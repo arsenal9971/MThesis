@@ -1,0 +1,176 @@
+\chapter{Preliminaries}
+The main results of this work are about point processes which are used to model users of a telecommunications network. On this chapter we will define what is a point process and we will enunciate some classic results that will be used in the following chapters. We will also refer to one of the most elementary example of point process the Poisson point process which is quite used in modeling. Finally we will briefly discuss the concept of Hausdorff measure its relation with Lebesgue measure and we will enunciate the coarea formula. We will not offer many proofs in this chapter but we will provide the corresponding bibliography to the interested reader for consulting them.
+
+\section{Point process}
+
+A point process is a set of points that are randomly distributed on the space and which does not densely accumulate in any part of it. For $A\subset \mathbb{R}^d$ we say that $A$ is \textit{locally finite} if for any bounded set $B\subset \mathbb{R}^d$ the cardinality of $A\cap B $ is finite. A point process $X$ will take values on the space
+$$\textbf{N}=\lbrace A\subset \mathbb{R}^d: A\mbox{ is locally finite }\rbrace, $$ where we will equip $\textbf{N}$ with $\mathcal{N}$ the minimum $\sigma$-algebra that contains all the locally finite sets of $\mathbb{R}^d$. We will denote by $\mathcal{B}_0(\mathbb{R}^d)$ the bounded Borel sets.
+
+\begin{defn} A point process $X$ on $\mathbb{R}^d$ is a measurable mapping defined on some probability space $(\Omega, \mathcal{F}, P)$ taking values in $(\textbf{N}, \mathcal{N})$. This mapping induces a distribution $P_X$ of $X$ given by 
+$$P_X(B)=P(\omega\in\Omega:X(\omega)\in B),\mbox{ for }B\in \mathcal{N}.$$
+\end{defn}
+
+In general is hard to study the distribution of a point process, it is more easy to answer questions such as: How many points has a point process in some borelian bounded region of the space? or Which is the sum of a function evaluated in each of the points of the process? The intensity measure will be our big allied for answering that kind of questions .
+
+\begin{defn} 
+Let $X$ be a pointed process, for $B_1, ..., B_n\in\mathcal{B}_0(\mathbb{R}^d)$, we have that $\#(X\cap B_1), ..., \#(X\cap B_1)$ where $\#(A)$ denotes the cardinality of a set $A\in\mathbb{R}^d$ are random variables taking values on $\mathbb{N}$. 
+We say that the measure $$\Lambda(B)=E \#(X\cap B), B\in\mathcal{B}_0(\mathbb{R}^d), $$ is the intensity measure of $X$. If it exists we will denote by $\lambda$ the density of $\Lambda$ with respect to the Lebesgue measure. We say that $\lambda$ is the intensity function of $X$.
+ \end{defn}
+
+
+It is much easier to define a point process by its intensity measure than by its distribution in fact the joint $$(\#(X\cap B_1), ..., \#(X\cap B_n))$$ characterizes it. 
+
+\begin{prop} The distribution of a point process $X$ is determined by the family of joint distributions $$(\#(X\cap B_1), ..., \#(X\cap B_n)),B_1, ..., B_n\in\mathcal{B}_0(\mathbb{R}^d).$$
+\end{prop}
+\begin{proof}
+\cite{Moller} Lemma B. 2.
+\end{proof}
+%\begin{defn} The family of finite dimensional distributions of a point process $X$, is the collection of joint distributions $$(\#(X\cap B_1), \#(X\cap B_2), ..., \#(X\cap B_k))$$ where $B_i\in\mathcal{B}_0(\mathbb{R}^d)$, $i=1, ...,m$, $m\in\mathbb{N}$. 
+%\end{defn}
+
+%\begin{thm} Let be $P$ a probability measure on $\mathcal{B}_0(\mathbb{R}^d)$ such that satisfy the following Kolmogorov Consistency Conditions
+%\begin{enumerate}
+%\item Invariance under index permutations. For all integers $k>0$ and all permutations of% the integers $1, ...,k,$ $$P() $$
+%\end{enumerate}
+
+
+ %is  determined by its finite-dimensional distributions.
+%\end{thm}
+The next theorem could be called the Fundamental Theorem of point processes and it is key in the development of this work. It relates the expected value of random sums evaluated in the points of the process with its intensity measure. 
+\begin{thm}[Campbell] Let $X$ be a point process and let $f:\mathbb{R}^d\rightarrow\mathbb{R}$ a non negative measurable function. Then the random sum $$\Sigma=\sum_{x\in X }f(x) $$ is a random variable, with expected value $$E(\Sigma)=\int_{\mathbb{R}^d}f(x)\Lambda (dx).$$
+\end{thm}
+\begin{proof}
+Lets assume that $f$ is a step function, then we can write $f=\sum_{i=1}^n c_i\mathds{1}_{B_i}$, $c_i\geq 0$, $B_i\in\mathcal{B}_0(\mathbb{R}^d)$ disjoint. Then we have that
+$$\Sigma=\sum_{x\in X}\sum_{i=1}^n c_i\mathds{1}_{B_i}(x)=\sum_{i=1}^n c_i \#(X\cap B_i)$$ so
+$$E(\Sigma)=\sum_{i=1}^n c_i E\#(X\cap B_i)=\sum_{i=1}^n c_i \Lambda(B_i)=\int_{\mathbb{R}^d}f(x)\Lambda (dx).$$ The result follows by monotone approximation.
+\end{proof}
+
+We are interested in simple point process since in our models each point will represent an user of a telecommunication network and it does not make sense to have two users in the same spatial location.
+
+\begin{defn} We say that a point process $X$ is simple if for all $x\in\mathbb{R}^d$ satisfies that $P(\#(X\cap \lbrace x\rbrace)>1)=0$.
+\end{defn}
+
+
+
+For finishing our review of basic results we talk about stationary point process which has been inspired in the classic definition for random variables.
+
+\begin{defn} A point process $X$ is called stationary if for all $x\in\mathbb{R}^d$, $X+x$ and $X$ have the same distribution where $$ X+x=\lbrace Y_i: Y_i=X_i+x, X_i\in X\rbrace.$$
+
+Additionally we say that $X$ is ergodic if for all $B, C \in\mathcal{N},$ $$\lim_{t\rightarrow\infty}\frac{1}{(2t)^d}\int_{[-t, t]^d}\mathds{1}\lbrace X\in B, X+x\in C\rbrace dx=P(X\in B)P(X\in C).$$
+\end{defn}
+
+
+%\begin{thm}(Campbell, Mecke) Let $X$ be a stationary point process with constant density $\rho$, then for any $x\in\mathbb{R}^d$,  $F\in\textbf{N}$, $B\in\mathcal{B}_0(\mathbb{R}^d)$,
+
+%$$P^!_0(F)=\frac{1}{\Lambda(B)}E\sum_{X_i\in X\cap B}\mathds{1}\lbrace X\setminus\lbrace x\rbrace\in F \rbrace$$
+%is a probability measure.
+
+%Moreover 
+%$$E\sum_{x\in X}f(x,X\setminus\lbrace x \rbrace)= \lambda\int_{\mathbb{R^d}}\int_{\textbf{N}} f(x,x+F)P^!_0(dF)dx,$$  for all non negative measurable functions  $f$ on $\mathbb{R}^d\times\textbf{N} $. 
+%\end{thm}
+The homogeneity of a stationary point process aloud us to define the concept of nearest neighbor distribution.
+\begin{defn} Let $X$ be a stationary point process we define the nearest neighbor distribution $G(r)$ as the probability that given that $x$ is in $X$, its nearest neighbor on $X$ is at distance $r$, more precisely 
+\begin{align}
+G(r)&=\frac{1}{\Lambda(B)}E\sum_{X_i\in X\cap B}\mathds{1}\lbrace (X\setminus\lbrace x\rbrace)\cap B^d_r(x)\neq\emptyset\rbrace\nonumber
+\end{align}
+for $r>0$ and $B\in\mathcal{B}_0(\mathbb{R}^d)$.
+\end{defn}
+
+And of course there is also an ergodic theorem for pointed process, for stating it we need the concept of sequence of convex averaging windows.
+
+\begin{defn} $\lbrace W_n\rbrace$ a sequence of subsets of $\mathbb{R}^d$ is a sequence of convex averaging windows if
+\begin{enumerate}
+\item each $W_n$ is convex and compact,
+\item $W_n\subset W_{n+1}$,
+\item $\sup_{r\geq 0} \lbrace  B(x,r)\subset W_n\mbox{ for some }x\rbrace\rightarrow\infty$ as $n\rightarrow\infty$.
+\end{enumerate}
+\end{defn}
+ 
+ \begin{thm} Let $X$ be a stationary ergodic pointed process, $\lbrace W_n\rbrace$ a sequence of convex averaging windows and $f$ a non negative measurable function on $\mathbb{R}$. Then almost surely $$\lim_{n\rightarrow\infty}\frac{1}{\nu_d(W_n)}\int_{W_n} f(X+x)dx=E(f(X)), $$ where $\nu_d$ is the $d$-dimensional Lebesgue measure.
+ \end{thm}
+\cite{Dal} Section 12.2.
+
+\section{Poisson point process}
+ 
+The Poisson point processes are the most common and basic example of point processes. Due to its independence characteristics it becomes very easy to work with them. Quite often it is used in telecommunications models. 
+ 
+\begin{defn} Let $\Lambda$ a non atomic measure on $\mathbb{R}^d$ such that for all\\ $B\in\mathcal{B}_0(\mathbb{R}^d)$, $\Lambda(B)<\infty$. We say that $X$ is a Poisson pointed process with intensity measure $\Lambda$ if
+
+1. for $B\in\mathcal{B}_0(\mathbb{R}^d)$, $\#(X\cap B)$ has Poisson distribution with mean $\Lambda(B)$.
+
+2. for $B_1, ...,B_k\in\mathcal{B}_0(\mathbb{R}^d) $ disjoint sets $\#(X\cap B_1), ..., \#(X\cap B_k)$ are independent.
+
+\end{defn}
+ 
+A good resource for studying the construction of this point process is \cite{Kingman} Section 5.5. The Campbell's theorem can be translated in to a more simple version and also extended to compute the moment generator function of a random sum.
+
+\begin{thm} [Campbell] Let $X$ be a Poisson point process with intensity function $\lambda$ and $f$ a measurable real valued function on $\mathbb{R}^d$. Then the random sum $$\Sigma=\sum_{x\in X }f(x) $$ is almost surely absolutely convergent if and only if $$\int_{\mathbb{R}^d}1\wedge\vert f(x)\vert\Lambda(dx)<\infty. $$ 
+If this condition holds, then $$E(e^{\theta\Sigma})=\exp(\int_{\mathbb{R}^d}(e^{\theta f(x)}-1)\Lambda (dx)) $$ for any complex $\theta$ for which the integral on the right converges and in particular whenever $\theta$ is imaginary. Moreover $$E(\Sigma)=\int_{\mathbb{R}^d}f(x)\Lambda (dx) $$ in the sense that the expectation exists if and only if the integral converges. If the integral converges then
+ $$Var(\Sigma)=\int_{\mathbb{R}^d}f(x)^2\Lambda (dx), $$
+finite or infinite.
+\end{thm}
+\begin{proof}
+See \cite{Kingman} Section 3.2.
+\end{proof}
+
+The next two theorems are a generalization of the Campbell's theorem. 
+
+\begin{thm}[Slyvniak-Mecke] Let $X$ be a Poisson point process with intensity measure $\Lambda$ then $$E\sum_{x\in X}f(x, X)=\int_{\mathbb{R}^d}E(f(x,X\cup\lbrace x\rbrace)) \Lambda (dx)$$ 
+$$E\sum_{x\in X}f(x, X\setminus\lbrace x\rbrace))=\int_{\mathbb{R}^d}E(f(x,X) \Lambda (dx) $$
+for all non negative measurable functions  $f$ on $\mathbb{R}^d\times\textbf{N} $. 
+\end{thm}
+\begin{proof}
+\cite{Sch} Theorem 3.2.5,\cite{Moller} Theorem 3.2.
+\end{proof}
+
+As an example of an application of this result we will compute the nearest neighbor density of a stationary Poisson point process.
+
+\begin{prop}\label{prop1.0} Let $X$ be a stationary Poisson point process of constant intensity $\lambda(x)=\lambda$ then is nearest neighbor density is $$G(r)=1-e^{-\Lambda( B_{r}^d(o))}, $$ 
+\end{prop}
+
+\begin{proof}
+By the Slyvniak-Mecke's theorem we have that
+$$G(r)=\frac{1}{\Lambda(B)}\int_{\mathbb{R}^d}P(X\cap B\cap B_{r}^d(x)\neq \emptyset)\Lambda(dx)=1-e^{-\Lambda( B_{r}^d(x))}. $$
+\end{proof}
+
+It is very useful to have a way to compare Poisson point processes with different intensities on a same space this can be done using coupling techniques. For that let $X$ be an stationary Poisson point process in $\mathbb{R}^{d}\times [0,\lambda_M]$ with constant intensity function $\mathds{1}$. If $\lambda^*:\mathbb{R}^d\rightarrow[0,\lambda_M]$ is a measurable function, then we define $$X^{[\lambda^*]}=\lbrace X_i:(X_i, U_i)\in X\mbox{ and }U_i\leq\lambda^*(X_i)\rbrace.$$ 
+
+
+\begin{prop}\label{prop1.1}$X^{[\lambda^*]}$ as before is a Poisson point process in $\mathbb{R}^d$ with intensity function $\lambda^*$.
+\end{prop}
+\begin{proof}
+Since $X$ is a Poisson point process with intensity function $\mathds{1}$ we have that for $B\in\mathcal{B}_0(\mathbb{R}^d)$,
+$$E\#(X^{[\lambda^*]}\cap B)=\int_{B\times[0\times \lambda_M]}\mathds{1}_{x_{d+1}\leq\lambda^*(x_1, ...,x_d)}dx=\int_B\lambda^*(\hat{x})d\hat{x}$$ for $x\in\mathbb{R}^{d+1}$ and $\hat{x}=(x_1,... ,x_d)$ the projection on the first $d$ coordinates. Hence by the Marking theorem on \cite{Kingman}, $X^{[\lambda^*]}$ is a Poisson point process with intensity function $\lambda^*$.
+\end{proof}
+
+\section{The Hausdorff measure and the coarea formula}
+
+In this section we mention a result that we will use in the third chapter of this work. This can be interpreted as a generalized "curvilinear" version of Fubini's theorem: the coarea formula. This is related with the Hausdorff measure which generalizes the Lebesgue measure.
+
+\begin{defn}[Hausdorff measure]
+ Let $A\subset \mathbb{R}^n$, $0\leq s <\infty$, $0<\delta\leq\infty$ we write
+$$\eta_ \delta^s(A)=\inf\lbrace\sum_{j=1}^\infty\alpha(s)(\frac{\mbox{diam} C_j}{2})^s\vert A\subset\bigcup_{j=1}^\infty C_j, \mbox{diam}C_j\leq\delta\rbrace,$$
+where $$\alpha(s)=\frac{\pi^\frac{s}{2}}{\Gamma(\frac{s}{2})+1}.$$
+For $A$ and $s$ as above, define
+$$\eta^s(A)=\lim_{\delta\rightarrow 0}\eta_ \delta^s(A)=\sup_{d>0}\eta_ \delta^s(A).$$
+We call $\eta^s$ the $s$-dimensional Hausdorff measure on $\mathbb{R}^d$. 
+\end{defn}
+
+The $d$-dimensional Lebesgue measure just allows us to measure the\\ $d$-dimensional volume of a measurable subset of $\mathbb{R}^d$. More generally the Hausdorff measure can measure the $d$-dimensional (or even $s$-dimensional) volume of any object in any dimension. The $d$-dimensional Lebesgue and Hausdorff measure coincide on $\mathbb{R}^d$.
+
+\begin{thm}$\eta^d=\nu ^d $ on $\mathbb{R}^d$ with $\nu^d $ the $d$-dimensional Lebesgue measure.
+\end{thm}
+\begin{proof}
+\cite{Eva} Section 2.2
+\end{proof}
+
+Finally we enunciate the coarea formula and its relation with the Hausdorff measure.
+
+\begin{thm}[Coarea formula] Let $f:\mathbb{R}^n\rightarrow\mathbb{R}^m$ be Lipschitz continuous, $n\geq m$. Then for each $\nu^n$-measurable function $g:\mathbb{R}^n\rightarrow\mathbb{R}$,
+$$\int_{\mathbb{R}^n}gJfdx=\int_{\mathbb{R}^m}\int_{f^{-1}(y)}gd\eta^{n-m}dy, $$
+where $Jf$ is the Jacobian of $f$.
+\end{thm}
+\begin{proof}
+\cite{Eva} Section 3.4.
+\end{proof}
+

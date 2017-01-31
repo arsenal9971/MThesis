@@ -1,0 +1,330 @@
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, english, singlespacing, headsepline, ]{MastersDoctoralThesis} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern} % Use the Palatino font by default
+%\usepackage{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+% The filename of the bibliography
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{caption}
+\usepackage{amssymb, graphicx, amsmath, amsthm}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\RequirePackage{hyperref}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{makeidx}
+\usepackage{array}
+\usepackage{titling}
+\usepackage{indentfirst}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{defn}{Definition}[chapter]
+\newtheorem{con}{Condition}[chapter]
+\newtheorem{lem}{Lemma}[chapter]
+\newtheorem{cor}{Corollary}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{rem}{Remark}[chapter]
+\newtheorem{ill}{Illustration}[chapter]
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{paper=a4paper, inner=2.5cm, outer=3.8cm, bindingoffset=2cm, top=1.5cm, bottom=1.5cm, }
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+\thesistitle{Interference in ad-hoc telecommunication systems in the high density limit} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Dr. Wolfgang König} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+
+\degree{Master Mathematics} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Adrián Hinojosa Calleja} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+
+
+
+\university{Technische Universität Berlin} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+
+
+
+\faculty{Fakultät II \\
+		Institut für Mathematik \\
+		AG Stochastik und Finanzmatematik} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\centering\includegraphics*[width=5cm]{bms-logo.jpg} \vspace{50pt}\includegraphics*[width=2cm]{tu-logo.jpg} \\
+
+\begin{center}
+
+{\LARGE \univname\par}\vspace{1.5cm} % University name
+\Large Master's Thesis\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+\huge
+Interference in ad-hoc telecommunication systems in the high-density limit
+\vspace{0.4cm} % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+ \normalsize
+\emph{Author:}\\
+{\authorname} % Author name - remove the \href bracket to remove the link
+
+
+\vspace{4cm}
+
+\begin{flushleft} 
+\emph{Supervisor:} Prof. Dr. Wolfgang König\\
+\emph{Second reader:} Dr. Christian Hirsch \\
+\end{flushleft} 
+
+
+\vspace{1cm}
+ \facname
+
+{\large 4. August 2016}\\[4cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+\cleardoublepage
+
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+
+\section*{Erklärung}\pagestyle{empty}
+\begin{flushleft}
+Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und eigenhändig
+sowie ohne unerlaubte fremde Hilfe und ausschließlich unter Verwendung
+der aufgeführten Quellen und Hilfsmittel angefertigt habe. 
+
+\vspace{5pt}
+Die selbständige und eigenständige Anfertigung versichert an Eides statt:
+\vspace{10pt}
+Berlin, den 4. August 2016 
+\end{flushleft}
+\vspace{50pt}
+Adrián Hinojosa Calleja
+%\pagestyle{empty}
+$\vspace{3cm}$
+%\begin{flushright}
+
+%\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+
+%\begin{itemize} 
+%\item This work was done wholly or mainly while in candidature for a research degree at this University.
+%\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+%\item Where I have consulted the published work of others, this is always clearly attributed.
+%\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+%\item I have acknowledged all main sources of help.
+%\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+%\end{itemize}
+ 
+%\noindent Signed:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+ 
+%\noindent Date:\\
+%\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+\clearpage\pagestyle{empty}
+\section*{Zusammenfassung in deutscher Sprache}
+
+\begin{center}
+\textbf{Störungen in Ad-hoc-Telekommunikationssystemen\\ in hoher Dichte Grenze}
+\end{center}
+
+Diese These ist angewendete Punktprozesse für Telekommunikations Modelle. Es ist in drei verschiedenen Hauptteile geteilt. 
+Der erste Teil (Kapitel 1) ist eine kurze Einfährung in die Theorie und die wichtigsten Ergebnisse der Punktprozesse, die im Rest der Arbeit verwendet werden. Der zweite Teil (Kapitel 2 und 3) geht um die Untersuchung der Verkehrsflussdichten 
+und es ist hauptsächlich basierend auf [4]. Schliesslich im dritten Teil (Kapitel 4) basierend auf [5] wir haben das Konzept
+der Informationsgeschwindigkeit ausgesetzte.
+
+
+\clearpage\pagestyle{empty}
+\begin{flushleft}
+\textit{A Trini, Rai y él/la que viene\\
+A Paqui, Nati y Elsa\\
+A Ma, Pa y Gon}
+\end{flushleft}
+
+
+\cleardoublepage
+ $\mbox{}$\\
+There must be some kind of way outta here\\
+Said the joker to the thief\\
+There's too much confusion\\
+I can't get no relief\\
+\\
+Business men, they drink my wine\\
+Plowman dig my earth\\
+None were level on the mind\\
+Nobody up at his word\\
+\\
+No reason to get excited\\
+The thief he kindly spoke\\
+There are many here among us\\
+Who feel that life is but a joke\\
+But you and I, we've been through that\\
+And this is not our fate\\
+So let us stop talkin' falsely now\\
+The hour's getting late\\
+\\
+All along the watchtower\\
+Princes kept the view\\
+While all the women came and went\\
+Barefoot servants, too\\
+Outside in the cold distance\\
+A wildcat did growl\\
+Two riders were approaching\\
+And the wind began to howl\\
+\\
+\begin{flushright}
+\textit{All along the watchtower}, Bob Dylan
+\end{flushright}
+
+\begin{figure}
+\captionsetup{width=1\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{coimbra.jpg}
+\caption{Department of Mathematics, University of Coimbra, Portugal. \\Picture by the author.}
+\end{figure}
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+%\begin{abstract}
+%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+
+%The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\chapter*{Acknowledgements}\pagestyle{empty}
+%\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+
+To the Mexican Council of Science and Technology (CONACYT) who granted me with a scholarship for studying my master degree at TU Berlin. To Prof. Wolfgang König who mentored myself in the last two years and encouraged me to increase the quality of this work. To Dr. Christian Hirsch for helping me to understand better many of the concepts and results on which this work is based. To Dominique, Tanja and Forough for all your help and human quality since I arrived to Berlin.
+
+To Maria Emilia for your support and trust on myself and my career as mathematician. To Adrián for being my academical old brother. To Alejandro for assisting me to pass through a terrible sickness that has been affecting me. To Gabi who was able to find someone for helping in a very critical point. To Peña Los Desamparados for an amazingly week at Cervera del Llano where you offered me more that I could never expect. To the Navarro Lara Family because "the southern it comes from, the best it is". To Vicki for many many Skype therapeutic sessions. To Pepis and Rogelio with whom I experienced an amazing travel. To Héctor for many fun afternoons at our office. To Santiago and Manolo because more than 20 years and an ocean has not being able to stop our friendship. To my friends Dragana, Emmi and Shimaa. To my Berlin-Schönholtz roommates András and Josué.
+
+Specially to the most important persons in my life: my family. Because in this last two years all of you shared with me the best of yourselves. If I had not had you I could not be able to overcome this hard stage of my life: Trini, Rai, Paqui, Nati, Elsa, Gonzalo, Mamá y Papá.
+
+To all of you, thank you very much.
+\\
+\\
+
+Berlin, August 2016 
+
+
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+\pagestyle{empty} 
+\tableofcontents% Prints the main table of contents
+
+%\listoffigures % Prints the list of figures
+
+%\listoftables % Prints the list of tables
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+%\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+
+%$a$ & distance & \si{\meter} \\
+%$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+%Symbol & Name & Unit \\
+
+%\addlinespace % Gap to separate the Roman symbols from the Greek
+
+%$\omega$ & angular frequency & \si{\radian} \\
+
+%\end{symbols}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+%\dedicatory{For/Dedicated to/To my\ldots} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+\include{Chapters/Introduction}
+\include{Chapters/Chapter1}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+%\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{90}
+
+\bibitem{Bac}
+  F. Baccelli, C. Bordenave,
+  \emph{The radial spanning tree of a Poisson point process},
+  The Annals of Applied Probability, 17(1):305-329,
+  2007.
+
+
+\end{thebibliography}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  
