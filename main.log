@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  31 JAN 2017 19:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2017 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,7 +1344,8 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 \c@rem=\count197
 \c@ill=\count198
 
-(./main.aux (./Chapters/Introduction.aux) (./Chapters/Chapter1.aux))
+(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -1489,14 +1490,14 @@ Package caption Info: End \AtBeginDocument code.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 56.9055pt
 * modes: includehead includefoot twoside 
-* h-part:(L,W,R)=(71.13188pt, 361.34995pt, 108.12054pt)
+* h-part:(L,W,R)=(56.9055pt, 412.56499pt, 71.13188pt)
 * v-part:(T,H,B)=(42.67912pt, 759.6886pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=361.34995pt
+* \textwidth=412.56499pt
 * \textheight=693.49821pt
-* \oddsidemargin=55.7674pt
-* \evensidemargin=35.85056pt
+* \oddsidemargin=41.54102pt
+* \evensidemargin=-1.1381pt
 * \topmargin=-29.59087pt
 * \headheight=18.85364pt
 * \headsep=19.8738pt
@@ -1601,13 +1602,13 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 70.
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 1: section
-<bms-logo.jpg, id=19, 197.538pt x 59.7432pt>
+<bms-logo.jpg, id=75, 197.538pt x 59.7432pt>
 File: bms-logo.jpg Graphic file (type jpg)
  <use bms-logo.jpg>
 Package pdftex.def Info: bms-logo.jpg used on input line 81.
 (pdftex.def)             Requested size: 142.26378pt x 43.0269pt.
 
-<tu-logo.jpg, id=21, 2238.3625pt x 1664.2175pt>
+<tu-logo.jpg, id=77, 2238.3625pt x 1664.2175pt>
 File: tu-logo.jpg Graphic file (type jpg)
  <use tu-logo.jpg>
 Package pdftex.def Info: tu-logo.jpg used on input line 81.
@@ -1625,40 +1626,15 @@ ogo.jpg> <./tu-logo.jpg>] [2
 
 ] [6
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 176--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--205
-
- []
-
-[7] [8
+] [7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 229--232
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--232
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
 
  []
 
@@ -1675,43 +1651,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--232
 
 ]
 1: section
-\openout2 = `Chapters/Introduction.aux'.
+\openout2 = `Chapters/Chapter1.aux'.
 
-(./Chapters/Introduction.tex)
+(./Chapters/Chapter1.tex
+Chapter 1.
+)
 1: section
 [1
 
 
 ]
-\openout2 = `Chapters/Chapter1.aux'.
+\openout2 = `Chapters/Chapter2.aux'.
 
- (./Chapters/Chapter1.tex [2
+ (./Chapters/Chapter2.tex [2
 
 
 
 ]
-Chapter 1.
+Chapter 2.
 )
 1: section
-[3] [4
+[3]
+\openout2 = `Chapters/Chapter3.aux'.
+
+ (./Chapters/Chapter3.tex [4
+
+
+
+]
+Chapter 3.
+)
+1: section
+[5]
+\openout2 = `Chapters/Chapter4.aux'.
+
+ (./Chapters/Chapter4.tex [6
+
+
+
+]
+Chapter 4.
+
+Overfull \hbox (25.84465pt too wide) in paragraph at lines 5--5
+[]\T1/lmr/bx/n/14.4 Using lin-ear Shear-lets to in-paint sparse sam-pled Epipol
+ar-
+ []
+
+)
+1: section
+[7]
+\openout2 = `Chapters/Chapter5.aux'.
+
+ (./Chapters/Chapter5.tex [8
+
+
+
+]
+Chapter 5.
+)
+1: section
+[9] [10
 
 
 ]
 1: section
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
- (./main.aux (./Chapters/Introduction.aux) (./Chapters/Chapter1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
+ (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
+(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CB0B7AA3BF5F770E36F7428C559C81CB;153.
+(rerunfilecheck)             Checksum: CF07D0EE3CFC4E439B6701C72BBED798;1369.
  ) 
 Here is how much of TeX's memory you used:
- 31821 strings out of 493089
- 692343 string characters out of 6134842
- 688998 words of memory out of 5000000
- 34784 multiletter control sequences out of 15000+600000
+ 31888 strings out of 493089
+ 693394 string characters out of 6134842
+ 693587 words of memory out of 5000000
+ 34810 multiletter control sequences out of 15000+600000
  74668 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,19n,69p,10404b,866s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1722,10 +1740,10 @@ ist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
 /lm/lmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.
 pfb>
-Output written on main.pdf (17 pages, 247718 bytes).
+Output written on main.pdf (23 pages, 258739 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

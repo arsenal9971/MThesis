@@ -1,3 +1,17 @@
-\BOOKMARK [0][-]{chapter*.5}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Preliminaries}{}% 2
-\BOOKMARK [1][-]{section.1.1}{Light Field}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Light Field Photography.}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Light Field Photography in the History}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{7D to 4D Approximation and the Plenoptic function}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Epipolar Geometry, Stereo Vision and Image rectifictation}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Sparse aquisition of Epipolar-plane}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Shearlets as Frames}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{Linear Shearlets and its relation with ridgelets}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.4}{Image inpainting using Shearlets}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.5}{Epipolar-plane representation with linear Shearlets}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 17
