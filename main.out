@@ -1,9 +1,9 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Light Field Photography.}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Light Field Photography}{}% 2
 \BOOKMARK [1][-]{section.2.1}{Light Field Photography in the History}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{7D to 4D Approximation and the Plenoptic function}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{Epipolar Geometry, Stereo Vision and Image rectifictation}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Sparse aquisition of Epipolar-plane}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Epipolar Geometry, Stereo Vision and Image rectifictation}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Sparse aquisition of Epipolar-plane}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Typical applications for the Light Field Theory}{chapter.2}% 6
 \BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 7
 \BOOKMARK [1][-]{section.3.1}{Shearlets as Frames}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.2}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 9
