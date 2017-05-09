@@ -8,9 +8,10 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
 1. Introduction.(explain chapters)  
 2. Light Field Photography. 
   1. Light Field Photography in the History.  
-  2. 7D to 4D Approximation and the Plenoptic function.
-  3. Epipolar Geometry, Stereo vision and Image rectification.    
-  4. Sparse aquisition of Epipolarplane (using OpenCV with such algorithms), with sampling rate.  
+  2. Light Field Acquisition Settings.
+	3. Typical applications for the Light Field Theory.
+  4. Geometrix proxy: Stereo Vision and multiview Epipolar Geometry.
+  5. Sparse aquisition of Epipolarplane (using OpenCV with such algorithms), with sampling rate.  
 3. Shearlets.  
   1. Frames.  
   2. Shearlets as Frames.  
