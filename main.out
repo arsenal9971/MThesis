@@ -4,15 +4,24 @@
 \BOOKMARK [1][-]{section.2.2}{Light Field Acquisition Settings}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Typical applications for the Light Field Theory}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Geometric proxy: Stereo Vision and multiview Epipolar Geometry}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.5}{Physical and Computational Setup for Sparse acquisition of Epipolar-plane}{chapter.2}% 7
-\BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 8
-\BOOKMARK [1][-]{section.3.1}{Shearlets as Frames}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.2}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.3}{Linear Shearlets and its relation with ridgelets}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.4}{Image inpainting using Shearlets}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.5}{Epipolar-plane representation with linear Shearlets}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 17
-\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 18
+\BOOKMARK [2][-]{subsection.2.4.1}{Epipolar constraint}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{Bolles feature tracking technique and experimental setup}{section.2.4}% 8
+\BOOKMARK [2][-]{subsection.2.4.3}{Functional analysis approach to EPI}{section.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.4.4}{Geometrical Approach to EPI}{section.2.4}% 10
+\BOOKMARK [1][-]{section.2.5}{Physical and computational setup for sparse acquisition of epipolar plane}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{Physical setup and sampling rate}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Followed pipeline}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.3}{Geometric construction of epipolar lines}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.4}{Tracking point algorithms}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.5}{Code for tracking and painting the EPI}{section.2.5}% 16
+\BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 17
+\BOOKMARK [1][-]{section.3.1}{Shearlets as Frames}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.3}{Linear Shearlets and its relation with ridgelets}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Image inpainting using Shearlets}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Epipolar-plane representation with linear Shearlets}{chapter.3}% 22
+\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 26
+\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 27

@@ -11,7 +11,16 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
   2. Light Field Acquisition Settings.
 	3. Typical applications for the Light Field Theory.
   4. Geometrix proxy: Stereo Vision and multiview Epipolar Geometry.
-  5. Sparse aquisition of Epipolarplane (using OpenCV with such algorithms), with sampling rate.  
+		1. Epipolar constraint.
+		2. Bolles feature tracking technique and experimental setup.
+		4. Functional analysis approach to EPI.
+		5. Geometrical approach to EPI.
+  5. Physical and computational setup for sparse acquisition of epipolar plane
+		1. Physical setup and sampling rate.
+		2. Followed pipeline.
+		3. Geometric construction of epipolar lines.
+		4. Tracking points algorithms.
+		5. Code for tracking and painting the EPI.
 3. Shearlets.  
   1. Frames.  
   2. Shearlets as Frames.  

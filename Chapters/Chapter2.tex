@@ -13,15 +13,15 @@ The propagation of the light rays in the 3D space can be completely described by
 
 \bigskip
 
-In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from.
+In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L_4$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from.
 
 \bigskip 
 
  There exists three tipical forms of this 4D approximation: 
 \begin{enumerate}
-\item The LF rays positions are indexed by their Cartesian coordinates on two parallel planes, also called the two-plane parametrization $L(u,v,s,t)$.
-\item The LF rays positions are indexed by their Cartesian coordinates on a plane and the directional angles leaving each point, $L(u,v,\phi,\theta)$.
-\item Pairs of points on the surface of a sphere $L(\phi_1,\theta_1,\phi_2,\theta_2)$.
+\item The LF rays positions are indexed by their Cartesian coordinates on two parallel planes, also called the two-plane parametrization $L_4(u,v,s,t)$.
+\item The LF rays positions are indexed by their Cartesian coordinates on a plane and the directional angles leaving each point, $L_4(u,v,\phi,\theta)$.
+\item Pairs of points on the surface of a sphere $L_4(\phi_1,\theta_1,\phi_2,\theta_2)$.
 \end{enumerate}
 
 \bigskip
@@ -29,12 +29,12 @@ In a more practical approach the plenoptic function can be simplified to a 4D ve
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\textwidth]{./Diagrams/Light-field-parametrizations.jpg}
-\caption{Three different representations of 4D LF\@. Left: $L(u,v,\phi,\theta)$. Center: $L(\phi_1,\theta_1,\phi_2,\theta_2)$. Right: $L(u,v,s,t)$. Figure taken from Wikipedia (https://en.wikipedia.org/wiki/Light\_field)}
+\caption{Three different representations of 4D LF\@. Left: $L_4(u,v,\phi,\theta)$. Center: $L_4(\phi_1,\theta_1,\phi_2,\theta_2)$. Right: $L_4(u,v,s,t)$. Figure taken from Wikipedia (https://en.wikipedia.org/wiki/Light\_field)}
 \end{figure}
 
 \bigskip
 
-In this work we will centered our attention in the two plane parametrization $L(u,v,s,t)$, if you are interested in the other descriptions we recommend to see \cite{Liang}. In order to understand deeply this way of LF description, lets consider a camera with image plane coordinates $(u,v)$ and the focal distance $f$ moving along the $(s,t)$ plane. 
+In this work we will centered our attention in the two plane parametrization $L_4(u,v,s,t)$, if you are interested in the other descriptions we recommend to see \cite{Liang}. In order to understand deeply this way of LF description, lets consider a camera with image plane coordinates $(u,v)$ and the focal distance $f$ moving along the $(s,t)$ plane. 
 
 \bigskip
 
@@ -42,6 +42,7 @@ In this work we will centered our attention in the two plane parametrization $L(
 \centering
 \includegraphics[width=1.0\textwidth]{./Diagrams/two-planes_param.jpg}
 \caption{Graphic representation of the two plane parametrization of a single ray on the LF which is parametrized by the intersection $(s,t)$ and $(u,v)$ with planes $\pi_0$ and $\pi_1$, respectively. Figure taken from \cite{Kim-Disney} p.21}
+\label{fig:C2S0F3}
 \end{figure}
 
 \bigskip
@@ -121,16 +122,309 @@ A significant challenge of acquisition is that the captured set of images is ver
 
 Later on Wetzstein with the Camera Culture Group of the MIT Media Lab developed a compressive light field camera architecture that allows for higher-resolution light fields to be recovered than previously possible from a single image, using three main components: light field atoms as a sparse representation of natural light fields (that involves dictionary learning which elements are the light field atoms), and optical design that allows for capturing optimized 2D light field projection also based in the coded masks technique, and robust sparse reconstruction methods to recover a 4D ligth field from a single coded 2D projection. In our opinion even this approach allows us to get a very high resolution of light fields, is a trade off by its requirements of high performance computation and its limitations coming from the baised learned dictionaries from a limited set of scenes. 
 
-\bigskip
 
-Due to the lack of equipment, 
+\bigskip 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 0.45\textwidth]{./Diagrams/coded-mask.jpg}
+\caption{Single coded 2D projection from the work of Wetzstein, Figure taken from \cite{CompressedMIT} p. 8}
+\end{figure}
+
+
+In the multicameras instance, Vargharshakyan et al. \cite{LF-Shearlets} developed in 2015 an image based rendering technique based on light field reconstruction from a limited set of perspective views acquired by cameras, which in that sense is compressed. Even the preprint was presented in 2015, the actual paper was just published this year and it represents a state of the art light field recovery technique. The technique utilizes sparse representation of epipolar-plane images (a very important concept in stereo-vision that will be explained carefully in section~\ref{sec:Epi-geometry}) using as sparsifying system, adapted shearlet transform. This compressive approach was used in this thesis for the light field recovery and we picked it since we consider it as very interesting mathematically since it uses geometry (epipolar-plane representation), compressed sensing (sparse recovery) and functional analysis (shearlet representation). In the next sections and chapters we will cover every detail regarding the technique hoping it is comprehensive for everybody with no expert knowledge of any of the areas but just basic concepts. 
+
 
 \section{Typical applications for the Light Field Theory}
 \label{sec:LF-applications}
 
+We already introduced the concept of 4D Light Field, how this concept has been developed through more than a century already and some techniques of acquisition, but one fundamental question arises; what is the interest of studying Light Fields?, and this question has many answers. Of course the first one is just interest on the mathematical foundation of Early Vision, but this allow us not just to understand more the way the human brain works for vision interpretaton but also to enhance the quality of information of certain spatial scene. For a more clear exposition we will enumarate some of the more remarkable applications of light field recovery:
+
+\begin{itemize}
+\item \textbf{Illumination engineering}: With the study of the ligth field one can derive in a closed form the illumination patterns that would be observed on surfaces due to ligth sources of various shapes positioned above these surface. 
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 0.50\textwidth]{./Diagrams/ill_enge.png}
+\caption{Downward-facing light source which induces a light field whose irradiance vectors curve otwards, Figure taken from \url{https://en.wikipedia.org/wiki/File:Gershun-light-field-fig24.png}}
+\end{figure}
+
+\item \textbf{View synthesis}: One of the most visible applications of the light fields, which centers of the synthesis of intermediate views from a given set of captured views of a 3D visual scene, also called image-based rendering. Immersive visual applications as free viewpoint television and virtual reality require a dense set of images of a scene, but the scene is typically captured by a limited number of cameras that form a coarse set of multiview images. Modern methods for view synthesis are based in two different approaches: estimation of the scene depth and synthesis of novel views based on the estimated depth and the given images, where the depth works as correspondence map for view reprojection (something that could be interpreted as inverse projection). The limitation on this approach is that the quality of depth estimation is dependent on the scene content, causing visually annoying artifacts in the rendered (synthesized) views when the depth map has small deviations (for further information of this one can read \cite{Kim-Zimmer}).
+
+\bigskip
+
+The best approach so far that fixes this problem is based on the concept of plenoptic function and its light field  approximation. The scene capture and intermediate view synthesis problem can be formulated as sampling and consecutive reconstruction (interpolation) of the underlying plenoptic function. LF based methods consider each pixel of the given views as a sample of a multidimensional LF function, thus the unknown views are function values that can be determined after its reconstruction from samples.
+
+\item \textbf{Synthetic aperture photography (Light Field rendering)}: One can approximate the view that would captured by a camera having a finite aperture (non-pinhole) when integrating an appropiate 4D subset of the samples in a light field. This view has a finite depth of field (one can focuse until a finite depth on the scene). One can focus on different fronto-parallel or oblique planes in the scen by shearing the light field before performing this integration (one can check \cite{Isaksen} for the fronto-parallel case). Like in the case of Lytro cameras, this permits its photographs to be refocused after they are taken.
+
+\item \textbf{3D display}: One can present a light field using technology that maps each sample to the appropiate ray in physical space, one obtains then an autostereoscopic visual effect akin to viewing the original scene (hologram-wise). For non digital technologies for doing this one can use holography; digital technologies of 3D display include placing an array of lenslets over a high-resolution display screen, or projecting the imagery onto an array of lenslets using an array of video projectors; if this last one is combined with an array of video cameras, one can capture and display a time-varying light field, which basically constitutes a 3D television system (check \cite{Javidi}).
+
+\item \textbf{Light Field microscopy}: Light field permit manipulation of viewpoint and focus after the imagery has been recorded. By inserting a microlens array into the optical train of a conventional microscope, one can capture light fields of biological specimens in a single photograph. The ability to create focal stacks from a single photograph allows moving or light-sensitive specimens to be recorded, with 3D deconvolution one can produce a set fo cross sections whcih can be cisualized using volume rendering, one very recommended reference on that sense is \cite{Ng-micro}.
+
+\item \textbf{Brain imaging}: Neural activity can be recorded optically by genetically encoding neurons with reversible fluorescent markers that indicate the presence of calcium ions in real time. Since Light field microscopy captures full volume information in a singel frame, it is possible to monitor neural activity in many individual neurons randomly distributed in a large volume at video framerate. A quantitative measurement of neural activity can even be done despite optical aberrations in brain tissue and without reconstructing a volume image \cite{Pegard}.
+
+\item \textbf{Glare reduction}: Glare is a difficulty seeing in the presence of bright light such as direct or reflected light, and arises due to multiple scattering of light inside the camera's body and lens optics and reduces image contrast. While glare has been analyzed in 2D image space, it is useful to identify it as a 4D ray-space phenomenon \cite{Raskar}. By analyzing the ray-space inside a plenoptic camera, one can classify and remove glare artifacts, since in ray-space glare behaves as high frequency noise and can be reduced by outlier rejection (for instance thresholding). This application represents a great solution for some issues in film postproduction.
+
+\end{itemize}
+
+We think this examples of application make very clear the important role that Light Field recovery plays in technology, medicine and art; therefore we also think that is worth to study new optimal methods for this recovery.
+
 \section{Geometric proxy: Stereo Vision and multiview Epipolar Geometry}
 \label{sec:Epi-geometry}
 
-\section{Physical and Computational Setup for Sparse acquisition of Epipolar-plane}
+3D geometry reconstruction has been an interest of study for decades and there is a plenty of material where one can look at, where many different approaches are presented. One of the first approaches to recover depth information from a dense sequence of images is the seminal work of Bolles et al. \cite{Bolles} a very recommended classic in the topic; though its rendering technique is old and not robust enough for a dense reconstruction of scenes with occlusions, vary illumination and other features; one can use the geometric approach to obtain underlying linear structures of the light field. Due the mathematical simplicity and straight forward implementation of this approach we used this model to approach the Epipolar-plane images of the 3D scene to reconstruct the 4D Light Field, but in this case we have a sparse sequence of images so we used a sparse representation for the epipolar plane to tackle this issue.
+
+\subsection{Epipolar constraint}
+
+One of the fundamental tasks of computer vision is to describe a sscene in terms of coherent threedimensional objects and their spatial relationships. This tasks present clear limitations for two main reasons: 
+\begin{itemize}
+\item There is an enormous diversity of objects and an almost limitless ways in which they can occur in scenes.
+\item Classical images have an inherent ambiguity; since the process of forming an image captures only two of the three dimensions of the scene, an infinity of three-dimensional scenes can give rise to the same two-dimensional image; therefore no single two-dimensional image contains enough information to enable reconstruction of the three-dimensional scen that gave rise to it.
+\end{itemize}
+
+Human vision tackles this limitation with the use of knowledge of the scene objects and multiple images, like stereo pairs and image sequences acquired by a moving observer; though the mathematical and computational implementation  of this features is not trivial but using more than one image makes it theoritically possible, under certain circumstances (that go from position of the views to sampling rate) modern techniques on stereo vision have made this possible up to some precision. As we already mention in this thesis we will make use of the epipolar plane image analysis technique.
+
+\bigskip
+
+The epipolar plane image analysis proposed by Bolles \cite{Bolles} is a technique to make a threedimensional description of a static scene from a dense sequence of images; the sequence is dense in the sense that its images form a solid block of data in which the temporal continouity from image to image is equal to the spatial continuity (namely the resolution of the picture). Slices of this block encode the 3D position of objects and occlusion of an object by another.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 1\textwidth]{./Diagrams/multi-views1.jpg}
+\caption{First three of 125 images taken by Bolles et al. Figure taken from \cite{Bolles} p. 16}
+\label{fig:Bollesmultiviews}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 0.50\textwidth]{./Diagrams/block1.jpg}
+\caption{Spatiotemporal solid of data corresponding to the sequence on the Figure~\ref{fig:Bollesmultiviews}, Figure taken from \cite{Bolles} p.16}
+\end{figure}
+
+
+\bigskip
+
+One can supply the separate analysis of both camera motion and object position by an unified treatment of parameters and concentrate solely in object positions, this known motion assumption is appropriate for autonomous vehicles with intertial-guidance systems and some industrial tasks. This assumption is called the \textbf{"epipolar"} constraint and its most important feature is that it reduces the search required to find matching features from two dimensions to one and is derived from the known position of one camera with respect to the other. 
+
+\bigskip
+
+The epipolar constraint as we just mentioned reduces the complexity of matching features between successive images (by search dimensional reduction), even though matching features still one of the most difficult steps in motion processing. In stereo analysis, it is well known that the difficulty of finding matches increases with the distance between the lens centers, so as a second assumption we suppose that the images were taken very close together. 
+As another assumption that will simplify the matching of features between seccessive images one assume that the images were taken very close together. 
+
+\bigskip 
+
+At the time that Bolles et al.\ developed the epipolar plane image analysis technique matching features was indeed a very complex task to implement; they did not have digital cameras of high resolution as today, and also the most common algorithms on feature extraction/tracking for motion flow were after 1988 (we will discuss in detail about this on the section~\ref{sec:Sparse-acquisition}) just one year after Bolles proposed this approach. For this reason they developed their own very creative way to track features that is worth to mention shortly, to be able to compare with the modern robust algorithms.  
+
+\subsection{Bolles feature tracking technique and experimental setup}
+
+Bolles and his group in the Artificial Intelligence Center at Menlo Park developed as a feature tracker an edge detection and classification technique for analyzing one slice of the data (spatio-dimensional block of images) at a time. For this end, they adapted this approach to a range sensor, whcih gathered hundreds of slices in sequence. The sensor, a standard structured-light sensor, projected a plane of light onto the objects in the scene and then triangulated the three-dimensional coordinates of points along the intersection of the plane and the objects. The edge detection technique locates discontinuities in one plane and links them to similar discontinuities in previus planes. 
+
+\bigskip
+
+They found out that the spacing between light planes makes a significant difference in the complexity of the procedure that links discontnuities from one plane to the next. When the light planes are close together relative to the size of the object features, matching is essentially easy. When the planes are far apart, the matching is extremely difficult; this effect gives a sampling rate estimate analogous to the Nyquist limit in sampling theory. A deeper sampling analysis will be done in the section~\ref{sec:Sparse-acquisition}. For the physical acquisition of the pictures they borrowed a one-meter-long optical track and gathered multiple images while moving a camera manually along it. 
+
+\bigskip
+
+By different possibilities of camera movements on the track (e.g.\ straight ahead) they realized that it would be easier to make such measurements if they aimed the camera perependicularly to the track instead since the path of a scene point in the multiple views will follow a straight-line trajectory in time (whereas it will follow a hyperbolic trajectory if the camera is moving straight-ahead). 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 0.50\textwidth]{./Diagrams/perp-move.jpg}
+\caption{Lateral motion with camera perpendicular to the track, Figure taken from \cite{Bolles} p.9}
+\end{figure}
+
+The latter can be proven using the next diagram:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width= 0.50\textwidth]{./Diagrams/stereo-dist.jpg}
+\caption{Lateral motion epipolar geometry, Figure taken from \cite{Bolles} p.9}
+\label{fig:LateralMotion}
+\end{figure}
+
+Analyzing the figure~\ref{LateralMotion} one can see that the one-dimensional images are at distance $h$ in front of the lens centers, while the feature point $p$ is at a distance $D$ from the linear track along which the camera moves right to left. By similar triangles one has
+\begin{equation}
+\label{eq:C1S4E1}
+\begin{aligned}
+\Delta U = u_2-u_1 &= \frac{h(\Delta X+X)}{D}-\frac{hX}{D}\\
+                   &= \Delta X\frac{h}{D}
+\end{aligned}
+\end{equation}
+where $\Delta X$ is the distance traveled by the camera along the line, and $\Delta U$ the distance the feature moved in the image plane. By the Equation~\ref{eq:C1S4E1} the change in image position is al inear function of the distnace the camera moves; this equation can be rearranged as follows to yield a simple expression for the distance of a point in terms of the slope of its line in the EPI:
+
+\begin{equation}
+\label{eq:C1S4E2}
+\begin{aligned}
+D = h\frac{\Delta X}{\Delta U}
+\end{aligned}
+\end{equation}
+
+so if one constructs the spatio-temporal paths of feature points one can get its depth in the scene with respect to the image plane by measuring the slope of its lines with the Equation~\ref{eq:C1S4E2}.
+
+\bigskip
+
+We already mention words as epipolar plane, or epipolar plane image but we have not define anything yet. There are two different approachs to epipolar geometry, one is using functional analysis and permits the study of approximation errors of recovered 4D Light Fields, and the other is geometrical which permits an straight forwart implementation. In this subsection we will shortly expose them. 
+
+\subsection{Functional analysis approach to EPI}
+
+At the beginning of this chapter we mentioned the parallel plane approach to 4D light field (recall Figure~\ref{fig:C2S0F3}), the idea of epipolar geometry is based on this representation. As in Figure~\ref{fig:C2S0F3} lets the two parallel planes be called $\pi_0$ and $\pi_1$ with coordinates $(s,t)$ and $(u,v)$ respectively. In this scheme, the 4D Light Field will be a function $L_4:\mathbb{R}^4\longrightarrow\mathbb{R}^3$ with the radiance $\mathbf{r}\in\mathbb{R}^3$ given as
+
+$$
+\mathbf{r}=L_4(u,v,s,t)
+$$
+
+If we fix on of the two coordinates on $\pi_0$, say $t$, so that $\pi_0$ reduces to a line, the ray space of the resulting light field will span the $u,v$ and $s$ dimensions of the original ray space; lets called this parameterized light field a 3D light field, and can be denoted as a function $L_3:\mathbb{R}^3\longrightarrow\mathbb{R}^3$. The radiance $\mathbf{r}\in\mathbb{R}^3$ of a light ray is given then as
+
+$$
+\mathbf{r}=L_3(u,v,s)
+$$
+
+where $s$ is the 1D ray origin and $(u,v)$ represent the 2D ray direction. One can obtain a 2D slice of light field by fixing another parameter. A $uv$-slice fixing $s$ and $t$ is simply a perspective pinhole image $I_{s,t}(u,v)$ which is a camera with no lense but a small aperture instead. A $vs$- or $ut$- slice is known as a \textit{push-broom image} and can be obtained using a line-sensor sweeping the scene in the direction orthogonal to its linear sensor alignment \cite{Gupta}. 
+
+
+ A $us$-slice is obtained by reducing (fixing) one dimension, $v$, also from $\pi_1$. This slice is commonly called \textit{flatland light field}, it represents a light field of a hypothetical height-less world, where the light field is parameterized by two lines instead of planes.
+
+\bigskip
+
+For geometrical reasons explained in the Subsection~\ref{subsec:GeoEPI} this slices are called \textit{epipolar-plane images} (EPI) when the cameras can be represented as pinhole cameras, i.e., if one can place the image plane between the scene points and the camera center \cite{Bolles}. We will denote an EPI as $E_v: \mathbb{R}^2\longrightarrow\mathbb{R}^3$, with radiance
+
+\begin{equation}
+\mathbf{r}=E_v(u,s)
+\end{equation}
+
+of a ray at position $(u,s)$ and fixed parameter $v$. 
+
+\subsection{Geometrical Approach to EPI}
+\label{subsec:GeoEPI}
+
+Lets assume that we have two cameras modeled as pinholes with the image planes in front of the lenses, using Figure~\ref{fig:epipolarline}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.85\textwidth]{./Diagrams/epipolarline.jpg}
+\caption{Stereo vision configuration, Figure taken from \cite{Bolles} p. 14}
+\label{fig:epipolarline}
+\end{figure}
+
+For each point $P$ in the scene, there is a plane, called the \textit{epipolar plane}, that passes through the point and the line joining the two lens centers. The set of all epipolar planes is the \textit{pencil} of planes passing through the line joining the lens centers. Each epipolar plane intersects the two image planes along \textit{epipolar lines}. All the points in an epipolar plane are projected onto one epipolar line in the first image and onto the corresponding epipolar line in the second image. 
+
+\bigskip
+
+This lines are important for stereo processing since they reduce the search required to find matching points from two dimensions to one; thus, to find a match for a point along an epipolar line in one image, is just necessary to search along the corresponding epipolar line in the second image; this is equivalent to the already mentioned \textit{epipolar constraint} for a sequence of two images. Finally an \textit{epipole} is the intersection of an image plane with the line joining the lens centers.
+
+\bigskip
+
+The epipolar constraint can be generalized for sequences of more than two images when the camera is moving in straight line and all the lenses centers are collinear, so all pairs of camera positions produce the same pencil of epipolar planes, then straight line motion of camera defines a partition of the scene into a set of planes. If the lenses centers are not in a line, the epipolar planes passing through a scene point differe in between cameras so the one-dimensional search feature will not be possible. 
+
+\bigskip 
+
+Since the point of an epipolar plane are projected onto one line in each image, all the info about them is contained in that sequence of lines, the image constructed from this sequence of line is called \textit{epipolar plane image}(EPI) and contains all the information about the epipolar plane (check Figure~\ref{fig:EPI-dices})
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.95\textwidth]{./Diagrams/EPI-dices.jpg}
+\caption{Epipolar plane image (EPI) formation, (a) Capturing setup, (b) Stack of captured images, (c) Example of EPI\@. Figure taken from \cite{LF-Shearlets} page 2}
+\label{fig:EPI-dices}
+\end{figure}
+
+If one has the EPI of a sufficiently dense sequence, one can estimate then the depth of each point of the scene with the slope of the lines in the EPI using Equation~\ref{eq:C1S4E2} and obtain the depth map. 
+
+\section{Physical and computational setup for sparse acquisition of epipolar plane}
 \label{sec:Sparse-acquisition}
 
+One of the downsides on the references in this topic that we found out was the lack of detailed explanation of the followed pipeline that the group or researcher in question used to take and process the set of images of a scene, to go from a sequence of raw pictures to the epipolar plane images of the sequence; in most of the papers and books one gets a black box of expensive privative computer vision software used to detect and track pictures in the sequence; in some papers is also not clear the whole reconstruction procedure in the sense that they just present the algorithm but not the implementation code which makes impossible to reproduce and improve their implementation.
+
+\bigskip
+
+In this thesis we are trying to make every single detail clear in order to give the reader the tools to try themselves each step of the acquisition/processing/reconstruction technique and if possible improve it. 
+
+\subsection{Physical setup and sampling rate}
+
+We already saw that there are a plenty of techniques on acquire the light field of a scene, and we will use the approach of multiple views of a moving camera proposed by Bolles et al.\ 
+
+\bigskip 
+
+By lack of equipment we did not take the images but used the datasets provided by the research group of Professor Markus Gross in the Disney Research Center at Zurich used for their publications \cite{ChangilPhD}, \cite{PointCloud}, \cite{SceneRec} and \cite{StructMot}, all of them about scene reconstruction, outlier removal and motion flow applied to new filming techniques. One can find the datasets in their webpage \url{https://www.disneyresearch.com/project/lightfields/} with detailed description of their setting. 
+
+\bigskip
+
+They provide five different datasets that are made of sequence of images named after the objects that appear in the scene: Mansion, Church, Couch, Bikes and Statue; this datasets have been widely used by the community (see \cite{LF-Shearlets}). In all the cases they used a digital SLR camera translated motorized linear stage to capture the multiple views (with the camera facing perpendicularly with respect of the stage). One can observe in Figure~\ref{fig:setting} the used stage and camera.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.93 \textwidth]{./Diagrams/setting.jpg}
+\caption{Acquisition setup with a digital SLR camera translated by a motorized linear stage, both controlled remotely from a computer. Figure taken from \cite{ChangilPhD} p.27}
+\label{fig:setting}
+\end{figure}
+
+\bigskip
+
+The reconstruction of the light field in a scene has some restrictions in the sampling rate, it is clear that successive views that are too separate from each other will make the task more difficult if not impossible. Recalling Equation~\ref{eq:C1S4E1} we have that 
+$$
+\Delta U = \Delta X\frac{h}{D}
+$$
+
+where $\Delta X$ is the distance traveled by the camera between succesive views, $\Delta U$ is the distance the feature moved in the image plane, $h$ the focal distance (distance between the lens center and the image plane) and $D$ the distance between the stage where the camera is moving and the feature point. 
+
+\bigskip
+
+Following the idea of Vagharshakyan et al. \cite{LF-Shearlets}, by assuming a horizontal sampling rate $\Delta U$ satisfying the Nyquist sampling criterion for scene's highest texture frequency, i.e.\ the sampling frequency is at least the double of the scene's highest texture frequency, one can relate the required camera motion step (sampling) with the scene depth. For given $D_{min}$ the sampling rate $\Delta X$ should be such that 
+
+\begin{equation}
+\label{eq:C2S5E4}
+\Delta X \leq \frac{D_{min}}{h}\Delta U
+\end{equation}
+
+in order to ensure maximum 1 pixel disparity between nearby views, which will avoid aliasing and other artifacts. Vagharshakyan et al.\ also proved that by selecting the equality for $\Delta X$ in Equation~\ref{eq:C2S5E4}, one maximizes the baseband support, which helps in designing reconstruction filters; in particular, simple separable filters like linear interpolators can be used. The problem in this thesis is the reconstruction densely sampled EPIs (and thus the whole LF) from their decimated and aliased verrsion produced by a higher camera step $\Delta X$ than the one in Equation~\ref{eq:C2S5E4} by using some sparse representation of the EPIs. 
+
+
+\bigskip
+
+In the case of the setting used by the group of the Disney Research Center, the images were captured by using a Canon EOS 4D Mark II DSLR camera and a Canon EF $50$mm f/$1.4$ USM lens and a Zaber T-LST1500D motorized linear stage to drive the camera to the shooting positions. The camera focal length was $50$ mm and the sensor size was $36\times24$mm, PTLens was used to radially undistort the captured images, and Voodoo Camera Tracker was used to estimate the camera poses for rectifiction (is very important that the images are rectified to be able to track points); by its number of corners (features easy to track) the \textbf{Church} data set was the one studied in this thesis, here the camera separation is $\Delta X=10mm$ which attains the Nyquist sampling bound mentioned in Equation~\ref{eq:C2S5E4}.
+
+\subsection{Followed pipeline}
+
+The next diagram shows the general followed pipeline from acquisition to LF reconstruction:
+
+\begin{tikzpicture}
+  [node distance=.8cm,
+  start chain=going below,]
+     \node[punktchain, join] (intro) {Acquisition of rectified images};
+     \node[punktchain, join] (probf)      {Problemformulering};
+     \node[punktchain, join] (investeringer)      {Investeringsteori};
+     \node[punktchain, join] (perfekt) {Det perfekte kapitalmarked};
+     \node[punktchain, join, ] (emperi) {Emperi};
+      \node (asym) [punktchain ]  {Asymmetrisk information};
+      \begin{scope}[start branch=venstre,
+        %We need to redefine the join-style to have the -> turn out right
+        every join/.style={->, thick, shorten <=1pt}, ]
+        \node[punktchain, on chain=going left, join=by {<-}]
+            (risiko) {Risiko og gamble};
+      \end{scope}
+      \begin{scope}[start branch=hoejre,]
+      \node (finans) [punktchain, on chain=going right] {Det finansielle system};
+    \end{scope}
+  \node[punktchain, join,] (disk) {Det imperfekte finansielle marked};
+  \node[punktchain, join,] (makro) {Investeringsmssige konsekvenser};
+  \node[punktchain, join] (konk) {Konklusion};
+  % Now that we have finished the main figure let us add some "after-drawings"
+  %% First, let us connect (finans) with (disk). We want it to have
+  %% square corners.
+  \draw[|-,-|,->, thick,] (finans.south) |-+(0,-1em)-| (disk.north);
+  % Now, let us add some braches. 
+  %% No. 1
+  \draw[tuborg] let
+    \p1=(risiko.west), \p2=(finans.east) in
+    ($(\x1,\y1+2.5em)$) -- ($(\x2,\y2+2.5em)$) node[above, midway]  {Teori};
+  %% No. 2
+  \draw[tuborg, decoration={brace}] let \p1=(disk.north), \p2=(makro.south) in
+    ($(2, \y1)$) -- ($(2, \y2)$) node[tubnode] {Analyse};
+  %% No. 3
+  \draw[tuborg, decoration={brace}] let \p1=(perfekt.north), \p2=(emperi.south) in
+    ($(2, \y1)$) -- ($(2, \y2)$) node[tubnode] {Problemfelt};
+\end{tikzpicture}
+
+\subsection{Geometric construction of epipolar lines}
+
+\subsection{Tracking point algorithms}
+
+\subsection{Code for tracking and painting the EPI}

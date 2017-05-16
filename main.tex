@@ -27,6 +27,39 @@
 \usepackage{titling}
 \usepackage{indentfirst}
 
+%----------------------------------------------------------------------------------
+%----------- TIKZ Setup
+%----------------------------------------------------------------------------------
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+
+\tikzset{>=stealth',
+  punktchain/.style={rectangle, 
+    rounded corners, 
+    % fill=black!10,
+    draw=black, very thick,
+    text width=10em, 
+    minimum height=3em, 
+    text centered, 
+    on chain},
+  line/.style={draw, thick, <-},
+  element/.style={tape,
+    top color=white,
+    bottom color=blue!50!black!60!,
+    minimum width=8em,
+    draw=blue!40!black!90, very thick,
+    text width=10em, 
+    minimum height=3.5em, 
+    text centered, 
+    on chain},
+  every join/.style={->, thick,shorten >=1pt},
+  decoration={brace},
+  tuborg/.style={decorate},
+  tubnode/.style={midway, right=2pt},
+}
+
+
 \theoremstyle{definition}
 \newtheorem{thm}{Theorem}[chapter]
 \newtheorem{defn}{Definition}[chapter]
@@ -389,6 +422,88 @@ Berlin, September 2017
 	\emph{The Lumigraph},
 	Proceedings of ACM SIGGRAPH, 43-54,
 	1996
+
+\bibitem{Kim-Zimmer}
+	C. Kim, H. Zimmer, Y. Pritch, A. Sorkine-Hornung, M. Gross,
+	\emph{Scene reconstruction from high spatio-angular resolution light fields},
+	ACM Trans. Grpah, 32(4), 73:1-73:2, 
+	2013 
+
+\bibitem{Isaksen}
+	A. Isaksen, L. McMillan, S.J. Gortler, 
+	\emph{Dynamically Reparameterized Light Fields},
+	ACM SIGGRAPH, ACM Press, 297-306,
+	2000
+
+\bibitem{Javidi}
+	B. Javidi, F. Okano, 
+	\emph{Three-Dimensional Television, Video and Display Technologies},
+	Springer-Verlag,
+	2012
+
+\bibitem{Ng-micro}
+	M. Levoy, R. Ng, A. Adams, M. Footer, M. Horowitz,
+	\emph{Light Field Microscopy},
+	ACM Transactions on Graphics, Proceedings of SIGGRAPH, 25(3),
+	2006
+
+\bibitem{Pegard}
+	N. C. P\'egard, H. Y. Liu, N. Antipa, M. Gerlock, H. Adesnik, L. Waller,
+	\emph{Compressive light-field microscopy for 3D neural activity recording},
+	Optica 3, 5, 517-524,
+	2016
+
+\bibitem{Raskar}
+	R. Raskar, A. Agrawal, C. Wilson, A. Veeraraghavan,
+	\emph{The Discrete Focal Stack Transform},
+	Proc. ACM SIGGRAPH, 56
+	2008
+
+\bibitem{Bolles}
+	R. C. Bolles, H. H. Baker,
+	\emph{Epipolar-Plane Image Analysis: An Approach to Determining Structure from Motion},
+	International Journal of Computer Vision, 1, 7-55,
+	1987
+
+\bibitem{Gupta}
+	R. Gupta, R. I. Hartley, 
+	\emph{Linear pushbroom cameras},
+	IEEE Transactions on Pattern Analysis and Machine Intelligence, 19(9), 963-975,
+	1997
+
+\bibitem{LearnOpenCV}
+	G. Bradski, A. Kaehler,
+	\emph{Learning OpenCV},
+	O'Reilly Media, 2008
+
+\bibitem{MultipleView}
+	R. Hartley, A Zisserman,
+	\emph{Multiple view geometry in computer vision},
+	Cambridge University Press,
+	2004
+
+\bibitem{ChangilPhD}
+	C. Kim, 
+	\emph{3D Reconstruction and Rendering from High Resolution Light Fields},
+	PhD Thesis of ETH Zurich, 2015
+
+\bibitem{PointCloud}
+	K. Wolff, C. Kim, H. Zimmer, C. Schroers, M. Botsch, O. Sorkine-Hornung, A. Sorkine-Hornung,
+	\emph{Point Cloud Noise and Outlier Removal for Image-Based 3D Reconstruction},
+	3D International Conference on 3D Vision (3DV), 2016
+
+\bibitem{SceneRec}
+	C. Kim, H. Zimmer, Y. Pritch, A. Sorkine-Hornung, M. Gross,
+	\emph{Scene Reconstruction from High Spatio-Angular Resolution Light Fields},
+	ACM SIGGRAPH, 2013
+
+\bibitem{StructMot}
+	T. Basha, S. Avidan, A. Sorkine-Hornung, W. Matusik,
+	\emph{Structure and Motion from Scene Registration},
+	IEEE Conference on Computer Vision Pattern Recognition (CPVR) 2012
+	
+	
+	
 
 \end{thebibliography}
 

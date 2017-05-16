@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2017 16:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 MAY 2017 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1335,36 +1335,161 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-\c@thm=\count191
-\c@defn=\count192
-\c@con=\count193
-\c@lem=\count194
-\c@cor=\count195
-\c@prop=\count196
-\c@rem=\count197
-\c@ill=\count198
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.0 (rcs-revision 1.2)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 
-(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
+\arrowsize=\dimen261
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarychains.code.tex
+File: tikzlibrarychains.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.6)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen262
+\pgfdecoratedremainingdistance=\dimen263
+\pgfdecoratedinputsegmentcompleteddistance=\dimen264
+\pgfdecoratedinputsegmentremainingdistance=\dimen265
+\pgf@decorate@distancetomove=\dimen266
+\pgf@decorate@repeatstate=\count191
+\pgfdecorationsegmentamplitude=\dimen267
+\pgfdecorationsegmentlength=\dimen268
+)
+\tikz@lib@dec@box=\box67
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.0 (rcs-revision 1.6)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box68
+\pgfnodeparttwobox=\box69
+\pgfnodepartthreebox=\box70
+\pgfnodepartfourbox=\box71
+\pgfnodeparttwentybox=\box72
+\pgfnodepartnineteenbox=\box73
+\pgfnodeparteighteenbox=\box74
+\pgfnodepartseventeenbox=\box75
+\pgfnodepartsixteenbox=\box76
+\pgfnodepartfifteenbox=\box77
+\pgfnodepartfourteenbox=\box78
+\pgfnodepartthirteenbox=\box79
+\pgfnodeparttwelvebox=\box80
+\pgfnodepartelevenbox=\box81
+\pgfnodeparttenbox=\box82
+\pgfnodepartninebox=\box83
+\pgfnodeparteightbox=\box84
+\pgfnodepartsevenbox=\box85
+\pgfnodepartsixbox=\box86
+\pgfnodepartfivebox=\box87
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.4)
+)
+\c@thm=\count192
+\c@defn=\count193
+\c@con=\count194
+\c@lem=\count195
+\c@cor=\count196
+\c@prop=\count197
+\c@rem=\count198
+\c@ill=\count199
+ (./main.aux (./Chapters/Chapter1.aux)
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
+(./Chapters/Chapter5.aux)
+
+LaTeX Warning: Label `Bolles' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 70.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 103.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Now handling font encoding TS1 ...
@@ -1450,16 +1575,16 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 ) (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count199
-\scratchdimen=\dimen261
-\scratchbox=\box67
-\nofMPsegments=\count200
-\nofMParguments=\count201
+\scratchcounter=\count200
+\scratchdimen=\dimen269
+\scratchbox=\box88
+\nofMPsegments=\count201
+\nofMParguments=\count202
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count202
-\MPscratchDim=\dimen262
-\MPnumerator=\count203
-\makeMPintoPDFobject=\count204
+\MPscratchCnt=\count203
+\MPscratchDim=\dimen270
+\MPnumerator=\count204
+\makeMPintoPDFobject=\count205
 \everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1517,101 +1642,103 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 70.
-Package scrbase Info: activating english \authorshipname on input line 70.
-Package scrbase Info: activating english \byname on input line 70.
-Package scrbase Info: activating english \abbrevname on input line 70.
-Package scrbase Info: activating english \constantsname on input line 70.
-Package scrbase Info: activating english \symbolsname on input line 70.
-Package scrbase Info: activating english \acknowledgementname on input line 70.
-
-\AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 70.
+(scrlayer)             \begin{document} on input line 103.
+Package scrbase Info: activating english \authorshipname on input line 103.
+Package scrbase Info: activating english \byname on input line 103.
+Package scrbase Info: activating english \abbrevname on input line 103.
+Package scrbase Info: activating english \constantsname on input line 103.
+Package scrbase Info: activating english \symbolsname on input line 103.
+Package scrbase Info: activating english \acknowledgementname on input line 103
+.
+\AtBeginShipoutBox=\box89
+Package hyperref Info: Link coloring OFF on input line 103.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count205
+\c@section@level=\count206
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  ABD: EveryShipout initializing macros
-\c__siunitx_mathsf_int=\count206
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 70.
+\c__siunitx_mathsf_int=\count207
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 103.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 70.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 103.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 70.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 103
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 70.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 103
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 70.
+(Font)              <10.95> on input line 103.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 70.
+(Font)              <8> on input line 103.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 70.
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+(Font)              <6> on input line 103.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 70.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 103.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 70.
-
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 103
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-\c__siunitx_mathtt_int=\count207
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 70.
-
+\c__siunitx_mathtt_int=\count208
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 103
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 1: section
-<bms-logo.jpg, id=79, 197.538pt x 59.7432pt>
+<bms-logo.jpg, id=115, 197.538pt x 59.7432pt>
 File: bms-logo.jpg Graphic file (type jpg)
  <use bms-logo.jpg>
-Package pdftex.def Info: bms-logo.jpg used on input line 81.
+Package pdftex.def Info: bms-logo.jpg used on input line 114.
 (pdftex.def)             Requested size: 142.26378pt x 43.0269pt.
 
-<tu-logo.jpg, id=81, 2238.3625pt x 1664.2175pt>
+<tu-logo.jpg, id=117, 2238.3625pt x 1664.2175pt>
 File: tu-logo.jpg Graphic file (type jpg)
  <use tu-logo.jpg>
-Package pdftex.def Info: tu-logo.jpg used on input line 81.
+Package pdftex.def Info: tu-logo.jpg used on input line 114.
 (pdftex.def)             Requested size: 56.9055pt x 42.3062pt.
  [1
 
@@ -1629,12 +1756,12 @@ ogo.jpg> <./tu-logo.jpg>] [2
 ] [7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 236--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 236--239
 
  []
 
@@ -1669,7 +1796,7 @@ Chapter 1.
 
 ]
 Chapter 2.
-<./Diagrams/Plenoptic_function.jpg, id=175, 211.992pt x 197.538pt>
+<./Diagrams/Plenoptic_function.jpg, id=220, 211.992pt x 197.538pt>
 File: ./Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
 
 <use ./Diagrams/Plenoptic_function.jpg>
@@ -1696,7 +1823,7 @@ Underfull \hbox (badness 4543) in paragraph at lines 11--11
 
 1: section
 [3 <./Diagrams/Plenoptic_function.jpg>]
-<./Diagrams/Light-field-parametrizations.jpg, id=187, 518.3pt x 85.41pt>
+<./Diagrams/Light-field-parametrizations.jpg, id=233, 518.3pt x 85.41pt>
 File: ./Diagrams/Light-field-parametrizations.jpg Graphic file (type jpg)
 
 <use ./Diagrams/Light-field-parametrizations.jpg>
@@ -1710,13 +1837,13 @@ tions of 4D LF. Left:
  []
 
 
-Overfull \hbox (13.3634pt too wide) in paragraph at lines 37--38
+Overfull \hbox (18.1134pt too wide) in paragraph at lines 37--38
 []\T1/lmr/m/n/10.95 In this work we will cen-tered our at-ten-tion in the two p
-lane parametriza-tion $\OML/lmm/m/it/10.95 L\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/1
-0.95 u; v; s; t\OT1/lmr/m/n/10.95 )$\T1/lmr/m/n/10.95 ,
+lane parametriza-tion $\OML/lmm/m/it/10.95 L[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it
+/10.95 u; v; s; t\OT1/lmr/m/n/10.95 )$\T1/lmr/m/n/10.95 ,
  []
 
-<./Diagrams/two-planes_param.jpg, id=189, 385.9218pt x 232.7094pt>
+<./Diagrams/two-planes_param.jpg, id=235, 385.9218pt x 232.7094pt>
 File: ./Diagrams/two-planes_param.jpg Graphic file (type jpg)
 
 <use ./Diagrams/two-planes_param.jpg>
@@ -1724,11 +1851,11 @@ Package pdftex.def Info: ./Diagrams/two-planes_param.jpg used on input line 43.
 
 (pdftex.def)             Requested size: 412.56499pt x 248.78352pt.
 
-<./Diagrams/images_stacked.jpg, id=193, 249.76512pt x 138.18024pt>
+<./Diagrams/images_stacked.jpg, id=239, 249.76512pt x 138.18024pt>
 File: ./Diagrams/images_stacked.jpg Graphic file (type jpg)
 
 <use ./Diagrams/images_stacked.jpg>
-Package pdftex.def Info: ./Diagrams/images_stacked.jpg used on input line 55.
+Package pdftex.def Info: ./Diagrams/images_stacked.jpg used on input line 56.
 (pdftex.def)             Requested size: 371.30597pt x 205.43335pt.
 
 
@@ -1736,52 +1863,143 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./Diagrams/Light-field-parametrizations.jpg> <./Diagrams/two-planes_param.j
 pg>] [5 <./Diagrams/images_stacked.jpg>]
-<./Diagrams/raytrix.jpg, id=227, 615.29875pt x 248.93pt>
+<./Diagrams/raytrix.jpg, id=272, 615.29875pt x 248.93pt>
 File: ./Diagrams/raytrix.jpg Graphic file (type jpg)
 
 <use ./Diagrams/raytrix.jpg>
-Package pdftex.def Info: ./Diagrams/raytrix.jpg used on input line 79.
+Package pdftex.def Info: ./Diagrams/raytrix.jpg used on input line 80.
 (pdftex.def)             Requested size: 371.30597pt x 150.22137pt.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 80.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 81.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./Diagrams/lytro.jpg, id=230, 727.65565pt x 501.14082pt>
+<./Diagrams/lytro.jpg, id=275, 727.65565pt x 501.14082pt>
 File: ./Diagrams/lytro.jpg Graphic file (type jpg)
 
 <use ./Diagrams/lytro.jpg>
-Package pdftex.def Info: ./Diagrams/lytro.jpg used on input line 87.
+Package pdftex.def Info: ./Diagrams/lytro.jpg used on input line 88.
 (pdftex.def)             Requested size: 288.79422pt x 198.90047pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
  \T1/lmtt/m/n/10 lytro-[]illum-[]review-[]26434 / images / highres-[]Lytro-[]Il
 lum-[]6 _ 
  []
 
 [6 <./Diagrams/raytrix.jpg> <./Diagrams/lytro.jpg>]
-<./Diagrams/lytro_array.png, id=247, 903.375pt x 525.965pt>
+<./Diagrams/lytro_array.png, id=292, 903.375pt x 525.965pt>
 File: ./Diagrams/lytro_array.png Graphic file (type png)
 
 <use ./Diagrams/lytro_array.png>
-Package pdftex.def Info: ./Diagrams/lytro_array.png used on input line 104.
+Package pdftex.def Info: ./Diagrams/lytro_array.png used on input line 105.
 (pdftex.def)             Requested size: 330.05324pt x 192.16422pt.
- [7 <./Diagrams/lytro_array.png>]) [8]
+ [7 <./Diagrams/lytro_array.png>]
+<./Diagrams/coded-mask.jpg, id=313, 242.56961pt x 251.15614pt>
+File: ./Diagrams/coded-mask.jpg Graphic file (type jpg)
+
+<use ./Diagrams/coded-mask.jpg>
+Package pdftex.def Info: ./Diagrams/coded-mask.jpg used on input line 130.
+(pdftex.def)             Requested size: 185.65298pt x 192.22961pt.
+ [8 <./Diagrams/coded-mask.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 144.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 144.
+
+<./Diagrams/ill_enge.png, id=327, 427.5975pt x 282.05376pt>
+File: ./Diagrams/ill_enge.png Graphic file (type png)
+
+<use ./Diagrams/ill_enge.png>
+Package pdftex.def Info: ./Diagrams/ill_enge.png used on input line 147.
+(pdftex.def)             Requested size: 206.28249pt x 136.06856pt.
+ [9 <./Diagrams/ill_enge.png>] [10]
+<./Diagrams/multi-views1.jpg, id=355, 454.46712pt x 127.1674pt>
+File: ./Diagrams/multi-views1.jpg Graphic file (type jpg)
+
+<use ./Diagrams/multi-views1.jpg>
+Package pdftex.def Info: ./Diagrams/multi-views1.jpg used on input line 192.
+(pdftex.def)             Requested size: 412.56499pt x 115.4489pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Diagrams/block1.jpg, id=358, 216.1151pt x 265.45326pt>
+File: ./Diagrams/block1.jpg Graphic file (type jpg)
+
+<use ./Diagrams/block1.jpg>
+Package pdftex.def Info: ./Diagrams/block1.jpg used on input line 199.
+(pdftex.def)             Requested size: 206.28249pt x 253.37808pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] [12 <./Diagrams/multi-views1.jpg> <./Diagrams/block1.jpg>]
+<./Diagrams/perp-move.jpg, id=376, 233.1493pt x 160.8793pt>
+File: ./Diagrams/perp-move.jpg Graphic file (type jpg)
+
+<use ./Diagrams/perp-move.jpg>
+Package pdftex.def Info: ./Diagrams/perp-move.jpg used on input line 231.
+(pdftex.def)             Requested size: 206.28249pt x 142.34502pt.
+
+<./Diagrams/stereo-dist.jpg, id=379, 237.54836pt x 202.98444pt>
+File: ./Diagrams/stereo-dist.jpg Graphic file (type jpg)
+
+<use ./Diagrams/stereo-dist.jpg>
+Package pdftex.def Info: ./Diagrams/stereo-dist.jpg used on input line 239.
+(pdftex.def)             Requested size: 206.28249pt x 176.2667pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `LateralMotion' on page 13 undefined on input line 244
+.
+
+[13 <./Diagrams/perp-move.jpg>] [14 <./Diagrams/stereo-dist.jpg>]
+<./Diagrams/epipolarline.jpg, id=405, 486.81876pt x 293.095pt>
+File: ./Diagrams/epipolarline.jpg Graphic file (type jpg)
+
+<use ./Diagrams/epipolarline.jpg>
+Package pdftex.def Info: ./Diagrams/epipolarline.jpg used on input line 303.
+(pdftex.def)             Requested size: 350.68275pt x 211.13109pt.
+ [15 <./Diagrams/epipolarline.jpg>]
+<./Diagrams/EPI-dices.jpg, id=416, 744.7825pt x 300.12125pt>
+File: ./Diagrams/EPI-dices.jpg Graphic file (type jpg)
+
+<use ./Diagrams/EPI-dices.jpg>
+Package pdftex.def Info: ./Diagrams/EPI-dices.jpg used on input line 324.
+(pdftex.def)             Requested size: 391.93547pt x 157.94153pt.
+ [16 <./Diagrams/EPI-dices.jpg>]
+<./Diagrams/setting.jpg, id=432, 900.36375pt x 506.89375pt>
+File: ./Diagrams/setting.jpg Graphic file (type jpg)
+
+<use ./Diagrams/setting.jpg>
+Package pdftex.def Info: ./Diagrams/setting.jpg used on input line 354.
+(pdftex.def)             Requested size: 383.6824pt x 216.01096pt.
+ [17 <./Diagrams/setting.jpg>]
+Overfull \hbox (4.35701pt too wide) in paragraph at lines 424--425
+[][] 
+ []
+
+[18]) [19]
 \openout2 = `Chapters/Chapter3.aux'.
 
-
-(./Chapters/Chapter3.tex
-Chapter 3.
-)
-1: section
-[9
+ (./Chapters/Chapter3.tex [20
 
 
 
 ]
+Chapter 3.
+)
+1: section
+[21]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [10
+ (./Chapters/Chapter4.tex [22
 
 
 
@@ -1795,10 +2013,10 @@ ar-
 
 )
 1: section
-[11]
+[23]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex [12
+ (./Chapters/Chapter5.tex [24
 
 
 
@@ -1806,36 +2024,45 @@ ar-
 Chapter 5.
 )
 1: section
-[13] [14
+[25] [26
 
 
 ]
 1: section
-[15] [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 397.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 397.
- (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 397.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 397.
+[27]pdfTeX warning (ext4): destination with the same identifier (name{cite.Boll
+es}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.462 \bibitem{Bolles}
+                       [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 512.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 512.
+ (./main.aux (./Chapters/Chapter1.aux)
+(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
+(./Chapters/Chapter5.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 512.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 512.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E8B0F940A4A64210C829A4A4E0784F30;1488.
+(rerunfilecheck)             Checksum: B6CE4AAAEE79A160A6D7991431923A92;2263.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32082 strings out of 493089
- 696570 string characters out of 6134842
- 697486 words of memory out of 5000000
- 34943 multiletter control sequences out of 15000+600000
- 113184 words of font info for 98 fonts, out of 8000000 for 9000
+ 35606 strings out of 493089
+ 799118 string characters out of 6134842
+ 813513 words of memory out of 5000000
+ 38328 multiletter control sequences out of 15000+600000
+ 116501 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,71p,10404b,866s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-15/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/
+ 64i,20n,78p,10404b,866s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/
 fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
 m/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.
@@ -1848,11 +2075,12 @@ blic/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (28 pages, 2582867 bytes).
+texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (40 pages, 3172947 bytes).
 PDF statistics:
- 385 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 589 PDF objects out of 1000 (max. 8388607)
+ 490 compressed objects within 5 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
