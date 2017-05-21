@@ -379,52 +379,335 @@ in order to ensure maximum 1 pixel disparity between nearby views, which will av
 
 \bigskip
 
-In the case of the setting used by the group of the Disney Research Center, the images were captured by using a Canon EOS 4D Mark II DSLR camera and a Canon EF $50$mm f/$1.4$ USM lens and a Zaber T-LST1500D motorized linear stage to drive the camera to the shooting positions. The camera focal length was $50$ mm and the sensor size was $36\times24$mm, PTLens was used to radially undistort the captured images, and Voodoo Camera Tracker was used to estimate the camera poses for rectifiction (is very important that the images are rectified to be able to track points); by its number of corners (features easy to track) the \textbf{Church} data set was the one studied in this thesis, here the camera separation is $\Delta X=10mm$ which attains the Nyquist sampling bound mentioned in Equation~\ref{eq:C2S5E4}.
+In the case of the setting used by the group of the Disney Research Center, the images were captured by using a Canon EOS 4D Mark II DSLR camera and a Canon EF $50$mm f/$1.4$ USM lens and a Zaber T-LST1500D motorized linear stage to drive the camera to the shooting positions. The camera focal length was $50$ mm and the sensor size was $36\times24$mm, PTLens was used to radially undistort the captured images, and Voodoo Camera Tracker was used to estimate the camera poses for rectifiction (is very important that the images are rectified to be able to track points); by its number of corners (features easy to track) the \textbf{Church} data set which consists in 101 pictures was the one studied in this thesis, here the camera separation is $\Delta X=10mm$ which attains the Nyquist sampling bound mentioned in Equation~\ref{eq:C2S5E4}.
 
 \subsection{Followed pipeline}
 
 The next diagram shows the general followed pipeline from acquisition to LF reconstruction:
 
+\begin{center}
 \begin{tikzpicture}
   [node distance=.8cm,
   start chain=going below,]
-     \node[punktchain, join] (intro) {Acquisition of rectified images};
-     \node[punktchain, join] (probf)      {Problemformulering};
-     \node[punktchain, join] (investeringer)      {Investeringsteori};
-     \node[punktchain, join] (perfekt) {Det perfekte kapitalmarked};
-     \node[punktchain, join, ] (emperi) {Emperi};
-      \node (asym) [punktchain ]  {Asymmetrisk information};
-      \begin{scope}[start branch=venstre,
-        %We need to redefine the join-style to have the -> turn out right
-        every join/.style={->, thick, shorten <=1pt}, ]
-        \node[punktchain, on chain=going left, join=by {<-}]
-            (risiko) {Risiko og gamble};
-      \end{scope}
-      \begin{scope}[start branch=hoejre,]
-      \node (finans) [punktchain, on chain=going right] {Det finansielle system};
-    \end{scope}
-  \node[punktchain, join,] (disk) {Det imperfekte finansielle marked};
-  \node[punktchain, join,] (makro) {Investeringsmssige konsekvenser};
-  \node[punktchain, join] (konk) {Konklusion};
-  % Now that we have finished the main figure let us add some "after-drawings"
-  %% First, let us connect (finans) with (disk). We want it to have
-  %% square corners.
-  \draw[|-,-|,->, thick,] (finans.south) |-+(0,-1em)-| (disk.north);
-  % Now, let us add some braches. 
-  %% No. 1
-  \draw[tuborg] let
-    \p1=(risiko.west), \p2=(finans.east) in
-    ($(\x1,\y1+2.5em)$) -- ($(\x2,\y2+2.5em)$) node[above, midway]  {Teori};
-  %% No. 2
-  \draw[tuborg, decoration={brace}] let \p1=(disk.north), \p2=(makro.south) in
-    ($(2, \y1)$) -- ($(2, \y2)$) node[tubnode] {Analyse};
-  %% No. 3
-  \draw[tuborg, decoration={brace}] let \p1=(perfekt.north), \p2=(emperi.south) in
-    ($(2, \y1)$) -- ($(2, \y2)$) node[tubnode] {Problemfelt};
+     \node[punktchain, join] (acqui) {Acquisition of rectified images sequence};
+     \node[punktchain, join] (corner) {Corner detection};
+     \node[punktchain, join] (tracking) {Point tracking};
+     \node[punktchain, join] (paintsparse) {Initial sparse EPI painting};
+     \node[punktchain, join, ] (sparserec) {Sparse EPI reconstrution};
 \end{tikzpicture}
+\end{center}
+
+The last part of diagram can be represented diagramatically by Figure~\ref{fig:EPI_rec}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.65\textwidth]{./Diagrams/Sparse_rec_diagram.jpg}
+\caption{Diagram of sparse EPI reconstruction algorithm, Figure taken from \cite{LF-Shearlets} p. 7}
+\label{fig:EPI_rec}
+\end{figure}
+
+The first step in the pipeline (Acquisition of rectified images sequence) was already explained in Subsection~\ref{sec:Sparse-acquisition}; the three middle steps (corner detection, point tracking and initial sparse EPI painting) will be explained in the last subsections of this chapter. Finally the last step (sparse EPI reconstructin) will be described in detail in Chapter~\ref{chap:Inpainting_sparse}.
 
 \subsection{Geometric construction of epipolar lines}
 
+To have closer in mind, in stereo vision when we have two different points of views of a scene (that can be interpreted as two different cameras pointing to the same scene) a line that passes through the lens center of one camera maps to a point P in the image plane and to a line in the image plane of the other camera, this line is called epipolar line, see Figure~\ref{epipolar_line}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 1\textwidth]{./Diagrams/epipolar_line.jpg}
+\caption{Epipolar line correspondent to a scene point $X$. Figure taken from \url{http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_epipolar_geometry/py_epipolar_geometry.html}}
+\label{epipolar_line}
+\end{figure}
+
+As we mentioned, every point on the line $OX$ projects to the same point on the left image plane, this implies that just with one image we cannot triangulate the 3D point on the scene. If the points $x$ and $x'$ (corresponding to the same scene point) on the two image planes are known the proyection lines ($Ox$ and $O'x'$) most intersect exactly at X, so the coordinates of points $X$ on the scene can be calculated from the coordinates of the two image points; this means that with two perspectives is possible to triangulate 3D points. The epipolar geometry is based in this result. 
+
+\bigskip
+
+Let $l'$ be the epipolar line in the right image plane correspondint to $X$, this is also the projection of the line $OX$ on this image plane, by epipolar constraint to find the matching point in the right image one needs just to search in the epipolar line correspondent to $X$, this allows us to have a better performance and accuracy in feature tracking algorithms. The plane $XOO'$ is called \textit{epoipolar plane}. All the epipolar lines at each image intersect in one point called the epipole (in the Figure~\ref{epipolar_line} the epipoles correspond to the points $e$ and $e'$) and every epipolar plane pass throught the epipoles; one can also find the epipoles with the intersections of the line that joins the lens centers $O$ and $O'$ and the image planes.
+
+\bigskip
+
+To be able to construct algorithmically the epipolar lines we used the method implemented in the famous computer vision toolbox OpenCV (\url{http://opencv.org/}), where one can use the concepts of \textbf{Fundamental Matrix (F)} and \textbf{Essential Matrox (E)}; this matrices include all the realtive spatial information of one of the image planes with respect to the other (rotation and translation), see Figure~\ref{fig:essential_matrix.jpg}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.9\textwidth]{./Diagrams/essential_matrix.jpg}
+\caption{Essential Matrix. Figure taken from \url{http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_epipolar_geometry/py_epipolar_geometry.html}}
+\label{fig:essential_matrix.jpg}
+\end{figure}
+
+Lets define and construct precisely both matrices:
+\begin{itemize}
+\item \textbf{Essential Matrix (E):} It contains the information about rotation and translation of the image plane, which decribes the location of the second camera relative to the first in global coordinates (i.e.\ euclidean spatial coordinates of the 3D scene). To construct it lets pick one coordinate system to work in and do our calculations from there, for instance lets coose our coordinates centered on $O_l$ (left camera's center), in this coordinates the location of the observed point $P$ is $P_l$ and the origin of the other camera is at $T$. The location of $P$ as seen by the right camera is $P_r$ in our coordinate system, where 
+
+\begin{equation}
+\label{eq:C2S5E5}
+P_r=R(P_l-R)
+\end{equation}
+
+with $R$ the associated rotation matrix, to relate this we need to introduce the epipolar plane. The equation of a plane which passes trough a point $a$ with normal vector $n$ is $(x-a)\cdot n=0$, in this case the coordinates of the point $P_l$ which is in the epipolar plane will be 
+\begin{equation}
+\label{eq:C2S5E6}
+(P_l-T)^{\intercal}(T\times P_l)=0
+\end{equation}
+
+combining Eq.~\ref{eq:C2S5E5} and Eq.~\ref{eq:C2S5E6} we obtain then that $(P_l-T)=R^{-1}P_r$, but rotation matrix are orthogonal so $R^{\intercal}=R^{-1}$ then $(R^{\intercal}P_r)^{\intercal}(T\times P_l)=0$, one can define then the matrix $S$ such that $T\times P_l=SP_l$ so 
+$$
+S=
+\left(\begin{matrix}
+0 & -T_z & T_y \\
+T_z & 0 & -T_x \\
+-T_y & T_x & 0
+\end{matrix}\right)
+$$
+
+this imples that $(P_r)^{\intercal}RSP_l=0$. One defines $E=(P_r)^{\intercal}EP_l$ (where $E$ is the essential matrix), now to get back to global coordinates, one uses the projection equations $p_l=f_lP_l/Z_l$ and $p_r=f_rP_r/Z_r$; divinding them by $Z_l>_r/f_lf_r$ one obtains the equation for the epipolar line:
+\begin{equation}
+\label{eq:C2S5E7}
+p_r^{\intercal}Ep_l=0
+\end{equation}
+since the essential matrix $E$ is a rank deficient matrix (i.e.\ if $E$ is of size $n\times n$ there are fewer $n$ nonzero eigenvalues) the Equation~\ref{eq:C2S5E7} is the equation for a line, even though we are interested in camera coordinates (pixel coordinates) and $E$ does not relates them, rather relates global coordinates, even though one can us $E$ to construct the fundamentla matrix $F$ that will do the work.
+
+\item \textbf{Fundamental Matrix (F):} It contains the same information as $E$ in addition to information about the intrinsic of the cameras (pixel coordinates). If $p$ is a point and $M$ is the camera intrinsic matrix (which projects the image to the pixels), then $q=Mp$ is a point in the camera's coordinates, using this and the Equation~\ref{eq:C2S5E7} one has 
+\begin{equation}
+\label{eq:C2S5E8}
+q_r^{\intercal}(M_r^{-1})^{\intercal}E M_l^{-1}q_l=0
+\end{equation}
+so one defines the fundamental matrix $F$ as $F=(M_r^{-1})^{\intercal}EM_l^{-1}$ so that $q_r^{\intercal}Fq_l=0$, then $F$ is just like $E$ but $F$ operating in the image pixel coordinates rather than in the physical coordinates.
+\end{itemize}
+it is clear that finding the epipolar lines does not require complicated mathematical concepts just linear algebra and classical geometry, for a more detailed explanation of the fundamental and essential matrices and its implementation in OpenCV we recommend the chapter 12 of \cite{LearnOpenCV} which is strongly based on the more theoretical book "Multiple View Geometry in Computer Vision" by R. Hartley and A. Zisserman \cite{MultipleView}. We are assuming here that we have a form to find matching points in between the images, but this is in our experience the hardest task on the EPI construction, and there are different ways to tackle which we will explain in the next subsection. 
+
 \subsection{Tracking point algorithms}
 
+Tracking a point in a sequence of images of the same scene is a very common task in computer vision; it can be applied to analyse motion flow in a video in order to predict position of an object in future frames. The task consists mainly in two part: first you need to detect feature points that are easy to track (e.g.\ corners) and second you need to follow them in the different frames. In this subsection we will present first some feature detection algorithms that are used commonly in motion flow tracking with the advantages and disadvantages of each one. 
+
+\begin{itemize}
+\item \textbf{SIFT (Scale Invariant Feature Transform):} As its name suggests it SIFT is a feature detector that is scale invariant. In the universe of computer vision related algorithms there exist plenty of imagefeature detection algorithms; some of them are corner detectors which are rotation invariant (e.g. Harris and Shi Tomasi), i.e.\ even if the image is rotated we can find the same corners; this makes a lot of sense sicne corners remain corners even if the image is rotated, but they are not necessarily scaling invariant, for example a corner in a small image within a small window is flat when is zoom in with the same window, see Figure~\ref{fig:ScalingCorner}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{./Diagrams/ScalingCorner.jpg}
+\caption{Scaling a corner with constant window size does not output a corner. Figure taken from \url{http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html}}
+\label{fig:ScalingCorner}
+\end{figure}
+
+In 2004, D. Lowe of University of British Columbia published the paper "Distintive Image Features from Scale-Invariant Key Points" \cite{SIFT} where he presented this scaling-invariant feature detector that is known as the first of its kind and state of the art (OpenCV contains an implementation of the algorithm just in the developers version of the API). 
+
+\bigskip
+
+The brad idea of the algorithm is as follows: From the Figure~\ref{fig:ScalingCorner} is obvious that to detect windows with different scale. It behaves correctly with small corners, but to detect large corners we need larger windows. For this, scale-space filtering is used; Laplacian of Gaussian (refering to the famous blob detector spatial filter nicely explained in \cite{MVision}) is found for the image with various standard derivation $\sigma$ (which controls the scales); this acts as a blob detector for blobs of different sizes. One finds the local maxima accross the space and scale which give us a list of $(x,y,\sigma)$ values (see Figure~\ref{fig:dif_sizes_corners}) which means there is a potential key point $(x,y)$ at scale $\sigma$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.8\textwidth]{./Diagrams/dif_sizes_corners.jpg}
+\caption{OpenCV implementation of SIFT algorithm that detects corners of different sizes. Figure taken from \url{http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html}}
+\label{fig:dif_sizes_corners}
+\end{figure}
+
+To draw the epipolar lines of a pair of images we can use SIFT as the feature points matching algorithm but is not very useful when trying to track the same points in a lot of successive images for two main reasons; first is very costly computationally since it needs to detect corners several times for different sizes and second, in the practice when we tried to implement it with OpenCV it was not mantaining the order of the corners so when we have too many corners there was not a straight-forward way to keep track along the sequence of pictures.
+
+\item \textbf{Harris Corner Detector:} This corner detector was introduced by Chris Harry and Mike Stephens in the 1998 paper "A combined corner and edge detector" \cite{HarrisCorner}, and their idea was very simple. This algorithm basically finds the difference in intensity for a displacement of $(u,v)$ in all directions. This is expressed as bellow:
+
+\begin{equation}
+\label{eq:C2S4E9}
+E(u,v)=\sum_{x,y}w(x,y)(I(x+u,y+v)-I(x,y))^2
+\end{equation}
+
+where $w$ is a windows function (e.g.\ rectangular or gaussian), and $I(x,y)$ is the intensity of the image at the point $(x,y)$. For corner detection one has to maximize the functional $E(u,v)$, applying Taylor expansion one gets the equation 
+$$
+E(u,v)\approx
+ \left(
+\begin{matrix}
+u &  v
+\end{matrix}
+\right)
+M
+\left( 
+\begin{matrix}
+u\\
+v
+\end{matrix}
+\right)
+$$
+where
+$$
+M = \sum_{x,y}w(x,y)
+\left(\begin{matrix}
+I_xI_x & I_xI_y \\
+I_xI_y & I_yI_y
+\end{matrix}
+\right)
+$$
+where $I_x$ and $I_y$ are directional derivatives of the intensity. The main part comes when after this they created a score, this scores will indicate if a window can contain a corener or no and is given by the following relation
+\begin{equation}
+\label{eq:C2S4E10}
+R=det(M)-K(\tr{(M)})^2=\lambda_1\lambda_2-K(\lambda_1+\lambda_2)^2
+\end{equation}
+where $\lambda_1$ and $\lambda_2$ are the eigenvalues of $M$. The criterion with the score has the next cases:
+\begin{enumerate}
+\item If $|R|$ is small, i.e.\ $\lambda_1,\lambda_2$ are small, the region is flat.
+\item If $R<0$, i.e.\ $\lambda_1\gg\lambda_2$ or viceversa, the region is an edge.
+\item If $R$ is large, $\lambda_1$ and $\lambda_2$ are large and $\lambda_1\sim\lambda_2$, then region is a corner. 
+\end{enumerate}
+for a graphical representation of this conditions see Figure~\ref{fig:harris_region}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.5\textwidth]{./Diagrams/harris_region.png}
+\caption{Diagrama representing the criterion of corner detection for Harris detector, the axis $x$ represents $\lambda_1$ and axis $y$ represents $\lambda_2$}
+\label{fig:harris_region}
+\end{figure}
+
+OpenCV offers a faithful implementation of Harris Corner Detector, but we rather used a modification of this algorithm that works better, the so called Shi-Tomasi Corner Detector.
+
+\item \textbf{Shi-Tomasi corner detector:} After Harris and Stephens proposed their corner detector in 1994 J. Shi and C. Tomasi proposed a variation on their paper "Good Features to Track" \cite{ShiTomasi} which shows better results compared with Harris work. 
+
+\bigskip
+
+Shi-Tomasi changes the scoring function that gave criteria for corner detection in Harris (see Equation~\ref{eq:C2S4E10}) to the form
+\begin{equation}
+\label{eq:C2S4E11}
+R = \min (\lambda_1,\lambda_2)
+\end{equation}
+as in the case of the Harris Corner Detector, if $|R|$ is greater than a threshold value $\lambda_{\min}$, it is considered as a corner. The $\lambda_1\text{vs.}\lambda_2$ space will now look as in Figure~\ref{fig:shitomasi_space}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{./Diagrams/shitomasi_space.png}
+\caption{$\lambda_1\text{vs.}\lambda_2$ space for Shi-Tomasi corner detector, as in Harris detector's case, the upper right area corresponds to corners, the upper left and lower right correspond to edges}
+\label{fig:shitomasi_space}
+\end{figure}
+
+There is also an straight forward implementation of this algorithm on OpenCV, we used this algorithm to find the $N$ strongest corners and then trakc them with Lucas-Kanade algorithm. Even the Shi-Tomasi corner detector is rotation invariant since the trace and the determinant of the matrix $M$ are rotation invariant they are not scaling invariant like the SIFT algorithm which is slower than the former. In the case of the sequence that we are working with the images were taken very close to each other so the scale of the features wont change significantly. 
+\end{itemize}
+
+We already explained the different options for feature detection algorithms and that the option picked was the Shi-Tomasi corner detector to track the strong corners obtained by the Shi-Tomasi algorithm we used the Lucas-Kanade method explained as follows:
+\begin{itemize}
+\item \textbf{Lucas-Kanade method:} We would like to associate a movement vector $(u,v)$ to every such "interesting pixel" (stron corner point) in the scene obtained by comparing two successive images with the next two assumptions:
+\begin{enumerate}
+\item The two images are separated by a small increment $\Delta t$, such that the objects have not displaces significantly (the algorithm works best with slow moving objects). 
+\item The images depict a natural scene containing textured objects exhibiting shades of gray (different intensity levels) which change smoothly.
+\item The pixel intensity of an object does not change in consecutive frames.
+\item Neighbouring pixels have similar motion.
+\end{enumerate}
+With this assumptions consider a piel in $(x,y)$ at time $t$ with intensity $I(x,y,t)$, it moves by distance $(dx,dy)$ in next frame taken after $dt$ time. Since those pixels are the same and intensity does not change we can say 
+$$
+I(x,y,t)=I(x+dx,y+dy,t+dt)
+$$
+Expanding with Taylor the right hand side we obtain the following equation
+\begin{equation}
+\label{eq:C2S5E12}
+I_xu+I_yv+I_t=0
+\end{equation}
+where 
+$$
+\begin{aligned}
+I_x &= \frac{\partial I}{\partial x}&;
+I_y &= \frac{\partial I}{\partial y}\\
+I_t &= \frac{\partial I}{\partial t}\\
+u &= \frac{\partial x}{\partial t}&;
+v &= \frac{\partial y}{\partial t}
+\end{aligned}
+$$
+The Equation~\ref{eq:C2S5E12} is known as the \textbf{"Optical Flow Equation"}.Computing the gradient of the intensity we obtain $(I_x,I_y,I_t)$, and we aim to know the flow by solving the equation for $(u,v)$. In 1981, Bruce D. Lucas and Takeo Kanade proposed a method to solve this in their paper "An iterative image registration technique with an application to stereo vision" \cite{LucasKanade}; the made the assumptions that we already mentioned before. 
+
+\bigskip
+
+By assumption neighbouring pixels have similar motion, lets take a $3\times 3$ patch around the point (in our case corner), then all the nine points of the patch have the same motion. We can find $(I_x,I_y,I_t)$ for this nine points; thus the problem reduces to solve nine equations with 2 unknowns variables which is over-determined. As is explained in detail on \cite{LucasKanade} a better solution is obtained with least squares fit method. In this setting the problem has the solution
+\begin{equation}
+\label{eq:C2S5E13}
+\left( 
+\begin{matrix}
+u \\
+v 
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+\sum_i I_{x_i}^2 & \sum_i I_{x_i}I_{y_i} \\
+\sum_i I_{x_i}I_{y_i} & \sum_i I_{y_i}^2 
+\end{matrix}
+\right)^{-1}
+\left(
+\begin{matrix}
+-\sum_i I_{x_i}I_{t_i}\\
+-\sum_i I_{y_i}I_{t_i}
+\end{matrix}
+\right)
+\end{equation}
+obtaining with this the vector flow of the features in the scene. By its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how did we implemented the Lucas-Kanade methid with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
+\end{itemize}
+ 
 \subsection{Code for tracking and painting the EPI}
+
+The code used in the python API of OpenCV to detect the N strongest corners and track them through the 101 different views in the Church data set is presented in the following:
+
+\lstinputlisting[language=Python]{./Code_notebooks/detecting_tracking.py}
+
+The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the curch and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1 \textwidth]{./Diagrams/first_frame_church.png}
+\caption{First image of the church data set}
+\label{fig:first_frame_church}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{./Diagrams/first_frame_church_points.png}
+\caption{336 corners found in the first image of the church}
+\label{fig:first_frame_church_points}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1 \textwidth]{./Diagrams/last_frame_church.png}
+\caption{Last image of the church data set}
+\label{fig:last_frame_church}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{./Diagrams/last_frame_church_points.png}
+\caption{Last position of corners in the last image of the church}
+\label{fig:last_frame_church_points}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{./Diagrams/track_points_church.png}
+\caption{Path of points tracked in the image sequence of the church, one can observe that the trajectories of the features are more or less straight lines, with some nuerical and algorithmical errors that can be ignored. The image is presented in shades of gray since the Lucas-Kanade method can be implemented with good performance in shades of gray}
+\label{fig:track_points_church}
+\end{figure}
+
+\bigskip
+
+We are trying to construct the epipolar plane images correspondent to the sequence of different views of the church; for that we will follow the method that Bolles proposed in \cite{Bolles}. We will use that the points follow a straight line trajectory along the sequence due that the camera followed an straight line so each point in the first image will move in its correspondent epipolar line which will be parallel to the $x$-axis, since the camera points orthogonally with respect to the to the scene. 
+
+\bigskip
+
+For each strip $y_0-\epsilon \leq y \leq y_0+\epsilon$ parallel to the $x$-axis in the initial image we ploted for points correspondent to different features the $x$ entry (which corresponds to the $u$ entry in the two-planes 4D light field model) with respect to the time (the sequence of images).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.6 \textwidth]{./Diagrams/lateral_motion_epi.jpg}
+\caption{Feature point tracking for lateral camera motion. Figure taken from \cite{Bolles} p. 16}
+\label{lateral_motion_epi}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.8 \textwidth]{./Diagrams/EPI_bolles.jpg}
+\caption{EPI correspondent to some strip in the sequence of images, we are looking to get the EPI for the Church data set. Figure taken from \cite{Bolles} p. 17}
+\label{EPI_bolles}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.6 \textwidth]{./Diagrams/Feature_EPI_bolles.jpg}
+\caption{Horizontal line of a feature (house) corresponds to a diagonal strip its correspondent EPI\@. Figure taken from \cite{Bolles} p. 17}
+\label{Feature_EPI_bolles}
+\end{figure}
+
+
