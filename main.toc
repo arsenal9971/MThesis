@@ -26,5 +26,5 @@
 \contentsline {section}{\numberline {4.2}Iterative thresholding with constant velocity}{35}{section.4.2}
 \contentsline {section}{\numberline {4.3}Iterative thresholding with vaiable velocity}{35}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusion and outlook}{37}{chapter.5}
-\contentsline {chapter}{Appendices}{39}{section*.36}
+\contentsline {chapter}{Appendices}{39}{section*.39}
 \contentsline {chapter}{\numberline {A}Code for point tracking}{41}{Appendix.1.A}

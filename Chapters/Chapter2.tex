@@ -691,7 +691,7 @@ Since in comparsion with the actual resolution of the pictures ($1024\text{px}\t
 
 \bigskip
 
-In order to have a trustworthy light field reconstruction we took Epipolar plane images corresponding to $y$-strips with different thickness depending on the density of tracked points for the corresponding $y$, for example more tight at the bottom part of the pictures where we have a lot of tracked points due the bushes and trees and  broader at the top where there is not a lot of tracked points due the almost homogeneous sky. 
+In order to have a trustworthy light field reconstruction we took Epipolar plane images corresponding to $y$-strips with different thickness depending on the density of tracked points for the corresponding $y$, for example more tight at the bottom part of the pictures where we have a lot of tracked points due the bushes and trees and  broader at the top where there is not a lot of tracked points due the almost homogeneous sky.
 
 \begin{figure}[h!]
 \centering
@@ -714,4 +714,26 @@ In order to have a trustworthy light field reconstruction we took Epipolar plane
 \label{Feature_EPI_bolles}
 \end{figure}
 
+We can see in Figure~\ref{fig:673_10_102_4_48_8_strip} a strip at the bottom of the image, centered at $y_0=673$, with width $2\epsilon=20$ that captures 48 different tracked points corresponding to 8 different features, the dense EPI associated with this strip is in Figure~\ref{fig:673_10_102_4_48_8_dense} and its sparse form obtained by measuring each 4 rows at the EPI is in Figure~\ref{fig:673_10_102_4_48_8_sparse}. We will present a deeper analysis on the sparse measure and the main results of Shearlet-based inpainting an sparse EPI and measuring the depth map which is the main topic of this thesis at Chapter~\ref{chap:Inpainting_sparse}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.6 \textwidth]{./EPIs_Strips/Strips/673_10_102_4_48_8_strip.png}
+\caption{Tracked points on a strip centered at $y_0=673$ with width $2\epsilon=20$}
+\label{fig:673_10_102_4_48_8_strip}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.6 \textwidth]{./EPIs_Strips/EPIs/673_10_102_4_48_8_dense.png}
+\caption{Dense Epipolar plane image associated with the strip on Figure~\ref{fig:673_10_102_4_48_8_strip}, the horizontal axis is the spatial coordinate $x$ and the vertical axis is the time}
+\label{fig:673_10_102_4_48_8_dense}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.6 \textwidth]{./EPIs_Strips/EPIs/673_10_102_4_48_8_sparse.png}
+\caption{Sparse Epipolar plane image associated with the strip on Figure~\ref{fig:673_10_102_4_48_8_sparse} by measuring each 4th row on Figure~\ref{fig:673_10_102_4_48_8_dense}}
+\label{fig:673_10_102_4_48_8_sparse}
+\end{figure}
 
