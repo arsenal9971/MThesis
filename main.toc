@@ -14,15 +14,17 @@
 \contentsline {subsection}{\numberline {2.5.2}Followed pipeline}{18}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Geometric construction of epipolar lines}{20}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Tracking point algorithms}{22}{subsection.2.5.4}
-\contentsline {subsection}{\numberline {2.5.5}Code for tracking and painting the EPI}{27}{subsection.2.5.5}
-\contentsline {chapter}{\numberline {3}Shearlets}{37}{chapter.3}
-\contentsline {section}{\numberline {3.1}Shearlets as Frames}{37}{section.3.1}
-\contentsline {section}{\numberline {3.2}Generalization of Shearlets to Alpha Particles}{37}{section.3.2}
-\contentsline {section}{\numberline {3.3}Linear Shearlets and its relation with ridgelets}{37}{section.3.3}
-\contentsline {section}{\numberline {3.4}Image inpainting using Shearlets}{37}{section.3.4}
-\contentsline {section}{\numberline {3.5}Epipolar-plane representation with linear Shearlets}{37}{section.3.5}
-\contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Iterative thresholding with constant velocity}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}Iterative thresholding with vaiable velocity}{39}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{41}{chapter.5}
+\contentsline {subsection}{\numberline {2.5.5}Procedure for tracking and painting the EPIs}{27}{subsection.2.5.5}
+\contentsline {chapter}{\numberline {3}Shearlets}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Shearlets as Frames}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}Generalization of Shearlets to Alpha Particles}{33}{section.3.2}
+\contentsline {section}{\numberline {3.3}Linear Shearlets and its relation with ridgelets}{33}{section.3.3}
+\contentsline {section}{\numberline {3.4}Image inpainting using Shearlets}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}Epipolar-plane representation with linear Shearlets}{33}{section.3.5}
+\contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{35}{section.4.1}
+\contentsline {section}{\numberline {4.2}Iterative thresholding with constant velocity}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}Iterative thresholding with vaiable velocity}{35}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{37}{chapter.5}
+\contentsline {chapter}{Appendices}{39}{section*.36}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{41}{Appendix.1.A}

@@ -20,7 +20,7 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
 		2. Followed pipeline.
 		3. Geometric construction of epipolar lines.
 		4. Tracking points algorithms.
-		5. Code for tracking and painting the EPI.
+		5. Procedure for tracking and painting the EPIs.
 3. Shearlets.  
   1. Frames.  
   2. Shearlets as Frames.  
@@ -33,4 +33,7 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
   2. Iterative thresholding with constant velocity (Gitta and Wang-Q method).  
   3. Iterative thresholding with variable velocity (using paper), check the improvements.  
   4. Experiments with Shearlab.jl with GPU and without.  
-5. Application of Geometric Structured Sparsity idea of Irina's thesis (tentative).  
+5. Application of Geometric Structured Sparsity idea of Irina's thesis (tentative). 
+
+- Appendices:
+1. Appendix A: Code for point tracking

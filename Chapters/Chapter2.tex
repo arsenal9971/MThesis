@@ -638,13 +638,9 @@ v
 obtaining with this the vector flow of the features in the scene. By its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how did we implemented the Lucas-Kanade methid with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
 \end{itemize}
  
-\subsection{Code for tracking and painting the EPI}
+\subsection{Procedure for tracking and painting the EPIs}
 
-The code used in the python API of OpenCV to detect the N strongest corners and track them through the 101 different views in the Church data set is presented in the following:
-
-\lstinputlisting[language=Python]{./Code_notebooks/detecting_tracking.py}
-
-The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the curch and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set.
+The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the curch and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec: Appendix A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook PRO with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
 
 \begin{figure}[h!]
 \centering
@@ -656,7 +652,7 @@ The maximum number of strong corners obtained by the Shi-Tomsi in the first view
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1\textwidth]{./Diagrams/first_frame_church_points.png}
-\caption{336 corners found in the first image of the church}
+\caption{336 corners found in the first image of the church with different colors corresponding to different features}
 \label{fig:first_frame_church_points}
 \end{figure}
 
@@ -676,7 +672,7 @@ The maximum number of strong corners obtained by the Shi-Tomsi in the first view
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{./Diagrams/track_points_church.png}
+\includegraphics[width=1\textwidth]{./Diagrams/track_points_church.png}s
 \caption{Path of points tracked in the image sequence of the church, one can observe that the trajectories of the features are more or less straight lines, with some nuerical and algorithmical errors that can be ignored. The image is presented in shades of gray since the Lucas-Kanade method can be implemented with good performance in shades of gray}
 \label{fig:track_points_church}
 \end{figure}
@@ -687,7 +683,15 @@ We are trying to construct the epipolar plane images correspondent to the sequen
 
 \bigskip
 
-For each strip $y_0-\epsilon \leq y \leq y_0+\epsilon$ parallel to the $x$-axis in the initial image we ploted for points correspondent to different features the $x$ entry (which corresponds to the $u$ entry in the two-planes 4D light field model) with respect to the time (the sequence of images).
+For each strip $y_0-\epsilon \leq y \leq y_0+\epsilon$ that is parallel to the $x$-axis in the initial image we ploted for points correspondent to different features the $x$ entry (which corresponds to the $u$ entry in the two-planes 4D light field model) with respect to the time (the sequence of images).
+
+\bigskip
+
+Since in comparsion with the actual resolution of the pictures ($1024\text{px}\times 683\text{px}=699392\text{px}^2$) the number of corners that we could detect was very small (about 0.04\% of the total number of points) taking strips of points with constant $y=y_0$ that are very tight will not capture a lot of tracked points; the distribution of the points as one can see in Figure~\ref{fig:first_frame_church_points} is not homogeneous at all. 
+
+\bigskip
+
+In order to have a trustworthy light field reconstruction we took Epipolar plane images corresponding to $y$-strips with different thickness depending on the density of tracked points for the corresponding $y$, for example more tight at the bottom part of the pictures where we have a lot of tracked points due the bushes and trees and  broader at the top where there is not a lot of tracked points due the almost homogeneous sky. 
 
 \begin{figure}[h!]
 \centering
