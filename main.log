@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2017 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2017 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1796,19 +1796,19 @@ ogo.jpg> <./tu-logo.jpg>] [2
 ] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 214--220
+Underfull \hbox (badness 10000) in paragraph at lines 214--221
 
  []
 
 [7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 
  []
 
@@ -2450,15 +2450,15 @@ Overfull \hbox (1.34836pt too wide) in paragraph at lines 169--170
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.470 \bibitem{Bolles}
+l.471 \bibitem{Bolles}
                        [46] [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
  (./main.aux (./Chapters/Chapter1.aux)
 (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
 (./Chapters/Chapter5.aux) (./Chapters/Appendix1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 984357D089832AC994ED2CDDA21D63D7;2379.
 
@@ -2472,7 +2472,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  37831 strings out of 493089
  830018 string characters out of 6134842
- 879410 words of memory out of 5000000
+ 878410 words of memory out of 5000000
  40254 multiletter control sequences out of 15000+600000
  128454 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2499,7 +2499,7 @@ m/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on main.pdf (59 pages, 6104685 bytes).
+Output written on main.pdf (59 pages, 6104693 bytes).
 PDF statistics:
  1063 PDF objects out of 1200 (max. 8388607)
  899 compressed objects within 9 object streams
