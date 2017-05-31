@@ -21,13 +21,14 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
 		3. Geometric construction of epipolar lines.
 		4. Tracking points algorithms.
 		5. Procedure for tracking and painting the EPIs.
-3. Shearlets.  
-  1. Frames.  
+3. Shearlets.
+	  
+  1. Continuous Shea.  
   2. Shearlets as Frames.  
   3. Generalization of Shearlets to Alpha Particles.  
   4. Linear Shearlets and its relation with ridgelets (proof that are parseval frames).
 	5. Image inpainting using Shearlets.
-  5. Epipolar Plane Representation with linear Shearlets. (0-particles)  
+  5. Epipolar Plane Representation :with linear Shearlets. (0-particles)  
 4. Inpainting Sparse Sampled Epipolar-plane.
   1. Using linear Shearlets to inpain sparse sampled Epipolar-plane.
   2. Iterative thresholding with constant velocity (Gitta and Wang-Q method).  

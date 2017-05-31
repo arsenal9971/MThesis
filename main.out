@@ -15,15 +15,16 @@
 \BOOKMARK [2][-]{subsection.2.5.4}{Tracking point algorithms}{section.2.5}% 15
 \BOOKMARK [2][-]{subsection.2.5.5}{Procedure for tracking and painting the EPIs}{section.2.5}% 16
 \BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 17
-\BOOKMARK [1][-]{section.3.1}{Shearlets as Frames}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.2}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.3}{Linear Shearlets and its relation with ridgelets}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.4}{Image inpainting using Shearlets}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.5}{Epipolar-plane representation with linear Shearlets}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 23
-\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 27
-\BOOKMARK [0][-]{section*.39}{Appendices}{}% 28
-\BOOKMARK [0][-]{Appendix.1.A}{Code for point tracking}{}% 29
+\BOOKMARK [1][-]{section.3.1}{Shearlet Systems and Transform}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{Shearlets as Frames}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.3}{Generalization of Shearlets to Alpha Particles}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Linear Shearlets and its relation with ridgelets}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Image inpainting using Shearlets}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.6}{Epipolar-plane representation with linear Shearlets}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 27
+\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 28
+\BOOKMARK [0][-]{section*.41}{Appendices}{}% 29
+\BOOKMARK [0][-]{Appendix.1.A}{Code for point tracking}{}% 30
