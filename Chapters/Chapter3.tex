@@ -4,7 +4,7 @@ We want to be able to express efficiently Epipolar Plane Images that will reduce
 
 \bigskip
 
-One can think a signal as a function that contains information about the behavior or attributes of some phenomenon \cite{Roland}, by this definition it actually could be anything; it also depends the area you are working on this definition that works the best. For example, in signal processing, arbitrary binary data streams are not considered as signals. For the sake of simplicity in this thesis we will agree to define a signal as a function that could represent video, image or audio and it will be either analog (evaluated with continuous parameters) or digital (evaluated with discrete parameters). 
+One can think a signal as a function (or something that can be represented as) that contains information about the behavior or attributes of some phenomenon \cite{Roland}, by this definition it actually could be a lot of things; it also depends the area you are working on, this definition will work or not. For example, in signal processing, arbitrary binary data streams are not considered as signals. For the sake of simplicity in this thesis we will agree to define a signal as a function that could represent video, image or audio and it will be either analog (evaluated with continuous parameters) or digital (evaluated with discrete parameters). 
 
 \bigskip
 
@@ -29,7 +29,7 @@ T_tf(x)=f(x-t)
 $$
 and $M_{\xi}:L^2(\mathbb{R})\longrightarrow L^2(\mathbb{R})$ is the modulation operator, given by 
 $$
-M \xi f(x)=e^{i\xi x}f(x)
+M_{\xi} f(x)=e^{i\xi x}f(x)
 $$
 
 \bigskip 
@@ -189,7 +189,7 @@ To study the approximation of natural images by the wavelets, we first need to i
 \bigskip
 
 \begin{defn}[Cartoon-like functions]
-The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is defined as the set of functions $f:\mathbb{R}^2\longrightarrow \mathbb{C}$ of the form $f= f_0+\xi_B f_1$. Here, we assume that $B\subset [0,1]^2$ where $\partial B\in C^2$ and bounded curvature. Moreover, $f_i\in C^2(\mathbb{R}^2)$ with $||f_i||_{C^2}\leq 1$ and $\text{supp} f_i\subset [0,1]^2$ for $i=0,1$. 
+The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is defined as the set of functions $f:\mathbb{R}^2\longrightarrow \mathbb{C}$ of the form $f= f_0+\chi_B f_1$. Here, we assume that $B\subset [0,1]^2$ where $\partial B\in C^2$ and bounded curvature. Moreover, $f_i\in C^2(\mathbb{R}^2)$ with $||f_i||_{C^2}\leq 1$ and $\text{supp} f_i\subset [0,1]^2$ for $i=0,1$. 
 \end{defn}
 
 \bigskip
@@ -204,7 +204,7 @@ The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is de
 Now, let $f$ be a cartoon-like image containing a singularity along a smooth curve and $\{\psi_{j,m}\}$ be a standard wavelet bases of $L^2(\mathbb{R}^2)$. For $j$ sufficiently large, the only significan wavelet coefficients $\langle f,\psi_{ j,m}\rangle$ are the ones associated with the singularity. At each scale $2^{-j}$, each wavelet $\psi_{j,m}$ is supported inside a box of size $2^{-j}\times 2^{-j}$, there exist about $2^j$ elements of the wavelet basis overlapping the singularity curve. The associated wavelet coefficients are controlled by 
 
 $$
-|\langle f,	psi_{j,m}\rangle|\leq ||f||_{\infty}||\psi_{j,n}||_{L^1(\mathbb{R}^2)}\lesssim 2^{-j}
+|\langle f,	\psi_{j,m}\rangle|\leq ||f||_{\infty}||\psi_{j,n}||_{L^1(\mathbb{R}^2)}\lesssim 2^{-j}
 $$
 
 It follows that the $N$-th largest wavelet coefficient in magnitude, denoted by $\langle f,\psi_{j,m}\rangle_{(N)}$, is bounded by O($N^{-1}$). Thus, if $f$ is approximated by its best $N$-term approximation $f_N$, the $L^2$ error (called  best $N$-term approximation error) obeys
@@ -214,6 +214,7 @@ $$
 $$
 
 This estimate is actually tight, in the sense that there exist cartoon-like images for which the best $N$-term approximation error is
+
 $$
 \sigma_N(f,\{\psi_{j,m}\}_{j,m})\approx N^{-\frac{1}{2}}
 $$
@@ -227,11 +228,11 @@ Even this looks like a nice result, it is far from optimal.
 \label{C3S2T1}
 Let $\{\psi_{\lambda}\}_{\lambda\in\Lambda}\subset L^2(\mathbb{R}^2)$ be a frame for $L^2(\mathbb{R}^2)$. Then the optimal best $N-term$ approximation error for any $f\in\mathcal{E}^2(\mathbb{R}^2)$ is
 $$
-\sigma(f,\{\psi_{\lambda}\}_{\lambda\in\Lambda})=O(N^{-1})
+\sigma_N(f,\{\psi_{\lambda}\}_{\lambda\in\Lambda})=O(N^{-1})
 $$
 \end{thm}
 \begin{proof}
-This result was proved by Donoho in 2001 on \cite{DonohobestNterm}, so one can refer to his proof.
+In Section~\ref{sec:ShearletsFrames} we will define the concept of frame. This result was proved by Donoho in 2001 on \cite{DonohobestNterm}, so one can refer to his proof.
 \end{proof}
 
 \bigskip
@@ -256,6 +257,7 @@ We just discussed the limitations of wavelet systems in higher dimensions, we wi
 \bigskip
 
 By tradition and effectivenes one can use the family of dilation operators $D_{A_a}$, $a>0$ based on parabolic scaling matrices $A_a$ of the form
+
 $$
 A_a:=
 \left(
@@ -278,7 +280,7 @@ a & 0 \\
 \right)
 $$
 
-with $\alpha\in (0,1)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Particle}, we will discuss this in detail on Section~\ref{AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
+with $\alpha\in (0,1)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Particle}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
 
 \bigskip
 
@@ -293,7 +295,12 @@ S_s=
 \right)
 $$
 
-
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7\textwidth]{./Diagrams/anisotropic_isotropic.jpg}
+\caption{Optimal covering og anisotropic scaled and sheared atoms}
+\label{edges-images}
+\end{figure}
 
 \section{Shearlets as Frames}
 \label{sec:ShearletsFrames}
