@@ -62,6 +62,22 @@
   tubnode/.style={midway, right=2pt},
 }
 
+%--------------------------------------------------------------------------------
+%---- Julia highlighting settings
+%--------------------------------------------------------------------------------
+\usepackage{beramono}
+\usepackage{listings}
+
+\lstdefinelanguage{julia}{morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
 
 \theoremstyle{definition}
 \newtheorem{thm}{Theorem}[chapter]
@@ -613,6 +629,24 @@ Berlin, September 2017
 	\emph{Functional Analysis III: Lecture Notes},
 	Sommersemester 2016, TU Berlin, 
 	2016
+
+\bibitem{Shearlab}
+	G. Kutyniok, W.-Q. Lim, R. Reisenhofer,
+	\emph{Shearlab 3D: Faithful Digital Shearlet Transforms Based on Compaclty Supported Shearlets},
+	ACM Trans.\ Math.\ Software 42, Article No. 5
+	2016
+
+\bibitem{Nonseparableshear}
+	W.-Q. Lim,
+	\emph{Nonseparable shearlet transform},
+	IEEE Transactions on Image Processing, 2285), pp. 2056-2065,
+	2013
+
+\bibitem{daubechies}
+	I. Daubechies,
+	\emph{Ten lectures on wavelets},
+	volume 62 of CBMS-NSF Regional Conference Series in Applied Mathematics, SIAM, 
+	1992
 
 \end{thebibliography}
 

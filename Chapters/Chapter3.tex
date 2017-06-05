@@ -100,7 +100,7 @@ The sparse representation property of data is important not only for data storag
 So far we have just mentioned the sparse representation property for one-dimensional signals and also the existence of straight forward and fast algorithmic implementations; the latter is based in the general machinery to construct orthonormal wavelet bases known as \textit{Multiresolution Analysis} (MRA). In the one dimensional case, this is defined as a sequence of closed subspaces $(V_j)_{j\in\mathbb{Z}}$ in $L^2(\mathbb{R})$ known as the scaling spaces which satisfies the following properties
 
 \begin{enumerate}
-\item[(a)] $\{0\}\subset\ldots\subset V_{-2}\subset V_{-1}\subset V_0\subset V_1\subset V_2\subset\ldots L^2(\mathbb{R})$.
+\item[(a)] $\{0\}\subseteq\ldots\subset V_{-2}\subset V_{-1}\subset V_0\subset V_1\subset V_2\subset\ldots L^2(\mathbb{R})$.
 \item[(b)] $\cap_{j\in\mathbb{Z}}V_j=\{0\}$ and $\overline{\cup_{j\in\mathbb{Z}V_j}}=L^2(\mathbb{R})$.
 \item[(c)] $f\in V_j$ if and only if $D_2^{-1}f\in V_{j+1}$.
 \item[(d)] There exists a $\varphi\in L^2(\mathbb{R})$, called \textit{scaling function}, such that $\{T_m\varphi:m\in\mathbb{Z}\}$ is an orthonormal basis for $V_0$.
@@ -164,14 +164,14 @@ There exists more general non-separable two dimensional wavelets transforms usin
 
 \bigskip
 
-One can formalize this notion using the concept of best $N$-term approximation. We will provide the general definition applied to dictionaries (collection of vectors on a Hilbert space $\{\varphi_i: i\in I\}\subset \mathcal{H}$ with $I$ finite or countable infinite).
+One can formalize this notion using the concept of best $N$-term approximation. We will provide the general definition applied to dictionaries (collection of vectors on a Hilbert space $\{\varphi_i: i\in I\}\subseteq \mathcal{H}$ with $I$ finite or countable infinite).
 
 \bigskip
 
 \begin{defn}[Best N-term Approximation]
-Let $D:=\{\varphi_i\text{:  }i\in I\}\subset \mathcal{H}$ be a dictionary. Consider a vector $x\in\mathcal{H}$ and an integer $N\in\mathbb{N}$. Then the \textit{best N-term approximation of x} with respect to $D$ is defined by the solution of the following minimization problem:
+Let $D:=\{\varphi_i\text{:  }i\in I\}\subseteq \mathcal{H}$ be a dictionary. Consider a vector $x\in\mathcal{H}$ and an integer $N\in\mathbb{N}$. Then the \textit{best N-term approximation of x} with respect to $D$ is defined by the solution of the following minimization problem:
 $$
-\min_{I_N,(c_i)_{i\in I_N}}||x-\sum_{i\in I_N} c_i\varphi_i|| \text{ subject to } I:N\subset I,\# I_N\leq N
+\min_{I_N,(c_i)_{i\in I_N}}||x-\sum_{i\in I_N} c_i\varphi_i|| \text{ subject to } I:N\subseteq I,\# I_N\leq N
 $$
 \end{defn}
 
@@ -189,7 +189,7 @@ To study the approximation of natural images by the wavelets, we first need to i
 \bigskip
 
 \begin{defn}[Cartoon-like functions]
-The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is defined as the set of functions $f:\mathbb{R}^2\longrightarrow \mathbb{C}$ of the form $f= f_0+\chi_B f_1$. Here, we assume that $B\subset [0,1]^2$ where $\partial B\in C^2$ and bounded curvature. Moreover, $f_i\in C^2(\mathbb{R}^2)$ with $||f_i||_{C^2}\leq 1$ and $\text{supp} f_i\subset [0,1]^2$ for $i=0,1$. 
+The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is defined as the set of functions $f:\mathbb{R}^2\longrightarrow \mathbb{C}$ of the form $f= f_0+\chi_B f_1$. Here, we assume that $B\subseteq [0,1]^2$ where $\partial B\in C^2$ and bounded curvature. Moreover, $f_i\in C^2(\mathbb{R}^2)$ with $||f_i||_{C^2}\leq 1$ and $\text{supp} f_i\subset [0,1]^2$ for $i=0,1$. 
 \end{defn}
 
 \bigskip
@@ -226,7 +226,7 @@ Even this looks like a nice result, it is far from optimal.
 
 \begin{thm}
 \label{C3S2T1}
-Let $\{\psi_{\lambda}\}_{\lambda\in\Lambda}\subset L^2(\mathbb{R}^2)$ be a frame for $L^2(\mathbb{R}^2)$. Then the optimal best $N-term$ approximation error for any $f\in\mathcal{E}^2(\mathbb{R}^2)$ is
+Let $\{\psi_{\lambda}\}_{\lambda\in\Lambda}\subseteq L^2(\mathbb{R}^2)$ be a frame for $L^2(\mathbb{R}^2)$. Then the optimal best $N$-term approximation error for any $f\in\mathcal{E}^2(\mathbb{R}^2)$ is
 $$
 \sigma_N(f,\{\psi_{\lambda}\}_{\lambda\in\Lambda})=O(N^{-1})
 $$
@@ -258,7 +258,8 @@ We just discussed the limitations of wavelet systems in higher dimensions, we wi
 
 By tradition and effectivenes one can use the family of dilation operators $D_{A_a}$, $a>0$ based on parabolic scaling matrices $A_a$ of the form
 
-$$
+\begin{equation}
+\label{eq:scaling}
 A_a:=
 \left(
 \begin{matrix}
@@ -266,11 +267,12 @@ a & 0 \\
 0 & a^{1/2}
 \end{matrix}
 \right)
-$$
+\end{equation}
 
 This is the first approach to a scaling operator by the long history of parabolic scaling in harmonic analysis literature \cite{Fefferman}; the so called \textit{Classical Shearlets} use this approach, one can generalize the scaling using matrices of the form 
 
-$$
+\begin{equation}
+\label{eq:scalingalpha}
 A_a:=
 \left(
 \begin{matrix}
@@ -278,14 +280,15 @@ a & 0 \\
 0 & a^{\alpha}
 \end{matrix}
 \right)
-$$
+\end{equation}
 
 with $\alpha\in (0,1)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Particle}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
 
 \bigskip
 
  Next, we need an orthogonal transformation to change to change the orientation of the waveforms. One does not use rotations since it destroys the structure of the integer lattice $\mathbb{Z}^2$ whenever the rotation angle is different from $0,\pm\frac{\pi}{2},\pm\frac{3\pi}{2}$, which will represent an issue in the discrete setting. One chooses the shearing operator $D_s$, $s\in\mathbb{R}$, where the \textit{shearing matrix} $S_s$ is given by 
-$$
+\begin{equation}
+\label{eq:shearing}
 S_s=
 \left(
 \begin{matrix}
@@ -293,17 +296,331 @@ S_s=
 0 & 1
 \end{matrix}
 \right)
-$$
+\end{equation}
+
+with this two elements we are ready to define the Continuous Shearlet Transform.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width = 0.7\textwidth]{./Diagrams/anisotropic_isotropic.jpg}
-\caption{Optimal covering og anisotropic scaled and sheared atoms}
+\caption{Optimal covering of anisotropic scaled and sheared atoms}
 \label{edges-images}
 \end{figure}
 
+\begin{figure}[!tbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./Diagrams/circle.png}
+    \caption{Circle before parabolic scaling}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./Diagrams/circle_scaled.png}
+    \caption{Circle after parabolic scaling $a=4$}
+  \end{minipage}
+\end{figure}
+
+
+\begin{figure}[!tbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./Diagrams/square.png}
+    \caption{Square before shearing}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./Diagrams/square_sheared.png}
+    \caption{Sheared square by a factor of $k=1$}
+  \end{minipage}
+\end{figure}
+
+
+\begin{defn}[Continuous Shearlet Transform]
+Let $\psi\in L^2(\mathbb{R}^2)$, $A_a$ and $S_s$ the parabolic scaling matrix and shearing matrix defined in~\ref{eq:scaling} and~\ref{eq:shearing} respectively, then the continuous shearlet system $SH(\psi)$ associated with $\psi$ is defined by
+\begin{equation}
+\label{eq:contshearletsys}
+\mathcal{SH}(\psi):=\{\psi_{a,s,t}=a^{1/2}\psi (S_sA_ax-t):a\in\mathbb{R}^+,s\in\mathbb{R},t\in\mathbb{R}^2\}
+\end{equation}
+\end{defn}
+
+In analogy with the discretization of wavelets, one can discretize faithfully the shearlet system which permits a straight forward implementation. We will use $a=2$ for scaling parameter since it was proven to be the best choice.
+
+\begin{defn}[Discrete Shearlet Transform]
+Let $\psi\in L^2(\mathbb{R}^2)$, $j\in\mathbb{Z}$, lets define the \textit{discrete parabolic scaling matrix} as follows
+
+\begin{equation}
+\label{eq:discscaling}
+A_j:= A_2^j =
+\left(\begin{matrix}
+2^j & 0 \\
+0 & 2^{j/2}
+\end{matrix}\right)
+\end{equation}
+
+and the \textit{discrete shearing matrix} for $k\in\mathbb{Z}$
+
+\begin{equation}
+\label{eq:discshearing}
+S_k:= 
+\left(\begin{matrix}
+1 & k \\
+0 & 1
+\end{matrix}\right) 
+\end{equation}
+
+Given $\psi\in L^2(\mathbb{R}^2)$, the discrete shearlet system associated with $\psi$ is defined as
+
+\begin{equation}
+\label{eq:discshearletsys}
+\mathcal{DSH}(\psi):=\{\psi_{j,k,m}=2^{3j/4}\psi (S_kA_jx-m):j\in\mathbb{Z},k\mathbb{z},m\in\mathbb{Z}^2\}
+\end{equation}
+\end{defn}
+
+It has been proved that Shearlets present a lot of features and breakthrough results; for instance they can perform common tasks of signal processing as inpainting or denoising with great results in comparison with other methods (e.g.\ wavelets); but we defined the Shearlet System with motivation on the optimal best $N$-term approximation error found by Donoho (see Theorem~\ref{C3S2T1}), and prove that this bound is reached one first need to give some definitons.
+
+\begin{defn}[Classical shearlets]
+\label{def:classical_shearlets}
+Let $\psi\in L^2(\mathbb{R}^2)$ be defined by
+$$
+\hat{\psi}(\xi_1,\xi_2)=\hat{\psi}_1(\xi_1)\hat{\psi}_2\left(\frac{\xi_2}{\xi_1}\right)
+$$
+where $\psi_1,\psi_2\in L^2(\mathbb{R})$ satisfy the following properties:
+\begin{itemize}
+\item $\sum_{j\in\mathbb{Z}} |\hat{\psi}_1(2^{-j}\xi)|^2=1$ for a.e. $\xi\in\mathbb{R}$ (\textit{wavelet like}).
+\item $\text{supp}(\hat{\psi}_1)\subseteq \left[ \frac{1}{2},-\frac{1}{16}\right]\cup\left[\frac{1}{16},\frac{1}{2}\right]$
+\item $\hat{\psi}_1\in C^{\infty}(\mathbb{R})$.
+\item $\sum_{k=-1,0,1}|\hat{\psi}_2(\xi+k)|^2=1$ for a.e. $\xi\in [-1,1]$ ("bump-like").
+\item $\text{supp}(\hat{\psi}_2)\subseteq [-1,1]$.
+\item $\hat{\psi}_2\in C^{\infty}(\mathbb{R})$.
+\end{itemize}
+Then, we call $\psi$ a \textit{classical shearlet}.
+\end{defn}
+
+\begin{figure}[!tbp]
+  \centering
+   \includegraphics[width=0.7\textwidth]{./Diagrams/tiling_nocone.jpg}
+    \caption{Tiling of the Fourier domain for the classical shearlets. Figure taken from \cite{Gitta-notes}, pp. 82}
+  \label{fig:tiling_nocone}
+
+\end{figure}
+
+One can observe in  the tiling of the Fourier domain of the classical shearlets in Figure~\ref{fig:tiling_nocone} that the tiling of the Fourier domain of the classical shearlets is not uniform at all, it is very biased towards the $\xi_2$-axis, that will lead to some issues if one wants to analyze singularities aligned with the $x_1$-axis. For directional systems as the shearlet system one would like to have a uniform tiling of the Fourier space; to achieve this one can split the space in "cones" and associate different shearlet system for each cone. 
+
+\bigskip
+
+\begin{defn}[Cone-adapted shearlet system]
+\label{def:cone_shearlets}
+Let $\phi,\psi,\tilde{\psi}\in L^2(\mathbb{R}^2)$ and $c=(c_1,c_2)\in (\mathbb{R}^+)^2$. The \textit{cone-adapted shearlet system} associated with $\phi,\psi,\tilde{\psi}$ and $c$ is defined by 
+$$
+\mathcal{SH}(\phi,\psi,\tilde{\psi},c):=\Phi(\phi,c_1)\cup\Psi(\psi,c)\cup \tilde{\Psi}(\tilde{\psi},c)
+$$
+
+where
+
+$$
+\begin{aligned}
+\Phi(\phi,c_1)&:=\{\phi(x-c_1m)\text{: }m\in\mathbb{Z}\},\\
+\Psi(\psi,c)&:=\{2^{3j/4}\psi(S_kA_jx-M_cm)\text{: } j\geq 0,|k|\leq\lceil 2^{j/2}\rceil,m\in\mathbb{Z}^2\},\\
+\tilde{\Psi}(\tilde{\psi},c)&:=\{2^{3j/4}\tilde{\psi}(\tilde{S}_k\tilde{A}_jx-\tilde{M}_cm)\text{: } j \geq 0,|k|\leq\lceil 2^{j/2}\rceil,m\in\mathbb{Z}^2\},
+\end{aligned}
+$$
+
+with 
+
+$$
+M_c=\left(\begin{matrix} c_1 & 0 \\ 0 & c_2\end{matrix}\right)\text{,  }
+\tilde{M}_c=\left(\begin{matrix} c_2 & 0 \\ 0 & c_1\end{matrix}\right) \text{,  }
+\tilde{S}_k=\left(\begin{matrix} 1 & 0 \\ k & 1 \end{matrix}\right)\text{,  }
+\tilde{A}_j=\left(\begin{matrix} 2^{j/2} & 0 \\ 0 & 2^j\end{matrix}\right)
+$$
+
+Lets split the Fourier space in cones $\mathcal{C}_1, \mathcal{C}_2, \mathcal{C}_3,\mathcal{C}_4$ and a central low-frequency square $\mathcal{R}$, see Figure~\ref{fig:tiling_cone}. Then the set
+
+$$
+\mathcal{P}_{\mathcal{R}}\Phi(\phi,1)\cup \mathcal{P}_{\mathcal{C}_1}\Psi(\psi,(1,1))\cup\mathcal{P}_{\mathcal{C}_2}\tilde{\Psi}(\mathcal{Psi},(1,1))
+$$
+
+where $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{C}_2}$ are the projections in the Fourier domain, is called the \textit{Cone-adapted shearlet transform}.
+\end{defn}
+
+\begin{figure}[!tbp]
+  \centering
+   \includegraphics[width=0.9\textwidth]{./Diagrams/tiling_cone.jpg}
+    \caption{(a) Tiling of the Fourier domain into cones. (b) Frequency tiling generated by cone-adapted shearlets. Figure taken from \cite{Gitta-notes} pp. 83 }
+  \label{fig:tiling_cone}
+\end{figure}
+
+\bigskip
+
+In the case of the wavelet transform the discretization and implementation of the algorithm that performs it since dilation can be performed by subsampling and one can use fourier transform properties to translate convolution into multiplication and that can be implemented optimally with the fft-algorithm. Once can also take in account that the convolution operation with a function of compact support can be thought as a filtering operation in signal processing, so a wavelet system and a multeresolution analysis  is interpreted in typical implemenation as a filter bank, the last using a high pass and a low pass filter that characterize the interaction of the wavelet and scaling function, the former obeying the admissibility condition. 
+
+\bigskip
+
+The Shearlet Transform of a function $f\in L^2(\mathbb{R}^2)$, $\langle f,\psi_{j,k,m}\rangle$ for the same reasons has a faithfull implementation using filtering and subsampling operations just taking care of the invariance of the $\mathbb{Z}^2$ grid under the discretization of the shearlet operator (Wang-Q. Lim proposed a solution for this on \cite{Nonseparableshear}); the filters need to characterize the functions $\phi$ and $\psi$ on the cone-adapated shearlet system (Definition~\ref{def:cone_shearlets}). The simplest choice is to take $\psi$ to be the tensor product of a wavelet function $\psi_1$ and a scaling function $\phi_1$ related to a multiresolution analysis, this approach is known as the separable shearlet generator. 
+
+$$
+\begin{aligned}
+\phi(x_1,x_2)&=\phi_1(x_1)\phi_1(x_2)\\
+\psi(x_1,x_2)&=\psi_1(x_1)\phi_1(x_2)
+\end{aligned}
+$$
+
+Even this separable approach forms a frame a frame for $L^2(\mathbb{R}^2)$ (check Section~\ref{sec:ShearletsFrames} for a detail explanation) and simplifies the implementation, it is not a good choice for directional representations; the separability causes a significant overlap between $\text{supp}(\hat{\psi}_{j,k,m})$ and $\text{supp}(\hat{\psi}_{j,k+1,m})$, see Figure~\ref{fig:separable_nonseparable}. Also in Figure~\ref{fig:separable_nonseparable} one can see that wedge shaped support is well adapted for covering the frequency domain by the application of the shear and scale operator while improving directional selectivity to achieve this Wang-Q. Lim proposed in 2013 a non-separable shearlet generator $\psi^{\text{non}}$ given by the relation
+
+$$
+\hat{\psi}^{\text{non}}(\xi)=P\left(\frac{\xi_1}{2},\xi_2\right)\hat{\psi}(\xi),
+$$
+
+where $\psi$ is the already mentioned separable shearlet generator and $P$ is a 2D directional fan filter (see \cite{Nonseparableshear} for a more detailed explanation of this filter). The wedge form that non-separable shearlet generators give to the shearlet system the ability to cover the Fourier domain optimally. We will use this approach in this thesis; the implementation of the non-separable shearlet transform is widely explained in \cite{Shearlab} where the most known implemenation is based on, Shearlab3D in matlab (one can download it in \url{shearlab.org}); by the improvement of performance we will use the Julia Programming Language (\url{https://julialang.org/}) implementation of this library that can be downloaded in \url{https://github.com/arsenal9971/Shearlab.jl} or installed from the Julia REPL using \lstinline[language=julia]{Pkg.add("Shearlab")}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{./Diagrams/separable_nonseparable.jpg}
+\caption{Frequency covering by shearlets $\psi_{j,0,m}$ and $\psi_{j,1,m}$ (a) with separable generator (b) with non-separable generator. Figure taken from \cite{Nonseparableshear} pp. 12}
+\label{fig:separable_nonseparable}
+\end{figure}
+
+We finally can give in this section the result that we were looking for to justify formally the superiority of the Shearlet System over the Wavelet System on representating optimally the \textit{cartoon-like functions}, we will again make use of the term frame, despite it has not been introduced yet, but until the next section.
+
+\begin{thm}
+\label{thm:optimal_shearlets}
+Let $\psi\in L^2(\mathbb{R}^2)$ be compactly supported.
+
+Assume that  for $\alpha>5$, $\gamma\geq 4$, $q>q'>0$ and $q>r>0$, it holds that
+\begin{equation}
+\label{eq:boundframe}
+|\hat{\psi}(\xi_1,\xi_2)|\leq C \min\{1,|q\xi_1|^{\alpha}\}\min\{1,|q'\xi_1|^{-\gamma}\}\min\{1,|r\xi_2|^{-\gamma}\}
+\end{equation}
+for some constant $C>0$ and that for $h\in L^1(\mathbb{R}^1)$ 
+$$
+|\frac{\partial}{\partial\xi_2}\hat{\psi}(\xi)|\leq |h(\xi_1)|\left(1+\big| \frac{\xi_2}{\xi_1}\big|\right)^{-\gamma}
+$$
+is satisfied. Assume that the same conditions are satisfied for $\tilde{\psi}$. Then, if the \textit{cone-adapated shearlet system} on definition~\ref{def:cone_shearlets} $\mathcal{SH}(\phi,\psi,\tilde{psi},(1,1))$ forms a frame for $L^2(\mathbb{R}^2)$, then there exists a constant $C'>0$ such that for all $f\in\mathcal{E}^2(\mathbb{R}^2)$, we have 
+
+\begin{equation}
+\label{eq:optimalshearlets}
+\sigma_N(f,\mathcal{SH}(\phi,\psi,\tilde{\psi},(1,1))\leq C'N^{-1}(\log N)^{3/2} \text{as  } N\longrightarrow\infty
+\end{equation}
+\end{thm}
+\begin{proof}
+The proof of this theorem is quite technical and it has not a great impact on the results of our thesis, so one will let the reader to consult \cite{FirstShearlets} for a detailed proof. 
+\end{proof}
+
+As $N$ goes bigger the logarithm in the estimate~\ref{eq:optimalshearlets} can be taken as a constant, so Theorem~\ref{thm:optimal_shearlets} shows that the Cone-Adapted Shearlet System atains the theoretical optimal best $N$-term approximation error for the cartoon like functions given in Theorem~\ref{C3S2T1}. Cartoon-like functions represent accurately natural images, so this system is proven to be a great option to inpaint EPIs in this thesis. In the next sections we will show other features of the Shearlets as its character of frames for $L^2(\mathbb{R}^2)$ as well as other forms of them using general scaling matrix, called alpha particles and we will show why a particular case of alpha particles is the best to inpaint sparse-sampled EPIs.
+
 \section{Shearlets as Frames}
 \label{sec:ShearletsFrames}
+
+Lets now take a bigger picture on representation systems. An orthonormal basis for Hilbert space $\mathcal{H}$ is a sequence $(\phi_i)_{i\in I}\subset\mathcal{H}$ such that for each vector $x\in\mathcal{H}$
+\begin{equation}
+\label{eq:parseval}
+x=\sum_{i\in I}\langle x,\phi_i\rangle \phi_i
+\end{equation}
+
+so one can represent each vector in termos of the collection and one can decompose each element $x\in\mathcal{H}$ as
+$$
+x\mapsto (\langle x,\phi_i\rangle)_{i\in I}\text{,  }\mathcal{H}\longrightarrow \ell_2(I)
+$$
+
+even this two features (decomposition and recovery) are very simply expressed for orthonormal bases, one woul like to extend the theory for different reasons. For example, it is not possible to recover $x$ if one loses some of the coefficients $\langle x, \phi_i\rangle$, so the induced decomposition is not robust. In the last section we mentioned the imporance of sparse representation of signals in different applications, but an orthonormal basis forces the representation coefficients to be $\langle x,\phi_i\rangle$, the sequence of coefficients will not have a rapid decay. One will call this two mentioned characteristics as \textit{Robust Decomposition}, and \textit{Sparse representation}. 
+
+\bigskip
+
+A natural generalization of the convept of orthonormal bases is the concept of frames, to define them one weakens the Parseval equation~\ref{eq:parseval}.
+
+\bigskip
+
+\begin{defn}[Frames]
+\label{def:frames}
+\begin{enumerate}
+\item[(1)] A sequence $(\phi_i)_{i\in I}$ in a Hilbert space $\mathcal{H}$ is called a \textbf{frame} for $\mathcal{H}$, if there exist constans $0<A\leq B<\infty$ such that
+\begin{equation}
+\label{eq:frames}
+A||x||^2\leq \sum_{i\in I}|\langle x,\phi_i\rangle|^2\leq B||x||^2 \text{,  }\forall x\in \mathcal{H}
+\end{equation}
+$A$ and $B$ are called lower and upper frame bound.
+\item[(2)] If $A$ and $B$ can be chosen to be equal, we call it ($A$-) tight frame. If $A=B=1$ is possible, $(\phi_i)_{i\in I}$ forms a Parseval frame.
+\item[(3)] If only the upper bound in~\ref{eq:frames} holds, we call $(\phi_i)_{i\in I}$ a Bessel sequence.
+\end{enumerate}
+\end{defn}
+
+\bigskip
+
+With this definition an orthonormal basis will be a Parseval frame. Since $A>0$ frames also span the whole space $\mathcal{H}$, frames allows one to obtain both characteristics \textit{robust decomposition} and \textit{sparse representation}; for a detailed explanation of this we highly recommend the Chapter 5 of \cite{Mallat}.
+
+\bigskip
+
+In the last section we introduced different representation systems for signals in $L^2(\mathbb{R}^2)$, as Gabor systems that emerge motivated by the short time fourier transform, wavelet and shearlet systems. This systems will form a frame under certain conditions on the generating functions and parameters. For example in the case of wavelet systems we have the next theorem that gives a necessary condition to form frames.
+
+\bigskip
+
+\begin{thm}[Necessary condtion for wavelet wrames]
+Let $a>1$, $b>0$ and $\psi\in L^2(\mathbb{R})$ a wavelet function such that the related system $W(\psi,a,b)$ forms a frame for $L^2(\mathbb{R})$ with frame bounds $A$ and $B$. Then, we have
+$$
+A\leq \frac{1}{b}\sum_{j\in\mathbb{Z}}|\hat{\psi}(a^j\xi)|^2\leq B \text{,   }\forall\xi\in\mathbb{R}
+$$
+\end{thm}
+\begin{proof}
+One can find the proof in Theorem 3.3 of \cite{daubechies}
+\end{proof}
+
+\bigskip
+
+Sufficient conditions of wavelet frames are more technical and one can find them in Theorem 3.15 of \cite{Gitta-notes}. In our case we would like to know under what conditions \textit{Classical Shearlets} and \textit{Cone-adapted shearlets} separable and nonseparable form frames, and for that we have the next results.
+
+\begin{thm}
+Let $\psi$ be a classical shearlet, i.e.\ obeys the conditions~\ref{def:classical_shearlets}. Then the associated wavelet system $\mathcal{SH}(\psi)$ forms a Parseval frame for $L^2(\mathbb{R}^2)$.
+\end{thm}
+\begin{proof}
+By the above properties of $\psi_1$ and $\psi_2$, we have
+$$
+\begin{aligned}
+\sum_{j\in\mathbb{Z}}\sum_{k\in\mathbb{Z}}|\hat{\psi}(S^T_{-k}A_{-j}\xi)|^2&=\sum_{j\in\mathbb{Z}}|\hat{\psi}_1(2^{-j}\xi_1)|^2\sum_{k\in\mathbb{Z}}|\hat{\psi}_2(2^{j/2}\xi_2/\xi_1-k)|^2\\
+&=\sum_{j\in\mathbb{Z}}|\hat{\psi}_1(2^{-j}\xi_1)|^2=1
+\end{aligned}
+$$
+this holds for almost every $\xi\in\mathbb{R}^2$, using on this equation Plancherel's and Parseval's identity is enough to finish the proof.
+\end{proof}
+
+Using a similar proof of the last theorem one can prove the next theorem.
+
+\begin{thm}
+Let $\psi\in L^2(\mathbb{R}^2)$ be a classical shearlet. Then 
+$$
+\Psi(\psi,(1,1)):=\{2^{3j/4}\psi(S_kA_jx-m)\text{: }j\geq 0,|k|\leq\lceil 2^{j/2}\rceil,m\in\mathbb{Z}^2\}
+$$
+forms a Parseval frame for 
+$$
+\{f\in L^2(\mathbb{R})\text{:  supp}\hat{f}\subset\{\xi\in\mathbb{R}^2\text{:  }|\xi_1|\geq 1,|\xi_2/\xi_1|\leq 1\}\}
+$$
+\end{thm}
+
+Finally one can state the result for the \text{cone-adapted shearlet system}.
+
+\begin{thm}
+For $\alpha >\gamma>3$, $q>q'>0$ and $q>r>0$, let 
+\begin{equation}
+\label{eq:coneshearframes}
+|\hat{\psi}(\xi_1,\xi_2)|\leq C\min\{1,|q\xi_1|^{\alpha}\}\min\{1,|q'\xi_1|^{-\gamma}\}\min\{1,|r\xi_2|^{-\gamma}\}
+\end{equation}
+for some constant $C>0$, and that
+
+$$
+\sum_{j,k\in\mathbb{Z}}|\hat{\psi}(S^T_{-k}A_{-j}\xi)|^2\geq C'>0
+$$
+
+for almost every $\xi\mathbb{R}^2$. For $\tilde{\psi}$, we assume similar conditions. Then, there exists some $c_0$ such that $\mathcal{SH}(\phi,\psi,\tilde{\psi},c)$, with suitable $\phi$, forms a frame for $L^2(\mathbb{R}^2)$ for all $c_1,c_2<c_0$ and for the frame bounds, we have 
+
+$$
+C_1(\alpha,\gamma,q,q',r,c_1,c_2)\leq A\leq B\leq C_2(\alpha,\gamma,q,q',r,c_1,c_2)
+$$
+
+\end{thm}
+\begin{proof}
+We refer to \cite{FirstShearlets} for the proof of this theorem. 
+\end{proof}
+
+The choice of functions $\psi$ and $\phi$ presented in the last section in both separable and non-separable fashion obey the inequality~\ref{eq:coneshearframes} (see \cite{Nonseparableshear}); therefore the related shearlet system will form a frame. This strong machinery shows the strong properties of the shearlet systems being frames, presenting both sparse representation and robust decomposition and in particular shows that the shearlets will span $L^2(\mathbb{R}^2)$. In the next section we will extend the notion of scaling that is suitable for levels of anisotropy. 
 
 \section{Generalization of Shearlets to Alpha Particles}
 \label{sec:AlphaShearlets}

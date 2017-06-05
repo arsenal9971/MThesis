@@ -36,5 +36,5 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
   4. Experiments with Shearlab.jl with GPU and without.  
 5. Application of Geometric Structured Sparsity idea of Irina's thesis (tentative). 
 
-- Appendices:
+- Appendices::
 1. Appendix A: Code for point tracking
