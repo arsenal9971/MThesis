@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 JUN 2017 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 JUN 2017 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2408,7 +2408,7 @@ File: ./Diagrams/tiling_cone.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./Diagrams/tiling_cone.jpg used on input line 448.
 (pdftex.def)             Requested size: 371.30597pt x 194.1394pt.
  [43 <./Diagrams/tiling_cone.jpg>]
-<./Diagrams/separable_nonseparable.jpg, id=810, 677.53125pt x 260.975pt>
+<./Diagrams/separable_nonseparable.jpg, id=809, 677.53125pt x 260.975pt>
 File: ./Diagrams/separable_nonseparable.jpg Graphic file (type jpg)
 
 <use ./Diagrams/separable_nonseparable.jpg>
@@ -2659,7 +2659,7 @@ exlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/201
 t/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (73 pages, 6518296 bytes).
+Output written on main.pdf (73 pages, 6518113 bytes).
 PDF statistics:
  1279 PDF objects out of 1440 (max. 8388607)
  1077 compressed objects within 11 object streams
