@@ -277,12 +277,12 @@ A_a:=
 \left(
 \begin{matrix}
 a & 0 \\
-0 & a^{\alpha}
+0 & a^{\alpha/2}
 \end{matrix}
 \right)
 \end{equation}
 
-with $\alpha\in (0,1)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Particle}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
+with $\alpha\in (0,2)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Shearlets}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
 
 \bigskip
 
@@ -440,7 +440,15 @@ $$
 \mathcal{P}_{\mathcal{R}}\Phi(\phi,1)\cup \mathcal{P}_{\mathcal{C}_1}\Psi(\psi,(1,1))\cup\mathcal{P}_{\mathcal{C}_2}\tilde{\Psi}(\tilde{\psi},(1,1))
 $$
 
-where $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{C}_2}$ are the projections in the Fourier domain, is called the \textit{Cone-adapted shearlet transform}.
+where 
+$$
+\begin{aligned}
+\mathcal{C}_1\cup \mathcal{C}_3 &:=\mathcal{C}_h =\{ (\xi_2,\xi_1)\in\mathbb{R}^2| |\xi_2/\xi_1|\leq 1,|\xi_1|>1\}\\
+\mathcal{C}_2\cup \mathcal{C}_4 &:= \mathcal{C}_v =\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_2/\xi_1|> 1, |\xi_2|>1\},\\
+\mathcal{R}&:=\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_1|,|\xi_2|\leq 1\}
+\end{aligned}
+$$
+and $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{C}_2}$ are the projections in the Fourier domain, is called the \textit{Cone-adapted shearlet transform}.
 \end{defn}
 
 \begin{figure}[!tbp]
@@ -506,7 +514,7 @@ is satisfied. Assume that the same conditions are satisfied for $\tilde{\psi}$. 
 The proof of this theorem is quite technical and it has not a great impact on the results of our thesis, so one will let the reader to consult \cite{FirstShearlets} for a detailed proof. 
 \end{proof}
 
-As $N$ goes bigger the logarithm in the estimate~\ref{eq:optimalshearlets} can be taken as a constant, so Theorem~\ref{thm:optimal_shearlets} shows that the Cone-Adapted Shearlet System atains the theoretical optimal best $N$-term approximation error for the cartoon like functions given in Theorem~\ref{C3S2T1}. Cartoon-like functions represent accurately natural images, so this system is proven to be a great option to inpaint EPIs in this thesis. In the next sections we will show other features of the Shearlets as its character of frames for $L^2(\mathbb{R}^2)$ as well as other forms of them using general scaling matrix, called alpha particles and we will show why a particular case of alpha particles is the best to inpaint sparse-sampled EPIs.
+As $N$ goes bigger the logarithm in the estimate~\ref{eq:optimalshearlets} can be taken as a constant, so Theorem~\ref{thm:optimal_shearlets} shows that the Cone-Adapted Shearlet System atains the theoretical optimal best $N$-term approximation error for the cartoon like functions given in Theorem~\ref{C3S2T1}. Cartoon-like functions represent accurately natural images, so this system is proven to be a great option to inpaint EPIs in this thesis. In the next sections we will show other features of the Shearlets as its character of frames for $L^2(\mathbb{R}^2)$ as well as other forms of them using general scaling matrix, called alpha shearlets and we will show why a particular case of alpha shearlets is the best to inpaint sparse-sampled EPIs.
 
 \section{Shearlets as Frames}
 \label{sec:ShearletsFrames}
@@ -523,7 +531,7 @@ x\mapsto (\langle x,\phi_i\rangle)_{i\in I}\text{,  }\mathcal{H}\longrightarrow 
 $$
 
 even this two features (decomposition and recovery) are very simply expressed for orthonormal bases, one woul like to extend the theory for different reasons. For example, it is not possible to recover $x$ if one loses some of the coefficients $\langle x, \phi_i\rangle$, so the induced decomposition is not robust. In the last section we mentioned the imporance of sparse representation of signals in different applications, but an orthonormal basis forces the representation coefficients to be $\langle x,\phi_i\rangle$, the sequence of coefficients will not have a rapid decay. One will call this two mentioned characteristics as \textit{Robust Decomposition}, and \textit{Sparse representation}. 
-
+p
 \bigskip
 
 A natural generalization of the convept of orthonormal bases is the concept of frames, to define them one weakens the Parseval equation~\ref{eq:parseval}.
@@ -609,7 +617,7 @@ $$
 \sum_{j,k\in\mathbb{Z}}|\hat{\psi}(S^T_{-k}A_{-j}\xi)|^2\geq C'>0
 $$
 
-for almost every $\xi\mathbb{R}^2$. For $\tilde{\psi}$, we assume similar conditions. Then, there exists some $c_0$ such that $\mathcal{SH}(\phi,\psi,\tilde{\psi},c)$, with suitable $\phi$, forms a frame for $L^2(\mathbb{R}^2)$ for all $c_1,c_2<c_0$ and for the frame bounds, we have 
+for almost every $\xi\in\mathbb{R}^2$. For $\tilde{\psi}$, we assume similar conditions. Then, there exists some $c_0$ such that $\mathcal{SH}(\phi,\psi,\tilde{\psi},c)$, with suitable $\phi$, forms a frame for $L^2(\mathbb{R}^2)$ for all $c_1,c_2<c_0$ and for the frame bounds, we have 
 
 $$
 C_1(\alpha,\gamma,q,q',r,c_1,c_2)\leq A\leq B\leq C_2(\alpha,\gamma,q,q',r,c_1,c_2)
@@ -622,11 +630,388 @@ We refer to \cite{FirstShearlets} for the proof of this theorem.
 
 The choice of functions $\psi$ and $\phi$ presented in the last section in both separable and non-separable fashion obey the inequality~\ref{eq:coneshearframes} (see \cite{Nonseparableshear}); therefore the related shearlet system will form a frame. This strong machinery shows the strong properties of the shearlet systems being frames, presenting both sparse representation and robust decomposition and in particular shows that the shearlets will span $L^2(\mathbb{R}^2)$. In the next section we will extend the notion of scaling that is suitable for levels of anisotropy. 
 
-\section{Generalization of Shearlets to Alpha Particles}
+\section{Generalization of Shearlets to Alpha Shearlets}
 \label{sec:AlphaShearlets}
 
-\section{Linear Shearlets and its relation with ridgelets}
+The classical and the cone-adapted shearlets that we mentioned so far make use of a parabolic scaling matrix to perform the scaling operation, this matrix has the form 
 
-\section{Image inpainting using Shearlets}
+\begin{equation}
+\label{eq:parabolic_scaling}
+A_j=\left(
+\begin{matrix}
+2^j & 0 \\
+0 & 2^{j/2}
+\end{matrix}
+\right)
+\end{equation}
 
-\section{Epipolar-plane representation with linear Shearlets}
+the form of the matrix has been motivated by the aim to construct best approximation of functions with singularities over parabolic curves, but one would like to have more flexibility on curves that dominate the images; in the case of the Epipolar Images as one can see in Section~\ref{sec:Epi-geometry} one would like to have a system that is good to approximate straight line singularities. 
+
+\bigskip
+
+The natural generalization of the parabolic scaling was motivated by the inpainting problem (see \cite{Gitta-alpha}) is reached by the introduction the so called \textit{scaling sequences} $(\alpha_j)_j\subseteq (-\infty,2)$ with associated scaling matrices
+
+\begin{equation}
+\label{eq:alpha_scaling}
+A_{j,\alpha_j,(h)}=\left(
+\begin{matrix}
+2^j & 0 \\
+0 & 2^{\alpha_j j/2}
+\end{matrix}
+\right)
+\end{equation}
+
+which offers a lot of flexibility in scaling and let us choose the level of anisotropy for each scale $j$ independently; using definition of scaling matrix we will define the \textit{Universal Shearlet System} introduced by Gitta Kutyniok and Martin Genzel in \cite{Gitta-alpha}; it is very convinient to generalize the notion of scaling also because it permits us to have a uniform treatment of different band-limited systems like classical cone-adapted shearlets, ridgelets and band-limited wavelets. 
+
+\bigskip
+
+One main objective of the introduction of the \textit{Universal Shearlet System} is to construct due to its flexibility a compactly supported directional system which forms a Parseval frame and gives an optimal sparsifying approximation of cartoon-like functions. The classical shearlet theory showed that certain class of band-limited shearlets constitute a Parseval frame and provide an optimal sparse approximation (see \cite{Guo-Labate}); but, when trying to force the compact support of those even under certain conditions optimal approximation rates can be achieved, they weill not have the Parseval property. 
+
+\bigskip 
+
+Lets proceed with the construction of the \textit{Universal Shearlets}. First let us recall the definition of the \textit{Schwartz functions space} 
+
+$$
+\mathcal{S}(\mathbb{R}^d):=\{\phi\in C^{\infty}(\mathbb{R}^d)|\forall K,N\in\mathbb{N}_0:\sup_{x\in\mathbb{R}^d}(1+|x|^2)^{-N/2}\sum_{|\alpha|\leq K}|D^{\alpha}\phi(x)|<\infty\}
+$$
+
+we will rather use the compact notation $\langle|x|\rangle:=(1+|x|^2)^{-N/2}$, the fourier transform will be an operator of $\mathbb{S}(\mathbb{R}^d)$. 
+
+\bigskip
+
+Lets define a scaling function as  $\phi\in\mathbb{S}(\mathbb{R})$ satisfying $0\leq \hat{\phi}\leq 1$, $\hat{\phi}(u)=1$ for $u\in [-1/16,1/16]$, and $\text{supp}(\hat{\phi})\subset [-1/8,1/8]$. A function with these properties is usually named \textit{Meyer scaling function}. Now, lets define the \textit{corona scaling function} for $j\in\mathbb{N}_0$ by ($\xi=(\xi_1,\xi_2)\in\mathbb{R}^2$)
+
+$$
+\begin{aligned}
+\hat{\Phi}(\xi)&:=\hat{\phi}(\xi_1)\hat{\phi}(\xi_2),\\
+W(\xi)&:= \sqrt{\hat{\Phi}^2(2^{-2}\xi)-\hat{\Phi}^2(\xi)},\\
+W_j(\xi)&:=W(2^{-2j}\xi).
+\end{aligned}
+$$
+
+The functions $W_j$ are compactly supported in corona-shaped scaling levels, i.e.\,
+\begin{equation}
+\label{eq:alpha31}
+\text{supp}W_j\subset \mathcal{K}_j:=[-2^{2j-1},2^{2j-1}]^2\setminus (-2^{2j-4},2^{2j-4})^2
+\end{equation}
+
+and as in the case of classical cone-adapted shearlets one can decompose the Fourier domain by the sequence of scaling functions:
+
+$$
+\hat{\Phi}^2(\xi)+\sum_{j\geq 0} W^2_j(\xi)=1\text{,   }\xi\in\mathbb{R}^2
+$$ 
+
+as in the definiton of the classical shearlets the function $W$ can be viewed as a wavelet, in the same manner one considers a \textit{bump-like} function $v\in C^{\infty}(\mathbb{R})$ which satisfies $\text{supp}v\subset [-1,1]$ and 
+
+\begin{align}
+& |v(u-1)|^2+|v(u)|^2+|v(u+1)|^2 = 1 \quad \textrm{for} \quad u\in[-1,1] \quad \textrm{,and}\label{eq:alpha33}\\
+& v(0)=1 \quad \textrm{and} \quad v^{(n)}(0)=0\quad\textrm{for}\quad n\geq 1\label{eq:alpha34}
+\end{align}
+
+For an explicit construction of $v$ we refer to \cite{Guo-Labate}, again to avoid directional bias along $\xi_2$-axis at the Fourier space we will use the cone-adapted approach (see definition~\ref{def:cone_shearlets}), with 
+
+$$
+\begin{aligned}
+\mathcal{C}_{(h)} &:=\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_2/\xi_1|\leq 1\}\\
+\mathcal{C}_{(v)} &:=\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_2/\xi_1|>1\}
+\end{aligned}
+$$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{./Diagrams/alphapartcones.jpg}
+\caption{(a) Fourier transform of a Meyer scaling function. (b) Decomposition of the frequency plane by corona functions $W_j$ and $\Phi$. (c) Symmetric frequency decompositionby cones. Figure taken from \cite{Gitta-alpha} pp. 11}
+\label{fig:separable_nonseparable}
+\end{figure}
+
+Lets introduce adapted versions of the usual shearing and scaling matrices,
+$$
+A_{\alpha,(h)}:=\left(\begin{matrix} 2 & 0 \\ 0 & 2^{\alpha/2}\end{matrix}\right) \quad \textrm{,}\quad S_{(h)}:=\left(\begin{matrix} 1 & 1\\ 0 & 1\end{matrix}\right)
+$$
+$$
+A_{\alpha,(v)}:=\left(\begin{matrix}2^{\alpha/2} & 0 \\ 0 & 2 \end{matrix}\right)\quad \textrm{,}\quad S_{(v)}:=\left(\begin{matrix} 1 & 0 \\ 1 & 1\end{matrix}\right)
+$$
+
+where $\alpha\in (-\infty,2)$ is the \textit{scaling parameter}, $A_{j,\alpha,(\iota)}:=A^j_{\alpha,(\iota)}$ and $S_{k,(\iota)}:=S^k_{(\iota)}$ for $\iota\in\{h,v\}$. The adapted \textit{cone functions} are given by
+$$
+V_{(h)}(\xi):=v(\xi_2/\xi_1)\textrm{,}\quad V_{(v)}(\xi):=v(\xi_1/\xi_2)\textrm{,}\quad \xi\in\mathbb{R}^2.
+$$
+Lets define now the ingredients of a universal shearlet system.
+
+\bigskip
+
+\begin{defn}
+\label{def:alpha31}
+Let $\Phi$, $W$, $V_{(h)}$, $V_{(v)}\in L^2(\mathbb{R}^2)$ be defined as before.
+\begin{enumerate}
+\item[1.] \textbf{Coarse scaling functions}: For $k\in\mathbb{Z}^2$, we set 
+$$
+\psi_{-1,k}:=\Phi(x-k)\textrm{,}\quad x\in\mathbb{R}^2.
+$$
+\item[2.] \textbf{Interior shearlets}: Let $\alpha\in (-\infty,2)$, $j\in\mathbb{N}_0$, $k\in\mathbb{Z}$ with $|k|< 2^{(2-\alpha)j/2}$, $m\in\mathbb{Z}^2$ and $\iota\in\{h,v\}$. The shearlets will be given by 
+
+\begin{equation}
+\label{eq:alpha35}
+\hat{\psi}^{\alpha,(\iota)}_{j,k,m}(\xi):=2^{-(\alpha+2)j/4}W(2^{-j}\xi)V_{(\iota)}(\xi^{\top} A_{-j,\alpha,(\iota)}S_{-k,(\iota)})e^{-2\pi i\xi^{\top}A_{-j,(\iota)}S_{-k,(\iota)}}\textrm{,}\quad \xi\in\mathbb{R}^2
+\end{equation}
+
+\item[3.] \textbf{Boundary shearlets}: For $\alpha\in(-\infty,2)$, $j\geq 1$, $k=\pm\lceil 2^{(2-\alpha)j/2}\rceil$ and $k\in\mathbb{Z}^2$, we define
+\begin{equation}
+\label{eq:alpha36}
+\hat{\psi}_{j,k,m}^{\alpha}:=
+\begin{cases}
+2^{-(\alpha+2)j/4-1/4}W(2^{-j}\xi)V_{(h)}(\xi^{\top} A_{-j,\alpha,(h)}S_{-k,(\iota)})e^{-\pi i\xi^{\top}A_{-j,\alpha,(h)}S_{-k,(h)}m}\textrm{,}\quad \xi\in\mathcal{C}_{(h)},\\
+2^{-(\alpha+2)j/4-1/4}W(2^{j}\xi)V_{(v)}(\xi^{\top}A_{-j,\alpha,(v)}S_{-k,(v)})e^{-\pi i\xi^{\top}A_{-j,\alpha,(v)}S_{-k,(h)}m}\textrm{,}\quad \xi\in\mathcal{C}_{(v)}
+\end{cases}
+\end{equation}
+and in the case $j=0$, $k=\pm 1$, we define
+$$
+\hat{\psi}^{\alpha}_{0,k,m}:=
+\begin{cases}
+W(\xi) V_{(h)}(\xi^{\top}S_{-k,(h)})e^{-2\pi i\xi^{\top}m}\textrm{,}\quad \xi\in\mathcal{C}_{(h)}\textrm{,}\\
+W(\xi)V_{(v)}(\xi^{\top}S_{-k,(v)})e^{-2\pi i\xi^{\top}m}\textrm{,}\quad \xi\in\mathcal{C}_{(v)}.
+\end{cases}
+$$
+One can compare this definition of shearlet system with the Definition~\ref{def:cone_shearlets} of classical cone-adapted shearlet system and see that in the case of $\alpha = 1$ both are the same. The Fourier transform $\hat{\psi}_{j,k,m}^{\alpha,(h)}$ has compact support in the trapezoidal region
+
+\begin{equation}
+\label{eq:alpha37}
+\{\xi\in\mathbb{R}^2|\xi_1\in[-2^{j-1},2^{j-1}]\setminus (-2^{j-2},2^{j-2}),||\xi_2/\xi_1-k2^{-(2-\alpha)j/2}|\leq 2^{-(2-\alpha)j/2}\}.
+\end{equation}
+\end{enumerate}
+\end{defn}
+
+\bigskip
+
+Since the boundary shearlets were defined piecewise, smoothness (of the Fourier transforms) is not guaranteed for all $\alpha\in (-\infty,2)$. The exponent $2^{(2-\alpha)j/2}$ needs to be necessarily integer-valued when analyzing the first partial derivatives of eq.~\ref{eq:alpha36}. To satisfy this for every $j\in\mathbb{Z}$, we would have to restrict the set of admissible $\alpha$ to the set of integers; but this would not give us the arbitrary scaling behavior that we are looking for. To overcome this issue one can relax the condition of a globally fixed $\alpha$ and, introduce a \textit{separate} scaling parameter $\alpha_j$ on each scale. The universal shearlet system will be associated with a whole sequence $(\alpha_j)_{j\in\mathbb{N}_0}\subset\mathbb{R}$. In this setting the set of admissible scaling parameters can be substantially enlarged since we have $(2-\alpha_j)j/2\in\mathbb{Z}$ whenever $\alpha_j$ is multiple of $2/j$. 
+
+\bigskip
+
+\begin{defn}
+\label{def:alpha32}
+A sequence $(\alpha_j)_{j\in\mathbb{N}_0}\subset\mathbb{R}$ is called a scaling sequence if 
+$$
+\alpha_j\in A_j:=\left \{\frac{2n}{j}\big| n\in\mathbb{Z},n\leq j-1\right \}=\left \{\ldots,-\frac{4}{j},-\frac{2}{j},0\frac{2}{j},\ldots,1-\frac{2}{j}\right \}
+$$
+\end{defn}
+
+\bigskip
+
+\begin{defn}
+\label{def:alpha33}
+Let $(\alpha_j)_{j\in\mathbb{N}_0}$ be a \textit{scaling sequence}. Then we define the associated universal-scaling shearlet system, or shorter, universal shearlet system, by
+$$
+\mathcal{SH}(\phi,v,(\alpha_j)_j):=\mathcal{SH}_{\text{Low}}(\phi)\cup\mathcal{SH}_{\text{Int}}(\phi,v,(\alpha_j)_j)\cup\mathcal{SH}_{\text{Bound}}(\phi,v,(\alpha_j)_j),
+$$
+where
+$$
+\begin{aligned}
+\mathcal{SH}_{\text{Low}}(\phi)&:=\{\psi_{-1,m}|m\in\mathbb{Z}^2\}\\
+\mathcal{SH}_{\text{Int}}(\phi,v,(\alpha_j)_j)&:=\{\psi_{j,k,m}^{\alpha_j,(\iota)}|j\geq 0,|m|< 2^{(2-\alpha_j)j/2},m\in\mathbb{Z}^2,\iota\in\{h,v\}\},\\
+\mathcal{SH}_{\text{Bound}}(\phi,v,(\alpha_j)_j)&:=\{\psi_{j,k,m}^{\alpha_j}|j\geq 0,|k|=\pm 2^{(2-\alpha_j)j/2},m\in\mathbb{Z}^2\}.
+\end{aligned}
+$$
+
+\end{defn}
+
+\bigskip
+
+Since the elements of a scaling sequence $\alpha_j$ can be chosen independently for each scaling level and, in particular, the sequence $(\alpha_j)_j$ does not need to converge; this premits a faithful implementation of the universal shearlet transform; this is already implemented in the toolbox used in this thesis (Shearlab.jl) one determines the total number of shearings (on each scale) first given by $|k|\leq \lceil 2^{(2-\alpha_j)j/2}\rceil$, rather that selecting a fixed $\alpha_j$. We are ready to prove the main property of the universal shearlet system, i.e.\ its character of frame.
+
+\begin{thm}[Universal shearlet frames]
+\label{thm:alpha34}
+Let $(\alpha_j)_{j}$ be a scaling sequence and $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ be an associated universal shearlet system. Then $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ constitutes a Parseval frame for $L^2(\mathbb{R}^2)$ consisting of band-limited Schwartz functions. Moreover, the interior and boundary shearlets have infinitely  many vanishing moments. 
+\end{thm}
+\begin{proof}
+Lets proceed with the proof of the different properties required.
+\begin{itemize}
+\item\textit{Band-limiting and vanishing moment property:} Observing that $(0,0)\notin \text{supp}W_k\subset \mathcal{K}_j$ which immediately follows from Definition~\ref{def:alpha31}.
+\item\textit{Smoothness:} Due to the band-limiting of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$, it is sufficient to show that the Fourier transforms of the elements are smooth. This will imply that $\mathcal{SH}(\phi,v,(\alpha_j)_j)\subset \mathcal{S}(\mathbb{R}^2)$. 
+
+\bigskip
+
+The smoothness of $\mathcal{SH}_{\text{Low}}(\phi,v,(\alpha_j)_j)$ and $\mathcal{SH}_{\text{Int}}(\phi,v,(\alpha_j)_j)$ are induced by their smooth defining functions $\phi$ and $v$. We still need to consider elements $\psi^{\alpha_j}_{j,k,m}\in\mathcal{SH}_{\text{Bound}}(\phi,v,(\alpha_j)_j)$. In the interior of $\mathcal{C}_{(h)}$ and $\mathcal{C}_{(v)}$, the smoothness is again obvious. Thus, we only need to analyze the boundary lines of the cones which are given by $\{|\xi_1|=|\xi_2|\}$.
+
+\bigskip
+
+Lets use the shortcut $k_j:=2^{(2-\alpha_j)j/2}$ for the maximal shearing number (on scale $j$) and simplify the definition of $\hat{\psi}_{j,k,m}^{\alpha_j}$ (for $j\geq 1$):
+
+\begin{equation}
+\label{eq:alpha71}
+\hat{\psi}^{\alpha_j}_{j,k,m}(\xi)=2^{-\frac{(2+\alpha_j)j}{2}-\frac{1}{4}}\cdot
+\begin{cases}
+W(2^{-j}\xi)v(k_j(\xi_2/\xi_1-1))&e^{-\pi i[2^{-j}\xi_1 m_1+2^{-\alpha_j j/2}(\xi_2-\xi_1)m_2]}\\
+& \textrm{,}\quad \xi\in\mathcal{C}_{(h)},\\
+W(2^{-j}\xi)v(k_j(\xi_1/\xi_2-1))&e^{-\pi i[2^{-j}\xi_1 m_1+2^{-\alpha_j j/2}(\xi_1-\xi_1)m_2]}\\
+&\textrm{,}\quad \xi\in\mathcal{C}_{(v)},
+\end{cases}
+\end{equation}
+
+In the case of $\xi_1=\pm \xi_2$, both terms coincide implying the continuity of $\hat{\psi}_{j,k,m}^{\alpha_j}$. By the same argument, the continuity of $\hat{\psi}_{j,-k_j,m}^{\alpha_j}$ is cerified. Next we comput the partial derivatives of both terms in eq.~\ref{eq:alpha71} which are given by
+
+\begin{equation}
+\label{eq:alpha72}
+\begin{aligned}
+\frac{\partial}{\partial\xi_1}\big|_{\xi_1=\xi_2}[W(2^{-j}\xi)v(k_j(\xi_2/\xi_1-1))&e^{-\pi i[2^{-j}\xi_1m_1+2^{-\alpha_j j/2}(\xi_2-\xi_1)m_2]}]\\
+=2^{-j}\frac{\partial W}{\partial\xi_1}(2^{-j}\xi_1,2^{-j}\xi_1)v(0)&e^{-2^{-j}\pi i\xi_1 m_1}-\frac{k_j}{\xi_1}W(2^{-j}\xi_1,2^{-j}\xi_1)v'(0)e^{-2^{-j}\pi i\xi_1 m_1}\\
+&-\pi i(2^{-j}m_1-2^{-\alpha_j j/2}m_2)W(2^{-j}\xi_1,2^{-j}\xi_1)v(0)\\
+&\quad \cdot e^{-2^{-j}\pi i\xi_1 m_1}
+\end{aligned}
+\end{equation}
+
+and
+
+\begin{equation}
+\label{eq:alpha73}
+\begin{aligned}
+&\frac{\partial}{\partial\xi_1}\big|_{\xi_1=\xi_2}[W(2^{-j}\xi)v(k_j(\xi_1/\xi_2-1))e^{-\pi i[2^{-j}\xi_1m_1+2^{\alpha_j j/2}(\xi_2-\xi_1)m_2]}]\\
+&=2^{-j}\frac{\partial W}{\partial\xi_1}(2^{-j}\xi_1,2^{-j}\xi_1)v(0)e^{-2^{-j}\pi i\xi_1 m_1}+\frac{k_j}{\xi_1}W(2^{-j}\xi_1,2^{-j}\xi_1)v'(0)e^{-2^{-j}\pi i\xi_1 m_1}\\
+&\quad-\pi i(2^{-j}m_1-2^{-\alpha_j j/2}m_2)W(2^{-j}\xi_1,2^{-j}\xi_1)v(0)e^{-2^{-j}\pi i\xi_1 m_1}
+\end{aligned}
+\end{equation}
+These two expressions coincide, since by definition $v'(0)=0$. The same can be done in a similar way for the partial derivative with respect to $\xi_2$, and by obvious modifications, one verifies the smoothness for $\hat{\psi}_{j,-k_j,m}^{\alpha_j}$ as well as for the case $j=0$. Finally, the differentiability of higher order is proven by induction and successive use of eq.~\ref{eq:alpha34}.
+
+\item\textit{Parseval frame property:} Let $f\in L^2(\mathbb{R}^2)$ be arbitrary. Lets condiser the different parts of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ separately:
+
+\begin{enumerate}
+\item[\textbf{Case 1}] Boundary shearlets with $j\geq 1$: By Plancherel's Theorem, we get
+\begin{equation}
+\label{eq:alpha74}
+\begin{aligned}
+\sum_{m\in\mathbb{Z}^2} |\langle f,\psi_{j,k,m}^{\alpha_j}&\rangle|^2=\sum_{k\in\mathbb{Z}^2}\langle \hat{f},\hat{\psi}_{j,k,m}^{\alpha_j}\rangle |^2 =\sum_{k\in\mathbb{Z}^2}\bigg|\int_{\mathbb{R}^2}2^{-(2+\alpha_j)j/4-1/2}\hat{f}(\xi)W(2^{-j}\xi)\\
+ep^{\pi i\xi^{\top}A_{-j,\alpha_j,(h)}S_{-k_j,(h)}m}&\times[\chi_{\mathcal{C}_{(h)}}V_{(h)}(\xi^{\top}A_{-j,\alpha_j,(h)}S_{-k_j,(h)})+\chi_{\mathcal{C}_{(v)}}(\xi)V_{(v)}(\xi^{\top}A_{-j,\alpha_j,(v)}S_{k_j,(v)})]d\xi\bigg|^2
+\end{aligned}
+\end{equation}
+In order to apply the Parseval's identity, we can make use of that
+$$
+\eta^{\top}:=2^{-1}\xi^{\top}A_{-j,\alpha_{j},(h)}S_{-k_j,(h)}\Leftrightarrow \xi=\xi(\eta)=(2^{j+1}\eta_1,2^{j+1}\eta_1+2^{\alpha_j j/2+1}\eta_2).
+$$
+Then the equation~\ref{eq:alpha74} will have the form
+$$
+\begin{aligned}
+V_{(h)}\left(\xi^{\top}A_{j,\alpha_j,(h)}S_{-k_j,(h)}\right)&=v\left(\begin{matrix}\eta_2\\ \eta_1\end{matrix}\right),\\
+V_{(v)}\left(\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k_j,\alpha_j,(v)}\right)&=v\left(2^{(2-\alpha)j/2}(\xi_1/\xi_2-1)\right) = v\left(-\frac{\eta_2}{\eta_1+2^{(\alpha_j-2)j/2}\eta_2}\right),\\
+W(2^{-j}\xi)=W\left(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2]\right).
+\end{aligned}
+$$
+By equation~\ref{eq:alpha31}, the mapping $(\eta_1,\eta_2)\mapsto W(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2])$ is supported in the strip $\{|\eta_1|\leq 1/4\}$. Since $\text{supp}v\subset [-1,1]$, we have that the mappings
+$$
+\begin{aligned}
+(\eta_1,\eta_2)\mapsto U_{(h),j}(\eta)&:=W(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2])v\left(\frac{\eta_2}{\eta_1}\right)\\
+(\eta_1,\eta_2)\mapsto U_{(v),j}(\eta)&:=W(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2])v\left(-\frac{\eta_2}{\eta_1+2^{(\alpha_j-2)j/2}\eta_2}\right)
+\end{aligned}
+$$
+are supported in the square $Q^2:=[-1/2,1/2]^2$. Here, we used
+$$
+\begin{aligned}
+\big|-\frac{\eta_2}{\eta_1+2^{(\alpha_j-2)j/2}\eta_2}\bigg|\leq 1&\Longrightarrow \bigg|\frac{\eta_2}{\eta_1}\bigg|\leq \bigg| 1+2^{(\alpha_j-2)j/2}\frac{\eta_2}{\eta_1}\bigg|\leq 1+2^{(\alpha_j-2)j/2}\bigg|\frac{\eta_2}{\eta_1}\bigg|\\
+&\Longrightarrow \bigg|\frac{\eta_2}{\eta_1}\bigg| \leq\frac{1}{1-2^{(\alpha_j-2)j/2}}\leq 2
+\end{aligned}
+$$
+where in the last inequality we used $\alpha_j\leq 1-2/j$. With this observation, we can continue in~\ref{eq:alpha74} by
+$$
+\begin{aligned}
+&\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{j,k_j,m}^{\alpha_j}\rangle|^2\\
+&=\sum_{k\in\mathbb{Z}^2}\bigg|\int_{Q^2}2^{(2+\alpha_j)j/4+1/4}\hat{f}(\xi(\eta))\left[ \chi_{\mathcal{C}_{(h)}}(\xi(\eta))U{(h),j}(\eta)+\chi_{\mathcal{C}_{(v)}}(\xi(\eta))U_{(v),j}(\eta)\right]e^{2\pi i\eta^{\top}m}d\eta\bigg|^2\\
+&=\int_{Q^2}2^{(2+\alpha_j)j/2+1/2}|\hat{f}(\xi(\eta))|^2\bigg|\xi_{\mathcal{C}_{(h)}}(\xi(\eta))U_{(h),j}(\eta)+\xi_{\mathcal{C}_{(v)}}(\xi(\eta))U_{(v),j}(\eta)\bigg|^2d\eta\\
+&=\int_{\mathcal{C}_{(h)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1-1))|^2+\int_{\mathcal{C}_{(v)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_2-1))|^2d\xi.
+\end{aligned}
+$$
+Similarly we can get
+$$
+\begin{aligned}
+\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{j,k_j,m}^{\alpha_j}\rangle|^2&=\int_{\mathcal{C}_{(h)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1+1))|^2d\xi\\
+&+\int_{\mathcal{C}_{(v)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_1+1))|^2d\xi
+\end{aligned}
+$$
+which finishes the first case.
+
+\item[\textbf{Case 2}] Boundary shearlets with $j=0$: Since $\text{supp}W\subset Q^2$, we obtain
+$$
+\begin{aligned}
+&\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{0,\pm 1,m}^{\alpha_j}\rangle|^2=\sum_{k\in\mathbb{Z}^2}|\langle \hat{f},\hat{\psi}_{0,\pm 1,k}^{\alpha_j}\rangle|^2\\
+&=\sum_{k\in\mathbb{Z}^2}\bigg|\int_{Q^2}\hat{f}(\xi)W(\xi)\left[\chi_{\mathcal{C}_{(h)}}v\left(\frac{\xi_2}{\xi_1}\mp 1\right) +\chi_{\mathcal{C}_{(v)}}(\xi)\left(\frac{\xi_1}{\xi_2}\mp 1\right)\right]e^{2\pi i\xi^{\top}m}d\xi\bigg|^2\\
+&=\int_{\mathcal{C}_{(h)}}|\hat{f}(\xi)|^2|W(\xi)|^2\bigg| v\left(\frac{\xi_2}{\xi_1}\mp 1\right)\bigg|^2d\xi+\int_{\mathcal{C}_{(v)}}|\hat{f}(\xi)|^2|W(\xi)|^2\bigg|v\left(\frac{\xi_1}{\xi_2}\mp 1\right)\bigg|^2d\xi
+\end{aligned}
+$$
+
+\item[\textbf{Case 3}] Interior shearlets: The substitution $\eta^{\top}=\xi^{\top}A_{-j,\alpha_j,(\iota)}S_{-k,(\iota)}$, for $|k|<k_j$, $\iota\in\{h,v\}$ yields
+$$
+\begin{aligned}
+\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{j,k,m}^{\alpha_j,(h)}\rangle |^2 &= \int_{\mathbb{R}^2}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2 \bigg|v\left(k_j\frac{\xi_2}{\xi_1}-k\right)\bigg|^2d\xi,\\
+\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{j,k,m}^{\alpha_j,(v)}\rangle |^2 &= \int_{\mathbb{R}^2}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2\bigg|v\left(k_j\frac{\xi_1}{\xi_2}-k\right)\bigg|^2d\xi,
+\end{aligned}
+$$
+
+\item[\textbf{Case 4}] Coarse scaling functions: Since $\text{supp}\Phi\subset Q^2$, we have
+$$
+\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{-1,m}\rangle|^2=\sum_{k\in\mathbb{Z}^2}\bigg| \int_{Q^2}\hat{f}(\xi)\hat{\Phi}(\xi) e^{-2\pi i\xi^{\top}m}d\xi\bigg|^2 = \int_{\mathbb{R}^2}|\hat{f}(\xi)|^2|\hat{\Phi}(\xi)|^2d\xi
+$$
+\end{enumerate}
+Finally, using \textbf{Case 1} to \textbf{Case 2} we can conclude that 
+
+$$
+\begin{aligned}
+&\sum_{\psi\in\mathcal{SH}(\phi,v,(\alpha_j)_j)}|\langle f,\psi\rangle |^2\\
+&=\sum_{k\in\mathbb{Z}^2}\left( |\langle f,\psi_{-1,m}\rangle|^2+\sum_{\iota\in\{h,v\}}\sum_{j\in\mathbb{N}_0}\sum_{|k|<k_j}|\langle f,\psi_{j,k,m}^{\alpha_j,(\iota)}\rangle|^2+\sum_{j\in\mathbb{N}_0}\sum_{k=\pm k_j}|\langle f,\psi_{j,k,m}^{\alpha_j}\rangle |^2 \right)\\
+&=\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2|\hat{\Phi}(\xi)|^2d\xi\\
+&+\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2\sum{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2\left[ \sum_{|k|<k_j}\bigg| v\left( k_j\frac{\xi_2}{\xi_1}-k\right)\bigg|^2+\sum_{|k|<k_j}\bigg| v\left(k_j\frac{\xi_1}{\xi_2}-k\right)\bigg|^2\right] d\xi\\
+&+\int_{\mathbb{C}_{(h)}}|\hat{f}(\xi)|^2\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1-1))|^2d\xi\\
+&+\int_{\mathbb{C}_{(v)}}|\hat{f}(\xi)|^2\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_1-1))|^2d\xi\\
+&+\int_{\mathbb{C}_{(h)}}|\hat{f}(\xi)|^2\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1+1))|^2d\xi\\
+&+\int_{\mathbb{C}_{(v)}}|\hat{f}(\xi)|^2\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_1+1))|^2d\xi\\
+&=\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2|\hat{\Phi}(\xi)|^2d\xi+\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2\times \\
+&\quad \times \left[ \chi_{\mathcal{C}_{(h)}}(\xi)\sum_{|k|\leq k_j}\bigg| v\left( k_j\frac{\xi_2}{\xi_1}-k\right)\bigg|^2+\chi_{\mathcal{C}_{(v)}}(\xi)\sum_{|k|\leq k_j}\bigg| v\left( k_j\frac{\xi_1}{\xi_2}-k\right)\bigg|^2\right]d\xi\\
+&\underset{~\ref{eq:alpha31}}{=}\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2\left[|\hat{\Phi}(\xi)|^2+\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2\right]d\xi = ||\hat{f}||^2_{L^2(\mathbb{R}^2)}=||f||^2_{L^2(\mathbb{R}^2)}
+\end{aligned}
+$$
+Then we have the proof finished. 
+\end{itemize}
+\end{proof}
+
+\bigskip
+
+Now that we know that the general shearlet system forms a frame, we can introduce a simpler idea with $\alpha$ fixed, the so called $\alpha$-Shearlets.
+
+\begin{defn}[$\alpha$-Shearlets]
+\label{def:alphashearlets}
+For $\phi,\psi,\tilde{\psi}\in L^2(\mathbb{R}^2)$, $\alpha\in (-\infty,2)$ and $c=(c_1,c_2)\in (\mathbb{R}^+)^2$, the \textit{$\alpha$-shearlets system} $\mathcal{SH}(\phi,\psi,\tilde{\psi};\alpha,c)$ is defined as
+$$
+\mathcal{SH}(\phi,\psi,\tilde{\psi};\alpha)=\Phi(\phi;c_1)\cup\Psi(\psi;\alpha,c)\cup\tilde{\Psi}(\tilde{\psi};\alpha,c),
+$$
+where
+$$
+\begin{aligned}
+\Phi(\phi;c_1)&=\{\phi_m=\phi(\cdot-c_1m):m\in\mathbb{Z}^2\}\\
+\Psi(\psi;\alpha,c):=\{\psi_{j,k,m}&=2^{(\alpha+1)j/4}\psi(S_{k,(h)}A_{j,\alpha,(h)}\cdot-M_{c,(h)}m)\textrm{:}j\geq 0,|k|\leq \lceil 2^{(\alpha-1)j/2}\rceil,m\in\mathbb{Z}^2\},\\
+\tilde{\Psi}(\tilde{\psi};\alpha,c):=\{\tilde{\psi}_{j,k,m}&=2^{(\alpha+1)j/4}\tilde{\psi}(S_{k,(v)}A_{j,\alpha,(v)}\cdot-M_{c,(v)}m)\textrm{:}j\geq 0,|k|\leq \lceil 2^{(\alpha-1)j/2}\rceil,m\in\mathbb{Z}^2\},\\
+\end{aligned}
+$$
+where $M_{c,(h)}=\text{diag}(c_1,c_2)$ and $M_{c,(v)}=\text{diag}(c_2,c_1)$.
+\end{defn}
+
+Let $\alpha\in (-\infty,2)$, and recall the form of the scaling sequences set $A_j$ from definition~\ref{def:alpha32}, we choose $(\alpha_j)_j$ then to be the best possible approximation of $\alpha$, 
+$$
+\alpha_j:=\underset{\tilde{\alpha}_j\in A_j}{\text{argmin}}|\tilde{\alpha}_j-\alpha|\textrm{,}\quad j\geq 1.
+$$
+
+It is easy to verify that $2^{\alpha_j j/2}\in\Theta(2^{\alpha_j/2})$ as $j\longrightarrow \infty$. Then the corresponding universal shearlet system (or universal-scaling shearlet system) $\mathcal{SH}(phi,v,(\alpha_j)_j)$ has asymptotically the same scaling behavior as $\alpha$-shearlets; for further analysis of $\alpha$-shearlets and universal shearlet system we recommend to check \cite{Gitta-alpha} and \cite{firstalpha}. This generalized theory is very useful in the case that we want to have more freedom on the level of anisotropy of the features of some signal we want to analyze; this also will give us a general framework of sparse representation of different type of features in natural images and videos, the sparse character of the representations let us use the shearlet transform for typical image processing tasks as denoising and inpainting; the latter plays an important role in the light field recovery method presented in this thesis and therefore we will explore it in more detail on the next section.
+
+\section{Image inpainting using $\alpha$-Shearlets}
+
+On the last chapter we explained how one can optimize the light field acquisition by using sparse acquisition setups that reduces the number of images of the scene (sampling rate) that one needs to acquire and still be able to recover the light field, this also reduces the complexity of the EPIs acquisition algorithm but adds a new problem; the EPIs obtained by this sparse acquisition technique are as well sparse so one will truncated straight lines instead of straight lines (see Figure~\ref{fig:sparse_EPI}). 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{./Diagrams/sparse_EPI.jpg}
+\caption{(a) EPI for a coarsely sampled light field; (b) Correspondeing partially defined densely sampled EPI; (c) Ground truth densely sampled EPI, can be obtaied by inpainting. Figure taken from \cite{LF-Shearlets} pp. 6}
+\label{fig:sparse_EPI}
+\end{figure}
+
+One would like to recover the lost sections of the EPIs
+
+Before explaining the particular case of inpainting that we are working with it is worthwhile to present a general abstract framework of inpainting to grow some intuition behind this typical techinique on image processing. For this we need a separable Hilbert space $\mathcal{H}$, let $x^0$
+
+\section{0-Shearlets}
+
+\section{Epipolar-plane representation with 0-Shearlets}
