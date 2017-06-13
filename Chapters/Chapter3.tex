@@ -1008,10 +1008,146 @@ On the last chapter we explained how one can optimize the light field acquisitio
 \label{fig:sparse_EPI}
 \end{figure}
 
-One would like to recover the lost sections of the EPIs
+One would like to recover the lost sections of the EPIs, this task is present in different applications on data processing, since frequently the technologies of data acquisition fails resulting on missing traces; in imaging sicence, this task is referred as \textit{inpainting} by the similiraty of the physical task of restoring a painting. 
 
-Before explaining the particular case of inpainting that we are working with it is worthwhile to present a general abstract framework of inpainting to grow some intuition behind this typical techinique on image processing. For this we need a separable Hilbert space $\mathcal{H}$, let $x^0$
+\bigskip
+
+There are different algorithmical approaches to the inpainting task; the algorithms based on variational approaches which propagate information from the boundaries and try to guarantee smoothness (see \cite{Ballester}). Another approach is based on applied harmonic analysis combined with ideas of compressed sensing, assuming that certain representation systems provide sparse approximations of the original image, most of the approaches assume that one knows the position and shape of the lost areas (referred as masks).
+
+\bigskip
+
+In this thesis we will follow the second approach exploiding the sparse representation characteristics of the shearlet systems to inpaint epipolar plane images obtained from a sparsely sampled light field; using a combination of harmonic analysis and also a $\ell^1$ minimization technique widely used in compressed sensing. 
+
+\bigskip
+
+Before explaining the particular case of inpainting algorithm that we will work with it is worthwhile to present a general abstract framework of inpainting to grow some intuition. For this we need a separable Hilbert space $\mathcal{H}$. Let $x^0\in\mathcal{H}$ the undamaged (original) \textit{signal} that we want to recover. We will also assume that $\mathcal{H}$ decomposes into an orthogonal sum of two closed subspaces, that we will call the \textit{known part} and the \textit{missing part}, 
+
+$$
+\mathcal{H}=\mathcal{H}_K\oplus\mathcal{H}_M=P_K\mathcal{H}\oplus P_M\mathcal{H}
+$$
+
+where $P_K$ and $P_M$ are the orthogonal projection operator to the respective space. The inpainting of $x^0$ will be then translated to: "Given a corrupt signal $P_Kx^0$, recover the missing part $P_Mx^0$. 
+
+\bigskip
+
+In the case of image inpainting, we will consider a continuous image model, where $\mathcal{H}=L^2(\mathbb{R}^2)$, where the missing space is $H_M=L^2(\mathcal{M})$ for some measurable set $\mathcal{M}\subset\mathbb{R}^2$, seen as a mask covering the corrupted parts of the painting. In the next we will make further assumptions on the signal and missing space.
+
+\bigskip
+
+We will assume that the signal $x^0$ can be efficiently represented by some Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$, at practical applications this assumption is reasonable since we already mentioned that natural images represented by cartoon-like functions are optimally represented by directional systems as shearlets or curvelets. In the classical theory of sparse representations, this is translated as asking for the solution of the $\ell^0$-minimization problem
+
+\begin{equation}
+\label{eq:alpha21}
+\underset{c\in\ell^2(I)}{\min}||c||_{\ell^0(I)}\quad\textrm{subject to}\quad x^0=T_{\Phi}^*c=\sum_{i\in I}c_i\phi_i
+\end{equation}
+
+where the operator $T^*_{\Phi}$ is the so-called synthesis operator associated to the frame, then equation~\ref{eq:alpha21} tries to find a synthesis sequence of $x^0$ that has as few as possible non-zero elements measured by $||c||_0:=\#\{c_i|c_i\neq 0\}$. This minimization problem is not convex which represents a big complexity issue in the solution method; we will then follow a new strategy called \textit{analysis approach}.
+
+\bigskip
+
+In the \textit{analysis approach} we will consider \textit{analysis coefficients} given by the \textit{analysis operator} $T_{\Phi}x^0=(\langle x^0,\phi_i\rangle)_{i\in I}$, since the frame is assumed to obey the Parseval property, we can perform the reconstruction by $x^0=T^*_{\Phi}(\langle x^0,\phi_i\rangle)_{i\in I}=\sum_{i\in I}\langle x^0,\phi\rangle\phi_i$. $\Phi$ is not necessarily a basis, $T_{\Phi}x^0$ might not be a solution of~\ref{eq:alpha21}, so is not yet clear what it means to give a sparse representation in the sense of the analysis approach; to make sanse of this we need to use some ideas of \textit{compressed sensing}.
+
+\bigskip
+
+To be able to use the \textit{analysis approach} we will introduce the next $\ell^1$-minimization algorithm:
+
+\bigskip
+
+\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+		\SetKwInOut{Compute}{Compute}
+
+    \Input{Corrupted signal $P_Kx^0\in\mathcal{H}_K$, Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$}
+		\Compute{\begin{equation}
+			x^*=\underset{x\in\mathcal{H}}{\text{argmin}}||T_{\Phi}x||_{\ell^1(I)} \quad\textrm{subject to}\quad P_Kx^0=P_Kx
+			\tag{$\ell^1-\text{INP}$}
+		\label{eq:alphal1}
+		\end{equation}}
+    \Output{recovered signal $x^*\in\mathcal{H}$}
+    \caption{Inpainting via $\ell^1$-minimization}
+		\label{alg:alpha21}
+\end{algorithm}
+
+\bigskip
+
+In other words, Algorithm~\ref{alg:alpha21} minimizes the $\ell^1$-norm among all possible reconstruction candidates, which is the set of all signals coinciding with $x^0$ on $\mathcal{H}_K$. In the case where the undamaged signal $x^0$ is sufficiently sparsified by $\Phi$, and then an small $\ell^1$-norm of $T_{\Phi}x^0$, the solution $x^*$ will provide a good reconstruction of the important features on $x^0$.
+
+\bigskip
+
+We would like to prove some error estimates for the recovery by Algorithm~\ref{alg:alpha21}, for this, we will introduce some analysis tools that will also give us further insight about the structure of the proposed abstract model.
+
+\bigskip
+
+\begin{defn}[$\delta$-cluster sparsity]
+\label{def:alpha22}
+Let $\delta>0$ and $\Gamma\subset I$. A signal $x\in\mathcal{H}$ is called $\delta$-clustered sparse in $\Phi$ with respect to $\Gamma$, if
+\begin{equation}
+\label{eq:alpha22}
+||\mathbb{1}_{\Gamma^c}T_{\Phi}x||_{\lambda^1}\leq \delta
+\end{equation}
+In this case, $\Gamma$ is sait to be $\delta$-cluster for $x$ in $\Phi$. 
+\end{defn}
+
+\bigskip
+
+A signal will be $\delta$-clustered sparse if the analysis coefficients are highly concentrated on $\Gamma$. This definition will only have a useful meaning when $x$ is $\delta$-clustered sparse with respect to a small cluster $\Gamma$, and $\delta$ sufficiently small at the same time. Independently we can define the concept of \textit{cluster coherence}.
+
+\bigskip
+
+\begin{defn}[Cluster coherence]
+Let $\Gamma\subset I$, the cluster coherence of $\Phi$ with respect to $\mathcal{H}_M$ and $\Gamma$ is given by 
+$$
+\mu_c(\Gamma,P_M\Phi):=\max_{j\in I}\sum_{i\in\Gamma}|\langle P_M\phi_i,P_M\phi_j\rangle|,
+$$
+where $P_M\Phi:=(P_M\phi_i)_{i\in I}$.
+\end{defn}
+
+\bigskip
+
+The cluster coherence can be understood as an abstract measure for the gap size; we do not know $P_Mx^0$, so we would like to know the maximal amount of missing information. The Parseval expansion $x^0=\sum_{j\in I}\langle x^0,\phi_j\rangle \phi_j$ help us to estimate the analysis coefficientes of its projection onto $\mathcal{H}_M$:
+
+\begin{equation}
+\label{eq:alpha23}
+|\langle P_Mx^0,\phi_i\rangle|\leq\sum_{i\in I}|\langle x^0,\phi_j\rangle||\langle P_M\phi_j,\phi_i\rangle|=\sum_{i\in I}|\langle x^0,\phi_j\rangle||\langle P_M\phi_j, P_M\phi_i\rangle|.
+\end{equation}
+
+The scalar products $|\langle P_M\phi_j,P_M\phi_i\rangle|$ broadly indicate how "correlated" the measurments with $\phi_i$ and $\phi_j$ are on $\mathcal{H}_M$. To compute the recovery error, it was proposed before (see \cite{Firstinpaint}) to estimate the ditance between $x^0$ and its $\ell^1$-recovery $x^*$ with the Hilbert norm. This worked well to estimate an upper bound, but to show an optimality result (lower bound), measuring $||\cdot||$ is not useful, since the Parseval property of $\Phi$ gives $||x^0-x^*||=||T_{\Phi}(x^0-x^*)||_{\ell^2}$, the $\ell^2$-norm in comparison with the $\ell^1$ has an averaging effect on the coefficientes, then some sparsity features might be hiddeng when using the Hilbert space norm. We will proposed a new norm to measure the error, the $\ell^1$-analysis norm.
+
+\bigskip
+
+\begin{defn}[$\ell^1$-analysis norm]
+Let $x\in\mathcal{H}$ and $\Phi$ be a Parseval frame for $\mathcal{H}$. Then we define the $\ell^1$-analysis norm, with respect to $\Phi$, by
+$$
+||x||_{1,\Phi}:=||T_{\Phi}x||_{\ell^1}=||(\langle x,\phi_i\rangle)_{i\in I}||_{\ell^1}
+$$
+and the $\ell^1$-analysis space given by 
+$$
+\mathcal{H}_{1,\Phi}:=\{x\in \mathcal{H}|||x||_{1,\Phi}<\infty\}
+$$
+equipped with $||\cdot||_{1,\Phi}$
+\end{defn}
+
+Since $\Phi$ forms a Parseval frame, its analysis operator $T_{\Phi}$ is injective, and therefore the tuple $(\mathcal{H}_{1,\Phi},||\cdot||_{1,\Phi})$ defines a normed vector space, moreover
+\begin{equation}
+\label{eq:alpha24}
+||x||=||T_{\Phi}x||_{\ell^2}\leq ||T_{\Phi}x||_{\ell^1}=||x||_{1,\Phi}
+\end{equation}
+then we have the embedding $\mathcal{H}_{1,\Phi}\hookrightarrow\mathcal{H}$, then, by picking $x=x^*-x^0$, we can conclude that small recovery errors in $\mathcal{H}_{1,\Phi}$ always imply small ones in $\mathcal{H}$. With this tools we can provide a estimate of the recovery error.
+
+\begin{thm}
+\label{thm:alpha25}
+Let $\delta>0$ and $\Gamma\subset I$ be a $\delta$-cluster for $x^0$ in $\Phi$. Moreover, assume that $\mu_c(\Gamma,P_M\Phi)<1/2$. If $x^0\in\mathcal{H}_{1,\Phi}$ then the $\ell^1$-minimizer $x^*$ of the Algorithm~\ref{alg:alpha21} is also contained in $\mathcal{H}_{1,\Phi}$ and satisfies 
+\begin{equation}
+\label{eq:alpha25}
+||x^*-x^0||_{1,\Phi}\leq \frac{2\delta}{1-2\mu_c(\Gamma,P_M\Phi)}
+\end{equation}
+\end{thm}
+\begin{proof}
+The proof can be found in \cite{Firstinpaint}.
+\end{proof}
 
 \section{0-Shearlets}
+
 
 \section{Epipolar-plane representation with 0-Shearlets}
