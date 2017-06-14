@@ -995,7 +995,7 @@ $$
 \alpha_j:=\underset{\tilde{\alpha}_j\in A_j}{\text{argmin}}|\tilde{\alpha}_j-\alpha|\textrm{,}\quad j\geq 1.
 $$
 
-It is easy to verify that $2^{\alpha_j j/2}\in\Theta(2^{\alpha_j/2})$ as $j\longrightarrow \infty$. Then the corresponding universal shearlet system (or universal-scaling shearlet system) $\mathcal{SH}(phi,v,(\alpha_j)_j)$ has asymptotically the same scaling behavior as $\alpha$-shearlets; for further analysis of $\alpha$-shearlets and universal shearlet system we recommend to check \cite{Gitta-alpha} and \cite{firstalpha}. This generalized theory is very useful in the case that we want to have more freedom on the level of anisotropy of the features of some signal we want to analyze; this also will give us a general framework of sparse representation of different type of features in natural images and videos, the sparse character of the representations let us use the shearlet transform for typical image processing tasks as denoising and inpainting; the latter plays an important role in the light field recovery method presented in this thesis and therefore we will explore it in more detail on the next section.
+It is easy to verify that $2^{\alpha_j j/2}\in\Theta(2^{\alpha_j/2})$ as $j\longrightarrow \infty$. Then the corresponding universal shearlet system (or universal-scaling shearlet system) $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ has asymptotically the same scaling behavior as $\alpha$-shearlets; for further analysis of $\alpha$-shearlets and universal shearlet system we recommend to check \cite{Gitta-alpha} and \cite{firstalpha}. This generalized theory is very useful in the case that we want to have more freedom on the level of anisotropy of the features of some signal we want to analyze; this also will give us a general framework of sparse representation of different type of features in natural images and videos, the sparse character of the representations let us use the shearlet transform for typical image processing tasks as denoising and inpainting; the latter plays an important role in the light field recovery method presented in this thesis and therefore we will explore it in more detail on the next section.
 
 \section{Image inpainting using $\alpha$-Shearlets}
 
@@ -1084,7 +1084,7 @@ We would like to prove some error estimates for the recovery by Algorithm~\ref{a
 Let $\delta>0$ and $\Gamma\subset I$. A signal $x\in\mathcal{H}$ is called $\delta$-clustered sparse in $\Phi$ with respect to $\Gamma$, if
 \begin{equation}
 \label{eq:alpha22}
-||\mathbb{1}_{\Gamma^c}T_{\Phi}x||_{\lambda^1}\leq \delta
+||\mathbf{1}_{\Gamma^c}T_{\Phi}x||_{\lambda^1}\leq \delta
 \end{equation}
 In this case, $\Gamma$ is sait to be $\delta$-cluster for $x$ in $\Phi$. 
 \end{defn}
@@ -1146,6 +1146,83 @@ Let $\delta>0$ and $\Gamma\subset I$ be a $\delta$-cluster for $x^0$ in $\Phi$. 
 \begin{proof}
 The proof can be found in \cite{Firstinpaint}.
 \end{proof}
+
+\bigskip
+
+The Theorem~\ref{thm:alpha25} gives good estimates if $\Phi$ sparsifies $x^0$ and the size of the missing space, the latter measured in terms of cluster coherence is not too large. We would like to pick a cluster $\Gamma$ such that $x^0$ becomes $\delta$-clustered sparse for samll $\delta$ and at the same time $\mu_c$ shall not exceed the bound of $1/2$; even the concepts if cluster sparsity and cluster coherence were introduced independently, both notions are now joined together in terms of $\Gamma$; enlarging $\Gamma$ makes the Equation~\ref{eq:alpha25} true for smalle $\delta$, while $\mu_c(Gamma,P_MPhi)$ increases and could exceed $1/2$, this tell us that applying the Theorem~\ref{thm:alpha25} involves actually the fundamental task of choosing an appropriate cluster (see \cite{Firstinpaint} for a more detailed analysis). 
+
+\bigskip
+
+So far we have a general abstract framework for inpainting for Parseval frames, we would like to have an appropriate parseval frame to inpaint natural images (in the case of this thesis Epipolar Plane Images), in the sense that the recovery error is small; we have different options, for instance Universal Shearlet Systems and Wavelet Systems. Theorem~\ref{thm:alpha34} we know that for a scaling sequence $(\alpha_j)_j$ the related Universal Shearlet System $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ form a Parseval frame for $L^2(\mathbb{R}^2)$ and that they behave asymptotically equally as the $\alpha$-Shearlets system $\mathcal{SH}(\phi,\psi,\tilde{\psi};\alpha)$, then the $\alpha$-Shearlets and the Universal Shearlet Transform can be used in the inpainting framework. In the case of the Wavelet Systems, they will also form a frame for $L^2(\mathbb{R}^2)$ under some assumptions on the mother wavelet function, the scaling and the translation parameter (see \cite{Mallat} pp. 202).
+
+\bigskip
+
+In order to compare the shearlets and the wavelets performance for inpaiting, we want to present a benchmark that is related to the principal problem of the thesis, that is the inpainting of sparse sampled epipolar plane images (see Figure~\ref{fig:sparse_EPI}). Cartoon-like images are we know are governed by edges, the image to be inpainted as a benchmark is a masked linear singularity that can be viewed as a strip; epipolar plane images corresponding to sparse sampled light fields have also strips as missing space so this example will be enough. Many details in the analysis will be ommited but they are well explained in \cite{Gitta-alpha}. 
+
+\bigskip
+
+As we cannot work on actual edges in $L^2(\mathbb{R}^2$ and other Lebesgue spaces since they have measure zero, we will work with a line-distribution given by $\omega\mathcal{L}$ acting on Schwartz functions $f\in\mathcal{S}(\mathbb{R}^2)$, i.e.\ $\omega\mathcal{L}\in \mathcal{S}'(\mathbb{R}^2)$, if $\text{supp }\omega\subset[-\rho,\rho]$ then its action will be defined by
+
+$$
+\langle \omega \mathcal{L},g\rangle = \int_{-\rho}^{\rho} \omega(x_1)g(x_1,0)dx_1 \textrm{,}\quad \forall g\in\mathcal{S}(\mathbb{R}^2)
+$$
+
+where $\omega$ is a smooth weight and $\rho>0$. The weight $\omega$ sets up the linear singularity that is smooth in the vertical direction, while the value of $\rho$ corresponds to the length of the singularity. We will mask the linear singularity (wheighted distribution) $\omega\mathcal{L}$ with the mask 
+
+$$
+M_h=\{(x_1,x_2)\in\mathbb{R}^2:|x_1|\leq h\}\textrm{,}\quad h>0
+$$
+
+The observed signal then is 
+$$
+f=\mathbf{1}_{\mathbb{R}^2\setminus M_h}\cdot \omega\mathcal{L}
+$$ 
+
+see Figure~\ref{fig:alpha6}. We decompose $\omega\mathcal{L}$ by the same subbands $F_j$, $\omega\mathcal{L}\mapsto \omega\mathcal{L}_j=\omega\mathcal{L}*F_j$, denote $h=h_j$ and set 
+
+$$
+f_j=\mathbf{1}_{\mathbb{R}^2\setminus M_{h_j}}\cdot \omega\mathcal{L}_j
+$$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.8 \textwidth]{./Diagrams/alpha6.jpg}
+\caption{(a) Sketch of the corrupted modeling image, the line singularity has no "thickness" but some (gray-scale) intensity. (b) "Graph" of the corrupted line distribution $P_K\omega\mathcal{L}$ which is compactly supported on the $x_1$-axis. Figure taken from \cite{Gitta-alpha} pp. 15}
+\label{fig:alpha6}
+\end{figure}
+
+\bigskip
+
+Let $\{\psi_{\lambda}\}$ denote a particular wavelet Parseval frame and $\{ \sigma_{\eta}\}_{\eta}$ a particular shearlet Parseval frame (could be, classical shearlets, cone-adapted shearlets, $\alpha$-shearlets or universal shearlets). Then we can rewrite the minimization problem~\ref{eq:alphal1} as
+
+$$
+W_j=\underset{\tilde{W}_j}{\textrm{argmin}}||(\langle \tilde{W}_j,\psi_{\lambda}\rangle )_{\lambda}||_{\ell^1}\quad\textrm{subject to}\quad f_j=\mathbf{1}_{\mathbb{R}^2\setminus M_{h_j}}\cdot\tilde{W}_j
+$$ 
+
+for wavelet-based inpainting and 
+
+$$
+S_j=\underset{\tilde{S}_j}{\textrm{argmin}}||(\langle \tilde{S}_j,\sigma_{\eta}\rangle)_{\eta}||_{\ell^1}\quad \textrm{subject to}\quad f_j=\mathbf{1}_{\mathcal{R}^2\setminus M_{h_j}}\cdot\tilde{S}_j
+$$
+
+for the shearlet-based inpainting. Now we can state a Theorem that compares both systems in the inpainting task.
+
+\begin{thm}
+\label{thm:inpaintingwaveletsshearlets}
+For $h_j=o(2^{-j})$ (the critical thresholding case) as $j\longrightarrow \infty$,
+$$
+\frac{||W_j-\omega\mathcal{L}_j||_2}{||\omega\mathcal{L}_j||_2}\longrightarrow 0\textrm{,}\quad j\longrightarrow \infty\\
+$$ 
+For $h_j=o(2^{-j/2})$ as $j\longrightarrow\infty$,
+$$
+\frac{||S_j-\omega\mathcal{L}_k||_2}{||\omega\mathcal{L}_j||_2}\longrightarrow 0\textrm{,}\quad j\longrightarrow\infty\\
+$$
+\end{thm}
+\begin{proof}
+Due the technical level of the proof, we will refer to \cite{clustered-inpainting} for the detailed proof. 
+\end{proof}
+
+The Theorem~\ref{thm:inpaintingwaveletsshearlets} shows that Shearlets 
 
 \section{0-Shearlets}
 
