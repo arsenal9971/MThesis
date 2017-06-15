@@ -25,7 +25,7 @@ Title that I prefer: Fast Sparse Light Field Reconstruction with Shearlet-based 
 	  
   1. Continuous Shea.  
   2. Shearlets as Frames.  
-  3. Generalization of Shearlets to Alpha Particles.  
+  3. Universal Shearlets and Alpha Particles.  
   4. Linear Shearlets and its relation with ridgelets (proof that are parseval frames).
 	5. Image inpainting using Shearlets.
   5. Epipolar Plane Representation :with linear Shearlets. (0-particles)  

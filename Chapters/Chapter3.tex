@@ -251,6 +251,7 @@ As we mentioned before, the problem with wavelets that does not make them to app
 The bound result of theorem~\ref{C3S2T1} works as a benchmark for optimally sparse approximation of two-dimensional data in form of cartoon-like functions. Moreover, to proof theorem~\ref{C3S2T1} Donoho used adapted triangulations, which suggests that analyzing elemnts with elongated and orientable supports are required to get optimally sparse approximations of piecewise smooth two-dimensional functions. This observation leaded to two different approaches for solving this problem, the curvelets (proposed by E. Candès and D. Donoho in 1999 \cite{Curvelets}), and the shearlets (proposed by Kanghui Guro, Gitta Kutyniok and Demetrio Labate in 2005 \cite{FirstShearlets}), both are able to achieve the same optimal approximation rate; the one used in this thesis to sparsely represent EPIs is the latter due the possibility to develope a faithful implementation. 
 
 \section{Shearlet Systems and Transform}
+\label{sec:shearletsystem}
 
 We just discussed the limitations of wavelet systems in higher dimensions, we will then the concept of shearlet systems as a framework to solve these limitations. We also mentioned that in order to achieve optimally sparse approximations of signals with anisotropic singularities such as cartoon-like images, the analyzing elements must be made by waveforms ranging over several scales, orientations, and locations with the ability to become very elongated. One need then the combination of an appropriate scaling operator to generate elements at different scales, an orthogonal operator to change their orientations, and a translation operator to displace the elements over the two-dimensional plane. 
 
@@ -630,7 +631,7 @@ We refer to \cite{FirstShearlets} for the proof of this theorem.
 
 The choice of functions $\psi$ and $\phi$ presented in the last section in both separable and non-separable fashion obey the inequality~\ref{eq:coneshearframes} (see \cite{Nonseparableshear}); therefore the related shearlet system will form a frame. This strong machinery shows the strong properties of the shearlet systems being frames, presenting both sparse representation and robust decomposition and in particular shows that the shearlets will span $L^2(\mathbb{R}^2)$. In the next section we will extend the notion of scaling that is suitable for levels of anisotropy. 
 
-\section{Generalization of Shearlets to Alpha Shearlets}
+\section{Universal Shearlets and Alpha Shearlets}
 \label{sec:AlphaShearlets}
 
 The classical and the cone-adapted shearlets that we mentioned so far make use of a parabolic scaling matrix to perform the scaling operation, this matrix has the form 
@@ -791,7 +792,7 @@ Since the boundary shearlets were defined piecewise, smoothness (of the Fourier 
 \label{def:alpha32}
 A sequence $(\alpha_j)_{j\in\mathbb{N}_0}\subset\mathbb{R}$ is called a scaling sequence if 
 $$
-\alpha_j\in A_j:=\left \{\frac{2n}{j}\big| n\in\mathbb{Z},n\leq j-1\right \}=\left \{\ldots,-\frac{4}{j},-\frac{2}{j},0\frac{2}{j},\ldots,1-\frac{2}{j}\right \}
+\alpha_j\in A_j:=\left \{\frac{2n}{j}\big| n\in\mathbb{Z},n\leq j-1\right \}=\left \{\ldots,-\frac{4}{j},-\frac{2}{j},0,\frac{2}{j},\ldots,1-\frac{2}{j}\right \}
 $$
 \end{defn}
 
@@ -838,7 +839,7 @@ Lets use the shortcut $k_j:=2^{(2-\alpha_j)j/2}$ for the maximal shearing number
 
 \begin{equation}
 \label{eq:alpha71}
-\hat{\psi}^{\alpha_j}_{j,k,m}(\xi)=2^{-\frac{(2+\alpha_j)j}{2}-\frac{1}{4}}\cdot
+\hat{\psi}^{\alpha_j}_{j,k,m}(\xi)=2^{-\frac{(2+\alpha_j)j}{4}-\frac{1}{4}}\cdot
 \begin{cases}
 W(2^{-j}\xi)v(k_j(\xi_2/\xi_1-1))&e^{-\pi i[2^{-j}\xi_1 m_1+2^{-\alpha_j j/2}(\xi_2-\xi_1)m_2]}\\
 & \textrm{,}\quad \xi\in\mathcal{C}_{(h)},\\
@@ -1186,7 +1187,7 @@ $$
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width = 0.8 \textwidth]{./Diagrams/alpha6.jpg}
+\includegraphics[width = 0.9 \textwidth]{./Diagrams/alpha6.jpg}
 \caption{(a) Sketch of the corrupted modeling image, the line singularity has no "thickness" but some (gray-scale) intensity. (b) "Graph" of the corrupted line distribution $P_K\omega\mathcal{L}$ which is compactly supported on the $x_1$-axis. Figure taken from \cite{Gitta-alpha} pp. 15}
 \label{fig:alpha6}
 \end{figure}
@@ -1222,9 +1223,196 @@ $$
 Due the technical level of the proof, we will refer to \cite{clustered-inpainting} for the detailed proof. 
 \end{proof}
 
-The Theorem~\ref{thm:inpaintingwaveletsshearlets} shows that Shearlets 
+The Theorem~\ref{thm:inpaintingwaveletsshearlets} shows that Shearlets is a better choice than Wavelets as a Sparsifying  Parseval Frame to perform the inpainting of natural images, in particualr of EPIs, therefore is the system that we picked in this thesis.
+
+\bigskip
+
+There are different methods to minimize the $\ell^1$-norm in the inpainting algorithm~\ref{alg:alpha21}, we will use the iterative hard thresholding method since is the one that is traditionally used due to its effectiveness, the implementation and application of this algorithm for our task of EPIs-inpatinting will be explained in the Chapter~\ref{chap:Inpainting_sparse}.
 
 \section{0-Shearlets}
 
+In the last section we introduce a generalization of the classical cone-adpated shearlet transform allowing a more flexible scaling matrix $A_{j,\alpha_j,(\iota)}$, where $\alpha_j\in (-\infty,2)$ changes the "level" of anisotropy of the features the transform is sensible with. We also know by Theorem~\ref{thm:alpha34} that Shearlet System generated by the sequence of scaling parameters $(\alpha_j)_{j\in\mathbb{N}_0}$ will form a frame if the sequence form a scaling sequence, i.e.\ $\alpha_j$ is a multiple of $2/j$.
 
-\section{Epipolar-plane representation with 0-Shearlets}
+\bigskip
+
+ In the case when $\alpha_j=2$ for all $j=2$ we have a isotropic scaling case, where isotropic features like circles are well represented; it is the case of the wavelets. In the other hand when $\alpha_j=1$ for all $j$, then we have the classical cone-adapted shearlet system and the related parabolic scaling is well suited to approximate functions with singularities over parabolic curves. 
+
+\bigskip
+
+As we already mentioned several times, the final task of this thesis is to inpaint using ShearletsAs we already mentioned several times, the final task of this thesis is to inpaint EPIs form sparse sampled light fields using Shearlets. As we can see in Figure~\ref{fig:sparse_EPI} Epipolar Plane Images consist of straight-line structures, so one would like to have a scaling operation suited to straight-lines; this is performed using the sequence of scaling parameters given by
+
+$$
+\alpha_j=-\frac{2}{j}\in A_j\textrm{,}\quad \forall j\in\mathbb{Z}
+$$
+
+therefore the related universal shearlet system will form a Parseval frame and our inpainting framework is valid. By choosing like in this case very small $\alpha_j$ one produces more anisotropic elements which will approximate properly straight-line formed structures.
+
+\bigskip
+
+As we saw in Section~\ref{sec:shearletsystem}, the generating functions of a cone-adapted separable compactly supported shearlet system are given by:
+
+$$
+\begin{aligned}
+\psi(x_1,x_2)&=\psi_1(x_1)\phi_1(x_2)\\
+\phi(x_1,x_2)&=\phi_1(x_1)\phi_1(x_2)\\
+\tilde{\psi}(x_1,x_2)&=\psi(x_2,x_1)
+\end{aligned}
+$$
+
+where $\phi_1$ and $\psi_1$ are 1D scaling and wavelet functions. To obtain a smaller overlaping of the elements in the fourier transform one can multiply the separable generator by a 2D directional fan filter
+$$
+\hat{\psi}^{\text{nonsep}}=P(\xi_1/2,\xi_2)\hat{\psi}_1(\xi_1)\hat{\phi}_1(\xi_2)
+$$ 
+
+\bigskip
+
+If one considers a multiresolution analysis with wavelet and scaling function for $\psi_1,\phi_1\in L^2(\mathbb{R}^2)$ are given by
+$$
+\begin{aligned}
+\phi_1(x_1)&=\sum_{n_1\in\mathbb{Z}}h(n_1)\sqrt{2}\phi_1(2x_1-n_1)\\
+\psi_1(x_1)&=\sum_{n_1\in\mathbb{Z}}g(n_1)\sqrt{2}\phi_1(2x_1-n_1)
+\end{aligned}
+$$
+
+\bigskip
+
+The universal shearlet system generated by the scaling sequence $(\alpha_j)_{j\in \mathbb{Z}}=(-2/j)_{j\in\mathbb{Z}}$ will referred as $0-Shearlets$ since $\alpha_j\underset{j\rightarrow\infty}\longrightarrow 0$. The scaling matrix related to the $0$-shearlets will be given by
+$$
+A_{j}=\left(\begin{matrix} 2^j & 0\\ 0 & 2^{-1}\end{matrix}\right)
+$$
+
+The choice as expected will provide scaling only by one axis and the shearing will change the direction of the scaling. Let $J\in\mathbb{N}$ the maximum scale, then the shearlet system for $\Psi(\psi)$ is formed by the functions
+
+$$
+\Psi(c,\psi)=\psi_{j,k,m}\textrm{,}\quad |k|\leq 2^{j+1}\textrm{,}\quad j=0,\ldots,J-1,
+$$
+
+where
+
+\begin{equation}
+\label{eq:LFshearlets3}
+\psi_{j,k,m}(x)=2^{j/2}\psi(S_kA_jx-M_{c_j}m),
+\end{equation}
+
+and $c_j=(c_1^j,c_2^j)$ are sampling constants for translation. It is easy to see that
+
+\begin{equation}
+\label{eq:LFshearlets4}
+\psi_{j,k,m}(x)=\psi_{j,0,m}\left( S_{\frac{k}{2^j+1}}x\right).
+\end{equation}
+
+Following the procedure of \cite{Shearlab}, it can be shown that the digital filter corresponding to $\psi_{j,0,m}$ is given by
+
+\begin{equation}
+\label{eq:LFshearlets5}
+\psi^d_{j,0}(m)=(p_j\ast(g_{J-j}\otimes h_{J+1}))(m),
+\end{equation}
+
+where $\otimes$ denote the tensor product such that 
+
+$$
+(g_{J-j}\otimes h_{J+1})(m)=g_{J-j}(m_1)h_{J+1}(m_2),
+$$
+
+and $\{p_j(n)\}_{n\in\mathbb{Z}}$ are the Fourier coefficients of the trigonometric polynomial $P(2^{J-j-1}\xi_1,2^{J+1}\xi_1)$, $\{ h_j(n)\}_{n\in\mathbb{Z}}$ and $\{g_j(n)\}_{n\in\mathbb{Z}}$ are the Fourier coefficients of the respective trigonometric polynomial
+
+$$
+\begin{aligned}
+\hat{h}_j(\xi)&=\prod_{k=0,\ldots,j-1}\hat{h}(2^k\xi),\\
+\hat{g}_j(\xi)&=\hat{g}(2^{j-1}\xi)\hat{h}_{j-1}(\xi)
+\end{aligned}
+$$
+
+and $\hat{h}_0\equiv 1$, one can see in Figure~\ref{fig:magnitude_response} the frequency responses of this digital filters until scale $j=4$. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/magnitude_response.jpg}
+\caption{Frequency responses of the scaling and wavelet filters $h_j,g_j,j=1,\ldots,4$. Figure taken from \cite{LF-Shearlets} pp. 4}
+\label{fig:magnitude_response}
+\end{figure}
+
+As it was presented for first time in \cite{Nonseparableshear}, the shear transform $S_{k2^{-j}}$, $j\in\mathbb{N}$, $k\in\mathbb{Z}$ does not preserve the regular grit $\mathbb{Z}^2$, therefore its digitalization is non-trivial. To tackle this issue, one needs to refine the $\mathbb{Z}^2$ grid along the $x_1-axis$ by a factor $2^j$, then the new grid $2^{-j}\mathbb{Z}\times\mathbb{Z}$ is invariant under the $S_{k 2^{-j}}$ transform. 
+
+\bigskip
+
+For an arbitrary $r\in \ell^2(\mathbb{Z}^2)$, the shear transform $S_{k 2^{-j}}$ can be implemented as a digital filter
+
+\begin{equation}
+\label{eq:LFshearlets6}
+S^d_{k 2^{-j}}(r)=((2^jr_{\uparrow 2^j}\ast_1\tau_j)(S_k\cdot)\ast_1\overline{\tau}_j)_{\downarrow 2^j}
+\end{equation}
+
+where $\tau_j$ is a digital low-pass filter with normalized cutoff frequency at $2^-j$. 
+
+\bigskip
+
+Using the Equations~\ref{eq:LFshearlets3},~\ref{eq:LFshearlets4},~\ref{eq:LFshearlets5} and~\ref{eq:LFshearlets6} and the proper choice of $c_j$ it can be shown that the digital filter corresponding to $\psi_{j,k,m}$ is given by
+
+$$
+\psi_{j,k}^d=(S^d_{k2^{-(j+1)}}(p_j\ast g_{J-j}\otimes h_{J+1}))(m).
+$$
+
+A digital filter corresponding to separable elements of the transform $\phi_m$ related to the scaling function, is given by $\phi^d=(h_J\otimes h_J)(m)$. Then, the discrete shearlet transform associated with the set of elements $\Psi(c;\psi)$ and corresponding to frequency plane region $C_{\psi}$ is defined as follows
+
+$$
+\mathcal{DST}_{j,k,m}(f_J)=(f_J\ast \overline{\psi_{j,k}^d})(m),
+$$
+
+where $f_J(n)$ for $n\in\mathbb{Z}^2$ are discrete samples of $f\in L^2(\mathbb{R}^2)$, $j=0,\ldots,J-1$, $|k|\leq 2^{j+1}$, $m\in\mathbb{Z}^2$.
+
+\bigskip
+
+To compute the inverse transform we need to construct the dual frame; in order to do that we first set
+
+$$
+\hat{\Psi}^d=|\hat{\phi}^d|^2+\sum_{j=0,\ldots,J-1}\sum_{|k|\leq 2^{j+1}}(|\hat{\psi}^d_{j,k}|^2+|\hat{\tilde{\psi}}_{j,k}^d|^2).
+$$ 
+
+The dueal shearlet filters are defined by
+
+$$
+\hat{\phi}^d=\frac{\hat{\phi}^d}{\hat{\Psi}^d}\textrm{,}\quad \hat{\gamma}^d_{j,k}=\frac{\hat{\psi}^d_{j,k}}{\hat{\Psi}^d}\textrm{,}\quad \hat{\tilde{\gamma}}^d_{j,k}=\frac{\hat{\tilde{\psi}}_{j,k}^d}{\hat{\Psi}^d}
+$$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/LFshearlets2e.jpg}
+\caption{$\hat{\Psi}^d$ corresponding to constructed shearlet transform for $J=2$. Figure taken from \cite{LF-Shearlets} pp. 4}
+\label{fig:LFshearlets2e}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/LFshearlets2f.jpg}
+\caption{Frequency domain support of shearlet transform elements used in reconstruction. Figure taken from \cite{LF-Shearlets} pp. 4}
+\label{fig:LFshearlets2f}
+\end{figure}
+
+One can see an illustration of the obtained system in the frequency plane $\hat{\Psi}^d$ for $J=2$ in Figure~\ref{fig:LFshearlets2e}. Finally, the reconstruction formula is given by
+
+$$
+f_J=(f_J\ast \overline{\phi}^d)\ast \phi^d+\sum_{j,k}(f_J\ast\overline{\psi}^d_{j,k})\ast \gamma^d_{j,k}+\sum_{j,k}(f_J\ast \overline{\tilde{\psi}}^d_{j,k})\tilde{\gamma}^d_{j,k}
+$$
+
+Following the methodology of \cite{LF-Shearlets} we will be interested only in the transform elements where the shearing has positibe sign, i.e. $0\leq k\leq 2^{j+1}$, the corresponding transform elements are ccovering the frequency domain region highlighted in Figure~\ref{fig:LFshearlets2f}. Then, we use the direct transform $S$ for discrete values $f_J$ and $j=0,\ldots J-1$, $k=0,\ldots, 2^{j+1}$, $m\in\mathbb{Z}^2$ defined as 
+
+$$
+S(f_J)=\{ c_{j,k}(m)=(f_J\ast \overline{\psi}_{j,k}^d)(m),c_0(m)=(f_J\ast \overline{\phi}^d)(m)\}.
+$$
+
+The inverse transform $S^*$ is then given by
+
+$$
+S^*(\{c_{j,k},c_0\})=\sum_{\begin{matrix}j=0,\ldots,J-1\\k=0,\ldots,2^{j+1}\end{matrix}}(c\ast \gamma_{j,k}^d)(m)+(c_0\ast\phi^d)(m).
+$$
+
+In the case of the Shearlet Transform implementation that we used for this thesis (Shearlab.jl) the $0$-Shearlet transform can be perform by choosing for each scale $j$ the number of shearings to be such that $|k|\leq 2^{j+1}$.
+
+\bigskip
+
+As a final remark for this section it is worth to mention that the $0$-Shearlet system is closely related to the Ridgelet Transform (see \cite{ridglet}), in the sense that both are computed by an inner product of an admissible generating function with different directional, scaling and translational parameters, where the scaling operation is performed in just one direction; the difference is that ridgelets perform directional operation by rotating the elements instead of shearing.
+
+\bigskip
+
+We have now all the tools necessary to perform the light field reconstruction using the Epipolar Plane Images method with sparsely sampled EPIs; in the next chapter we will present the minimization method used to perform such reconstruction as well as the results obtained numerically and the comparison with other light field reconstruction methods using different softwares and procedures. 

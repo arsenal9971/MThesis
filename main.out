@@ -17,14 +17,13 @@
 \BOOKMARK [0][-]{chapter.3}{Shearlets}{}% 17
 \BOOKMARK [1][-]{section.3.1}{Shearlet Systems and Transform}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.2}{Shearlets as Frames}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.3}{Generalization of Shearlets to Alpha Shearlets}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.3}{Universal Shearlets and Alpha Shearlets}{chapter.3}% 20
 \BOOKMARK [1][-]{section.3.4}{Image inpainting using -Shearlets}{chapter.3}% 21
 \BOOKMARK [1][-]{section.3.5}{0-Shearlets}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.6}{Epipolar-plane representation with 0-Shearlets}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 24
-\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 27
-\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 28
-\BOOKMARK [0][-]{section*.52}{Appendices}{}% 29
-\BOOKMARK [0][-]{Appendix.1.A}{Code for point tracking}{}% 30
+\BOOKMARK [0][-]{chapter.4}{Inpainting Sparse Sampled Epipolar-plane}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{Iterative thresholding with constant velocity}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Iterative thresholding with vaiable velocity}{chapter.4}% 26
+\BOOKMARK [0][-]{chapter.5}{Conclusion and outlook}{}% 27
+\BOOKMARK [0][-]{section*.55}{Appendices}{}% 28
+\BOOKMARK [0][-]{Appendix.1.A}{Code for point tracking}{}% 29
