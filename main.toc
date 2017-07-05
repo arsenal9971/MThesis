@@ -19,12 +19,13 @@
 \contentsline {section}{\numberline {3.1}Shearlet Systems and Transform}{39}{section.3.1}
 \contentsline {section}{\numberline {3.2}Shearlets as Frames}{45}{section.3.2}
 \contentsline {section}{\numberline {3.3}Universal Shearlets and Alpha Shearlets}{47}{section.3.3}
-\contentsline {section}{\numberline {3.4}Image inpainting using $\alpha $-Shearlets}{55}{section.3.4}
+\contentsline {section}{\numberline {3.4}Image inpainting using Shearlet Parseval Frames}{55}{section.3.4}
 \contentsline {section}{\numberline {3.5}0-Shearlets}{60}{section.3.5}
-\contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane}{67}{chapter.4}
-\contentsline {section}{\numberline {4.1}Using linear Shearlets to inpaint sparse sampled Epipolar-plane}{67}{section.4.1}
-\contentsline {section}{\numberline {4.2}Iterative thresholding with constant velocity}{67}{section.4.2}
-\contentsline {section}{\numberline {4.3}Iterative thresholding with vaiable velocity}{67}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{69}{chapter.5}
-\contentsline {chapter}{Appendices}{71}{section*.55}
-\contentsline {chapter}{\numberline {A}Code for point tracking}{73}{Appendix.1.A}
+\contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane and Computing Depth Map}{67}{chapter.4}
+\contentsline {section}{\numberline {4.1}Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}{67}{section.4.1}
+\contentsline {section}{\numberline {4.2}Results of sparse EPIs inpaiting}{70}{section.4.2}
+\contentsline {section}{\numberline {4.3}Line detection in inpainted EPIs and depth map computation}{70}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{71}{chapter.5}
+\contentsline {chapter}{Appendices}{73}{section*.57}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{75}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Code for point tracking}{79}{Appendix.1.B}
