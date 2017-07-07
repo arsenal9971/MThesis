@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {4.1}Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}{67}{section.4.1}
 \contentsline {section}{\numberline {4.2}Results of sparse EPIs inpaiting}{70}{section.4.2}
 \contentsline {section}{\numberline {4.3}Line detection in inpainted EPIs and depth map computation}{70}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{71}{chapter.5}
-\contentsline {chapter}{Appendices}{73}{section*.57}
-\contentsline {chapter}{\numberline {A}Code for point tracking}{75}{Appendix.1.A}
-\contentsline {chapter}{\numberline {B}Code for point tracking}{79}{Appendix.1.B}
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{73}{chapter.5}
+\contentsline {chapter}{Appendices}{75}{section*.61}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{77}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Code for point tracking}{81}{Appendix.1.B}

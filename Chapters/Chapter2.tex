@@ -479,6 +479,7 @@ so one defines the fundamental matrix $F$ as $F=(M_r^{-1})^{\intercal}EM_l^{-1}$
 it is clear that finding the epipolar lines does not require complicated mathematical concepts just linear algebra and classical geometry, for a more detailed explanation of the fundamental and essential matrices and its implementation in OpenCV we recommend the chapter 12 of \cite{LearnOpenCV} which is strongly based on the more theoretical book "Multiple View Geometry in Computer Vision" by R. Hartley and A. Zisserman \cite{MultipleView}. We are assuming here that we have a form to find matching points in between the images, but this is in our experience the hardest task on the EPI construction, and there are different ways to tackle which we will explain in the next subsection. 
 
 \subsection{Tracking point algorithms}
+\label{sec:track_alg}
 
 Tracking a point in a sequence of images of the same scene is a very common task in computer vision; it can be applied to analyse motion flow in a video in order to predict position of an object in future frames. The task consists mainly in two part: first you need to detect feature points that are easy to track (e.g.\ corners) and second you need to follow them in the different frames. In this subsection we will present first some feature detection algorithms that are used commonly in motion flow tracking with the advantages and disadvantages of each one. 
 
@@ -640,6 +641,7 @@ obtaining with this the vector flow of the features in the scene. By its simplic
 \end{itemize}
  
 \subsection{Procedure for tracking and painting the EPIs}
+\label{sec:proc_track}
 
 The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the curch and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec:Appendix_A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook PRO with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
 

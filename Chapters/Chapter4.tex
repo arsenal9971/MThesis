@@ -111,7 +111,7 @@ $$
 \alpha_n=\frac{||\beta_n||_2^2}{||MS^*(\beta_n)||_2^2}
 $$
 
-where $\beta_n=S_{\Gamma_n}(y-Mx_n)$ and $S_{\Gamma_n}$ is the shearlet transform decomposition only for coefficients from $\Gamma_n=\textrm{supp}(S(x_n))$. The convergence rate of the adaptative selection is also illustrated in Figure~\ref{fig:alpha_accel} and one can see that the adaptation provides high convergence speed and stable reconstruction we refer to the original paper \cite{hard-thresholding} for a more detailed analysis of the convergence and stability conditions, which for our case are fulfilled using the fact that the $0$-Shearlets system form a Parseval Frame. 
+where $\beta_n=S_{\Gamma_n}(y-Mx_n)$ and $S_{\Gamma_n}$ is the shearlet transform decomposition only for coefficients from $\Gamma_n=\textrm{supp}(S(x_n))$; is important to be noticed that $||\cdot||_2$ is the Eucledian norm in the associated $N^2\eta$-dimensional Eucledian space of $\mathbb{R}^{N\times N\times \eta}$ with elements arranged in lexicographic order. The convergence rate of the adaptative selection is also illustrated in Figure~\ref{fig:alpha_accel} and one can see that the adaptation provides high convergence speed and stable reconstruction we refer to the original paper \cite{hard-thresholding} for a more detailed analysis of the convergence and stability conditions, which for our case are fulfilled using the fact that the $0$-Shearlets system form a Parseval Frame. 
 
 \bigskip
 
@@ -123,6 +123,38 @@ Finally, in the following subsections we will present the resulting inpainted EP
 
 \section{Results of sparse EPIs inpaiting}
 
+In order to give the full picture of the EPIs inpainting algorithm implementation and results, we will present the set of ideas that made us take some decisions in the way to design the implementation of the inpainting algorithm.
+
+\bigskip 
+
+As we presented to Section~\ref{sec:Sparse-acquisition} the data set that we used was a series of pictures of a Church, given by the research group of Professor Markus Gross in the Disney Research Center. The data set has 100 different views of the scene, we present in~\ref{fig:first_church},~\ref{fig:second_church} and~\ref{fig:third_church} the 1st, 55th and 100th views of the data set.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/data_set/church_image-raw_0000_lowres.jpg}
+\caption{1st picture of the Church Data Set}
+\label{fig:first_church}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/data_set/church_image-raw_0055_lowres.jpg}
+\caption{55th picture of the Church Data Set}
+\label{fig:second_church}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/data_set/church_image-raw_0100_lowres.jpg}
+\caption{100th picture of the Church Data Set}
+\label{fig:third_church}
+\end{figure}
+
+
+\bigskip
+
+The first step in the implementation was the design the code to track the points; in the Subsection~\ref{sec:proc_track} we presented the followed algorithm (Lucas-Kanade method with Shi-Tomasi corner detector) whose implementation is presented in with the results were stored in an 
+ presented in Figure~\ref{fig:track_points_church}-
 
 \section{Line detection in inpainted EPIs and depth map computation}
 
