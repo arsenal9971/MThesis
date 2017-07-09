@@ -17,7 +17,7 @@ Using the inpainted EPIs we will present a line detection algorithm called Hough
 
 \section{Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}
 
-To formulate the light field reconstruction algorithm in discrete domain we will assume that that the starting coarse set of views is a downsampled version of the unknown densely sampled light field we are trying to reconstruct. The uniformly distributed cameras imply the possibility of estimating a common upper bound of disparities between consecutive views that we will call $d_{\text{max}}$; as we saw in Subsection~\ref{sec:phys_setup_sampling_rate} for densely sampled EPI's one need to ensure maximum 1 pixel disparity between nearby views (this in order to avoid aliasing and other artifacts), this representing minimum sampling rate law similar to Nyquist-Shannon sampling theorem. The given sparse set of views are regarded as taken at each $d_max=\lceil d_{max}\rceil$-th view of a densely sampled Light Field. 
+To formulate the light field reconstruction algorithm in discrete domain we will assume that that the starting coarse set of views is a downsampled version of the unknown densely sampled light field we are trying to reconstruct. The uniformly distributed cameras imply the possibility of estimating a common upper bound of disparities between consecutive views that we will call $d_{\text{max}}$; as we saw in Subsection~\ref{sec:phys_setup_sampling_rate} for densely sampled EPI's one need to ensure maximum 1 pixel disparity between nearby views (this in order to avoid aliasing and other artifacts), this representing minimum sampling rate law similar to Nyquist-Shannon sampling theorem. The given sparse set of views are regarded as taken at each $d_{max}=\lceil d_{max}\rceil$-th view of a densely sampled Light Field. 
 
 \bigskip
 
@@ -153,8 +153,116 @@ As we presented to Section~\ref{sec:Sparse-acquisition} the data set that we use
 
 \bigskip
 
-The first step in the implementation was the design the code to track the points; in the Subsection~\ref{sec:proc_track} we presented the followed algorithm (Lucas-Kanade method with Shi-Tomasi corner detector) whose implementation is presented in with the results were stored in an 
- presented in Figure~\ref{fig:track_points_church}-
+\begin{itemize}
+
+\item \textbf{First step (Track Points):} The first step in the implementation was the design the code to track the points; in the Subsection~\ref{sec:proc_track} we presented the followed algorithm (Lucas-Kanade method with Shi-Tomasi corner detector) whose implementation using OpenCV Python's API is presented in Appendix~\ref{sec:Appendix_A} with the results were stored in a data frame that one can find in the repository of this thesis (\url{https://github.com/arsenal9971/MThesis/blob/master/Code_notebooks/church_tracking.csv}) and are presented in Figure~\ref{fig:track_points_church}.
+
+\bigskip
+
+\item \textbf{Second Step (Paint sparse EPIs):}Once we had the data of the tracked points we proceed to paint the EPIs related to fixed $y$-positions in the scenes we used the julia code presented in Appendix~\ref{sec:Appendix_B}, where we used vertical strips of width $2\epsilon=16.0$ pixels to captures tracked points in the scene at different fixed $y$ positions and follow them along the different views, we also used the same data set to paint the corresponding Sparse Views with a constant disparity between consecutive views $d_{max}=7px$; this maximum disparity was chosen by trying different disparities and pick the best one in terms of the painting speed (the greater the disparity, the less time it takes to paint the sparse EPIs) and the Shearlet-based inpainting performance using a fixed number of iterations (50) in the iterative thresholding algorithm; where we measure the performance mostly in terms of how many lines of the original EPI are captured by our line detection algorithm that will be explained in the next subsection. One can see in Figure~\ref{fig:strip_disparity} the strip of points in the first image that were tracked to perform the benchmark to compute the best disparity parameter for our task; the Figure~\ref{fig:dense_disparity} is the associated densely sampled EPI and the associated sparsely sampled EPIs with different disparities $d_{max}$ are presented in Figure~\ref{fig:first_sparse_disparity},~\ref{fig:second_sparse_disparity},~\ref{fig:third_sparse_disparity} and~\ref{fig:fourth_sparse_disparity}. Finally on Figure~\ref{fig:benchmark_line} one can see the different running time obtained for different disparities (clearly the smaller the disparity, the more pictures you need to take and therefore the longest the running time); as we mentioned on Subsection~\ref{sec:proc_track} we used a Macbook Pro with OSX 10.10.5, 8GB of memory, 2.7 GHz Intel Core i5 Processor and Graphic Card Intel Iris Graphics 6100 with 1536 MB of graphic memory (relatively a low end computer system).
+
+\bigskip
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_strip.png}
+\caption{Strip of points of width $2\epsilon = 16.0$ px used for the benchmark to choose the disparity $d_{max}$}
+\label{fig:strip_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_dense.png}
+\caption{Densely sampled EPI associated to the points in the strip on Figure~\ref{fig:strip_disparity}}
+\label{fig:dense_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_sparse.png}
+\caption{Sparsely sampled EPI associated to the disparity $d_{max} = 4$ px}
+\label{fig:first_sparse_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_sparse.png}
+\caption{Sparsely sampled EPI associated to the disparity $d_{max} = 7$ px}
+\label{fig:second_sparse_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_sparse.png}
+\caption{Sparsely sampled EPI associated to the disparity $d_{max}=9$ px}
+\label{fig:third_sparse_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_sparse.png}
+\caption{Sparsely sampled EPI associated to the disparity $d_{max}=12$ px}
+\label{fig:fourth_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/sparse_painting_benchmark.png}
+\caption{Running time of painting of sparsely sampled EPIs with different disparities}
+\label{fig:benchmark_line}
+\end{figure}
+
+
+\bigskip
+
+One can also see in Figures~\ref{fig:first_lines_disparity},~\ref{fig:second_lines_disparity},~\ref{fig:third_lines_disparity} and~\ref{fig:fourth_lines_disparity} the lines detected in different inpainted EPIs corresponding to the same dense EPI, with different views disparity $d_max$, one can see that the important features are detected when $d_{max}=4$ and $d_{max}=7$ while when $d_{max}$ is bigger some lines are lost. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 4$ px}
+\label{fig:first_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 7$ px}
+\label{fig:second_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 9$ px}
+\label{fig:third_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 12$ px}
+\label{fig:fourth_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 12$ px}
+\label{fig:fourth_lines_disparity}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.7 \textwidth]{./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png}
+\caption{Lines detected in an inpainted using disparity $d_{max} = 12$ px}
+\label{fig:fourth_lines_disparity}
+\end{figure}
+
+\item \textbf{Third step (Inpaint sparse EPIs):}  
+
+\end{itemize}
 
 \section{Line detection in inpainted EPIs and depth map computation}
 
+Once we have the inpaiting EPIs for our sparse set of views we need to be able to compute the slopes of the lines corresponding to different feature points; in computer vision a well known algorithm 

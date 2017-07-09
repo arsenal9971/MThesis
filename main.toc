@@ -24,8 +24,8 @@
 \contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane and Computing Depth Map}{67}{chapter.4}
 \contentsline {section}{\numberline {4.1}Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}{67}{section.4.1}
 \contentsline {section}{\numberline {4.2}Results of sparse EPIs inpaiting}{70}{section.4.2}
-\contentsline {section}{\numberline {4.3}Line detection in inpainted EPIs and depth map computation}{70}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{73}{chapter.5}
-\contentsline {chapter}{Appendices}{75}{section*.61}
-\contentsline {chapter}{\numberline {A}Code for point tracking}{77}{Appendix.1.A}
-\contentsline {chapter}{\numberline {B}Code for point tracking}{81}{Appendix.1.B}
+\contentsline {section}{\numberline {4.3}Line detection in inpainted EPIs and depth map computation}{73}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{79}{chapter.5}
+\contentsline {chapter}{Appendices}{81}{section*.73}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{83}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Code for painting EPIs}{87}{Appendix.1.B}
