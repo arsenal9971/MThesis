@@ -24,6 +24,7 @@
 \usepackage{booktabs}
 \usepackage{mathrsfs}
 \usepackage{float}
+\usepackage{morefloats}
 \usepackage{tikz}
 \usepackage{makeidx}
 \usepackage{array}
@@ -106,8 +107,6 @@
 
 \degree{Master Mathematics} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
 \author{Héctor Andrade Loarca} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
-
-
 
 \university{Technische Universität Berlin} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 
@@ -278,8 +277,7 @@ Berlin, September 2017
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
-%----------------------------------------------------------------------------------------
-
+%---------------
 %\begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
 %$a$ & distance & \si{\meter} \\
@@ -317,9 +315,12 @@ Berlin, September 2017
 \begin{appendices}
 \include{Chapters/Appendix1}
 \include{Chapters/Appendix2}
+\include{Chapters/Appendix3}
+\include{Chapters/Appendix4}
 \end{appendices}
 
-%----------------------------------------------------------------------------------------
+%-----------------:wq
+-----------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
@@ -710,6 +711,24 @@ Berlin, September 2017
 	\emph{Normalised Iterative Hard Thresholding; guaranteed stability and performance},
 	IEEE J. Sel. Topics Signal Processing, 4(2), pp. 298-309, 
 	2010
+
+\bibitem{hough-duda}
+	R.O. Duda, P.E. Hart,
+	\emph{Use of the Hough Transformation to Detect Lines and Curves in Pictures},
+	Comm. ACM, 15, pp. 11-15,
+	1972
+
+\bibitem{hough-invented}
+	P.E. Hart, 
+	\emph{How the Hough Transform was Invented},
+	IEEE Signal Processing Magazine, 26(6), pp. 18-22,
+	2009
+
+\bibitem{hough-original}
+	P.V.C. Hough, 
+	\emph{Method and means for recognizing complex patterns},
+	U.S. Patent 3, 069, 654, 
+	1962
 
 \end{thebibliography}
 
