@@ -25,10 +25,10 @@
 \contentsline {section}{\numberline {4.1}Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}{67}{section.4.1}
 \contentsline {section}{\numberline {4.2}Results of sparse EPIs inpaiting}{70}{section.4.2}
 \contentsline {section}{\numberline {4.3}Line detection in inpainted EPIs and depth map computation}{76}{section.4.3}
-\contentsline {section}{\numberline {4.4}Performance and results comparison with previews works}{87}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{91}{chapter.5}
-\contentsline {chapter}{Appendices}{93}{section*.97}
-\contentsline {chapter}{\numberline {A}Code for point tracking}{95}{Appendix.1.A}
-\contentsline {chapter}{\numberline {B}Code for painting EPIs}{99}{Appendix.1.B}
-\contentsline {chapter}{\numberline {C}Code for inpainting sparse EPIs}{103}{Appendix.1.C}
-\contentsline {chapter}{\numberline {D}Code for computing the depth map}{107}{Appendix.1.D}
+\contentsline {section}{\numberline {4.4}Performance and results comparison with previews works}{88}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{97}{chapter.5}
+\contentsline {chapter}{Appendices}{99}{section*.103}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{101}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Code for painting EPIs}{105}{Appendix.1.B}
+\contentsline {chapter}{\numberline {C}Code for inpainting sparse EPIs}{109}{Appendix.1.C}
+\contentsline {chapter}{\numberline {D}Code for computing the depth map}{113}{Appendix.1.D}

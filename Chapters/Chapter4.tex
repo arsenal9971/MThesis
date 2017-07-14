@@ -263,11 +263,11 @@ One can also see in Figures~\ref{fig:first_lines_disparity},~\ref{fig:second_lin
 \label{fig:fourth_lines_disparity}
 \end{figure}
 
-\item \textbf{Third step (Inpaint sparse EPIs):} After paint all the sparsely sampled EPIs corresponding to different horizontal strips of width $16.0$px whose union cover all the tracked points, we inpainted to recover a densely sampled EPIs and therefore we can finally compute the depth map by computing the slopes of the different lines in the EPIs. As we already mentioned on the last section, in order to perform the minimization problem associated with the inpainting algorithm we used iterative hard thresholding with a $0$-Shearlet system as sparsifying system whose code we can find on Appendix~\ref{Appendix_C} and was implemented using julia programming language with the libraries PyPlot.jl and Shearlab.jl. 
+\item \textbf{Third step (Inpaint sparse EPIs):} After paint all the sparsely sampled EPIs corresponding to different horizontal strips of width $16.0$px whose union cover all the tracked points, we inpainted to recover a densely sampled EPIs and therefore we can finally compute the depth map by computing the slopes of the different lines in the EPIs. As we already mentioned on the last section, in order to perform the minimization problem associated with the inpainting algorithm we used iterative hard thresholding with a $0$-Shearlet system as sparsifying system whose code we can find on Appendix~\ref{sec:Appendix_C} and was implemented using julia programming language with the libraries PyPlot.jl and Shearlab.jl. 
 
 \bigskip
 
-We choose some of the best EPIs (corresponding to strips that capture an important number of tracked points) to show here (see Figures , but to compute the depth map we used all the inpainted EPIs that can be found on \url{https://github.com/arsenal9971/MThesis/tree/master/Diagrams/results/Inpainted} that follow the same naming notation as the dense EPIs, sparse EPIs and strips).
+We choose some of the best EPIs (corresponding to strips that capture an important number of tracked points) to show here (see Figures~\ref{fig:strip1} to~\ref{fig:inpainted5}), but to compute the depth map we used all the inpainted EPIs that can be found on \url{https://github.com/arsenal9971/MThesis/tree/master/Diagrams/results/Inpainted} that follow the same naming notation as the dense EPIs, sparse EPIs and strips).
 
 \bigskip
 
@@ -537,17 +537,223 @@ There are different existing implementations of the Hough line, in Python, C++ a
 \label{fig:feature_points}
 \end{figure}
 
-Once we have points associated to features, we compute the depth of this points at different fixed $y$-strips finding out that for a fixed $y$-strip the points of a certain feature have relatively the same depth, therefore we assigned a depth to a feature for a fixed $y$. As we already mentioned we used the OpenCV python API as well as some python code for computing the depth map with this method, the code can be found in Appendix~\ref{sec:Appendix_D} and the obtained results are in the tables~\ref{table1} and~\ref{table2} where the values at each height $y$ (measured in pixels of the inpainted EPIs that one can find  are the obtained depth of the points of that feature at that height in meters$^2$/pixels; this values describe completly the depth map, if one would like to visualize them in a refocusing-type application we should perform the so called light field rendering, where one finds contours of the corresponding features and apply a gaussian filter to defocused the elements that are not at the same depth, but this is not part of this thesis and will be taken as a future development goal. 
+Once we have points associated to features, we compute the depth of this points at different fixed $y$-strips finding out that for a fixed $y$-strip the points of a certain feature have relatively the same depth, therefore we assigned a depth to a feature for a fixed $y$. As we already mentioned we used the OpenCV python API as well as some python code for computing the depth map with this method, the code can be found in Appendix~\ref{sec:Appendix_D} and the obtained results are in the tables~\ref{table1} to~\ref{table6} where the values at each height $y$ (where the different strips are centered at) are the obtained depth of the points of that feature at that height in meters$^2$/pixels and whenever occur a blank space means that such feature has not points in such height (is worth to mention that the heights are measured from bottom to top, i.e.\ the bigger the height, the lower in the picture); this values describe completly the depth map, if one would like to visualize them in a refocusing-type application we should perform the so called light field rendering, where one finds contours of the corresponding features and apply a gaussian filter to defocused the elements that are not at the same depth, but this is not part of this thesis and will be taken as a future development goal. One can use as a guide of the heights Figure~\ref{feature_points_grid}. 
 
-
-\begin{table}
+\begin{figure}[h!]
 \centering
-    \begin{tabular}{| c | c | c | c | c |}
+\includegraphics[width = 0.9 \textwidth]{./Diagrams/results/data_set/feature_points_grid.png}
+\caption{Features of the Church with tracked points with grid of heights}
+\label{fig:feature_points_grid}
+\end{figure}
+
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
     \hline
-    feature/height(px) & 680 & 673 & 664 & 632 \\ \hline
-		Bush1 & 0.015 & 0.016 & 0.016 & 0.015 \\ \hline	
+    feature/height(px) & 680 & 673 & 664 & 632 & 616 & 600 & 584 & 568 \\ \hline
+		 Bush1 & 0.0161 & 0.0157 & 0.0158 & 0.0156 & 0.0157 & 0.0161 & 0.0160 & 0.0158\\ \hline
+		 Bush2 & 0.0217 & 0.0221 & 0.0221 & 0.0220 &  &  &  & \\ \hline	
+		 Bush3 & 0.0257 & 0.0261 & 0.0260 & 0.0258 & 0.0258 &  &  & \\ \hline	
+		 Tree1 & 0.0284 & 0.0285 & 0.0286 & 0.0285 & 0.0285 & 0.0286 & 0.0287 & 0.0291 \\ \hline	
+		 Tree2 &  &  & 0.0442  &  &  & 0.045  & 0.046 & 0.045 \\ \hline	
+		 Tree3 & 0.0501 & 0.0502 & 0.0501 & 0.0499 & 0.0498 & 0.0502 & 0.0500 & 0.0501\\ \hline	
+		 Tree4 & 0.0594 & 0.0591 & 0.0590 & 0.0589 & 0.0590 & 0.0593 & 0.0595 & 0.0594\\ \hline	
+		 Tree5 & 0.0801 & 0.0799 & 0.0798 & 0.0800 & 0.0801 & 0.0798 & 0.0799 & 0.0800\\ \hline	
+		 Tree6 & 0.1001 & 0.0998 & 0.0999 & 0.0998 & 0.1003 & 0.1002 &  & \\ \hline	
+     LampPost1 &  &  & & 0.0181 &  & 0.0180 & 0.0182 &  \\ \hline
+		 LampPost2 &  &  &  & 0.1123 & 0.1122  &  &  & \\ \hline
+		 FrontWall &  &  &  &  &  &  &  & \\ \hline
+		 Window1 &  &  &  &  &  &  &  & \\ \hline
+		 Window2 &  &  &  &  &  &  &  & \\ \hline
+		 Window3 &  &  &  &  &  &  &  & \\ \hline
+		 Window4 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar1 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar2 &  &  &  &  &  &  &  & \\ \hline
+		 Cable1 &  &  &  &  &  &  &  & \\ \hline
+	   Cable2 &  &  &  &  &  &  &  & \\ \hline
+	   Cable3 &  &  &  &  &  &  &  & \\ \hline
+		 HighLamp &  &  &  &  &  &  &  & \\ \hline
+	   Tower &  &  &  &  &  &  &  & \\ \hline
     \end{tabular}
-		\label{table1}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table1}
 \end{table}
 
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+    \hline
+    feature/height(px) & 552 & 536 & 520 & 504 & 488 & 472 & 456 & 440\\ \hline
+		 Bush1 & 0.0157 &  &  &  &  &  &  & \\ \hline
+		 Bush2 &  &  &  &  &  &  &  & \\ \hline	
+		 Bush3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree1 & 0.0291 & 0.0292 & 0.0290 & 0.0291 &  &  &  & 0.030 \\ \hline	
+		 Tree2 & 0.0461 & 0.0456 & 0.0460 & 0.0459 &  &  & 0.0461 & 0.0461\\ \hline	
+		 Tree3 & 0.0495 & 0.0496 &  & 0.0497 & 0.0498 & 0.0499 & 0.0495 & 0.0501 \\ \hline	
+		 Tree4 & 0.0594 &  &  &  &  &  &  & \\ \hline	
+		 Tree5 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree6 &  &  &  &  &  &  &  & \\ \hline	
+     LampPost1 & 0.0181 & 0.0180 & 0.0182 & 0.0183 &  & 0.0182 & 0.0179 & 0.0180 \\ \hline
+		 LampPost2 &  &  &  &  &  &  &  & \\ \hline
+		 FrontWall &  &  &  &  &  &  &  & \\ \hline
+		 Window1 &  &  &  &  &  &  &  & \\ \hline
+		 Window2 &  &  &  &  &  &  &  & \\ \hline
+		 Window3 &  &  &  &  &  &  &  & \\ \hline
+		 Window4 &  & 0.0391 &  &  &  &  &  & \\ \hline
+		 Pillar1 &  &  &  &  &  &  &  & 0.0054 \\ \hline
+		 Pillar2 &  & 0.0251 &  &  &  &  &  & \\ \hline
+		 Cable1 &  &  &  &  & 0.0020 &  &  & \\ \hline
+	   Cable2 &  &  &  &  &  & 0.0701 & 0.0608 & \\ \hline
+	   Cable3 &  &  &  &  &  &  &  & \\ \hline
+		 HighLamp &  &  &  &  &  &  &  & \\ \hline
+	   Tower &  &  &  &  &  &  &  & \\ \hline
+    \end{tabular}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table2}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+    \hline
+    feature/height(px) & 424 & 408 & 392 & 376 & 360 & 344 & 328 & 322\\ \hline
+		 Bush1 &   &   &  &  &  &  &  & \\ \hline
+		 Bush2 &  &  &  &  &  &  &  & \\ \hline	
+		 Bush3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree1 &  &  & 0.0332 & 0.0341 & 0.0341 &  & 0.0335 & \\ \hline	
+		 Tree2 &  & 0.0459 &  &  &  &  &  & \\ \hline	
+		 Tree3 & 0.0502 & 0.0500 & 0.0501 &  & 0.0502 & 0.0499 &  & \\ \hline	
+		 Tree4 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree5 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree6 &  &  &  &  &  &  &  & \\ \hline	
+     LampPost1 &  &  &  &  & 0.0180 & 0.0181 &  & \\ \hline
+		 LampPost2 &  &  &  &  &  &  &  & \\ \hline
+		 FrontWall &  &  &  &  &  &  &  & \\ \hline
+		 Window1 &  &  &  &  &  &  &  & 0.0601\\ \hline
+		 Window2 &  &  &  &  &  &  &  & \\ \hline
+		 Window3 &  & 0.0522 &  &  &  &  &  & \\ \hline
+		 Window4 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar1 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar2 &  &  &  &  &  & 0.0256 &  & \\ \hline
+		 Cable1 &  &  &  &  &  &  & & \\ \hline
+	   Cable2 &  &  &  &  &  &  & 0.0212 & \\ \hline
+	   Cable3 &  &  &  &  &  &  &  & \\ \hline
+		 HighLamp &  &  &  &  &  &  &  & \\ \hline
+	   Tower & 0.0995 &  & 0.1002  & 0.1003  & 0.1002 & 0.1001 & 0.1002 & 0.0996 \\ \hline
+    \end{tabular}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table3}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+    \hline
+    feature/height(px) & 312 & 306 & 300 & 292 & 280 & 264 & 248 & 232 \\ \hline
+		 Bush1 &  &  &  &  &  &  &  & \\ \hline
+		 Bush2 &  &  &  &  &  &  &  & \\ \hline	
+		 Bush3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree1 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree2 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree4 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree5 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree6 &  &  &  &  &  &  &  & \\ \hline	
+     LampPost1 &  &  &  &  &  &  &  & \\ \hline
+		 LampPost2 &  &  &  &  &  &  &  & \\ \hline
+		 FrontWall &  &  &  &  &  &  &  & 0.0051\\ \hline
+		 Window1 &  &  &  &  &  &  &  & \\ \hline
+		 Window2 &  &  &  &  & 0.0402 &  &  & \\ \hline
+		 Window3 &  &  &  &  &  &  &  & \\ \hline
+		 Window4 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar1 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar2 &  &  &  &  &  &  &  & \\ \hline
+		 Cable1 &  &  &  &  &  &  &  & \\ \hline
+	   Cable2 &  &  &  &  & 0.0131 &  &  & \\ \hline
+	   Cable3 &  &  &  &  &  &  &  & \\ \hline
+		 HighLamp &  &  &  &  &  &  &  & \\ \hline
+	   Tower &  &  &  &  &  & 0.1001 & 0.0999 & 0.1003 \\ \hline
+    \end{tabular}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table4}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+    \hline
+    feature/height(px) & 216 & 200 & 168 & 152 & 136 & 120 & 104 & 88\\ \hline
+		 Bush1 &  &  &  &  &  &  &  & \\ \hline
+		 Bush2 &  &  &  &  &  &  &  & \\ \hline	
+		 Bush3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree1 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree2 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree3 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree4 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree5 &  &  &  &  &  &  &  & \\ \hline	
+		 Tree6 &  &  &  &  &  &  &  & \\ \hline	
+     LampPost1 &  &  &  &  &  &  &  & \\ \hline
+		 LampPost2 &  &  &  &  &  &  &  & \\ \hline
+		 FrontWall &  &  &  &  &  &  &  & \\ \hline
+		 Window1 &  &  &  &  &  &  &  & \\ \hline
+		 Window2 &  &  &  &  &  &  &  & \\ \hline
+		 Window3 &  &  &  &  &  &  &  & \\ \hline
+		 Window4 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar1 &  &  &  &  &  &  &  & \\ \hline
+		 Pillar2 &  &  &  &  &  &  &  & \\ \hline
+		 Cable1 &  &  &  &  &  &  &  & \\ \hline
+	   Cable2 &  & 0.0015 &  &  &  &  &  & \\ \hline
+	   Cable3 &  &  &  &  &  &  &  & \\ \hline
+		 HighLamp &  &  &  &  &  & 0.0009 &  & \\ \hline
+	   Tower & 0.1002 & 0.0998 &  & 0.0999 & 0.1002 & 0.0998 & 0.1001 & \\ \hline
+    \end{tabular}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table5}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+    \begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+    \hline
+    feature/height(px) & 72 & 56\\ \hline
+		 Bush1 &  &  \\ \hline
+		 Bush2 &  &  \\ \hline	
+		 Bush3 &  &  \\ \hline	
+		 Tree1 &  &  \\ \hline	
+		 Tree2 &  &   \\ \hline	
+		 Tree3 &  &   \\ \hline	
+		 Tree4 &  &   \\ \hline	
+		 Tree5 &  &   \\ \hline	
+		 Tree6 &  &    \\ \hline	
+     LampPost1 &  &  \\ \hline
+		 LampPost2 &  &  \\ \hline
+		 FrontWall &  &  \\ \hline
+		 Window1 &  &  \\ \hline
+		 Window2 &  &  \\ \hline
+		 Window3 &  &  \\ \hline
+		 Window4 &  &  \\ \hline
+		 Pillar1 &  &   \\ \hline
+		 Pillar2 &  &  \\ \hline
+		 Cable1 &  &  \\ \hline
+	   Cable2 &  &  \\ \hline
+	   Cable3 &  & 0.0020\\ \hline
+		 HighLamp & 0.0008 & 0.0007  \\ \hline
+	   Tower &  & \\ \hline
+    \end{tabular}
+		\caption{Depth of features in $m^2/px$ at different heights in $px$}\label{table6}
+\end{table}
+
+It could also be interesting to have depth map not by feature but by $x$ position, therefore one could make a heat map with the depth which will give us a more effective way to analyse it; the issue with this approach is that hardly more than the already tracked points can be tracked by the common tracking algorithms; this could be improved in the future using some other transformation like iterative feature extractors like Convolutional Neural Networks\cite{DCNN} to have a better corner detector and to be able to track more points; even though this approach works very well and the comparison with the existent light field recovery methods for approaching the depth map of a scene, in the next section we will shortly review this. 
+
 \section{Performance and results comparison with previews works}
+
+We already mentioned several times the computer system that was used is a low end MacBook whose processor and gpu are by far not the best in the commercial market and are even worse in comparison with the high-end servers used some researcher on the area. 
+
+\bigskip
+
+In the last sections we got the next running times on finishing the whole pipeline of light field reconstruction:
+
+\begin{itemize}
+\item \textbf{Point tracking}: 16.36 seconds.
+\item \textbf{Sparse EPI painting}: 9.46 seconds (43 EPIs, 0.22 seconds for each).
+\item \textbf{Sparse EPI inpainting}: 666.50 (43 inpeinted EPIs, 15.50 seconds for each).
+\item \textbf{Line detection and depth map computation}: 0.43 seconds (43 EPIs, 0.01 seconds for each).
+\end{itemize}
+
+This gives a total of 692.75 seconds to reconstruct the Light Field and compute the Depth Map. 

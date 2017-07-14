@@ -108,7 +108,7 @@ end
 
 # Function to inpaint a specific file of sparse EPI with 
 # iterative thresholding with 50 iterations 
-fhe Untold History of the United Statesunction inpaint_file(file_sparse,file_dense) 
+inpaint_file(file_sparse,file_dense) 
     # The path of the sparse EPI
     name_sparse = "../Diagrams/results/EPIs/"*file_sparse;
     EPI_sparse = Shearlab.load_image(name_sparse, n,m);

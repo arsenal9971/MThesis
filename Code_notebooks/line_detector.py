@@ -10,9 +10,11 @@ import time
 from PIL import Image
 
 # Importing the image
-name_inpainted = '../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png';
+name_inpainted = '../Diagrams/results/Inpainted/673_10_
+			102_7_48_8_inpainted.png';
 img = cv2.imread(name)
-name_strip = '../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png';
+name_strip = '../Diagrams/results/EPIs/
+		673_10_102_4_48_8_strip.png';
 
 # Reading the size of the image in pixels
 [size_y,size_x] = np.shape(img[:,:,0])
@@ -42,7 +44,6 @@ for line in lines:
 
 plt.rcParams["figure.figsize"] = [12,9]
 plt.imshow(img_lines)
-# plt.savefig('../Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png')
 plt.show()
 
 # Function to compute the slope
@@ -69,5 +70,4 @@ cv2.line(img,(x1,y1),(x2,y2),(0,0,255),2);
 plt.imshow(img)
 plt.rcParams["figure.figsize"] = [12,9]
 plt.imshow(strip)
-# plt.savefig('../Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png')
 plt.show()
