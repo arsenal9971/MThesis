@@ -148,17 +148,17 @@ We already introduced the concept of 4D Light Field, how this concept has been d
 \caption{Downward-facing light source which induces a light field whose irradiance vectors curve otwards, Figure taken from \url{https://en.wikipedia.org/wiki/File:Gershun-light-field-fig24.png}}
 \end{figure}
 
-\item \textbf{View synthesis or rendering}: One of the most visible applications of the light fields, which centers of the synthesis of intermediate views from a given set of captured views of a 3D visual scene, also called image-based rendering. Immersive visual applications as free viewpoint television and virtual reality require a dense set of images of a scene, but the scene is typically captured by a limited number of cameras that form a coarse set of multiview images. Modern methods for view synthesis are based in two different approaches: estimation of the scene depth and synthesis of novel views based on the estimated depth and the given images, where the depth works as correspondence map for view reprojection (something that could be interpreted as inverse projection or triangulation). The limitation on this approach is that the quality of depth estimation is dependent on the scene content, causing visually annoying artifacts in the rendered (synthesized) views when the depth map has small deviations (for further information of this one can read \cite{Kim-Zimmer}).
+\item \textbf{View synthesis or rendering}: One of the most visible applications of the light fields, which centers of the synthesis of intermediate views from a given set of captured views of a 3D visual scene, also called image-based rendering. Immersive visual applications as free viewpoint television and virtual reality require a dense set of images of a scene, but the scene is typically captured by a limited number of cameras that form a coarse set of multiview images. Modern methods for view synthesis are based in two different approaches: estimation of the scene depth and synthesis of novel views based on the estimated depth and the given images, where the depth works as correspondence map for view reprojection (something that could be interpreted as inverse projection). The limitation on this approach is that the quality of depth estimation is dependent on the scene content, causing visually annoying artifacts in the rendered (synthesized) views when the depth map has small deviations (for further information of this one can read \cite{Kim-Zimmer}).
 
 \bigskip
 
 The best approach so far that fixes this problem is based on the concept of plenoptic function and its light field  approximation. The scene capture and intermediate view synthesis problem can be formulated as sampling and consecutive reconstruction (interpolation) of the underlying plenoptic function. LF based methods consider each pixel of the given views as a sample of a multidimensional LF function, thus the unknown views are function values that can be determined after its reconstruction from samples.
 
-\item \textbf{Synthetic aperture photography (Light Field rendering)}: One can approximate the view that would captured by a camera having a finite aperture (non-pinhole) when integrating an appropiate 4D subset of the samples in a light field. This view has a finite depth of field (one can focuse until a finite depth on the scene). One can focus on different fronto-parallel or oblique planes in the scen by shearing the light field before performing this integration (one can check \cite{Isaksen} for the fronto-parallel case). Like in the case of Lytro cameras, this permits its photographies to be refocused after they are taken.
+\item \textbf{Synthetic aperture photography (Light Field rendering)}: One can approximate the view that would captured by a camera having a finite aperture (non-pinhole) when integrating an appropiate 4D subset of the samples in a light field. This view has a finite depth of field (one can focuse until a finite depth on the scene). One can focus on different fronto-parallel or oblique planes in the scen by shearing the light field before performing this integration (one can check \cite{Isaksen} for the fronto-parallel case). Like in the case of Lytro cameras, this permits its photographs to be refocused after they are taken.
 
-\item \textbf{3D display}: One can present a light field using technology that maps each sample to the appropiate ray in physical space, one obtains then an autostereoscopic visual effect when viewing the original scene (hologram-wise). With non digital technologies to do this, one can use holography; digital technologies of 3D display include placing an array of lenslets over a high-resolution display screen, or projecting the imagery onto an array of lenslets using an array of video projectors; if this last one is combined with an array of video cameras, one can capture and display a time-varying light field, which basically constitutes a 3D television system (check \cite{Javidi}).
+\item \textbf{3D display}: One can present a light field using technology that maps each sample to the appropiate ray in physical space, one obtains then an autostereoscopic visual effect akin to viewing the original scene (hologram-wise). For non digital technologies for doing this one can use holography; digital technologies of 3D display include placing an array of lenslets over a high-resolution display screen, or projecting the imagery onto an array of lenslets using an array of video projectors; if this last one is combined with an array of video cameras, one can capture and display a time-varying light field, which basically constitutes a 3D television system (check \cite{Javidi}).
 
-\item \textbf{Light Field microscopy}: Light field permit manipulation of viewpoint and focus after the imagery has been recorded. By inserting a microlens array into the optical train of a conventional microscope, one can capture light fields of biological specimens in a single photograph. The ability to create focal stacks from a single photograph allows moving or light-sensitive specimens to be recorded, with 3D deconvolution one can produce a set of cross sections which can be visualized using volume rendering, one very recommended reference on that sense is \cite{Ng-micro}.
+\item \textbf{Light Field microscopy}: Light field permit manipulation of viewpoint and focus after the imagery has been recorded. By inserting a microlens array into the optical train of a conventional microscope, one can capture light fields of biological specimens in a single photograph. The ability to create focal stacks from a single photograph allows moving or light-sensitive specimens to be recorded, with 3D deconvolution one can produce a set fo cross sections whcih can be cisualized using volume rendering, one very recommended reference on that sense is \cite{Ng-micro}.
 
 \item \textbf{Brain imaging}: Neural activity can be recorded optically by genetically encoding neurons with reversible fluorescent markers that indicate the presence of calcium ions in real time. Since Light field microscopy captures full volume information in a singel frame, it is possible to monitor neural activity in many individual neurons randomly distributed in a large volume at video framerate. A quantitative measurement of neural activity can even be done despite optical aberrations in brain tissue and without reconstructing a volume image \cite{Pegard}.
 
@@ -175,7 +175,7 @@ We think this examples of application make very clear the important role that Li
 
 \subsection{Epipolar constraint}
 
-One of the fundamental tasks of computer vision is to describe a scene in terms of coherent threedimensional objects and their spatial relationships. This tasks present clear limitations for two main reasons: 
+One of the fundamental tasks of computer vision is to describe a sscene in terms of coherent threedimensional objects and their spatial relationships. This tasks present clear limitations for two main reasons: 
 \begin{itemize}
 \item There is an enormous diversity of objects and an almost limitless ways in which they can occur in scenes.
 \item Classical images have an inherent ambiguity; since the process of forming an image captures only two of the three dimensions of the scene, an infinity of three-dimensional scenes can give rise to the same two-dimensional image; therefore no single two-dimensional image contains enough information to enable reconstruction of the three-dimensional scen that gave rise to it.
@@ -203,23 +203,24 @@ The epipolar plane image analysis proposed by Bolles \cite{Bolles} is a techniqu
 
 \bigskip
 
-One can supply the separate analysis of both camera motion and object position by an unified treatment of parameters and concentrate solely in object positions while knowing the camera followed trajectory, this known motion assumption is appropriate for autonomous vehicles with intertial-guidance systems and some industrial tasks. This assumption is called the \textbf{"epipolar"} constraint and its most important feature is that it reduces the search required to find matching features from two dimensions to one and is derived from the known position of one camera view with respect to the other. 
+One can supply the separate analysis of both camera motion and object position by an unified treatment of parameters and concentrate solely in object positions, this known motion assumption is appropriate for autonomous vehicles with intertial-guidance systems and some industrial tasks. This assumption is called the \textbf{"epipolar"} constraint and its most important feature is that it reduces the search required to find matching features from two dimensions to one and is derived from the known position of one camera with respect to the other. 
 
 \bigskip
 
-The epipolar constraint as we just mentioned reduces the complexity of matching features between successive images (by search dimensional reduction), even though matching features still one of the most difficult steps in motion processing. In stereo analysis, it is well known that the difficulty of finding matches increases with the distance between the lens centers of successive views, so as a second assumption we suppose that the images were taken very close together. 
+The epipolar constraint as we just mentioned reduces the complexity of matching features between successive images (by search dimensional reduction), even though matching features still one of the most difficult steps in motion processing. In stereo analysis, it is well known that the difficulty of finding matches increases with the distance between the lens centers, so as a second assumption we suppose that the images were taken very close together. 
+As another assumption that will simplify the matching of features between seccessive images one assume that the images were taken very close together. 
 
 \bigskip 
 
-At the time that Bolles et al.\ developed the epipolar plane image analysis technique matching features was indeed a very complex task to implement; they did not have digital cameras of high resolution as today, and also the most common algorithms on feature extraction/tracking for motion flow were developed after 1988 (we will discuss in detail about this on the section~\ref{sec:Sparse-acquisition}) just one year after Bolles proposed this approach. For this reason they developed their own very creative way to track features that is worth to mention shortly, to be able to compare with the modern robust algorithms.  
+At the time that Bolles et al.\ developed the epipolar plane image analysis technique matching features was indeed a very complex task to implement; they did not have digital cameras of high resolution as today, and also the most common algorithms on feature extraction/tracking for motion flow were after 1988 (we will discuss in detail about this on the section~\ref{sec:Sparse-acquisition}) just one year after Bolles proposed this approach. For this reason they developed their own very creative way to track features that is worth to mention shortly, to be able to compare with the modern robust algorithms.  
 
 \subsection{Bolles feature tracking technique and experimental setup}
 
-Bolles and his group in the Artificial Intelligence Center at Menlo Park developed as a feature tracker an edge detection and classification technique for analyzing one slice of the data (spatio-dimensional block of images) at a time. For this end, they adapted this approach to a range sensor, which gathered hundreds of slices in sequence. The sensor, a standard structured-light sensor, projected a plane of light onto the objects in the scene and then triangulated the three-dimensional coordinates of points along the intersection of the plane and the objects. The edge detection technique locates discontinuities in one plane and links them to similar discontinuities in previus planes. 
+Bolles and his group in the Artificial Intelligence Center at Menlo Park developed as a feature tracker an edge detection and classification technique for analyzing one slice of the data (spatio-dimensional block of images) at a time. For this end, they adapted this approach to a range sensor, whcih gathered hundreds of slices in sequence. The sensor, a standard structured-light sensor, projected a plane of light onto the objects in the scene and then triangulated the three-dimensional coordinates of points along the intersection of the plane and the objects. The edge detection technique locates discontinuities in one plane and links them to similar discontinuities in previus planes. 
 
 \bigskip
 
-They found out that the spacing between light planes makes a significant difference in the complexity of the procedure that links discontinuities from one plane to the next. When the light planes are close together relative to the size of the object features, matching is essentially easy. When the planes are far apart, the matching is extremely difficult; this effect gives a sampling rate estimate analogous to the Nyquist limit in sampling theory. A deeper sampling analysis will be done in the section~\ref{sec:Sparse-acquisition}. For the physical acquisition of the pictures they borrowed a one-meter-long optical track and gathered multiple images while moving a camera manually along it. 
+They found out that the spacing between light planes makes a significant difference in the complexity of the procedure that links discontnuities from one plane to the next. When the light planes are close together relative to the size of the object features, matching is essentially easy. When the planes are far apart, the matching is extremely difficult; this effect gives a sampling rate estimate analogous to the Nyquist limit in sampling theory. A deeper sampling analysis will be done in the section~\ref{sec:Sparse-acquisition}. For the physical acquisition of the pictures they borrowed a one-meter-long optical track and gathered multiple images while moving a camera manually along it. 
 
 \bigskip
 
@@ -248,7 +249,7 @@ Analyzing the figure~\ref{fig:LateralMotion} one can see that the one-dimensiona
                    &= \Delta X\frac{h}{D}
 \end{aligned}
 \end{equation}
-where $\Delta X$ is the distance traveled by the camera along the line, $\Delta U$ the distance the feature moved in the image plane, $h$ is the focal distance of the camera and $D$ is the depth of the feature point. By the Equation~\ref{eq:C1S4E1} the change in image position is a linear function of the distance the camera moved; this equation can be rearranged as follows to yield a simple expression for the distance of a point in terms of the slope of its line in the EPI (concept that will be explained in more detail in the next sections):
+where $\Delta X$ is the distance traveled by the camera along the line, $\Delta U$ the distance the feature moved in the image plane, $h$ is the focal distance of the camera and $D$ is the depth of the feature point. By the Equation~\ref{eq:C1S4E1} the change in image position is al inear function of the distnace the camera moves; this equation can be rearranged as follows to yield a simple expression for the distance of a point in terms of the slope of its line in the EPI:
 
 \begin{equation}
 \label{eq:C1S4E2}
@@ -257,7 +258,7 @@ D = h\frac{\Delta X}{\Delta U}
 \end{aligned}
 \end{equation}
 
-so if one constructs the spatio-temporal paths of feature points one can get its depth in the scene with respect to the image plane by measuring the slope of its lines with the Equation~\ref{eq:C1S4E2}, the spatial part just considers one dimension of the image planes, this is possible without losing information since in this setup the points follow a linear paths.
+so if one constructs the spatio-temporal paths of feature points one can get its depth in the scene with respect to the image plane by measuring the slope of its lines with the Equation~\ref{eq:C1S4E2}.
 
 \bigskip
 
@@ -265,13 +266,13 @@ We already mention words as epipolar plane, or epipolar plane image but we have 
 
 \subsection{Functional analysis approach to EPI}
 
-At the beginning of this chapter we mentioned the parallel plane approach to 4D light field (recall Figure~\ref{fig:C2S0F3}), the idea of epipolar geometry is based on this representation. As in Figure~\ref{fig:C2S0F3} let the two parallel planes be called $\pi_0$ and $\pi_1$ with coordinates $(s,t)$ and $(u,v)$ respectively. In this scheme, the 4D Light Field will be a function $L_4:\mathbb{R}^4\longrightarrow\mathbb{R}^3$ with the radiance $\mathbf{r}\in\mathbb{R}^3$ given as
+At the beginning of this chapter we mentioned the parallel plane approach to 4D light field (recall Figure~\ref{fig:C2S0F3}), the idea of epipolar geometry is based on this representation. As in Figure~\ref{fig:C2S0F3} lets the two parallel planes be called $\pi_0$ and $\pi_1$ with coordinates $(s,t)$ and $(u,v)$ respectively. In this scheme, the 4D Light Field will be a function $L_4:\mathbb{R}^4\longrightarrow\mathbb{R}^3$ with the radiance $\mathbf{r}\in\mathbb{R}^3$ given as
 
 $$
 \mathbf{r}=L_4(u,v,s,t)
 $$
 
-If we fix one of the two coordinates on $\pi_0$, say $t$, so that $\pi_0$ reduces to a line, the ray space of the resulting light field will span the $u,v$ and $s$ dimensions of the original ray space; lets called this parameterized light field a 3D light field, and can be denoted as a function $L_3:\mathbb{R}^3\longrightarrow\mathbb{R}^3$. The radiance $\mathbf{r}\in\mathbb{R}^3$ of a light ray is given then as
+If we fix on of the two coordinates on $\pi_0$, say $t$, so that $\pi_0$ reduces to a line, the ray space of the resulting light field will span the $u,v$ and $s$ dimensions of the original ray space; lets called this parameterized light field a 3D light field, and can be denoted as a function $L_3:\mathbb{R}^3\longrightarrow\mathbb{R}^3$. The radiance $\mathbf{r}\in\mathbb{R}^3$ of a light ray is given then as
 
 $$
 \mathbf{r}=L_3(u,v,s)
@@ -330,7 +331,7 @@ If one has the EPI of a sufficiently dense sequence, one can estimate then the d
 \section{Physical and computational setup for sparse acquisition of epipolar plane}
 \label{sec:Sparse-acquisition}
 
-One of the downsides on the references in this topic that we found out was the lack of detailed explanation of the followed pipeline that the group or researcher in question used to take and process the set of images of a scene, to go from a sequence of raw pictures to the epipolar plane images of the sequence; in most of the papers and books one gets a black box of expensive privative computer vision software used to detect and track pictures in the sequence; in some papers is also not clear the whole reconstruction procedure in the sense that they just present the algorithm but not the implementation code which makes impossible to reproduce and improve their implementation or even to assure that it actually works.
+One of the downsides on the references in this topic that we found out was the lack of detailed explanation of the followed pipeline that the group or researcher in question used to take and process the set of images of a scene, to go from a sequence of raw pictures to the epipolar plane images of the sequence; in most of the papers and books one gets a black box of expensive privative computer vision software used to detect and track pictures in the sequence; in some papers is also not clear the whole reconstruction procedure in the sense that they just present the algorithm but not the implementation code which makes impossible to reproduce and improve their implementation.
 
 \bigskip
 
@@ -347,7 +348,7 @@ By lack of equipment we did not take the images but used the datasets provided b
 
 \bigskip
 
-They provide five different datasets that are made of sequence of images named after the objects that appear in the scene: Mansion, Church, Couch, Bikes and Statue; these datasets have been widely used by the community (see \cite{LF-Shearlets}). In all the cases they used a digital SLR camera translated motorized linear stage to capture the multiple views (with the camera facing perpendicularly with respect of the stage). One can observe in Figure~\ref{fig:setting} the used stage and camera.
+They provide five different datasets that are made of sequence of images named after the objects that appear in the scene: Mansion, Church, Couch, Bikes and Statue; this datasets have been widely used by the community (see \cite{LF-Shearlets}). In all the cases they used a digital SLR camera translated motorized linear stage to capture the multiple views (with the camera facing perpendicularly with respect of the stage). One can observe in Figure~\ref{fig:setting} the used stage and camera.
 
 \begin{figure}[h!]
 \centering
@@ -374,12 +375,12 @@ Following the idea of Vagharshakyan et al. \cite{LF-Shearlets}, by assuming a ho
 \Delta X \leq \frac{D_{min}}{h}\Delta U
 \end{equation}
 
-in order to ensure a maximum of 1 pixel disparity between nearby views, which will avoid aliasing and other artifacts. Vagharshakyan et al.\ also proved that by selecting the equality for $\Delta X$ in Equation~\ref{eq:C2S5E4}, one maximizes the baseband support, which helps in designing reconstruction filters; in particular, simple separable filters like linear interpolators can be used. The problem in this thesis is the reconstruction densely sampled EPIs (and thus the whole LF) from their decimated and aliased version produced by a higher camera step $\Delta X$ than the one in Equation~\ref{eq:C2S5E4} by using some sparse representation of the EPIs. 
+in order to ensure maximum 1 pixel disparity between nearby views, which will avoid aliasing and other artifacts. Vagharshakyan et al.\ also proved that by selecting the equality for $\Delta X$ in Equation~\ref{eq:C2S5E4}, one maximizes the baseband support, which helps in designing reconstruction filters; in particular, simple separable filters like linear interpolators can be used. The problem in this thesis is the reconstruction densely sampled EPIs (and thus the whole LF) from their decimated and aliased verrsion produced by a higher camera step $\Delta X$ than the one in Equation~\ref{eq:C2S5E4} by using some sparse representation of the EPIs. 
 
 
 \bigskip
 
-In the case of the setting used by the group of the Disney Research Center, the images were captured by using a Canon EOS 4D Mark II DSLR camera and a Canon EF $50$mm f/$1.4$ USM lens and a Zaber T-LST1500D motorized linear stage to drive the camera to the shooting positions; an image of used setup can be found on Figure~\ref{fig:setting}. The camera focal length was $50$ mm and the sensor size was $36\times24$mm, PTLens was used to radially undistort the captured images, and Voodoo Camera Tracker was used to estimate the camera poses for rectifiction (is very important that the images are rectified to be able to track points); by its number of corners (features easy to track) the \textbf{Church} data set which consists in 101 pictures was the one studied in this thesis, here the camera separation is $\Delta X=10mm$ which attains the Nyquist sampling bound mentioned in Equation~\ref{eq:C2S5E4}.
+In the case of the setting used by the group of the Disney Research Center, the images were captured by using a Canon EOS 4D Mark II DSLR camera and a Canon EF $50$mm f/$1.4$ USM lens and a Zaber T-LST1500D motorized linear stage to drive the camera to the shooting positions. The camera focal length was $50$ mm and the sensor size was $36\times24$mm, PTLens was used to radially undistort the captured images, and Voodoo Camera Tracker was used to estimate the camera poses for rectifiction (is very important that the images are rectified to be able to track points); by its number of corners (features easy to track) the \textbf{Church} data set which consists in 101 pictures was the one studied in this thesis, here the camera separation is $\Delta X=10mm$ which attains the Nyquist sampling bound mentioned in Equation~\ref{eq:C2S5E4}.
 
 \subsection{Followed pipeline}
 
@@ -410,7 +411,7 @@ The first step in the pipeline (Acquisition of rectified images sequence) was al
 
 \subsection{Geometric construction of epipolar lines}
 
-To have closer in mind, in stereo vision when we have two different points of views of a scene (that can be interpreted as two different cameras pointing to the same scene) a line that passes through the lens center of one camera maps to a point $x$ in the image plane and to a line in the image plane of the other camera, this line is called epipolar line, see Figure~\ref{epipolar_line}
+To have closer in mind, in stereo vision when we have two different points of views of a scene (that can be interpreted as two different cameras pointing to the same scene) a line that passes through the lens center of one camera maps to a point P in the image plane and to a line in the image plane of the other camera, this line is called epipolar line, see Figure~\ref{epipolar_line}
 
 \begin{figure}[h!]
 \centering
@@ -419,7 +420,7 @@ To have closer in mind, in stereo vision when we have two different points of vi
 \label{epipolar_line}
 \end{figure}
 
-As we mentioned, every point on the line $OX$ projects to the same point on the left image plane, this implies that just with one image we cannot triangulate the 3D point on the scene. If the points $x$ and $x'$ (corresponding to the same scene point) on the two image planes are known the proyection lines ($Ox$ and $O'x'$) most intersect exactly at X, so the coordinates of points $X$ on the scene can be calculated from the coordinates of the two image points; this means that with two perspectives is possible to triangulate 3D points. Occlusion causes problems since some important features can be blocked by other objects and this can be solved by taking more pictures. The epipolar geometry is based in this result. 
+As we mentioned, every point on the line $OX$ projects to the same point on the left image plane, this implies that just with one image we cannot triangulate the 3D point on the scene. If the points $x$ and $x'$ (corresponding to the same scene point) on the two image planes are known the proyection lines ($Ox$ and $O'x'$) most intersect exactly at X, so the coordinates of points $X$ on the scene can be calculated from the coordinates of the two image points; this means that with two perspectives is possible to triangulate 3D points. The epipolar geometry is based in this result. 
 
 \bigskip
 
@@ -442,7 +443,7 @@ Lets define and construct precisely both matrices:
 
 \begin{equation}
 \label{eq:C2S5E5}
-P_r=R(P_l-T)
+P_r=R(P_l-R)
 \end{equation}
 
 with $R$ the associated rotation matrix, to relate this we need to introduce the epipolar plane. The equation of a plane which passes trough a point $a$ with normal vector $n$ is $(x-a)\cdot n=0$, in this case the coordinates of the point $P_l$ which is in the epipolar plane will be 
@@ -461,29 +462,29 @@ T_z & 0 & -T_x \\
 \end{matrix}\right)
 $$
 
-this imples that $(P_r)^{\intercal}RSP_l=0$. One defines $E=(P_r)^{\intercal}EP_l$ (where $E$ is the essential matrix), now to get back to global coordinates, one uses the projection equations $p_l=f_lP_l/Z_l$ and $p_r=f_rP_r/Z_r$ where $f_l$ and $f_r$ are the focus length of each camera and $Z_r$,$Z_l$ are the $Z$ coordinate fo the point with respect of each camera; divinding them by $Z_l>_r/f_lf_r$ one obtains the equation for the epipolar line:
+this imples that $(P_r)^{\intercal}RSP_l=0$. One defines $E=(P_r)^{\intercal}EP_l$ (where $E$ is the essential matrix), now to get back to global coordinates, one uses the projection equations $p_l=f_lP_l/Z_l$ and $p_r=f_rP_r/Z_r$; divinding them by $Z_l>_r/f_lf_r$ one obtains the equation for the epipolar line:
 \begin{equation}
 \label{eq:C2S5E7}
 p_r^{\intercal}Ep_l=0
 \end{equation}
-since the essential matrix $E$ is a rank deficient matrix (i.e.\ if $E$ is of size $n\times n$ there are fewer $n$ nonzero eigenvalues) the Equation~\ref{eq:C2S5E7} is the equation for a line, but we are interested in camera coordinates (pixel coordinates) and $E$ does not relates them, rather relates global coordinates, even though one can us $E$ to construct the fundamentla matrix $F$ that will do the work.
+since the essential matrix $E$ is a rank deficient matrix (i.e.\ if $E$ is of size $n\times n$ there are fewer $n$ nonzero eigenvalues) the Equation~\ref{eq:C2S5E7} is the equation for a line, even though we are interested in camera coordinates (pixel coordinates) and $E$ does not relates them, rather relates global coordinates, even though one can us $E$ to construct the fundamentla matrix $F$ that will do the work.
 
-\item \textbf{Fundamental Matrix (F):} It contains the same information as $E$ in addition to information about the intrinsics of the cameras (pixel coordinates). If $p$ is a point and $M$ is the camera intrinsic matrix (which projects the image to the pixels), then $q=Mp$ is a point in the camera's coordinates, using this and the Equation~\ref{eq:C2S5E7} one has 
+\item \textbf{Fundamental Matrix (F):} It contains the same information as $E$ in addition to information about the intrinsic of the cameras (pixel coordinates). If $p$ is a point and $M$ is the camera intrinsic matrix (which projects the image to the pixels), then $q=Mp$ is a point in the camera's coordinates, using this and the Equation~\ref{eq:C2S5E7} one has 
 \begin{equation}
 \label{eq:C2S5E8}
 q_r^{\intercal}(M_r^{-1})^{\intercal}E M_l^{-1}q_l=0
 \end{equation}
 so one defines the fundamental matrix $F$ as $F=(M_r^{-1})^{\intercal}EM_l^{-1}$ so that $q_r^{\intercal}Fq_l=0$, then $F$ is just like $E$ but $F$ operating in the image pixel coordinates rather than in the physical coordinates.
 \end{itemize}
-It is clear that finding the epipolar lines does not require complicated mathematical concepts just linear algebra and classical geometry, for a more detailed explanation of the fundamental and essential matrices and its implementation in OpenCV we recommend to read the chapter 12 of \cite{LearnOpenCV} which is strongly based on the more theoretical book "Multiple View Geometry in Computer Vision" by R. Hartley and A. Zisserman \cite{MultipleView}. We are assuming here that we have a form to find matching points in between the images, but this is in our experience the hardest task on the EPI construction, and there are different ways to tackle which we will explain in the next subsection. 
+it is clear that finding the epipolar lines does not require complicated mathematical concepts just linear algebra and classical geometry, for a more detailed explanation of the fundamental and essential matrices and its implementation in OpenCV we recommend the chapter 12 of \cite{LearnOpenCV} which is strongly based on the more theoretical book "Multiple View Geometry in Computer Vision" by R. Hartley and A. Zisserman \cite{MultipleView}. We are assuming here that we have a form to find matching points in between the images, but this is in our experience the hardest task on the EPI construction, and there are different ways to tackle which we will explain in the next subsection. 
 
 \subsection{Tracking point algorithms}
 \label{sec:track_alg}
 
-Tracking a point in a sequence of images of the same scene is a very common task in computer vision; it can be applied to analyse motion flow in a video in order to predict position of an object in future frames. The task consists mainly in two parts: First, you need to detect feature points that are easy to track (e.g.\ corners) and second you need to follow them in the different frames. In this subsection we will present first some feature detection algorithms that are used commonly in motion flow tracking with the advantages and disadvantages of each one. 
+Tracking a point in a sequence of images of the same scene is a very common task in computer vision; it can be applied to analyse motion flow in a video in order to predict position of an object in future frames. The task consists mainly in two part: first you need to detect feature points that are easy to track (e.g.\ corners) and second you need to follow them in the different frames. In this subsection we will present first some feature detection algorithms that are used commonly in motion flow tracking with the advantages and disadvantages of each one. 
 
 \begin{itemize}
-\item \textbf{SIFT (Scale Invariant Feature Transform):} As its name suggests it SIFT is a feature detector that is scale invariant. In the universe of computer vision related algorithms there exist plenty of image feature detection algorithms; some of them are corner detectors which are rotation invariant (e.g. Harris and Shi Tomasi), i.e.\ even if the image is rotated we can find the same corners; this makes a lot of sense sicne corners remain corners even if the image is rotated, but they are not necessarily scaling invariant, for example a corner in a small image within a small window is flat when is zoom in with the same window, see Figure~\ref{fig:ScalingCorner}
+\item \textbf{SIFT (Scale Invariant Feature Transform):} As its name suggests it SIFT is a feature detector that is scale invariant. In the universe of computer vision related algorithms there exist plenty of imagefeature detection algorithms; some of them are corner detectors which are rotation invariant (e.g. Harris and Shi Tomasi), i.e.\ even if the image is rotated we can find the same corners; this makes a lot of sense sicne corners remain corners even if the image is rotated, but they are not necessarily scaling invariant, for example a corner in a small image within a small window is flat when is zoom in with the same window, see Figure~\ref{fig:ScalingCorner}
 
 \begin{figure}[h!]
 \centering
@@ -496,7 +497,7 @@ In 2004, D. Lowe of University of British Columbia published the paper "Distinti
 
 \bigskip
 
-The broad idea of the algorithm is as follows: From the Figure~\ref{fig:ScalingCorner} is obvious that to detect windows with different scale. It behaves correctly with small corners, but to detect large corners we need larger windows. For this, scale-space filtering is used; Laplacian of Gaussian (refering to the famous blob detector spatial filter nicely explained in \cite{MVision}) is found for the image with various standard deviations $\sigma$ (which controls the scales); this acts as a blob detector for blobs of different sizes. One finds the local maxima accross the space and scale which give us a list of $(x,y,\sigma)$ values (see Figure~\ref{fig:dif_sizes_corners}) which means there is a potential key point $(x,y)$ at scale $\sigma$
+The brad idea of the algorithm is as follows: From the Figure~\ref{fig:ScalingCorner} is obvious that to detect windows with different scale. It behaves correctly with small corners, but to detect large corners we need larger windows. For this, scale-space filtering is used; Laplacian of Gaussian (refering to the famous blob detector spatial filter nicely explained in \cite{MVision}) is found for the image with various standard derivation $\sigma$ (which controls the scales); this acts as a blob detector for blobs of different sizes. One finds the local maxima accross the space and scale which give us a list of $(x,y,\sigma)$ values (see Figure~\ref{fig:dif_sizes_corners}) which means there is a potential key point $(x,y)$ at scale $\sigma$
 
 \begin{figure}[h!]
 \centering
@@ -514,7 +515,7 @@ To draw the epipolar lines of a pair of images we can use SIFT as the feature po
 E(u,v)=\sum_{x,y}w(x,y)(I(x+u,y+v)-I(x,y))^2
 \end{equation}
 
-where $w$ is a windows function (e.g.\ rectangular or gaussian), and $I(x,y)$ is the intensity of the image at the point $(x,y)$. For corner detection one has to maximize the functional $E(u,v)$, applying Taylor expansion until second order one gets the quadratic equation 
+where $w$ is a windows function (e.g.\ rectangular or gaussian), and $I(x,y)$ is the intensity of the image at the point $(x,y)$. For corner detection one has to maximize the functional $E(u,v)$, applying Taylor expansion one gets the equation 
 $$
 E(u,v)\approx
  \left(
@@ -555,7 +556,7 @@ for a graphical representation of this conditions see Figure~\ref{fig:harris_reg
 \begin{figure}[h!]
 \centering
 \includegraphics[width = 0.5\textwidth]{./Diagrams/harris_region.png}
-\caption{Diagram representing the criterion of corner detection for Harris detector, the axis $x$ represents $\lambda_1$ and axis $y$ represents $\lambda_2$}
+\caption{Diagrama representing the criterion of corner detection for Harris detector, the axis $x$ represents $\lambda_1$ and axis $y$ represents $\lambda_2$}
 \label{fig:harris_region}
 \end{figure}
 
@@ -579,19 +580,19 @@ as in the case of the Harris Corner Detector, if $|R|$ is greater than a thresho
 \label{fig:shitomasi_space}
 \end{figure}
 
-There is also an straight forward implementation of this algorithm on OpenCV, we used this algorithm to find the $N$ strongest corners and then track them with Lucas-Kanade algorithm. Even the Shi-Tomasi corner detector is rotation invariant since the trace and the determinant of the matrix $M$ are rotation invariant they are not scaling invariant like the SIFT algorithm which is slower than the former. In the case of the sequence that we are working with the images were taken very close to each other so the scale of the features wont change significantly. 
+There is also an straight forward implementation of this algorithm on OpenCV, we used this algorithm to find the $N$ strongest corners and then trakc them with Lucas-Kanade algorithm. Even the Shi-Tomasi corner detector is rotation invariant since the trace and the determinant of the matrix $M$ are rotation invariant they are not scaling invariant like the SIFT algorithm which is slower than the former. In the case of the sequence that we are working with the images were taken very close to each other so the scale of the features wont change significantly. 
 \end{itemize}
 
 We already explained the different options for feature detection algorithms and that the option picked was the Shi-Tomasi corner detector to track the strong corners obtained by the Shi-Tomasi algorithm we used the Lucas-Kanade method explained as follows:
 \begin{itemize}
-\item \textbf{Lucas-Kanade method:} We would like to associate a movement vector $(u,v)$ to every such "interesting pixel" (strong corner point) in the scene obtained by comparing two successive images with the next two assumptions:
+\item \textbf{Lucas-Kanade method:} We would like to associate a movement vector $(u,v)$ to every such "interesting pixel" (stron corner point) in the scene obtained by comparing two successive images with the next two assumptions:
 \begin{enumerate}
 \item The two images are separated by a small increment $\Delta t$, such that the objects have not displaces significantly (the algorithm works best with slow moving objects). 
 \item The images depict a natural scene containing textured objects exhibiting shades of gray (different intensity levels) which change smoothly.
 \item The pixel intensity of an object does not change in consecutive frames.
 \item Neighbouring pixels have similar motion.
 \end{enumerate}
-With this assumptions consider a pair in $(x,y)$ at time $t$ with intensity $I(x,y,t)$, it moves by distance $(dx,dy)$ in next frame taken after $dt$ time. Since those pixels are the same and intensity does not change we can say 
+With this assumptions consider a piel in $(x,y)$ at time $t$ with intensity $I(x,y,t)$, it moves by distance $(dx,dy)$ in next frame taken after $dt$ time. Since those pixels are the same and intensity does not change we can say 
 $$
 I(x,y,t)=I(x+dx,y+dy,t+dt)
 $$
@@ -636,13 +637,13 @@ v
 \end{matrix}
 \right)
 \end{equation}
-obtaining with this the vector flow of the features in the scene. By its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how did we implemented the Lucas-Kanade method with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
+obtaining with this the vector flow of the features in the scene. By its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how did we implemented the Lucas-Kanade methid with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
 \end{itemize}
  
 \subsection{Procedure for tracking and painting the EPIs}
 \label{sec:proc_track}
 
-The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the church and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec:Appendix_A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook Pro with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
+The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the curch and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec:Appendix_A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook Pro with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
 
 \begin{figure}[h!]
 \centering

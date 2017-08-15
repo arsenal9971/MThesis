@@ -5,11 +5,11 @@ We just presented in Subsection~\ref{sec:shearlet_parseval_inpainting} a general
 
 \bigskip
 
-We also presented in Subsection~\ref{sec:0-Shearlets} the particular case of Universal Shearlets with scaling sequence given by the parameters $\alpha_j=-2/j$, which generates a Parseval frame that is a good choice for the represenation of singularities distributed over straight lines, and therefore is a good option for inpainting Epipolar Plane Images that are formed by linear structures.
+We also presented in Subsection~\ref{sec:0-Shearlets} the particular case of Universal Shearlets with scaling sequence given by the parameters $\alpha_j=-2/j$, which generates a Parseval frame that is a good choice for the representation of singularities distributed over straight lines, and therefore is a good option for inpainting Epipolar Plane Images that are formed by linear structures.
 
 \bigskip
 
-In this chapter we will present a particular algorithm that we used to inpaint EPIs related to sparse sampled light fields using $0$-Shearlets in the Julia implemenation of Shearlab (Shearlab.jl) which is called Iterative Hard Thresholding; we will also present the results on the impainting for a particular data set (the Church Data set already mentioned in Chapter 2). 
+In this chapter we will present a particular algorithm that we used to inpaint EPIs related to sparse sampled light fields using $0$-Shearlets in the Julia implemenation of Shearlab (Shearlab.jl) which is called Iterative Hard Thresholding; we will also present the results on the inpainting of a particular data set (the Church Data set already mentioned in Chapter 2). 
 
 \bigskip
 
@@ -37,7 +37,7 @@ To proceed with the mathematics of the optimization problem that performs the in
 y(i,j)=M(i,j)y^*(i,j)
 \end{equation}
 
-where $M\in\mathbb{R}^{N\times N}$ is a measuring matrix from which one can get the mask for the inpainting problem, such that $H(kd_{max},\cdot)=1$ for $k=1,\ldots,m$ and $0$ elsewhere. The measurements $y$ form an incomplete EPI where only rows from the available images are presented, while everywhere else EPI values are $0$. We can rewrite the Equation~\ref{eq:lfshearlets7} as $y=Hy^*$ by lexicographically reordering the variables $y,y^*\in \mathbb{R}^{N^2}$, $H\in\mathbb{R}^{N^2\times N^2}$. 
+where $M\in\mathbb{R}^{N\times N}$ is a measuring matrix from which one can get the mask for the inpainting problem, such that $M(kd_{max},\cdot)=1$ for $k=1,\ldots,m$ and $0$ elsewhere. The measurements $y$ form an incomplete EPI where only rows from the available images are presented, while everywhere else EPI values are $0$. We can rewrite the Equation~\ref{eq:lfshearlets7} as $y=Hy^*$ by lexicographically reordering the variables $y,y^*\in \mathbb{R}^{N^2}$, $H\in\mathbb{R}^{N^2\times N^2}$. 
 
 \bigskip 
 
@@ -101,7 +101,7 @@ Here $\alpha_n$ is an acceleration parameter; in the usual inpainting algorithms
 \begin{figure}[h!]
 \centering
 \includegraphics[width = 0.9 \textwidth]{./Diagrams/alpha_accel.jpg}
-\caption{Reconstruction performance (expressed in terms of Peak Signal-to-Noise radio) dependence on acceleration coefficients $alpha_n$, for contant value for all iterations $\alpha_n=\alpha$, increasing $\alpha$ brings accelerating convergence, but after some limit, the reconstruction starts to diverge ($\alpha = 20$). Figure taken from \cite{LF-Shearlets} pp. 7}
+\caption{Reconstruction performance (expressed in terms of Peak Signal-to-Noise radio) dependence on acceleration coefficients $\alpha_n$, for contant value for all iterations $\alpha_n=\alpha$, increasing $\alpha$ brings accelerating convergence, but after some limit, the reconstruction starts to diverge ($\alpha = 20$). Figure taken from \cite{LF-Shearlets} pp. 7}
 \label{fig:alpha_accel}
 \end{figure}
 
@@ -111,11 +111,11 @@ $$
 \alpha_n=\frac{||\beta_n||_2^2}{||MS^*(\beta_n)||_2^2}
 $$
 
-where $\beta_n=S_{\Gamma_n}(y-Mx_n)$ and $S_{\Gamma_n}$ is the shearlet transform decomposition only for coefficients from $\Gamma_n=\textrm{supp}(S(x_n))$; is important to be noticed that $||\cdot||_2$ is the Eucledian norm in the associated $N^2\eta$-dimensional Eucledian space of $\mathbb{R}^{N\times N\times \eta}$ with elements arranged in lexicographic order. The convergence rate of the adaptative selection is also illustrated in Figure~\ref{fig:alpha_accel} and one can see that the adaptation provides high convergence speed and stable reconstruction we refer to the original paper \cite{hard-thresholding} for a more detailed analysis of the convergence and stability conditions, which for our case are fulfilled using the fact that the $0$-Shearlets system form a Parseval Frame. 
+where $\beta_n=S_{\Gamma_n}(y-Mx_n)$ and $S_{\Gamma_n}$ is the shearlet transform decomposition only for coefficients from $\Gamma_n=\textrm{supp}(S(x_n))$; it is important to be noticed that $||\cdot||_2$ is the Eucledian norm in the associated $N^2\eta$-dimensional Eucledian space of $\mathbb{R}^{N\times N\times \eta}$ with elements arranged in lexicographic order. The convergence rate of the adaptative selection is also illustrated in Figure~\ref{fig:alpha_accel} and one can see that the adaptation provides high convergence speed and stable reconstruction we refer to the original paper \cite{hard-thresholding} for a more detailed analysis of the convergence and stability conditions, which for our case are fulfilled using the fact that the $0$-Shearlets system form a Parseval Frame. 
 
 \bigskip
 
-As we discurssed in Subsection~\ref{sec:0-Shearlets} we are not obligated to use all the general shearlet transform atoms, instead we favor the use of atoms which are associated with valid directions in EPI; the support of those atomes is illustrated in Figure~\ref{fig:LFshearlets2f}. The scales of the shearlet transform are constructed in dyadic manner, therefore we are choosing $J = \lceil log_2 d_{max}\rceil$ number of scales. In order to perform this programatically using the software Shearlab.jl in every scale we choose $2^{j+1}+1$ shears ($j=0,\ldots, J-1$) to cover the region.
+As we discurssed in Subsection~\ref{sec:0-Shearlets} we are not obligated to use all the general shearlet transform atoms, instead we favor the use of atoms which are associated with valid directions in EPI; the support of those atomis is illustrated in Figure~\ref{fig:LFshearlets2f}. The scales of the shearlet transform are constructed in dyadic manner, therefore we are choosing $J = \lceil log_2 d_{max}\rceil$ number of scales. In order to perform this programatically using the software Shearlab.jl in every scale we choose $2^{j+1}+1$ shears ($j=0,\ldots, J-1$) to cover the region.
 
 \bigskip
 
@@ -159,11 +159,11 @@ As we presented to Section~\ref{sec:Sparse-acquisition} the data set that we use
 
 \bigskip
 
-\item \textbf{Second Step (Paint sparse EPIs):}Once we had the data of the tracked points we proceed to paint the EPIs related to fixed $y$-positions in the scenes we used the julia code presented in Appendix~\ref{sec:Appendix_B}, where we used horizontal strips of width $2\epsilon=16.0$ pixels to captures tracked points in the scene at different fixed $y$ positions and follow them along the different views, we also used the same data set to paint the corresponding Sparse Views with a constant disparity between consecutive views $d_{max}=7px$; this maximum disparity was chosen by trying different disparities and pick the best one in terms of the painting speed (the greater the disparity, the less time it takes to paint the sparse EPIs) and the Shearlet-based inpainting performance using a fixed number of iterations (50) in the iterative thresholding algorithm; where we measure the performance mostly in terms of how many lines of the original EPI are captured by our line detection algorithm that will be explained in the next subsection. One can see in Figure~\ref{fig:strip_disparity} the strip of points in the first image that were tracked to perform the benchmark to compute the best disparity parameter for our task; the Figure~\ref{fig:dense_disparity} is the associated densely sampled EPI and the associated sparsely sampled EPIs with different disparities $d_{max}$ are presented in Figure~\ref{fig:first_sparse_disparity},~\ref{fig:second_sparse_disparity},~\ref{fig:third_sparse_disparity} and~\ref{fig:fourth_sparse_disparity}. 
+\item \textbf{Second Step (Paint sparse EPIs):}Once we had the data of the tracked points we proceed to paint the EPIs related to fixed $y$-positions in the scenes, for this task we used the julia code presented in Appendix~\ref{sec:Appendix_B}, where we used horizontal strips of width $2\epsilon=16.0$ pixels to captures tracked points in the scene at different fixed $y$ positions and follow them along the different views, we also used the same data set to paint the corresponding Sparse Views with a constant disparity between consecutive views $d_{max}=7px$; this maximum disparity was chosen by trying different disparities and pick the best one in terms of the painting speed (the greater the disparity, the less time it takes to paint the sparse EPIs) and the Shearlet-based inpainting performance using a fixed number of iterations (50) in the iterative thresholding algorithm; where we measure the performance mostly in terms of how many lines of the original EPI are captured by our line detection algorithm that will be explained in the next subsection. One can see in Figure~\ref{fig:strip_disparity} the strip of points in the first image that were tracked to perform the benchmark to compute the best disparity parameter for our task; the Figure~\ref{fig:dense_disparity} is the associated densely sampled EPI and the associated sparsely sampled EPIs with different disparities $d_{max}$ are presented in Figure~\ref{fig:first_sparse_disparity},~\ref{fig:second_sparse_disparity},~\ref{fig:third_sparse_disparity} and~\ref{fig:fourth_sparse_disparity}. 
 
 \bigskip
 
-Finally on Figure~\ref{fig:benchmark_line} one can see the different running time obtained for different disparities (clearly the smaller the disparity, the more pictures you need to take and therefore the longest the running time); as we mentioned on Subsection~\ref{sec:proc_track} we used a Macbook Pro with OSX 10.10.5, 8GB of memory, 2.7 GHz Intel Core i5 Processor and Graphic Card Intel Iris Graphics 6100 with 1536 MB of graphic memory (relatively a low end computer system). One can find the whole set of strips, sparse and dense EPIs on \url{https://github.com/arsenal9971/MThesis/tree/master/Diagrams/results/EPIs}, the naming notation that we followed to identify them was \textbf{textfile}=$y_0\_\epsilon\_t_{max}\_d_{max}\_tp\_f.png$ where $y_0$ is the $y$ position of the tracked points on the corresponding strip $\epsilon$ is half the width of the strip, $d_{max}$ is the used disparity for the corresponding sparse EPI, $tp$ is the number of tracked points in the strip and $f$ the number of features corresponding to the tracked points).
+Finally on Figure~\ref{fig:benchmark_line} one can see the different running time obtained for different disparities (clearly the smaller the disparity, the more pictures you need to take and therefore the longest the running time); as we mentioned on Subsection~\ref{sec:proc_track} we used a Macbook Pro with OSX 10.10.5, 8GB of memory, 2.7 GHz Intel Core i5 Processor and Graphic Card Intel Iris Graphics 6100 with 1536 MB of graphic memory (relatively a low end computer system). One can find the whole set of strips, sparse and dense EPIs on \url{https://github.com/arsenal9971/MThesis/tree/master/Diagrams/results/EPIs}, the naming notation that we followed to identify them was \textbf{file\_name}=$y_0\_\epsilon\_t_{max}\_d_{max}\_tp\_f.png$ where $y_0$ is the $y$ position of the tracked points on the corresponding strip $\epsilon$ is half the width of the strip, $d_{max}$ is the used disparity for the corresponding sparse EPI, $tp$ is the number of tracked points in the strip and $f$ the number of features corresponding to the tracked points).
 
 \bigskip
 
@@ -219,7 +219,7 @@ Finally on Figure~\ref{fig:benchmark_line} one can see the different running tim
 
 \bigskip
 
-One can also see in Figures~\ref{fig:first_lines_disparity},~\ref{fig:second_lines_disparity},~\ref{fig:third_lines_disparity} and~\ref{fig:fourth_lines_disparity} the lines detected in different inpainted EPIs corresponding to the same dense EPI, with different views disparity $d_max$, one can see that the important features are detected when $d_{max}=4$ and $d_{max}=7$ while when $d_{max}$ is bigger some lines are lost. 
+One can also see in Figures~\ref{fig:first_lines_disparity},~\ref{fig:second_lines_disparity},~\ref{fig:third_lines_disparity} and~\ref{fig:fourth_lines_disparity} the lines detected in different inpainted EPIs corresponding to the same dense EPI, with different views disparity $d_{max}$, one can see that the important features are detected when $d_{max}=4$ and $d_{max}=7$ while when $d_{max}$ is bigger some lines are lost. 
 
 \begin{figure}[h!]
 \centering
@@ -263,7 +263,7 @@ One can also see in Figures~\ref{fig:first_lines_disparity},~\ref{fig:second_lin
 \label{fig:fourth_lines_disparity}
 \end{figure}
 
-\item \textbf{Third step (Inpaint sparse EPIs):} After paint all the sparsely sampled EPIs corresponding to different horizontal strips of width $16.0$px whose union cover all the tracked points, we inpainted to recover a densely sampled EPIs and therefore we can finally compute the depth map by computing the slopes of the different lines in the EPIs. As we already mentioned on the last section, in order to perform the minimization problem associated with the inpainting algorithm we used iterative hard thresholding with a $0$-Shearlet system as sparsifying system whose code we can find on Appendix~\ref{sec:Appendix_C} and was implemented using julia programming language with the libraries PyPlot.jl and Shearlab.jl. 
+\item \textbf{Third step (Inpaint sparse EPIs):} After paint all the sparsely sampled EPIs corresponding to different horizontal strips of width $16.0$px whose union cover all the tracked points, we inpainted to recover a densely sampled EPIs and therefore we can finally compute the depth map by computing the slopes of the different lines in the EPIs. As we already mentioned on the last section, in order to perform the minimization problem associated with the inpainting algorithm we used iterative hard thresholding with a $0$-Shearlet system as sparsifying system whose code we can find on Appendix~\ref{sec:AppendixC} and was implemented using julia programming language with the libraries PyPlot.jl and Shearlab.jl. 
 
 \bigskip
 
@@ -429,28 +429,28 @@ Once we have the inpaited EPIs for our sparse set of views with disparity $d_{ma
 D = h\frac{\Delta X}{\Delta U}= h\cdot \textrm{slope}
 \end{equation}
 
-where $h$ is the focal length of the camera that according to the specifications of the camera used in the data set is $h = 50mm=5\times 10^{-2}m$. In our case, each inpainted picture is imported in the line detection algorithm code as an image of certain $size=[size_x,size_y]$; by specifications of the data set we have that there were 101 taken pictures with a separation of $10$mm from each other with a total time span of $1100mm=1.1m$, the horizontal size in pixels of the used images in the data set is $683px$, therefore to obtain the depth of a point in Equation~\ref{eq:slope_epi} in an unified way and be able to compare the obtained depths in different strips we will need to modify the equation with a normalization term multiplying $m$, obtaining the equation:
+where $h$ is the focal length of the camera that according to the specifications of the camera used in the data set is $h = 50mm=5\times 10^{-2}m$. In our case, each inpainted picture is imported in the line detection algorithm code as an image of certain $size=[size_x,size_y]$; by specifications of the data set we have that there were 101 taken pictures with a separation of $10$mm from each other with a total time span of $1010mm=1.01m$, the horizontal size in pixels of the used images in the data set is $683px$, therefore to obtain the depth of a point in Equation~\ref{eq:slope_epi} in an unified way and be able to compare the obtained depths in different strips we will need to modify the equation with a normalization term multiplying $m$, obtaining the equation:
 
 \begin{equation}
 \label{eq:slope_epi_unified}
-D = (0.01m)\cdot \textrm{slope}\cdot\left(\frac{\textrm{size}_x}{\textrm{size}_y}\right)\cdot\left(\frac{1.1m}{683px}\right)
+D = (0.01m)\cdot \textrm{slope}\cdot\left(\frac{\textrm{size}_x}{\textrm{size}_y}\right)\cdot\left(\frac{1.01m}{683px}\right)
 \end{equation}
 
 \bigskip
 
-The resulting depth given by Equation~\ref{eq:slope_epi_unified} has units of $\frac{m^2}{px}$, the transformation from pixels to meters is not straight forward since we would need to know the transformation betweeen the spatial and image coordinates, and for that one shouls know a priori the actual depth of some fixed point and the correspondance in meters of the pixels of features at that depth; therefore the obtained depth is relative, but that is enough to construct the depth map.
+The resulting depth given by Equation~\ref{eq:slope_epi_unified} has units of $\frac{m^2}{px}$, the transformation from pixels to meters is not straight forward since we would need to know the transformation betweeen the spatial and image coordinates, and for that one should know a priori the actual depth of some fixed point and the correspondance in meters of the pixels of features at that depth; therefore the obtained depth is relative, but that is enough to construct the depth map.
 
 \bigskip
 
-Now that we know how to get the depth of points by its slope in the corresponding epipolar plane image we need to have a way to actually measure slopes in lines on the inpainted epipolar planes images and therefore we need a method to detect lines in an image. There are different methods to detect lines in images, commonly known as edge detectors; one can give as examples the Canny edge detector, the Phase Stretch Transform (PST), the Sobel method and the Hough Line Transform (see \cite{LearnOpenCV}, \cite{MultipleView}, \cite{hough-duda}, \cite{hough-invented} for a detailed explanation of each of this methods). By its easy and fast implementation and its effectiveness we used the Hough line transform to detect lines on the inpainted EPIs. 
+Now that we know how to get the depth of points by its slope in the corresponding epipolar plane image we need to have a way to actually measure the slope of lines on the inpainted epipolar planes images and therefore we need a method to detect lines in an image. There are different methods to detect lines in images, commonly known as edge detectors; one can give as examples the Canny edge detector, the Phase Stretch Transform (PST), the Sobel method and the Hough Line Transform (see \cite{LearnOpenCV}, \cite{MultipleView}, \cite{hough-duda}, \cite{hough-invented} for a detailed explanation of each of this methods). By its easy and fast implementation and its effectiveness we used the Hough line transform to detect lines on the inpainted EPIs. 
 
 \bigskip
 
-The Hough line transform was invented by Richard Duda and Peter Hart in 1972 on their paper "Use of the Hough Transformation to Detect Lines and Curves in Pictures"\cite{hough-duda} that is actually a generalization of a 1962 patent of Pual Hough\cite{hough-original} who proposed it for analysis of Bubble Chamber photographs for particle detection.
+The Hough line transform was invented by Richard Duda and Peter Hart in 1972 on their paper "Use of the Hough Transformation to Detect Lines and Curves in Pictures"\cite{hough-duda} and it is actually a generalization of a 1962 patent of Pual Hough\cite{hough-original} who proposed it for analysis of Bubble Chamber photographs for particle detection.
 
 \bigskip
 
-Even it seems as a trivial task for human vision, in automated analysis of digital images, a problem that often arises of detecting simple shapes as straight lines or circles. Generally an edge detector can be used as a pre-processing stage to obtain image points or image pixels that form part of the analysed curve in the image space. However imperfections in the image data or the edge detector may miss points or pixels on the desired cuves as well as spatial deviations between the ideal theoretical line/circle and the noisy edge points as they are obtained from the edge detector; therefore it is non-trivial to group the extracted edge features to an appropriate set of lines or circles. The Hough transform has a purpose address this problem by making it possible to perform groupings of edge points into object candidates by performing an explicit voting procedure over a set of parameterized image objects; in this thesis we will just make use of the simplest case of Hough transform that is detecting straight lines and it will be explained in the following.
+Even it seems as a trivial task for human vision, in automated analysis of digital images, a problem that often arises is the problem of detecting simple shapes as straight lines or circles. Generally an edge detector can be used as a pre-processing stage to obtain image points or image pixels that form part of the analysed curve in the image space. However imperfections in the image data or the edge detector may miss points or pixels on the desired cuves as well as spatial deviations between the ideal theoretical line/circle and the noisy edge points as they are obtained from the edge detector; therefore it is non-trivial to group the extracted edge features to an appropriate set of lines or circles. The Hough transform has as purpose to address this problem by making it possible to perform groupings of edge points into object candidates by performing an explicit voting procedure over a set of parameterized image objects; in this thesis we will just make use of the simplest case of Hough transform that is detecting straight lines and it will be explained in the following.
 
 \bigskip
 
@@ -465,7 +465,7 @@ this obtained by the relation $r=x\cos\theta+y\sin\theta$.
 
 \bigskip
 
-Given an arbitrary fixed point $(x_0,y_0)\in\mathbb{R}^2$, one can define a family of lines that goes through the poins by
+Given an arbitrary fixed point $(x_0,y_0)\in\mathbb{R}^2$, one can define a family of lines that goes through the points by
 
 \begin{equation}
 \label{eq:family-lines}
@@ -476,7 +476,7 @@ Therefore each pair $(r_{\theta},\theta)$ represents each line that passes by $(
 
 \bigskip 
 
-By the form of the Equation~\ref{eq:family-lines}, for a given fixed point $(x_0,y_0)$ the plot of the family of lines that goes through it $\theta\textrm{vs.}r_{\theta}$ is a sinusoid, we will consider only points such that $r>0$ and $0<\theta<2\pi$(see Figure~\ref{fig:family-lines-hough}).
+By the form of the Equation~\ref{eq:family-lines}, for a given fixed point $(x_0,y_0)$ the plot of the family of lines that goes through it on the domain $\theta$ \textbf{vs.} $r_{\theta}$ is a sinusoid, we will consider only points such that $r>0$ and $0<\theta<2\pi$(see Figure~\ref{fig:family-lines-hough}).
 
 \begin{figure}[h!]
 \centering
@@ -502,7 +502,7 @@ The three plots in Figure~\ref{fig:intersection-hough} intersect in one single p
 
 \bigskip 
 
-There are different existing implementations of the Hough line, in Python, C++ and Matlab; in this thesis we used the python implementation using the OpenCV API in python, cause is very simple to use and fast to run; we make use of the Canny edge detector that is similar to the already explained Shi-Tomasi and for more detail one should check \cite{LearnOpenCV} and the Hough Line Transfom. In order to compute the depth map, we make use of the inpainted EPIs corresponding to strips at different fixed $y$'s; the points were divided by the different features were they belong, those features are enumerated in the following list and pictured in Figure~\ref{feature_points.png}
+There are different existing implementations of the Hough line, in Python, C++ and Matlab; in this thesis we used the python implementation using the OpenCV API, cause is very simple to use and fast to run; we made use of the Canny edge detector that is similar to the already explained Shi-Tomasi and for more detail one should check \cite{LearnOpenCV} and the Hough Line Transfom. In order to compute the depth map, we made use of the inpainted EPIs corresponding to strips at different fixed $y$'s; the points were divided by the different features were they belong, those features are enumerated in the following list and pictured in Figure~\ref{fig:feature_points}
 
 \begin{enumerate}
 \item Bush 1.
@@ -537,7 +537,7 @@ There are different existing implementations of the Hough line, in Python, C++ a
 \label{fig:feature_points}
 \end{figure}
 
-Once we have points associated to features, we compute the depth of this points at different fixed $y$-strips finding out that for a fixed $y$-strip the points of a certain feature have relatively the same depth, therefore we assigned a depth to a feature for a fixed $y$. As we already mentioned we used the OpenCV python API as well as some python code for computing the depth map with this method, the code can be found in Appendix~\ref{sec:Appendix_D} and the obtained results are in the tables~\ref{table1} to~\ref{table6} where the values at each height $y$ (where the different strips are centered at) are the obtained depth of the points of that feature at that height in meters$^2$/pixels and whenever occur a blank space means that such feature has not points in such height (is worth to mention that the heights are measured from bottom to top, i.e.\ the bigger the height, the lower in the picture); this values describe completly the depth map, if one would like to visualize them in a refocusing-type application we should perform the so called light field rendering, where one finds contours of the corresponding features and apply a gaussian filter to defocused the elements that are not at the same depth, but this is not part of this thesis and will be taken as a future development goal. One can use as a guide of the heights Figure~\ref{feature_points_grid}. 
+Once we have points associated to features, we compute the depth of this points at different fixed $y$-strips finding out that for a fixed $y$-strip the points of a certain feature have relatively the same depth, therefore we assigned a depth to a feature for a fixed $y$. As we already mentioned we used the OpenCV python API as well as some python code for computing the depth map with this method, the code can be found in Appendix~\ref{sec:Appendix_D} and the obtained results are in the tables~\ref{table1} to~\ref{table6} where the values at each height $y$ (where the different strips are centered at) are the obtained depth of the points of that feature at that height in meters$^2$/pixels and whenever occur a blank space means that such feature has not points in such height (is worth to mention that the heights are measured from bottom to top, i.e.\ the bigger the height, the lower in the picture); this values describe completly the depth map, if one would like to visualize them in a refocusing-type application we should perform the so called light field rendering, where one finds contours of the corresponding features and apply a gaussian filter to defocused the elements that are not at the same depth, but this is not part of this thesis and will be taken as a future development goal. One can use as a guide of the heights Figure~\ref{fig:feature_points_grid}. 
 
 \begin{figure}[h!]
 \centering
@@ -756,4 +756,8 @@ In the last sections we got the next running times on finishing the whole pipeli
 \item \textbf{Line detection and depth map computation}: 0.43 seconds (43 EPIs, 0.01 seconds for each).
 \end{itemize}
 
-This gives a total of 692.75 seconds to reconstruct the Light Field and compute the Depth Map. 
+This gives a total of 692.75 seconds to reconstruct the Light Field and compute the Depth Map. With this estimates we can make a comparison with the performance of the other works on light field reconstruction; to be clear it is important to mention that along the different approaches and works on light field reconstruction the goals of the methods are different although the main purpose is the same. In this particular thesis we wanted to present a method that is easy to implement, free, open source, fast and that doesn't require very sofisticated systems; the limitations of our method comes when one wants to recover high definition light fields on images with few corners (few points to track with Lucas-Kanade), but for our particular dataset works perfectly. Having this in mind one can proceed with the comparison with the other works.
+
+\begin{enumerate}
+\item \textit{"Compressive Light Field Photograph using Overcomplete Dictionaries and Optimized Projections"} (by Wetzstein et all, check \cite{CompressedMIT}):  
+\end{enumerate}

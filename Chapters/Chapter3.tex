@@ -1,6 +1,6 @@
 \chapter{Shearlets}
 
-We want to be able to express efficiently Epipolar Plane Images that will reduce the number of minimum views needed to recover the light field of a scene; this task can be achieved by understanding the EPIs as signals and using signal processing machinery developed in the last twenty years, in this chapter we will explain in detail state-of-the-art methods on signal sparse-representation.
+We want to be able to express efficiently Epipolar Plane Images, since this will reduce the number of minimum views needed to recover the light field of a scene; this task can be achieved by understanding the EPIs as signals and using signal processing machinery developed in the last twenty years, in this chapter we will explain in detail state-of-the-art methods on signal sparse-representation.
 
 \bigskip
 
@@ -17,7 +17,7 @@ $$
 \hat{f}(\xi) := \int_{\mathbb{R}^n}f(x)e^{-i\langle x,\xi\rangle}dx
 $$
 
-one can think of the coordinates $\xi$ of the Fourier space, as one can see the Fourier transform $\hat{f}$ just gives information about the frequencies contained in $f$, but not at which time they occur; moreover, small changes in the neighborhood of some point $x\in\mathbb{R}^n$ could change significantly its Fourier transform, in general one would not like that. A small solution for this issue is reflected in the short-time Fourier transform; whose mechanism is based in localization of the Fourier transform to a certain window of $f$ and then move the window through the whole domain. Let $g\in L^2(\mathbb{R})$ the window function, the short-time Fourier transform of $f\in L^2(\mathbb{R})$ associated with the window $g$ will be
+one can think of the coordinates $\xi$ of the Fourier space as frequencies of $f$, as one can see the Fourier transform $\hat{f}$ just gives information about the frequencies contained in $f$, but not at which time they occur; moreover, small changes in the neighborhood of some point $x\in\mathbb{R}^n$ could change significantly its Fourier transform, in general one would like a transform that is robust under this kind of changes. A direct solution for this issue is reflected in the short-time Fourier transform; whose mechanism is based in localization of the Fourier transform to a certain window of $f$ and then move the window through the whole domain. Let $g\in L^2(\mathbb{R})$ the window function, the short-time Fourier transform of $f\in L^2(\mathbb{R})$ associated with the window $g$ will be
 
 $$
 S_gf(t,\xi)=\int_{\mathbb{R}} f(x)\overline{g(x-t)}e^{-ix\xi}dx=\langle f,M_{\xi}T_tg\rangle = (\widehat{f\cdot T_t\overline{g}})(\xi)\text{,  } t,\xi\in\mathbb{R}
@@ -34,14 +34,14 @@ $$
 
 \bigskip 
 
-One can associate to this transform the atoms $\{M_{\xi}T_tg\}_{(t,\xi)\in\mathbb{R}^2}$; for computational purposes one can discretize the transform taking $(t,\xi)\in\Lambda=a\mathbb{Z}\times b\mathbb{Z}$ for some $a,b>0$; the resulting atoms $G(g,a,b):=\{g_{am,bn}=M_{bn}T_{am}\}_{(m,n)\in\mathbb{Z}}$, for some cases of $(a,b)\in\mathbb{R}$ $G(g,a,b)$ is a generating set of $L^2(\mathbb{R})$ with an explicit recovery formula with other features, such sequence of function are known as \textbf{frames} and can be understand as the generalization of orthonormal bases, we will study them in detail on the Section~\ref{sec:ShearletsFrames}, for a further reading about Gabor frames one can check \cite{Gabor}.
+One can associate to this transform the atoms $\{M_{\xi}T_tg\}_{(t,\xi)\in\mathbb{R}^2}$; for computational purposes one can discretize the transform by taking $(t,\xi)\in\Lambda=a\mathbb{Z}\times b\mathbb{Z}$ for some $a,b>0$; the resulting atoms $G(g,a,b):=\{g_{am,bn}=M_{bn}T_{am}\}_{(m,n)\in\mathbb{Z}}$, for some cases of $(a,b)\in\mathbb{R}$ $G(g,a,b)$ is a generating set of $L^2(\mathbb{R})$ with an explicit recovery formula and other features, such sequence of function are known as \textbf{frames} (in this particular case \textbf{Gabor frames}) and can be understand as the generalization of orthonormal bases, we will study them in detail on the Section~\ref{sec:ShearletsFrames}, for a further reading about Gabor frames one can check \cite{Gabor}.
 
 \bigskip
 
 We introduced Gabor frames to overcome some limitations of the Fourier transform; Gabor frames also present some limitations
 \begin{itemize}
-\item When the Gabor frame is also a orthonormal bases don't have a good time-frequency localization \cite{Gabor}.
-\item The size of the window $g$ does not change so Gabor frames are not sensible to very localized information, so for instance they will never detect a singularity or regularity information of a function.
+\item When the Gabor frame is also a orthonormal basis it doesn't have a good time-frequency localization \cite{Gabor}.
+\item The size of the window $g$ does not change therefotherefotherefotherefotherefotherefotherefotherefotherefore Gabor frames are not sensible to very localized information, so for instance they will never detect a singularity or regularity information of a function.
 \end{itemize} 
 both limitations above can be overcome using \textbf{wavelets}.
 
@@ -79,8 +79,8 @@ the set of discrete set of wavelet atoms is referred as wavelet system. Wavelets
 \begin{itemize}
 \item One can get information about the regularity of a function $f$ by estimating bounds of its wavelet transform.
 \item The scaling parameter permits us to detect very localized information, in particular is very effective detecting one dimensional singularities, this property leads to the construction of a Multiresolution Analysis (MRA) which is an important area in applied harmonic analysis(check \cite{Mallat} p. 264).
-\item The unified treatment of both digital and continuous transforms permits an easy implementation.
-\item It can represent sparsely one dimensional signals, in the sense that not a lot of coefficients will be significant so one can  them.
+\item The unified treatment of both digital and continuous transforms permits an easy computational implementation.
+\item It can represent sparsely one dimensional signals, in the sense that not a lot of coefficients will be significant so one can delete them and still get a good approximation of the original signal.
 \end{itemize}
 
 \bigskip
@@ -89,7 +89,7 @@ Over all the features that we just mentioned the one that gave most of its fame 
 
 \bigskip
 
-It is not surprising that compression of data takes an important place in the academic research and industrial agenda nowadays. Our society generates and acquire a lot of data everyday that comes in a lot of different types and dimensions; the complexity of the processing of this raw data to extract some useful data in an understandable language grows with the dimensionality and size of the data. Even though, almost all data found in practical applications has the property that the relevant information which needs to be extracted or identified is sparse, that is, data are typically highly correlated and the essential information lives in lower dimensional subspaces (or manifolds). This information can be then captured using just few terms in an appropriate dictionary (e.g.\ some frame or orthonormal basis). 
+It is not surprising that compression of data takes an important place in the academic research and industrial agenda nowadays. Our society generates and acquire a lot of data everyday that comes in a lot of different types and dimensions; the complexity of the processing of this raw data to extract some useful features in an understandable language grows with the dimensionality and size of the data. Even though, almost all data found in practical applications has the property that the relevant information which needs to be extracted or identified is sparse, that is, data are typically highly correlated and the essential information lives in lower dimensional subspaces (or manifolds). This information can be then captured using just few terms in an appropriate dictionary (e.g.\ some frame or orthonormal basis). 
 
 \bigskip
 
@@ -97,11 +97,11 @@ The sparse representation property of data is important not only for data storag
 
 \bigskip
 
-So far we have just mentioned the sparse representation property for one-dimensional signals and also the existence of straight forward and fast algorithmic implementations; the latter is based in the general machinery to construct orthonormal wavelet bases known as \textit{Multiresolution Analysis} (MRA). In the one dimensional case, this is defined as a sequence of closed subspaces $(V_j)_{j\in\mathbb{Z}}$ in $L^2(\mathbb{R})$ known as the scaling spaces which satisfies the following properties
+So far we have just mentioned the sparse representation property for one-dimensional signals and also the existence of straight forward and fast algorithmic implementations; the latter is based in the general machinery to construct orthonormal wavelet bases known as \textit{Multiresolution Analysis} (MRA). In the one dimensional case, this is defined as a sequence of closed subspaces $(V_j)_{j\in\mathbb{Z}}$ of $L^2(\mathbb{R})$ known as the scaling spaces which satisfies the following properties
 
 \begin{enumerate}
 \item[(a)] $\{0\}\subseteq\ldots\subset V_{-2}\subset V_{-1}\subset V_0\subset V_1\subset V_2\subset\ldots L^2(\mathbb{R})$.
-\item[(b)] $\cap_{j\in\mathbb{Z}}V_j=\{0\}$ and $\overline{\cup_{j\in\mathbb{Z}V_j}}=L^2(\mathbb{R})$.
+\item[(b)] $\cap_{j\in\mathbb{Z}}V_j=\{0\}$ and $\overline{\cup_{j\in\mathbb{Z}}V_j}=L^2(\mathbb{R})$.
 \item[(c)] $f\in V_j$ if and only if $D_2^{-1}f\in V_{j+1}$.
 \item[(d)] There exists a $\varphi\in L^2(\mathbb{R})$, called \textit{scaling function}, such that $\{T_m\varphi:m\in\mathbb{Z}\}$ is an orthonormal basis for $V_0$.
 \end{enumerate}
@@ -121,11 +121,11 @@ where the scaling function take care of the low-frequency region $V_0$ and the w
 
 \bigskip
 
-In this thesis we are interested in image processing, if one would like to apply wavelets to imaging science an extension of the theory to $L^2(\mathbb{R}^2)$. For a painless extension we can introduce the concept of tensor products of Hilbert spaces. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two Hilbert spaces the tensor product is a bilinear operator $\otimes:\mathcal{H}_1\times\mathcal{H}_2\longrightarrow \mathcal{H}_1\otimes\mathcal{H}_2$ where $\mathcal{H}_1\otimes\mathcal{H}_2$ is a new Hilbert space.
+In this thesis we are interested in image processing, if one would like to apply wavelets to imaging science an extension of the theory to $L^2(\mathbb{R}^2)$ is necessary. For a painless extension we can introduce the concept of tensor products of Hilbert spaces. If $\mathcal{H}_1$ and $\mathcal{H}_2$ are two Hilbert spaces the tensor product is a bilinear operator $\otimes:\mathcal{H}_1\times\mathcal{H}_2\longrightarrow \mathcal{H}_1\otimes\mathcal{H}_2$ where $\mathcal{H}_1\otimes\mathcal{H}_2$ is a new Hilbert space.
 
 \bigskip
 
-We can use strongly the fact that the tensor product of orthonormal bases is an orthonormal basis of $\mathcal{H}_1\otimes\mathcal{H}_2$. In the case of $\mathcal{H}_1=\mathcal{H}_2=L^2(\mathbb{R})$ and $f,g\in L^2(\mathcal{R})$,
+We can use strongly the fact that the tensor product of orthonormal bases is an orthonormal basis of $\mathcal{H}_1\otimes\mathcal{H}_2$. In the case of $\mathcal{H}_1=\mathcal{H}_2=L^2(\mathbb{R})$ and $f,g\in L^2(\mathcal{R})$, then $f\otimes g\in L^2(\mathbb{R}^2)$ is given by
 
 $$
 (f\otimes g)(x_1,x_2)=f(x_1)g(x_2)\text{,  } (x_1,x_2)\in\mathbb{R}^2,
@@ -164,7 +164,7 @@ There exists more general non-separable two dimensional wavelets transforms usin
 
 \bigskip
 
-One can formalize this notion using the concept of best $N$-term approximation. We will provide the general definition applied to dictionaries (collection of vectors on a Hilbert space $\{\varphi_i: i\in I\}\subseteq \mathcal{H}$ with $I$ finite or countable infinite).
+One can formalize the notion of approximation quality using the concept of best $N$-term approximation. We will provide the general definition applied to dictionaries (collection of vectors on a Hilbert space $\{\varphi_i: i\in I\}\subseteq \mathcal{H}$ with $I$ finite or countable infinite).
 
 \bigskip
 
@@ -177,7 +177,7 @@ $$
 
 \bigskip
 
-The best N-term approximation $f_N$ of $f\in L^2(\mathbb{R}^2)$ with respect to the dictionary formed by the wavelet basis can be understan as the obtained by approximating $f$ from its $N$ largest wavelet coefficients in magnitude. Let $\Lambda_N$ the index set corresponding to the $N$- largest wavelet coefficients $|\langle f,\psi_{\lambda}\rangle|$ associated with some wavelet basis $(\psi)_{\lambda\in\Lambda}$, the best $N$-term approximation will be
+The best N-term approximation $f_N$ of $f\in L^2(\mathbb{R}^2)$ with respect to the dictionary formed by the wavelet basis can be understand as the obtained by approximating $f$ from its $N$ largest wavelet coefficients in magnitude. Let $\Lambda_N$ the index set corresponding to the $N$- largest wavelet coefficients $|\langle f,\psi_{\lambda}\rangle|$ associated with some wavelet basis $(\psi)_{\lambda\in\Lambda}$, the best $N$-term approximation will be
 $$
 f_N=\sum_{\lambda\in\Lambda_N}\langle f,\psi_{\lambda}\rangle\psi_{\lambda}
 $$
@@ -201,16 +201,16 @@ The class of \textit{cartoon-like functions} $\mathcal{E}^2(\mathbb{R}^2)$ is de
 \label{fig:cartoon-like}
 \end{figure}
 
-Now, let $f$ be a cartoon-like image containing a singularity along a smooth curve and $\{\psi_{j,m}\}$ be a standard wavelet bases of $L^2(\mathbb{R}^2)$. For $j$ sufficiently large, the only significan wavelet coefficients $\langle f,\psi_{ j,m}\rangle$ are the ones associated with the singularity. At each scale $2^{-j}$, each wavelet $\psi_{j,m}$ is supported inside a box of size $2^{-j}\times 2^{-j}$, there exist about $2^j$ elements of the wavelet basis overlapping the singularity curve. The associated wavelet coefficients are controlled by 
+Now, let $f$ be a cartoon-like image containing a singularity along a smooth curve and $\{\psi_{j,m}\}$ be a standard wavelet basis of $L^2(\mathbb{R}^2)$. For $j$ sufficiently large, the only significant wavelet coefficients $\langle f,\psi_{ j,m}\rangle$ are the ones associated with the singularity. At each scale $2^{-j}$, each wavelet $\psi_{j,m}$ is supported inside a box of size $2^{-j}\times 2^{-j}$, there exist about $2^j$ elements of the wavelet basis overlapping the singularity curve. The associated wavelet coefficients are controlled by 
 
 $$
-|\langle f,	\psi_{j,m}\rangle|\leq ||f||_{\infty}||\psi_{j,n}||_{L^1(\mathbb{R}^2)}\lesssim 2^{-j}
+|\langle f,	\psi_{j,m}\rangle|\leq ||f||_{\infty}||\psi_{j,m}||_{L^1(\mathbb{R}^2)}\lesssim 2^{-j}
 $$
 
-It follows that the $N$-th largest wavelet coefficient in magnitude, denoted by $\langle f,\psi_{j,m}\rangle_{(N)}$, is bounded by O($N^{-1}$). Thus, if $f$ is approximated by its best $N$-term approximation $f_N$, the $L^2$ error (called  best $N$-term approximation error) obeys
+It follows that the $N$-th largest wavelet coefficient in magnitude, denoted by $\langle f,\psi_{j,m}\rangle_{(N)}$, is bounded by O($N^{-1}$) (since $N\leq 2^j$). Thus, if $f$ is approximated by its best $N$-term approximation $f_N$, the $L^2$ error (called  best $N$-term approximation error) obeys
 
 $$
-\sigma_N(f,\{\psi_{j,m}\}_{j,m}^2=||f-f_N||^2_{L^2(\mathbb{R}^2)}\leq \sum_{\ell\geq N}|\langle f,\psi_{j,m}\rangle_{(l)}|^2\lesssim N^{-1}
+\sigma_N(f,\{\psi_{j,m}\}_{j,m})^2=||f-f_N||^2_{L^2(\mathbb{R}^2)}\leq \sum_{\ell\geq N}|\langle f,\psi_{j,m}\rangle_{(l)}|^2\lesssim N^{-1}
 $$
 
 This estimate is actually tight, in the sense that there exist cartoon-like images for which the best $N$-term approximation error is
@@ -248,7 +248,7 @@ As we mentioned before, the problem with wavelets that does not make them to app
 
 \bigskip
 
-The bound result of theorem~\ref{C3S2T1} works as a benchmark for optimally sparse approximation of two-dimensional data in form of cartoon-like functions. Moreover, to proof theorem~\ref{C3S2T1} Donoho used adapted triangulations, which suggests that analyzing elemnts with elongated and orientable supports are required to get optimally sparse approximations of piecewise smooth two-dimensional functions. This observation leaded to two different approaches for solving this problem, the curvelets (proposed by E. Candès and D. Donoho in 1999 \cite{Curvelets}), and the shearlets (proposed by Kanghui Guro, Gitta Kutyniok and Demetrio Labate in 2005 \cite{FirstShearlets}), both are able to achieve the same optimal approximation rate; the one used in this thesis to sparsely represent EPIs is the latter due the possibility to develope a faithful implementation. 
+The bound result of theorem~\ref{C3S2T1} works as a benchmark for optimally sparse approximation of two-dimensional data in form of cartoon-like functions. Moreover, to proof theorem~\ref{C3S2T1} Donoho used adapted triangulations, which suggests that analyzing elements with elongated and orientable supports are required to get optimally sparse approximations of piecewise smooth two-dimensional functions. This observation leaded to two different approaches for solving this problem, the curvelets (proposed by E. Candès and D. Donoho in 1999 \cite{Curvelets}), and the shearlets (proposed by Kanghui Guro, Gitta Kutyniok and Demetrio Labate in 2005 \cite{FirstShearlets}), both are able to achieve the same optimal approximation rate; the one used in this thesis to sparsely represent EPIs is the latter due the possibility to develope a faithful implementation. 
 
 \section{Shearlet Systems and Transform}
 \label{sec:shearletsystem}
@@ -283,7 +283,7 @@ a & 0 \\
 \right)
 \end{equation}
 
-with $\alpha\in (0,2)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Shearlets}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also knwon to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
+with $\alpha\in (0,2)$ that controls the "degree of anisotropy" and the generated system is known as \textit{Alpha Shearlets}, we will discuss this in detail on Section~\ref{sec:AlphaShearlets}. Parabolic scaling is also known to be required in order to obtain optimally sparse approximations of cartoon-like images, since it is the best adapted to $C^2$-regularity of the curves of discontinuity, i.e.\ is efficient to approximate smooth curves, moreover choosing $a=2$ gives the best performance.
 
 \bigskip
 
@@ -377,7 +377,7 @@ Given $\psi\in L^2(\mathbb{R}^2)$, the discrete shearlet system associated with 
 \end{equation}
 \end{defn}
 
-It has been proved that Shearlets present a lot of features and breakthrough results; for instance they can perform common tasks of signal processing as inpainting or denoising with great results in comparison with other methods (e.g.\ wavelets); but we defined the Shearlet System with motivation on the optimal best $N$-term approximation error found by Donoho (see Theorem~\ref{C3S2T1}), and prove that this bound is reached one first need to give some definitons.
+It has been proven that Shearlets present a lot of features and breakthrough results; for instance they can perform common tasks of signal processing as inpainting or denoising with great results in comparison with other methods (e.g.\ wavelets); but we defined the Shearlet System with motivation on the optimal best $N$-term approximation error found by Donoho (see Theorem~\ref{C3S2T1}), and prove that this bound is reached one first need to give some definitons.
 
 \begin{defn}[Classical shearlets]
 \label{def:classical_shearlets}
@@ -405,15 +405,25 @@ Then, we call $\psi$ a \textit{classical shearlet}.
 
 \end{figure}
 
-One can observe in  the tiling of the Fourier domain of the classical shearlets in Figure~\ref{fig:tiling_nocone} that the tiling of the Fourier domain of the classical shearlets is not uniform at all, it is very biased towards the $\xi_2$-axis, that will lead to some issues if one wants to analyze singularities aligned with the $x_1$-axis. For directional systems as the shearlet system one would like to have a uniform tiling of the Fourier space; to achieve this one can split the space in "cones" and associate different shearlet system for each cone. 
+One can observe in Figure~\ref{fig:tiling_nocone} that the tiling of the Fourier domain of the classical shearlets is not uniform at all, it is very biased towards the $\xi_2$-axis, that will lead to some issues if one wants to analyze singularities aligned with the $x_1$-axis. For directional systems as the shearlet system one would like to have a uniform tiling of the Fourier space; to achieve this one can split the space in "cones" and associate different shearlet system for each cone. 
 
 \bigskip
 
 \begin{defn}[Cone-adapted shearlet system]
 \label{def:cone_shearlets}
-Let $\phi,\psi,\tilde{\psi}\in L^2(\mathbb{R}^2)$ and $c=(c_1,c_2)\in (\mathbb{R}^+)^2$. The \textit{cone-adapted shearlet system} associated with $\phi,\psi,\tilde{\psi}$ and $c$ is defined by 
+Let $\phi,\psi,\tilde{\psi}\in L^2(\mathbb{R}^2)$ and $c=(c_1,c_2)\in (\mathbb{R}^+)^2$. Lets split the Fourier space in cones $\mathcal{C}_1, \mathcal{C}_2, \mathcal{C}_3,\mathcal{C}_4$ and a central low-frequency square $\mathcal{R}$, see Figure~\ref{fig:tiling_cone}, where 
 $$
-\mathcal{SH}(\phi,\psi,\tilde{\psi},c):=\Phi(\phi,c_1)\cup\Psi(\psi,c)\cup \tilde{\Psi}(\tilde{\psi},c)
+\begin{aligned}
+\mathcal{C}_1\cup \mathcal{C}_3 &:=\mathcal{C}_h =\{ (\xi_2,\xi_1)\in\mathbb{R}^2| |\xi_2/\xi_1|\leq 1,|\xi_1|>1\}\\
+\mathcal{C}_2\cup \mathcal{C}_4 &:= \mathcal{C}_v =\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_2/\xi_1|> 1, |\xi_2|>1\},\\
+\mathcal{R}&:=\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_1|,|\xi_2|\leq 1\}
+\end{aligned}
+$$
+ 
+
+Then the \textit{cone-adapted shearlet system} associated with $\phi,\psi,\tilde{\psi}$ and $c$ is defined by 
+$$
+\mathcal{SH}(\phi,\psi,\tilde{\psi},c):=\mathcal{P}_{\mathcal{R}}\Phi(\phi,c_1)\cup \mathcal{P}_{\mathcal{C}_1}\Psi(\psi,c)\cup\mathcal{P}_{\mathcal{C}_2}\tilde{\Psi}(\tilde{\psi},c)
 $$
 
 where
@@ -435,21 +445,7 @@ M_c=\left(\begin{matrix} c_1 & 0 \\ 0 & c_2\end{matrix}\right)\text{,  }
 \tilde{A}_j=\left(\begin{matrix} 2^{j/2} & 0 \\ 0 & 2^j\end{matrix}\right)
 $$
 
-Lets split the Fourier space in cones $\mathcal{C}_1, \mathcal{C}_2, \mathcal{C}_3,\mathcal{C}_4$ and a central low-frequency square $\mathcal{R}$, see Figure~\ref{fig:tiling_cone}. Then the set
-
-$$
-\mathcal{P}_{\mathcal{R}}\Phi(\phi,1)\cup \mathcal{P}_{\mathcal{C}_1}\Psi(\psi,(1,1))\cup\mathcal{P}_{\mathcal{C}_2}\tilde{\Psi}(\tilde{\psi},(1,1))
-$$
-
-where 
-$$
-\begin{aligned}
-\mathcal{C}_1\cup \mathcal{C}_3 &:=\mathcal{C}_h =\{ (\xi_2,\xi_1)\in\mathbb{R}^2| |\xi_2/\xi_1|\leq 1,|\xi_1|>1\}\\
-\mathcal{C}_2\cup \mathcal{C}_4 &:= \mathcal{C}_v =\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_2/\xi_1|> 1, |\xi_2|>1\},\\
-\mathcal{R}&:=\{ (\xi_1,\xi_2)\in\mathbb{R}^2||\xi_1|,|\xi_2|\leq 1\}
-\end{aligned}
-$$
-and $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{C}_2}$ are the projections in the Fourier domain, is called the \textit{Cone-adapted shearlet transform}.
+and $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{C}_2}$ are the projections in the Fourier domain.
 \end{defn}
 
 \begin{figure}[!tbp]
@@ -461,11 +457,11 @@ and $P_{\mathcal{R}}$, $\mathcal{P}_{\mathcal{C}_1}$ and $\mathcal{P}_{\mathcal{
 
 \bigskip
 
-In the case of the wavelet transform the discretization and implementation of the algorithm that performs it since dilation can be performed by subsampling and one can use fourier transform properties to translate convolution into multiplication and that can be implemented optimally with the fft-algorithm. Once can also take in account that the convolution operation with a function of compact support can be thought as a filtering operation in signal processing, so a wavelet system and a multeresolution analysis  is interpreted in typical implemenation as a filter bank, the last using a high pass and a low pass filter that characterize the interaction of the wavelet and scaling function, the former obeying the admissibility condition. 
+In the case of the wavelet transform the discretization and implementation of the algorithm that performs it is straight-forward since dilation can be performed by subsampling and one can use fourier transform properties to translate convolution into multiplication and that can be implemented optimally with the fft-algorithm. One can also take in account that the convolution operation with a function of compact support can be thought as a filtering operation in signal processing, so a wavelet system and a multeresolution analysis  is interpreted in the typical implemenation as a filter bank, the last using a high pass and a low pass filter that characterize the interaction of the wavelet and scaling function, the former obeying the admissibility condition. 
 
 \bigskip
 
-The Shearlet Transform of a function $f\in L^2(\mathbb{R}^2)$, $\langle f,\psi_{j,k,m}\rangle$ for the same reasons has a faithfull implementation using filtering and subsampling operations just taking care of the invariance of the $\mathbb{Z}^2$ grid under the discretization of the shearlet operator (Wang-Q. Lim proposed a solution for this on \cite{Nonseparableshear}); the filters need to characterize the functions $\phi$ and $\psi$ on the cone-adapated shearlet system (Definition~\ref{def:cone_shearlets}). The simplest choice is to take $\psi$ to be the tensor product of a wavelet function $\psi_1$ and a scaling function $\phi_1$ related to a multiresolution analysis, this approach is known as the separable shearlet generator. 
+For the same reasons the Shearlet Transform of a function $f\in L^2(\mathbb{R}^2)$, defined by its coefficients $\langle f,\psi_{j,k,m}\rangle$ has a faithfull implementation using filtering and subsampling operations just taking care of the invariance of the $\mathbb{Z}^2$ grid under the discretization of the shearing operator (Wang-Q. Lim proposed a solution for this on \cite{Nonseparableshear}); the filters need to characterize the functions $\phi$ and $\psi$ on the cone-adapated shearlet system (Definition~\ref{def:cone_shearlets}). The simplest choice is to take $\psi$ to be the tensor product of a wavelet function $\psi_1$ and a scaling function $\phi_1$ related to a multiresolution analysis, this approach is known as the separable shearlet transforms with generating functions:
 
 $$
 \begin{aligned}
@@ -480,7 +476,7 @@ $$
 \hat{\psi}^{\text{non}}(\xi)=P\left(\frac{\xi_1}{2},\xi_2\right)\hat{\psi}(\xi),
 $$
 
-where $\psi$ is the already mentioned separable shearlet generator and $P$ is a 2D directional fan filter (see \cite{Nonseparableshear} for a more detailed explanation of this filter). The wedge form that non-separable shearlet generators give to the shearlet system the ability to cover the Fourier domain optimally. We will use this approach in this thesis; the implementation of the non-separable shearlet transform is widely explained in \cite{Shearlab} where the most known implemenation is based on, Shearlab3D in matlab (one can download it in \url{shearlab.org}); by the improvement of performance we will use the Julia Programming Language (\url{https://julialang.org/}) implementation of this library that can be downloaded in \url{https://github.com/arsenal9971/Shearlab.jl} or installed from the Julia REPL using \lstinline[language=julia]{Pkg.add("Shearlab")}.
+where $\psi$ is the already mentioned separable shearlet generator and $P$ is a 2D directional fan filter (see \cite{Nonseparableshear} for a more detailed explanation of this filter). The wedge form that non-separable shearlet generators give to the shearlet system the ability to cover the Fourier domain optimally. We will use this approach in this thesis; the implementation of the non-separable shearlet transform is widely explained in \cite{Shearlab} where the most known implemenation is based on, Shearlab3D in matlab (one can download it in \url{https://shearlab.org}); by the improvement of performance we will use the Julia Programming Language (\url{https://julialang.org/}) implementation of this library that can be downloaded in \url{https://github.com/arsenal9971/Shearlab.jl} or installed from the Julia REPL using \lstinline[language=julia]{Pkg.add("Shearlab")}.
 
 \begin{figure}[h!]
 \centering
@@ -504,7 +500,7 @@ for some constant $C>0$ and that for $h\in L^1(\mathbb{R}^1)$
 $$
 |\frac{\partial}{\partial\xi_2}\hat{\psi}(\xi)|\leq |h(\xi_1)|\left(1+\big| \frac{\xi_2}{\xi_1}\big|\right)^{-\gamma}
 $$
-is satisfied. Assume that the same conditions are satisfied for $\tilde{\psi}$. Then, if the \textit{cone-adapated shearlet system} on definition~\ref{def:cone_shearlets} $\mathcal{SH}(\phi,\psi,\tilde{psi},(1,1))$ forms a frame for $L^2(\mathbb{R}^2)$, then there exists a constant $C'>0$ such that for all $f\in\mathcal{E}^2(\mathbb{R}^2)$, we have 
+is satisfied. Assume that the same conditions are satisfied for $\tilde{\psi}$. Then, if the \textit{cone-adapated shearlet system} on definition~\ref{def:cone_shearlets} $\mathcal{SH}(\phi,\psi,\tilde{\psi},(1,1))$ forms a frame for $L^2(\mathbb{R}^2)$, then there exists a constant $C'>0$ such that for all $f\in\mathcal{E}^2(\mathbb{R}^2)$, we have 
 
 \begin{equation}
 \label{eq:optimalshearlets}
@@ -526,16 +522,16 @@ Lets now take a bigger picture on representation systems. An orthonormal basis f
 x=\sum_{i\in I}\langle x,\phi_i\rangle \phi_i
 \end{equation}
 
-so one can represent each vector in termos of the collection and one can decompose each element $x\in\mathcal{H}$ as
+so one can represent each vector in terms of the collection and one can decompose each element $x\in\mathcal{H}$ as
 $$
 x\mapsto (\langle x,\phi_i\rangle)_{i\in I}\text{,  }\mathcal{H}\longrightarrow \ell_2(I)
 $$
 
 even this two features (decomposition and recovery) are very simply expressed for orthonormal bases, one woul like to extend the theory for different reasons. For example, it is not possible to recover $x$ if one loses some of the coefficients $\langle x, \phi_i\rangle$, so the induced decomposition is not robust. In the last section we mentioned the imporance of sparse representation of signals in different applications, but an orthonormal basis forces the representation coefficients to be $\langle x,\phi_i\rangle$, the sequence of coefficients will not have a rapid decay. One will call this two mentioned characteristics as \textit{Robust Decomposition}, and \textit{Sparse representation}. 
-p
+
 \bigskip
 
-A natural generalization of the convept of orthonormal bases is the concept of frames, to define them one weakens the Parseval equation~\ref{eq:parseval}.
+A natural generalization of the concept of orthonormal bases is the concept of frames, to define them one weakens the Parseval equation~\ref{eq:parseval}.
 
 \bigskip
 
@@ -563,7 +559,7 @@ In the last section we introduced different representation systems for signals i
 
 \bigskip
 
-\begin{thm}[Necessary condtion for wavelet wrames]
+\begin{thm}[Necessary condition for wavelet frames]
 Let $a>1$, $b>0$ and $\psi\in L^2(\mathbb{R})$ a wavelet function such that the related system $W(\psi,a,b)$ forms a frame for $L^2(\mathbb{R})$ with frame bounds $A$ and $B$. Then, we have
 $$
 A\leq \frac{1}{b}\sum_{j\in\mathbb{Z}}|\hat{\psi}(a^j\xi)|^2\leq B \text{,   }\forall\xi\in\mathbb{R}
@@ -629,7 +625,7 @@ $$
 We refer to \cite{FirstShearlets} for the proof of this theorem. 
 \end{proof}
 
-The choice of functions $\psi$ and $\phi$ presented in the last section in both separable and non-separable fashion obey the inequality~\ref{eq:coneshearframes} (see \cite{Nonseparableshear}); therefore the related shearlet system will form a frame. This strong machinery shows the strong properties of the shearlet systems being frames, presenting both sparse representation and robust decomposition and in particular shows that the shearlets will span $L^2(\mathbb{R}^2)$. In the next section we will extend the notion of scaling that is suitable for levels of anisotropy. 
+The choice of functions $\psi$ and $\phi$ presented in the last section in both separable and non-separable fashion obey the inequality~\ref{eq:coneshearframes} (see \cite{Nonseparableshear}); therefore the related shearlet system will form a frame. This machinery shows the strong properties of the shearlet systems being frames, presenting both sparse representation and robust decomposition and in particular shows that the shearlets will span $L^2(\mathbb{R}^2)$. In the next section we will extend the notion of scaling that is suitable for levels of anisotropy. 
 
 \section{Universal Shearlets and Alpha Shearlets}
 \label{sec:AlphaShearlets}
@@ -673,7 +669,7 @@ One main objective of the introduction of the \textit{Universal Shearlet System}
 Lets proceed with the construction of the \textit{Universal Shearlets}. First let us recall the definition of the \textit{Schwartz functions space} 
 
 $$
-\mathcal{S}(\mathbb{R}^d):=\{\phi\in C^{\infty}(\mathbb{R}^d)|\forall K,N\in\mathbb{N}_0:\sup_{x\in\mathbb{R}^d}(1+|x|^2)^{-N/2}\sum_{|\alpha|\leq K}|D^{\alpha}\phi(x)|<\infty\}
+\mathbb{S}(\mathbb{R}^d):=\{\phi\in C^{\infty}(\mathbb{R}^d)|\forall K,N\in\mathbb{N}_0:\sup_{x\in\mathbb{R}^d}(1+|x|^2)^{-N/2}\sum_{|\alpha|\leq K}|D^{\alpha}\phi(x)|<\infty\}
 $$
 
 we will rather use the compact notation $\langle|x|\rangle:=(1+|x|^2)^{-N/2}$, the fourier transform will be an operator of $\mathbb{S}(\mathbb{R}^d)$. 
@@ -722,7 +718,7 @@ $$
 \centering
 \includegraphics[width=0.9\textwidth]{./Diagrams/alphapartcones.jpg}
 \caption{(a) Fourier transform of a Meyer scaling function. (b) Decomposition of the frequency plane by corona functions $W_j$ and $\Phi$. (c) Symmetric frequency decompositionby cones. Figure taken from \cite{Gitta-alpha} pp. 11}
-\label{fig:separable_nonseparable}
+\label{fig:separable_nonseparable1}
 \end{figure}
 
 Lets introduce adapted versions of the usual shearing and scaling matrices,
@@ -817,7 +813,7 @@ $$
 
 \bigskip
 
-Since the elements of a scaling sequence $\alpha_j$ can be chosen independently for each scaling level and, in particular, the sequence $(\alpha_j)_j$ does not need to converge; this premits a faithful implementation of the universal shearlet transform; this is already implemented in the toolbox used in this thesis (Shearlab.jl) one determines the total number of shearings (on each scale) first given by $|k|\leq \lceil 2^{(2-\alpha_j)j/2}\rceil$, rather that selecting a fixed $\alpha_j$. We are ready to prove the main property of the universal shearlet system, i.e.\ its character of frame.
+Since the elements of a scaling sequence $\alpha_j$ can be chosen independently for each scaling level and, in particular, the sequence $(\alpha_j)_j$ does not need to converge; this permits a faithful implementation of the universal shearlet transform; this is already implemented in the toolbox used in this thesis (Shearlab.jl) one determines the total number of shearings (on each scale) first given by $|k|\leq \lceil 2^{(2-\alpha_j)j/2}\rceil$, rather that selecting a fixed $\alpha_j$. We are ready to prove the main property of the universal shearlet system, i.e.\ its character of frame.
 
 \begin{thm}[Universal shearlet frames]
 \label{thm:alpha34}
@@ -827,7 +823,7 @@ Let $(\alpha_j)_{j}$ be a scaling sequence and $\mathcal{SH}(\phi,v,(\alpha_j)_j
 Lets proceed with the proof of the different properties required.
 \begin{itemize}
 \item\textit{Band-limiting and vanishing moment property:} Observing that $(0,0)\notin \text{supp}W_k\subset \mathcal{K}_j$ which immediately follows from Definition~\ref{def:alpha31}.
-\item\textit{Smoothness:} Due to the band-limiting of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$, it is sufficient to show that the Fourier transforms of the elements are smooth. This will imply that $\mathcal{SH}(\phi,v,(\alpha_j)_j)\subset \mathcal{S}(\mathbb{R}^2)$. 
+\item\textit{Smoothness:} Due to the band-limiting of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$, it is sufficient to show that the Fourier transforms of the elements are smooth. This will imply that $\mathcal{SH}(\phi,v,(\alpha_j)_j)\subset \mathbb{S}(\mathbb{R}^2)$. 
 
 \bigskip
 
@@ -848,7 +844,7 @@ W(2^{-j}\xi)v(k_j(\xi_1/\xi_2-1))&e^{-\pi i[2^{-j}\xi_1 m_1+2^{-\alpha_j j/2}(\x
 \end{cases}
 \end{equation}
 
-In the case of $\xi_1=\pm \xi_2$, both terms coincide implying the continuity of $\hat{\psi}_{j,k,m}^{\alpha_j}$. By the same argument, the continuity of $\hat{\psi}_{j,-k_j,m}^{\alpha_j}$ is cerified. Next we comput the partial derivatives of both terms in eq.~\ref{eq:alpha71} which are given by
+In the case of $\xi_1=\pm \xi_2$, both terms coincide implying the continuity of $\hat{\psi}_{j,k,m}^{\alpha_j}$. By the same argument, the continuity of $\hat{\psi}_{j,-k_j,m}^{\alpha_j}$ is verified. Next we compute the partial derivatives of both terms in eq.~\ref{eq:alpha71} which are given by
 
 \begin{equation}
 \label{eq:alpha72}
@@ -872,7 +868,7 @@ and
 \end{equation}
 These two expressions coincide, since by definition $v'(0)=0$. The same can be done in a similar way for the partial derivative with respect to $\xi_2$, and by obvious modifications, one verifies the smoothness for $\hat{\psi}_{j,-k_j,m}^{\alpha_j}$ as well as for the case $j=0$. Finally, the differentiability of higher order is proven by induction and successive use of eq.~\ref{eq:alpha34}.
 
-\item\textit{Parseval frame property:} Let $f\in L^2(\mathbb{R}^2)$ be arbitrary. Lets condiser the different parts of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ separately:
+\item\textit{Parseval frame property:} Let $f\in L^2(\mathbb{R}^2)$ be arbitrary. Lets consider the different parts of $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ separately:
 
 \begin{enumerate}
 \item[\textbf{Case 1}] Boundary shearlets with $j\geq 1$: By Plancherel's Theorem, we get
@@ -891,8 +887,9 @@ Then the equation~\ref{eq:alpha74} will have the form
 $$
 \begin{aligned}
 V_{(h)}\left(\xi^{\top}A_{j,\alpha_j,(h)}S_{-k_j,(h)}\right)&=v\left(\begin{matrix}\eta_2\\ \eta_1\end{matrix}\right),\\
-V_{(v)}\left(\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k_j,\alpha_j,(v)}\right)&=v\left(2^{(2-\alpha)j/2}(\xi_1/\xi_2-1)\right) = v\left(-\frac{\eta_2}{\eta_1+2^{(\alpha_j-2)j/2}\eta_2}\right),\\
-W(2^{-j}\xi)=W\left(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2]\right).
+V_{(v)}\left(\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k_j,\alpha_j,(v)}\right)&=v\left(2^{(2-\alpha)j/2}(\xi_1/\xi_2-1)\right)\\
+ &= v\left(-\frac{\eta_2}{\eta_1+2^{(\alpha_j-2)j/2}\eta_2}\right),\\
+W(2^{-j}\xi)&=W\left(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2]\right).
 \end{aligned}
 $$
 By equation~\ref{eq:alpha31}, the mapping $(\eta_1,\eta_2)\mapsto W(2\eta_1,2[\eta_1+2^{(\alpha_j-2)j/2}\eta_2])$ is supported in the strip $\{|\eta_1|\leq 1/4\}$. Since $\text{supp}v\subset [-1,1]$, we have that the mappings
@@ -913,9 +910,11 @@ where in the last inequality we used $\alpha_j\leq 1-2/j$. With this observation
 $$
 \begin{aligned}
 &\sum_{k\in\mathbb{Z}^2}|\langle f,\psi_{j,k_j,m}^{\alpha_j}\rangle|^2\\
-&=\sum_{k\in\mathbb{Z}^2}\bigg|\int_{Q^2}2^{(2+\alpha_j)j/4+1/4}\hat{f}(\xi(\eta))\left[ \chi_{\mathcal{C}_{(h)}}(\xi(\eta))U{(h),j}(\eta)+\chi_{\mathcal{C}_{(v)}}(\xi(\eta))U_{(v),j}(\eta)\right]e^{2\pi i\eta^{\top}m}d\eta\bigg|^2\\
+&=\sum_{k\in\mathbb{Z}^2}\bigg|\int_{Q^2}2^{(2+\alpha_j)j/4+1/4}\hat{f}(\xi(\eta))[ \chi_{\mathcal{C}_{(h)}}(\xi(\eta))U{(h),j}(\eta)\\
+&+\chi_{\mathcal{C}_{(v)}}(\xi(\eta))U_{(v),j}(\eta)]e^{2\pi i\eta^{\top}m}d\eta\bigg|^2\\
 &=\int_{Q^2}2^{(2+\alpha_j)j/2+1/2}|\hat{f}(\xi(\eta))|^2\bigg|\xi_{\mathcal{C}_{(h)}}(\xi(\eta))U_{(h),j}(\eta)+\xi_{\mathcal{C}_{(v)}}(\xi(\eta))U_{(v),j}(\eta)\bigg|^2d\eta\\
-&=\int_{\mathcal{C}_{(h)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1-1))|^2+\int_{\mathcal{C}_{(v)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_2-1))|^2d\xi.
+&=\int_{\mathcal{C}_{(h)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_2/\xi_1-1))|^2\\
+&+\int_{\mathcal{C}_{(v)}}|\hat{f}(\xi)|^2|W(2^{-j}\xi)|^2|v(k_j(\xi_1/\xi_2-1))|^2d\xi.
 \end{aligned}
 $$
 Similarly we can get
@@ -966,7 +965,7 @@ $$
 &\underset{~\ref{eq:alpha31}}{=}\int_{\mathbb{R}^2}|\hat{f}(\xi)|^2\left[|\hat{\Phi}(\xi)|^2+\sum_{j\in\mathbb{N}_0}|W(2^{-j}\xi)|^2\right]d\xi = ||\hat{f}||^2_{L^2(\mathbb{R}^2)}=||f||^2_{L^2(\mathbb{R}^2)}
 \end{aligned}
 $$
-Then we have the proof finished. 
+Then we have the proof finished. This proof was based on the proof of Theorem 3.4 on \cite{Gitta-alpha}, with the necessary modifications.
 \end{itemize}
 \end{proof}
 
@@ -1010,7 +1009,7 @@ On the last chapter we explained how one can optimize the light field acquisitio
 \label{fig:sparse_EPI}
 \end{figure}
 
-One would like to recover the lost sections of the EPIs, this task is present in different applications on data processing, since frequently the technologies of data acquisition fails resulting on missing traces; in imaging sicence, this task is referred as \textit{inpainting} by the similiraty of the physical task of restoring a painting. 
+One would like to recover the lost sections of the EPIs, this task is present in different applications on data processing, since frequently the technologies of data acquisition fails resulting on missing traces; in imaging science, this task is referred as \textit{inpainting} by the similiraty of the physical task of restoring a painting. 
 
 \bigskip
 
@@ -1043,11 +1042,11 @@ We will assume that the signal $x^0$ can be efficiently represented by some Pars
 \underset{c\in\ell^2(I)}{\min}||c||_{\ell^0(I)}\quad\textrm{subject to}\quad x^0=T_{\Phi}^*c=\sum_{i\in I}c_i\phi_i
 \end{equation}
 
-where the operator $T^*_{\Phi}$ is the so-called synthesis operator associated to the frame, then equation~\ref{eq:alpha21} tries to find a synthesis sequence of $x^0$ that has as few as possible non-zero elements measured by $||c||_0:=\#\{c_i|c_i\neq 0\}$. This minimization problem is not convex which represents a big complexity issue in the solution method; we will then follow a new strategy called \textit{analysis approach}.
+where the operator $T^*_{\Phi}$ is the so-called synthesis operator associated to the frame, then equation~\ref{eq:alpha21} tries to find a synthesis sequence of $x^0$ that has as few as possible non-zero elements measured by $||c||_0:=\#\{c_i|c_i\neq 0\}$, by using the least possible of Shearlet Coefficients one smooth out the masked image covering then the holes get smoothly covered. This minimization problem is not convex which represents a big complexity issue in the solution method; we will then follow a new strategy called \textit{analysis approach}.
 
 \bigskip
 
-In the \textit{analysis approach} we will consider \textit{analysis coefficients} given by the \textit{analysis operator} $T_{\Phi}x^0=(\langle x^0,\phi_i\rangle)_{i\in I}$, since the frame is assumed to obey the Parseval property, we can perform the reconstruction by $x^0=T^*_{\Phi}(\langle x^0,\phi_i\rangle)_{i\in I}=\sum_{i\in I}\langle x^0,\phi\rangle\phi_i$. $\Phi$ is not necessarily a basis, $T_{\Phi}x^0$ might not be a solution of~\ref{eq:alpha21}, so is not yet clear what it means to give a sparse representation in the sense of the analysis approach; to make sanse of this we need to use some ideas of \textit{compressed sensing}.
+In the \textit{analysis approach} we will consider \textit{analysis coefficients} given by the \textit{analysis operator} $T_{\Phi}x^0=(\langle x^0,\phi_i\rangle)_{i\in I}$, since the frame is assumed to obey the Parseval property, we can perform the reconstruction by $x^0=T^*_{\Phi}(\langle x^0,\phi_i\rangle)_{i\in I}=\sum_{i\in I}\langle x^0,\phi\rangle\phi_i$. $\Phi$ is not necessarily a basis, $T_{\Phi}x^0$ might not be a solution of~\ref{eq:alpha21}, so is not yet clear what does it mean to give a sparse representation in the sense of the analysis approach; to make sense of this we need to use some ideas of \textit{compressed sensing}.
 
 \bigskip
 
@@ -1073,7 +1072,7 @@ To be able to use the \textit{analysis approach} we will introduce the next $\el
 
 \bigskip
 
-In other words, Algorithm~\ref{alg:alpha21} minimizes the $\ell^1$-norm among all possible reconstruction candidates, which is the set of all signals coinciding with $x^0$ on $\mathcal{H}_K$. In the case where the undamaged signal $x^0$ is sufficiently sparsified by $\Phi$, and then an small $\ell^1$-norm of $T_{\Phi}x^0$, the solution $x^*$ will provide a good reconstruction of the important features on $x^0$.
+In other words, Algorithm~\ref{alg:alpha21} minimizes the $\ell^1$-norm among all possible reconstruction candidates, which is the set of all signals coinciding with $x^0$ on $\mathcal{H}_K$. In the case where the undamaged signal $x^0$ is sufficiently sparsified by $\Phi$, and then it has a small $\ell^1$-norm of $T_{\Phi}x^0$, the solution $x^*$ will provide a good reconstruction of the important features on $x^0$.
 
 \bigskip
 
@@ -1086,9 +1085,9 @@ We would like to prove some error estimates for the recovery by Algorithm~\ref{a
 Let $\delta>0$ and $\Gamma\subset I$. A signal $x\in\mathcal{H}$ is called $\delta$-clustered sparse in $\Phi$ with respect to $\Gamma$, if
 \begin{equation}
 \label{eq:alpha22}
-||\mathbf{1}_{\Gamma^c}T_{\Phi}x||_{\lambda^1}\leq \delta
+||\mathbf{1}_{\Gamma^c}T_{\Phi}x||_{\ell^1}\leq \delta
 \end{equation}
-In this case, $\Gamma$ is sait to be $\delta$-cluster for $x$ in $\Phi$. 
+In this case, $\Gamma$ is said to be $\delta$-cluster for $x$ in $\Phi$. 
 \end{defn}
 
 \bigskip
@@ -1114,7 +1113,7 @@ The cluster coherence can be understood as an abstract measure for the gap size;
 |\langle P_Mx^0,\phi_i\rangle|\leq\sum_{i\in I}|\langle x^0,\phi_j\rangle||\langle P_M\phi_j,\phi_i\rangle|=\sum_{i\in I}|\langle x^0,\phi_j\rangle||\langle P_M\phi_j, P_M\phi_i\rangle|.
 \end{equation}
 
-The scalar products $|\langle P_M\phi_j,P_M\phi_i\rangle|$ broadly indicate how "correlated" the measurments with $\phi_i$ and $\phi_j$ are on $\mathcal{H}_M$. To compute the recovery error, it was proposed before (see \cite{Firstinpaint}) to estimate the ditance between $x^0$ and its $\ell^1$-recovery $x^*$ with the Hilbert norm. This worked well to estimate an upper bound, but to show an optimality result (lower bound), measuring $||\cdot||$ is not useful, since the Parseval property of $\Phi$ gives $||x^0-x^*||=||T_{\Phi}(x^0-x^*)||_{\ell^2}$, the $\ell^2$-norm in comparison with the $\ell^1$ has an averaging effect on the coefficientes, then some sparsity features might be hiddeng when using the Hilbert space norm. We will proposed a new norm to measure the error, the $\ell^1$-analysis norm.
+The scalar products $|\langle P_M\phi_j,P_M\phi_i\rangle|$ broadly indicate how "correlated" the measurments with $\phi_i$ and $\phi_j$ are on $\mathcal{H}_M$. To compute the recovery error, it was proposed before (see \cite{Firstinpaint}) to estimate the ditance between $x^0$ and its $\ell^1$-recovery $x^*$ with the Hilbert norm. This worked well to estimate an upper bound, but to show an optimality result (lower bound), measuring $||\cdot||$ is not useful, since the Parseval property of $\Phi$ gives $||x^0-x^*||=||T_{\Phi}(x^0-x^*)||_{\ell^2}$, the $\ell^2$-norm in comparison with the $\ell^1$ has an averaging effect on the coefficientes, then some sparsity features might be hidden when using the Hilbert space norm. We will proposed a new norm to measure the error, the $\ell^1$-analysis norm.
 
 \bigskip
 
@@ -1125,7 +1124,7 @@ $$
 $$
 and the $\ell^1$-analysis space given by 
 $$
-\mathcal{H}_{1,\Phi}:=\{x\in \mathcal{H}|||x||_{1,\Phi}<\infty\}
+\mathcal{H}_{1,\Phi}:=\{x\in \mathcal{H}:||x||_{1,\Phi}<\infty\}
 $$
 equipped with $||\cdot||_{1,\Phi}$
 \end{defn}
@@ -1151,7 +1150,7 @@ The proof can be found in \cite{Firstinpaint}.
 
 \bigskip
 
-The Theorem~\ref{thm:alpha25} gives good estimates if $\Phi$ sparsifies $x^0$ and the size of the missing space, the latter measured in terms of cluster coherence is not too large. We would like to pick a cluster $\Gamma$ such that $x^0$ becomes $\delta$-clustered sparse for samll $\delta$ and at the same time $\mu_c$ shall not exceed the bound of $1/2$; even the concepts if cluster sparsity and cluster coherence were introduced independently, both notions are now joined together in terms of $\Gamma$; enlarging $\Gamma$ makes the Equation~\ref{eq:alpha25} true for smalle $\delta$, while $\mu_c(Gamma,P_MPhi)$ increases and could exceed $1/2$, this tell us that applying the Theorem~\ref{thm:alpha25} involves actually the fundamental task of choosing an appropriate cluster (see \cite{Firstinpaint} for a more detailed analysis). 
+The Theorem~\ref{thm:alpha25} gives good estimates if $\Phi$ sparsifies $x^0$ and the size of the missing space, the latter measured in terms of cluster coherence is not too large. We would like to pick a cluster $\Gamma$ such that $x^0$ becomes $\delta$-clustered sparse for small $\delta$ and at the same time $\mu_c$ shall not exceed the bound of $1/2$; even the concepts if cluster sparsity and cluster coherence were introduced independently, both notions are now joined together in terms of $\Gamma$; enlarging $\Gamma$ makes the Equation~\ref{eq:alpha25} true for smalle $\delta$, while $\mu_c(\Gamma,P_M\Phi)$ increases and could exceed $1/2$, this tell us that applying the Theorem~\ref{thm:alpha25} involves actually the fundamental task of choosing an appropriate cluster (see \cite{Firstinpaint} for a more detailed analysis). 
 
 \bigskip
 
@@ -1163,13 +1162,13 @@ In order to compare the shearlets and the wavelets performance for inpaiting, we
 
 \bigskip
 
-As we cannot work on actual edges in $L^2(\mathbb{R}^2$ and other Lebesgue spaces since they have measure zero, we will work with a line-distribution given by $\omega\mathcal{L}$ acting on Schwartz functions $f\in\mathcal{S}(\mathbb{R}^2)$, i.e.\ $\omega\mathcal{L}\in \mathcal{S}'(\mathbb{R}^2)$, if $\text{supp }\omega\subset[-\rho,\rho]$ then its action will be defined by
+As we cannot work on actual edges in $L^2(\mathbb{R}^2)$ and other Lebesgue spaces since they have measure zero, we will work with a line-distribution given by $\omega\mathcal{L}$ acting on Schwartz functions $f\in\mathbb{S}(\mathbb{R}^2)$, i.e.\ $\omega\mathcal{L}\in \mathbb{S}'(\mathbb{R}^2)$, if $\text{supp }\omega\subset[-\rho,\rho]$ then its action will be defined by
 
 $$
 \langle \omega \mathcal{L},g\rangle = \int_{-\rho}^{\rho} \omega(x_1)g(x_1,0)dx_1 \textrm{,}\quad \forall g\in\mathcal{S}(\mathbb{R}^2)
 $$
 
-where $\omega$ is a smooth weight and $\rho>0$. The weight $\omega$ sets up the linear singularity that is smooth in the vertical direction, while the value of $\rho$ corresponds to the length of the singularity. We will mask the linear singularity (wheighted distribution) $\omega\mathcal{L}$ with the mask 
+where $\omega$ is a smooth weight and $\rho>0$. The weight $\omega$ sets up the linear singularity that is smooth in the vertical direction, while the value of $\rho$ corresponds to the length of the singularity. We will mask the linear singularity (weighted distribution) $\omega\mathcal{L}$ with the mask 
 
 $$
 M_h=\{(x_1,x_2)\in\mathbb{R}^2:|x_1|\leq h\}\textrm{,}\quad h>0
@@ -1224,7 +1223,7 @@ $$
 Due the technical level of the proof, we will refer to \cite{clustered-inpainting} for the detailed proof. 
 \end{proof}
 
-The Theorem~\ref{thm:inpaintingwaveletsshearlets} shows that Shearlets is a better choice than Wavelets as a Sparsifying  Parseval Frame to perform the inpainting of natural images, in particualr of EPIs, therefore is the system that we picked in this thesis.
+The Theorem~\ref{thm:inpaintingwaveletsshearlets} shows that Shearlets is a better choice than Wavelets as a Sparsifying  Parseval Frame to perform the inpainting of natural images, in particular of EPIs, therefore is the system that we picked in this thesis.
 
 \bigskip
 
@@ -1233,7 +1232,7 @@ There are different methods to minimize the $\ell^1$-norm in the inpainting algo
 \section{0-Shearlets}
 \label{sec:0-Shearlets}
 
-In the last section we introduce a generalization of the classical cone-adpated shearlet transform allowing a more flexible scaling matrix $A_{j,\alpha_j,(\iota)}$, where $\alpha_j\in (-\infty,2)$ changes the "level" of anisotropy of the features the transform is sensible with. We also know by Theorem~\ref{thm:alpha34} that Shearlet System generated by the sequence of scaling parameters $(\alpha_j)_{j\in\mathbb{N}_0}$ will form a frame if the sequence form a scaling sequence, i.e.\ $\alpha_j$ is a multiple of $2/j$.
+In the last section we introduce a generalization of the classical cone-adpated shearlet transform allowing a more flexible scaling matrix $A_{j,\alpha_j,(\iota)}$, where $\alpha_j\in (-\infty,2)$ changes the "level" of anisotropy of the features the transform is sensible to. We also know by Theorem~\ref{thm:alpha34} that Shearlet System generated by the sequence of scaling parameters $(\alpha_j)_{j\in\mathbb{N}_0}$ will form a frame if the sequence form a scaling sequence, i.e.\ $\alpha_j$ is a multiple of $2/j$.
 
 \bigskip
 
@@ -1241,7 +1240,7 @@ In the last section we introduce a generalization of the classical cone-adpated 
 
 \bigskip
 
-As we already mentioned several times, the final task of this thesis is to inpaint using Shearlets as we already mentioned several times, the final task of this thesis is to inpaint EPIs form sparse sampled light fields using Shearlets. As we can see in Figure~\ref{fig:sparse_EPI} Epipolar Plane Images consist of straight-line structures, so one would like to have a scaling operation suited to straight-lines; this is performed using the sequence of scaling parameters given by
+As we already mentioned several times, the final task of this thesis is to inpaint EPIs form sparse sampled light fields using Shearlets. As we can see in Figure~\ref{fig:sparse_EPI} Epipolar Plane Images consist of straight-line structures, so one would like to have a scaling operation suited to straight-lines; this is performed using the sequence of scaling parameters given by
 
 $$
 \alpha_j=-\frac{2}{j}\in A_j\textrm{,}\quad \forall j\in\mathbb{Z}
@@ -1268,7 +1267,7 @@ $$
 
 \bigskip
 
-If one considers a multiresolution analysis with wavelet and scaling function for $\psi_1,\phi_1\in L^2(\mathbb{R}^2)$ are given by
+If one considers a multiresolution analysis with wavelet and scaling function $\psi_1,\phi_1\in L^2(\mathbb{R}^2)$ given by
 $$
 \begin{aligned}
 \phi_1(x_1)&=\sum_{n_1\in\mathbb{Z}}h(n_1)\sqrt{2}\phi_1(2x_1-n_1)\\
@@ -1278,7 +1277,7 @@ $$
 
 \bigskip
 
-The universal shearlet system generated by the scaling sequence $(\alpha_j)_{j\in \mathbb{Z}}=(-2/j)_{j\in\mathbb{Z}}$ will referred as $0-Shearlets$ since $\alpha_j\underset{j\rightarrow\infty}\longrightarrow 0$. The scaling matrix related to the $0$-shearlets will be given by
+The universal shearlet system generated by the scaling sequence $(\alpha_j)_{j\in \mathbb{Z}}=(-2/j)_{j\in\mathbb{Z}}$ will be referred as $0-Shearlets$ since $\alpha_j\underset{j\rightarrow\infty}\longrightarrow 0$. The scaling matrix related to the $0$-shearlets will be given by
 $$
 A_{j}=\left(\begin{matrix} 2^j & 0\\ 0 & 2^{-1}\end{matrix}\right)
 $$
@@ -1334,7 +1333,7 @@ and $\hat{h}_0\equiv 1$, one can see in Figure~\ref{fig:magnitude_response} the 
 \label{fig:magnitude_response}
 \end{figure}
 
-As it was presented for first time in \cite{Nonseparableshear}, the shear transform $S_{k2^{-j}}$, $j\in\mathbb{N}$, $k\in\mathbb{Z}$ does not preserve the regular grit $\mathbb{Z}^2$, therefore its digitalization is non-trivial. To tackle this issue, one needs to refine the $\mathbb{Z}^2$ grid along the $x_1-axis$ by a factor $2^j$, then the new grid $2^{-j}\mathbb{Z}\times\mathbb{Z}$ is invariant under the $S_{k 2^{-j}}$ transform. 
+As it was presented for first time in \cite{Nonseparableshear}, the shearing transform $S_{k2^{-j}}$, $j\in\mathbb{N}$, $k\in\mathbb{Z}$ does not preserve the regular grit $\mathbb{Z}^2$, therefore its digitalization is non-trivial. To tackle this issue, one needs to refine the $\mathbb{Z}^2$ grid along the $x_1-axis$ by a factor $2^j$, then the new grid $2^{-j}\mathbb{Z}\times\mathbb{Z}$ is invariant under the $S_{k 2^{-j}}$ transform. 
 
 \bigskip
 
@@ -1345,14 +1344,14 @@ For an arbitrary $r\in \ell^2(\mathbb{Z}^2)$, the shear transform $S_{k 2^{-j}}$
 S^d_{k 2^{-j}}(r)=((2^jr_{\uparrow 2^j}\ast_1\tau_j)(S_k\cdot)\ast_1\overline{\tau}_j)_{\downarrow 2^j}
 \end{equation}
 
-where $\tau_j$ is a digital low-pass filter with normalized cutoff frequency at $2^-j$. 
+where $\tau_j$ is a digital low-pass filter with normalized cutoff frequency at $2^{-j}$. 
 
 \bigskip
 
 Using the Equations~\ref{eq:LFshearlets3},~\ref{eq:LFshearlets4},~\ref{eq:LFshearlets5} and~\ref{eq:LFshearlets6} and the proper choice of $c_j$ it can be shown that the digital filter corresponding to $\psi_{j,k,m}$ is given by
 
 $$
-\psi_{j,k}^d=(S^d_{k2^{-(j+1)}}(p_j\ast g_{J-j}\otimes h_{J+1}))(m).
+\psi_{j,k}^d(m)=(S^d_{k2^{-(j+1)}}(p_j\ast g_{J-j}\otimes h_{J+1}))(m).
 $$
 
 A digital filter corresponding to separable elements of the transform $\phi_m$ related to the scaling function, is given by $\phi^d=(h_J\otimes h_J)(m)$. Then, the discrete shearlet transform associated with the set of elements $\Psi(c;\psi)$ and corresponding to frequency plane region $C_{\psi}$ is defined as follows
@@ -1371,7 +1370,7 @@ $$
 \hat{\Psi}^d=|\hat{\phi}^d|^2+\sum_{j=0,\ldots,J-1}\sum_{|k|\leq 2^{j+1}}(|\hat{\psi}^d_{j,k}|^2+|\hat{\tilde{\psi}}_{j,k}^d|^2).
 $$ 
 
-The dueal shearlet filters are defined by
+The dual shearlet filters are defined by
 
 $$
 \hat{\phi}^d=\frac{\hat{\phi}^d}{\hat{\Psi}^d}\textrm{,}\quad \hat{\gamma}^d_{j,k}=\frac{\hat{\psi}^d_{j,k}}{\hat{\Psi}^d}\textrm{,}\quad \hat{\tilde{\gamma}}^d_{j,k}=\frac{\hat{\tilde{\psi}}_{j,k}^d}{\hat{\Psi}^d}
@@ -1401,7 +1400,7 @@ Following the methodology of \cite{LF-Shearlets} we will be interested only in t
 
 \begin{equation}
 \label{eq:0analysis}
-S(f_J)=\{ c_{j,k}(m)=(f_J\ast \overline{\psi}_{j,k}^d)(m),c_0(m)=(f_J\ast \overline{\phi}^d)(m)\}.
+S(f_J)=\{ c_{j,k}(m)=(f_J\ast \overline{\psi}_{j,k}^d)(m),c_0(m)=(f_J\ast \overline{\phi}^d)(m):\quad j=0,\ldots,J-1,k\leq 2^{j+1},m\in\mathbb{Z}^2\}.
 \end{equation}
 
 where $S$ is known as the synthesis operator related to the $0$-Shearlets frame. The inverse transform $S^*$ is then given by the so called synthesis operator 

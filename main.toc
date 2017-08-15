@@ -2,14 +2,14 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Light Field Photography}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Light Field Photography in the History}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Light Field Acquisition Settings}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Light Field Acquisition Settings}{6}{section.2.2}
 \contentsline {section}{\numberline {2.3}Typical applications for the Light Field Theory}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}Geometric proxy: Stereo Vision and multiview Epipolar Geometry}{11}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Epipolar constraint}{11}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Bolles feature tracking technique and experimental setup}{13}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Functional analysis approach to EPI}{14}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Functional analysis approach to EPI}{15}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Geometrical Approach to EPI}{15}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}Physical and computational setup for sparse acquisition of epipolar plane}{16}{section.2.5}
+\contentsline {section}{\numberline {2.5}Physical and computational setup for sparse acquisition of epipolar plane}{17}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Physical setup and sampling rate}{17}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Followed pipeline}{18}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Geometric construction of epipolar lines}{20}{subsection.2.5.3}
@@ -17,10 +17,10 @@
 \contentsline {subsection}{\numberline {2.5.5}Procedure for tracking and painting the EPIs}{27}{subsection.2.5.5}
 \contentsline {chapter}{\numberline {3}Shearlets}{33}{chapter.3}
 \contentsline {section}{\numberline {3.1}Shearlet Systems and Transform}{39}{section.3.1}
-\contentsline {section}{\numberline {3.2}Shearlets as Frames}{45}{section.3.2}
-\contentsline {section}{\numberline {3.3}Universal Shearlets and Alpha Shearlets}{47}{section.3.3}
-\contentsline {section}{\numberline {3.4}Image inpainting using Shearlet Parseval Frames}{55}{section.3.4}
-\contentsline {section}{\numberline {3.5}0-Shearlets}{60}{section.3.5}
+\contentsline {section}{\numberline {3.2}Shearlets as Frames}{46}{section.3.2}
+\contentsline {section}{\numberline {3.3}Universal Shearlets and Alpha Shearlets}{48}{section.3.3}
+\contentsline {section}{\numberline {3.4}Image inpainting using Shearlet Parseval Frames}{56}{section.3.4}
+\contentsline {section}{\numberline {3.5}0-Shearlets}{61}{section.3.5}
 \contentsline {chapter}{\numberline {4}Inpainting Sparse Sampled Epipolar-plane and Computing Depth Map}{67}{chapter.4}
 \contentsline {section}{\numberline {4.1}Iterative thresholding algorithm for EPIs inpainting using $0$-Shearlets}{67}{section.4.1}
 \contentsline {section}{\numberline {4.2}Results of sparse EPIs inpaiting}{70}{section.4.2}
