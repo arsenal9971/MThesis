@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 AUG 2017 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 AUG 2017 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3282,9 +3282,9 @@ Overfull \hbox (31.00688pt too wide) in paragraph at lines 616--643
 [87 <./Diagrams/results/EPIs/673_10_102_4_48_8_strip.png> <./Diagrams/results/E
 PIs/673_10_102_7_48_8_dense.png>] [88 <./Diagrams/results/EPIs/673_10_102_7_48_
 8_sparse.png> <./Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>]
-[89 <./Diagrams/family-lines-hough.jpg>]) [90 <./Diagrams/results/data_set/feat
-ure_points.png (PNG copy)> <./Diagrams/results/data_set/feature_points_grid.png
->] [91] [92] [93] [94] [95] [96]
+[89 <./Diagrams/family-lines-hough.jpg>] [90 <./Diagrams/results/data_set/featu
+re_points.png (PNG copy)> <./Diagrams/results/data_set/feature_points_grid.png>
+] [91] [92]) [93] [94] [95] [96]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
@@ -3503,15 +3503,16 @@ les}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.490 \bibitem{Bolles}
-                       [118] [119] [120]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 743.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 743.
- (./main.aux (./Chapters/Chapter1.aux)
-(./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux)
-(./Chapters/Chapter5.aux) (./Chapters/Appendix1.aux) (./Chapters/Appendix2.aux)
-(./Chapters/Appendix3.aux) (./Chapters/Appendix4.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 743.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 743.
+                       [118] [119] [120] [121]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 767.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 767.
+ (./main.aux
+(./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux)
+(./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Appendix1.aux)
+(./Chapters/Appendix2.aux) (./Chapters/Appendix3.aux) (./Chapters/Appendix4.aux
+))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 767.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 767.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 0D2AD78029E69208138D749B82D8B54D;2665.
 
@@ -3523,10 +3524,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40617 strings out of 493089
- 878817 string characters out of 6134842
- 959925 words of memory out of 5000000
- 42287 multiletter control sequences out of 15000+600000
+ 40628 strings out of 493089
+ 878913 string characters out of 6134842
+ 960065 words of memory out of 5000000
+ 42291 multiletter control sequences out of 15000+600000
  139885 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,22n,80p,10404b,2409s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3555,10 +3556,10 @@ exlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/201
 t/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (132 pages, 19036539 bytes).
+Output written on main.pdf (133 pages, 19043575 bytes).
 PDF statistics:
- 2449 PDF objects out of 2487 (max. 8388607)
- 2079 compressed objects within 21 object streams
- 1015 named destinations out of 1200 (max. 500000)
+ 2470 PDF objects out of 2487 (max. 8388607)
+ 2099 compressed objects within 21 object streams
+ 1022 named destinations out of 1200 (max. 500000)
  739 words of extra memory for PDF output out of 10000 (max. 10000000)
 
