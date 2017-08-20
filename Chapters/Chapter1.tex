@@ -1,3 +1,56 @@
 \chapter{Introduction}
 
+In the last few 3D scene reconstruction and rendering have played an important role in science and technology development; one can list some of the reasons for this, like the interest on the estimation of the depth map of a scene for computer vision purposes (as autonomous driving) or digital refocusing, which helps to reduce postproduction work and also to avoid the use of green screens on filming sets; another reasons can be the reconstruction of different views of a scene having just a limited set of them (parallax). It is clear that science and art are strongly mixed in this topic, which makes the public of interet broader than the usual scientific public. 
 
+\bigskip
+
+Since the introduction of the 3D scene reconstruction techniques, the concept of light fields has been widely adopted to tackle different tasks. Light Field Theory mixes mathematics, physics, computer science and cognitive sciences and this makes it sometimes hard to study, since it requires a broad multidiciplinary knowledge that goes from natural vision synthesis to $\ell^1$ optimization techinques used in compressed sensing passing through point tracking algorithms typical in computer vision tasks.
+
+\bigskip
+
+In general, the reconstruction of the light field of a scene involves complex physical settings and huge amount of data, since one recovers the 3D information of a scene using different views of the same, therefore new approaches for light field sparse sampling and compression are needed; this problem can be tackle from different sides, even though sparse dictionary learning techniques can be an option this leads typically to a very biased representation system that depends on the training data set (check \cite{CompressedMIT}), on the other hand digital signal processing and applied harmonic analysis has a very powerful toolbox on sparse representation systems for signals of different nature. In the case of 2D images the Shearlet System (see \cite{IntroShearlets}) represent a very effective sparsifying system that has been used in compression and inpainting methods. 
+
+\bigskip
+
+In 2015, Suren Vagharshakyan, Robert Bregovic and Atanas Gotchev from the Tempere University presented on their paper "Light Field Reconstruction Using Shearlet Transform"\cite{LF-Shearlets} a method to reduce the sampling rate of views of a scene needed to have a faithful reconstruction using an inpainting algorithm with the Shearlets as sparsifying system. Their results are very impressive but the work presents a very common limitation in Light Field reconstruction related works, even it presents the mathematical theory behind the reconstruction method it does not explain the followed implementation as well as the followed method to perform the needed point tracking on the different scenes; or if they present the implementation they made use of very expensive and complex hardware as well as privative software. This makes the whole work like a black box when ones want to reproduce the results, and in our appreciation this is not what science is about; science should be transparent and one should be able to reproduce the experiments related to a research work not just to verify the presented results but also to improve or modify the hardware and software, this is well known as open source. 
+
+\bigskip
+
+This thesis takes this motivation and presents the complete acquisition and processing pipeline for the light field reconstruction of a 3D scene from a dataset of raw pictures using the shearlets as sparsifying dictionary. The thesis can be divided in the different stages of the proposed pipeline:
+
+\begin{itemize}
+\item Acquisition of different views of the scenes (sparse sampling of the light field).
+\item Point tracking of key feature points easy to track (corners).
+\item Painting of Epipolar Plane Images (concept explained in Section~\ref{sec:Epi-geometry}) obteined with the sparse sampled light field with tracked points.
+\item Reconstruction of the dense sampled light field with the inpainting of the sparse Epipolar Plane Images using Shearlets as sparsifying system. 
+\item Depth map estimation with line detection algorithm on inpainted Epipolar Plane Images and slopes computation of the detected lines.
+\end{itemize}
+
+In each of the stages we present both the theoretical background of the methods and algorithms and the open source code implementation, we also present a way to download the used data set of views so everybody with the proper open source software (python, OpenCV and julia) on an average computer can reproduce our results or modify the code and improve it if possible.
+
+\section{Contributions}
+
+As we already mention this thesis presents a completely transparent pipeline of light field reconstruction from a set of different views of a scene; even we had some goals in mind when we started this project, at the end we finish with the next list of techincal contributions:
+
+\begin{itemize}
+\item \textbf{Simplification of the preprocessing and postprocessing pipeline:} As preprocessing pipeline we refer to track the points in the different views and postprocessing to the line detection to compute the depth map. In the explored references (see \cite{Bolles},\cite{LF-Shearlets}, \cite{Kim-Disney} and \cite{CompressedMIT}) the authors used expensive privative computer vision software that have implemented complex algorithms to track points and detect lines in powerful cluster-servers with multiple cores which are not properly explained in the corresponding work. In this thesis we introduce a complete explanation of classical computer vision algorithms to track points (Lucas-Kanade algorithm) and detect lines (Hough line transform) and we used an open source implementation of both algorithms that can be runned on almost any personal computer.
+
+\item \textbf{Complete open source and transparent implementation:} Also talking about the same explored references, they never presented the used code in the implementation of the whole pipeline; this happens usually because they want to commercialize their developments. In this thesis all the used code was developed by us and is presented completely with the links to the used dataset, the used software (python, julia and openCV) is open source and free; so everybody with a personal computer can reprodue our experiments, modify them and improve them.
+
+\item \textbf{Improvement on the performance of existent light field recovery methods:} In Section~\ref{sec:perform_results} we present in which sense the results this thesis approach in Light Field Recovery and its implementation represent an improvement of the former work on the topic; we present this as a tradeoff where we sacrificed high resolution for shorter running times; the improvement on the performance is also result of the use of an acceleration term on the reconstruction algorithm that makes such algorithm converge faster than usual. 
+
+\end{itemize}
+
+\section{Organization}
+
+The thesis is organized as follows:
+
+\begin{itemize}
+\item Chapter 2 introduces the basis of Light Field Photography Theory, this includes the history of the Light Field Photography, different technological and scientific applications as well as approaches on acquisition settings; we also present in this chapter the geometric proxy that we used with a deep treatment of Stereo Vision and multiview Epipolar Geometry as well as the physical and computational setup used in our approach. In this chapter the general pipeline is presented. 
+
+\item Chapter 3 presents the Shearlet theory; here we present the formal definition of the Shearlet Systems as transforms, we also explain what is a frame and how Shearlets form frames in certain cases. In this chapter we also generalize the notion of shearlets letting the "level of anisotropy" of the elements change introducing then the Universal Shearlets and the $\alpha$-Shearlets. As a central part of our light field recovery approach in this chapter is presented also an Image inpainting method using Shearlet Parseval Frames and finally a particular case of Universal Shearlets, called $0$-Shearlets that are sensible to straight lines structures and that will help to inpaint Epipolar Plane Images as the main part of the LF recovery. 
+
+\item A complete explanation of the sparse sampled Light Field recovery algorithm using inpainting is presented in Chapter 4. We introduce also in the reconstruction algorithm performed by Iterative hard thresholding an acceleration term than makes it converge faster than usual. In this chapter we also review an line detection algorithm used to compute the depth map of the scene using the inpainted Epipolar plane images, and we also present the obtained results of the depth map as well as the performance comparison with previews works. 
+
+\item Finally, Chapter 5 concludes the thesis by recapitulating the core contributions and opening a few avenues for future planned research and developement as well as improvements of the method. 
+\end{itemize}
