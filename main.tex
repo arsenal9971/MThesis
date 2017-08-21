@@ -182,7 +182,7 @@ der aufgeführten Quellen und Hilfsmittel angefertigt habe.
 \vspace{5pt}
 Die selbständige und eigenständige Anfertigung versichert an Eides statt:
 \vspace{10pt}
-Berlin, den 4. August 2017
+Berlin, den 11. September 2017
 \end{flushleft}
 \vspace{50pt}
 Héctor Andrade Loarca
@@ -206,14 +206,24 @@ $\vspace{3cm}$
  
 %\noindent Date:\\
 %\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+
 \clearpage\pagestyle{empty}
-\section*{Zusammenfassung in deutscher Sprache}
+\section*{Abstract}
 
 \begin{center}
-\textbf{Schnelle Rekonstruktion für Dünne Lichtfelder mit Shearlet-basierten Einfärbungen}
+\textbf{Fast Sparse Light Field Reconstruction with Shearlet-based Inpainting}
 \end{center}
 
-Diese These ist angewendete
+In this thesis we present a method to reconstruct the Light Field of an static scene. This method use a set of different views of a static scene and epipolar geometry to generate the epipolar plane images that are images with lines that represent the position of the feature points in the scene at the different views and whose slopes can be used to estimate the depth of the points and then generate the depth map of the scene. Our method also uses a sparse sampling of the light field, so with a small number of views we performed the recovery of the dense sampled light using and inpainting algorithm on the epipolar plane images with the Shearlets system as the sparsifying system; we used an accelerated version of the Iterative Hard Thresholding algorithm to implement the inpaiting method. The obtained estimation of the depth map was very accurate when comparing to the real depths of the elements of the scene; we also improve the performance of the recovery with respect of previous works in the sense that the running time was significantly reduced although the resolution of the light field we recovered is lower in our case due some limitations in the used point-tracking algorithm. An important characteristic of this work in comparison with previous work on light field resolution is the transparency of the pipeline, in this thesis we provide the whole scholarship, with open source code and detailed explanation of the theory behind each step in order to give the reader all the tools to reply our experiments, verify the results and possibly improve the method.  
+
+\clearpage\pagestyle{empty}
+\section*{Zusammenfassung}
+
+\begin{center}
+\textbf{Schnelle Rekonstruktion für dünne Lichtfelder mit Shearlet-basierten Einf\"arbungen}
+\end{center}
+
+In der vorliegende Arbeit stellen wir eine Methode zu Rekonstruktion des Lichtfeldes einer statischen Szene vor. Diese Methode verwendet eine Reihe von verschiedenen Ansichten einer statischen Szene und epipolaren Geometrie, um die epipolaren Oberfläche Bilder zu erzeugen, die Bilder mit Zeilen darstellen, die die Position der Merkmalspunkte in der Szene an den verschiedenen Ansichten darstellen und deren Steigungen verwendet werden k\"onnen, um die Tiefe der Punkte zu sch\"atzen und dann die Tiefenkarte der Szene zu erzeugen. Unsere Methode verwendet auch eine d\"unne Abtastung des Lichtfeldes, so dass wir mit einer kleinen Anzahl von Ansichten die Wiederherstellung des dichten, abgetasteten Lichts unter Verwendung und Einf\"arbungen-Algorithmus auf den epipolaren Ebenenbildern mit dem Shearlets-System als Sparsifizierungssystem durchgefr\"uhrt haben. Wir haben eine beschleunigte Version des Iterativen Hard Thresholding Algorithmus verwendet, um die Einf\"arbungen-Methode zu implementieren. Die erhaltene Sch\"atzung der Tiefenkarte war sehr genau, wenn man die tats\"achlichen Tiefen der Elemente der Szene vergleicht; Wir verbessern auch die Leistung der Erholung in Bezug auf bisherige Arbeiten in dem Sinne, dass die Laufzeit deutlich reduziert wurde, obwohl die Aufl\"osung des Lichtfeldes, das wir wiederhergestelled haben, in unsereme Fall aufgrund einiger Einschr\"ankungen des verwendeten Punktverfolgungsalgorithmus geringer ist. Ein wichtiges Merkmal dieser Arbeit im Vergleich zu fr\"uheren Arbeiten zur Lichtfeldauflösung ist die Transparenz der Pipeline, in dieser Arbeit bieten wir das ganze Stipendium mit offenem Quellcode und detaillierter Erläuterung der Theorie hinter jedem Schritt, um dem Leser zu geben Alle Werkzeuge, um unsere Experimente zu beantworten, die Ergebnisse zu \"uberpr\"ufen und die Methode zu verbessern.
 
 \clearpage\pagestyle{empty}
 \begin{flushleft}
@@ -254,11 +264,34 @@ produce the result
 
 \chapter*{Acknowledgements}\pagestyle{empty}
 %\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-To my mom.
+I would like to thank in first place my advisor Professorin Gitta Kutyniok for all the support and help that she have provided in the last two years, for her very interesting FA courses from which I learned a big part of what I am presenting in this thesis; I would also like thank her for the construction of the Shearlet Transform without which the light field reconstruction method presented in this thesis could not exist. I am looking forward to continue working with her in the PhD.
 
-To all of you, thank you very much.
-\\
-\\
+\bigskip
+
+I would like to thank my mother Julieta and my father Hector for all the love and support that they alwas give me, which is the principal base of all my accomplishments. I would also like to thank Patricia, Cristina and Sara, for teaching me always the meaning of the word family. 
+
+\bigskip
+
+I would like to thank Natasha, for all her patience and love, and for all the years that are waiting for us. 
+
+\bigskip
+
+I thank also Julio for asking me questions that I could not imagine by my self and for making me doubt of each mental step that I make when discussing my work. I would like to thank Tatiana for making my transition to Berlin easier and for being there. I would like to thank Adrian, Jorge, Melf, Daniel, Brent, Crystal, Andres, Josu\'e, Andras, Jonas, Vin, Dim, Qiao and all the amazing people that I've met in this trip and that have made it special.
+
+\bigskip
+
+I would also like to thank specially to the Berlin Mathematical School, for giving me this great opportunity, and I would try to give back all the help and support that I received. I am grateful in particular with Dr. Forough Sodoudi for giving me very helpful advices and helping me with all the problems and questions that have arrived in this two years. I would also like to thank Annika Preuss for helping me in this last six months, I am very happy that BMS choose very adequately its team.
+
+\bigskip
+
+I also thank University of California Berkeley, Julia Computing and NumFOCUS for letting me participate in the Julia Conference 2017, a very enlightening experience that helped me to improve the Shearlet Library that I used in this thesis.
+
+\bigskip
+
+Finally, to all those who were not mentioned, sorry.
+
+\bigskip
+
 
 Berlin, September 2017 
 
@@ -759,7 +792,31 @@ Berlin, September 2017
 	\emph{View synthesis algorithm in view synthesis reference software 2.0 (vsrs2.0)}, 
 	ISO/IEC JTC1/SC29/WG11 M, 16090,
 	2009
-	
+
+\bibitem{Gunnar}
+	G. Farneb\"ack,
+	\emph{Two-Frame Motion Estimation Based on Polynomial Expansion},
+	Image Analysis: 13th Scandinavian Conference, SCIA 2003 Halmstad, Sweden June 29-July 2, 2003 Proceedings, pp. 363-370,
+	2003
+
+\bibitem{Tanner}
+	J. Tanner, J. D. Blanchard, 
+	\emph{Large Scale Iterative Hard Thresholding on a Graphical Processing Unit},
+	AIP Conference Proceedings, Volume 1281, Issue 1, pp. 1730-1734,
+	2010
+
+\bibitem{RenNg}
+	R. Ng,
+	\emph{Digital Light Field Photography},
+	Stanford PhD Dissertation, 
+	2006
+
+\bibitem{LF-rendering}
+	M. Levoy, P. Hanrahan,
+	\emph{Light Field Rendering},
+	Proc. ACM SIGGRAPH,
+	1996
+
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------

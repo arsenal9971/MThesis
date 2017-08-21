@@ -31,8 +31,8 @@
 \contentsline {chapter}{\numberline {5}Conclusion and outlook}{99}{chapter.5}
 \contentsline {section}{\numberline {5.1}Recapitulation}{99}{section.5.1}
 \contentsline {section}{\numberline {5.2}Future work}{100}{section.5.2}
-\contentsline {chapter}{Appendices}{101}{section*.103}
-\contentsline {chapter}{\numberline {A}Code for point tracking}{103}{Appendix.1.A}
-\contentsline {chapter}{\numberline {B}Code for painting EPIs}{107}{Appendix.1.B}
-\contentsline {chapter}{\numberline {C}Code for inpainting sparse EPIs}{111}{Appendix.1.C}
-\contentsline {chapter}{\numberline {D}Code for computing the depth map}{115}{Appendix.1.D}
+\contentsline {chapter}{Appendices}{103}{section*.104}
+\contentsline {chapter}{\numberline {A}Code for point tracking}{105}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Code for painting EPIs}{109}{Appendix.1.B}
+\contentsline {chapter}{\numberline {C}Code for inpainting sparse EPIs}{113}{Appendix.1.C}
+\contentsline {chapter}{\numberline {D}Code for computing the depth map}{117}{Appendix.1.D}
