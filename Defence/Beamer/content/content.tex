@@ -1,291 +1,212 @@
-\begin{frame}{What is a signal?}
-\begin{block}{Our definition}
-Function (or something that can be represented as) that contains information about the behavior or attributes of some phenomenon. It can be digital (discrete) or analog (continuous).
-\end{block}
-\pause
-\begin{figure}[!tbp]
-  \centering
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/digita_signal.png}
-    \caption{Digital and continuous one-dimensional signals}
-  \end{minipage}
-	\pause
-  \hfill
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/white_noise.jpg}
-    \caption{White noise, not a signal}
-  \end{minipage}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Sparse representations of signals}
+\begin{frame}{What is this thesis about?}
+\begin{block}{}
 \begin{itemize}
- \item Relevant information in structured data is sparse, due the high correlation of its elements.\pause
- \item Goal: Find the right dictionary to represent optimally our data.
-\end{itemize}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{./Images/sparse_data.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Fourier Transform (Fourier, 1822)}
-$$
-\hat{f}(\omega):=\int_{\mathbb{R}^n} f(x)e^{-i\langle x,\omega\rangle} dx
-$$
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{./Images/fourier.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Short Time Fourier Transform (Gabor,1946)}
-$$
-S_gf(t,\omega)=\int_{\mathbb{R}} f(x)\overline{g(x-t)}e^{-ix\omega}dx
-$$
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.68\textwidth]{./Images/STFT.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Wavelet Transform (Morlet and Grossman, 1984)}
-$$
-\begin{aligned}
-\mathcal{W}_{\psi}f(a,b)&=\int_{\mathbb{R}}f(t)a^{-\frac{1}{2}}\overline{\psi\left(\frac{t-b}{a}\right)}dt\\
-&=(f\ast D_a\overline{\psi}^*)(b)\textrm{,}\quad (a, b)\in\mathbb{R}^+\times\mathbb{R}
-\end{aligned} 
-$$
-where 
-$$
-\int_0^{\infty}\frac{|\hat{\psi}(\omega)|^2}{\omega}d\omega<\infty
-$$
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\textwidth]{./Images/wavelet.jpg}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Cartoon-like functions}
-\begin{definition}
-Let $f:\mathbb{R}^2\longrightarrow\mathbb{C}$, $f\in\mathcal{E}^2(\mathbb{R}^2)$ if $f= f_0+\chi_B f_1$, with $B\subset [0,1]^2$, $\partial B\in C^2$ and with bounded curvature. Moreover, $f_i\in C^2(\mathbb{R}^2)$ with $||f_i||_{C^2}\leq 1$ and $\text{supp} f_i\subset [0,1]^2$ for $i=0,1$. 
-\end{definition}
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{./Images/cartoon-like.jpg}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Optimal error for 2D signals}
-\begin{block}{Best N-term approx.\ error (Donoho, 2001)}
-Let $\{\psi_{\lambda}\}_{\lambda\in\Lambda}\subset L^2(\mathbb{R}^2)$ a frame. The optimal best N-Term approximation error for any $f\in\mathcal{R}^2(\mathbb{R}^2)$ is
-$$
-\sigma_N(f,\{\psi_{\lambda}\}_{\lambda\in\Lambda})=O(N^{-1})
-$$
-\end{block}
-\pause
-\begin{block}{Error of 2D-wavelets}
-$$
-\sigma_N(f,\{\psi_{j,m}\}_{j,m})\sim N^{-1/2}
-$$
-\end{block}
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{./Images/anisotropic_isotropic.jpg}
-\end{figure}
-\end{frame}
-
-\begin{frame}{How to solve this? Scaling and Shearing}
-
-\begin{minipage}{0.25\textwidth}
-\begin{itemize}
-\item\textit{Scaling}
-$$
-A_j:=
-\left(
-\begin{matrix}
-2^j & 0 \\
-0 & 2^{j/2}
-\end{matrix}
-\right)
-$$
-\end{itemize}
-\end{minipage}  \hfill
-\pause
-\begin{minipage}{0.65\textwidth}
-\begin{figure}[!tbp]
-  \centering
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/circle.png}
-  \end{minipage}
-	\pause
- \hfill 
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/circle_scaled.png}
-  \end{minipage}
-\end{figure}
-\end{minipage}
-
-\pause
-
-\begin{minipage}{0.25\textwidth}
-\begin{itemize}
-\item\textit{Shearing}
-$$
-S_k:=
-\left(
-\begin{matrix}
-1 & k \\
-0 & 1
-\end{matrix}
-\right)
-$$
-\end{itemize}
-\end{minipage}  \hfill
-\pause
-\begin{minipage}{0.65\textwidth}
-\begin{figure}[!tbp]
-  \centering
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/square.png}
-  \end{minipage}
-	\pause
- \hfill 
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./Images/square_sheared.png}
-  \end{minipage}
-\end{figure}
-\end{minipage}
-
-\end{frame}
-
-\begin{frame}{Shearlet Transform (Kutyniok, Guo, Labate, 2005)}
-\begin{block}{Classical Shearlet Transform}
-$$
-\langle f,\psi_{j,k,m}\rangle =\int_{\mathbb{R}^2}f(x)\overline{\psi_{j,k,m}(x)}dx
-$$
-\pause
-where
-$$
-\mathcal{SH}(\psi)=\{\psi_{j,k,m}(x)=2^{3j/4}\psi (S_kA_jx-m):(j,k)\in\mathbb{Z}^2,m\in\mathbb{Z}^2\}
-$$
-\end{block}
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{./Images/tiling_nocone.jpg}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Cone-based shearlet transform}
-$$
-\mathcal{SH}(\phi,\psi,\tilde{\psi},c):=\mathcal{P}_{\mathcal{R}}\Phi(\phi,c1)\cup\mathcal{P}_{\mathcal{C}_1}\Psi(\psi,c)\cup\mathcal{P}_{\mathcal{C}_2}\tilde{\Psi}(\tilde{\psi,c})
-$$
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{./Images/tiling_cone}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Separable and non-separable generator}
-\begin{minipage}{0.48\textwidth}
-\begin{itemize}
-\item\textit{Separable}
-$$
-\psi^{\text{sep}}(x_1,x_2)=\psi_1(x_1)\phi_1(x_2)
-$$
-\end{itemize}
-\end{minipage}  \hfill
-\pause
-\begin{minipage}{0.5\textwidth}
-\begin{itemize}
-\item\textit{Non-separable}
-$$
-\hat{\psi}^{\text{non}}(\xi)=P\left(\frac{\xi_1}{2},\xi_2\right)\hat{\psi}^{\text{sep}}(\xi)
-$$
-\end{itemize}
-\end{minipage}
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{./Images/separable_nonseparable}
-\end{figure}
-\pause
-\begin{itemize}
-\item Best $N$-term approximation error
-$$
-\sigma_N(f,\{\psi_{j,k,m}\}_{j,k,m})\sim N^{-1}(\log(N))^{3/2}
-$$
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Current software}
-\begin{itemize}
-\item{Matlab}
-\begin{itemize}
-	\item FFST- Fast Finite Shearlet Transform (H\"auser, Steidl,TU Keiserlautern)\\ \url{http://www.mathematik.uni-kl.de/imagepro/software/ffst/}
-	\item 2D/3D Shearlet Toolbox (D. Labate, University of Houston)\\ \url{https://www.math.uh.edu/~dlabate/software.html}
-	\item \textbf{Shearlab3D} (G. Kutyniok, W.-Q.Lim, R. Reisenhoffer, TU Berlin)\\\url{http://www.shearlab.org/}
-\end{itemize}
-\pause
-\item{Python}
-\begin{itemize}
-	\item pyShearLab (Stefan Loock, U G\"otingen) \\ \url{http://na.math.uni-goettingen.de/pyshearlab/}
-\end{itemize}
-\pause
-\item{\textbf{Julia}}
-\begin{itemize}
-\item \textbf{Shearlab.jl} (H. Andrade, TU Berlin) \\ \url{https://github.com/arsenal9971/Shearlab.jl}
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Why Julia?}
-\begin{itemize}
-\item Extensive use of \lstinline[language=julia]{fft}, well implemented in Julia.
+\item A sparsely sampled light field reconstruction method of a static scene. 
 
 \bigskip
 \pause
+\item This method uses Universal Shearlets to perform an inpainting algorithm in the sparse Epipolar planes images (EPIs).
 
-\item Fast vectorization and loops as well as JIT-compilation.
+\bigskip 
+\pause
+\item The EPIs are images with linear structures obtained by tracking different feature points in a sequence of pictures of the scene. 
 
 \bigskip
 \pause
-\item Plenty of image filtering, import and rescaling functions with  \lstinline[language=julia]{Images.jl, Wavelets.jl}.
+\item The slope of the straight lines in the EPIs can be used to compute the depth of feature points in the scene and therefore the depth map that contains the 3D information of the scene.
 
 \bigskip
 \pause
-\item Support of multithreading and painless GPU processing with  \lstinline[language=julia]{ArrayFire.jl}.
-\end{itemize}
+\item The thesis presents all the steps in the reconstruction pipeline with theory, algorithms and code. 
+\end{itemize} 
+\end{block}
 \end{frame}
 
-\begin{frame}{Current application: Light Field Recovery}
+\begin{frame}{Involved concepts}
+\begin{block}{}
+\begin{itemize}
+\item Early Vision (biology) and Light Field Theory (physics).
+
+\bigskip
+\pause
+\item Computer Vision for point tracking and line detection (basic concepts of linear algebra).
+
+\bigskip 
+\pause
+\item Functional Analysis and Computational Harmonic Analysis (sparsifying dictionaries).
+
+\bigskip
+\pause
+\item Compressed sensing techniques ($\ell^1$ optimization algorithms). 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Light Field Thoery}
+\begin{block}{}
+\begin{itemize}
+
+\item In 1846 Michael Faraday proposed for the first time on his lecture "Thoughts on Ray Vibration" that light could be interpreted as a field.
+
+\pause
+
+\item Propagation of light rays in the 3D space is completely described by a 7D continuous function $L(x,y,z,\theta,\phi, \lambda, \tau)$ called the plenoptic function
+
+\pause
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.9\textwidth]{./Images/dices}
+\includegraphics[width=0.25\textwidth]{../../Diagrams/Plenoptic_function.jpg}
+\end{figure}
+
+\pause
+
+\item The plenoptic function can be simplified to a 4D function $L_4$, called 4D Light Field or simply Light Field, which quantifies the intensity of static and monochromatic light rays propagating in half space. 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{4D Light Field Representation}
+\begin{figure}[h!]
+\includegraphics[width=0.8\textwidth]{../../Diagrams/Light-field-parametrizations.jpg}
+\caption{Three different representation of 4F LF\@. Left: $L_4(u,v,\phi,\theta)$. Center: $L_4(\phi_1,\theta_1,\phi_2,\theta_2)$. Right: $L_4(u,v,s,t)$.}
 \end{figure}
 \pause
-\begin{figure}[!tbp]
-  \centering
-  \begin{minipage}[b]{0.32\textwidth}
-    \includegraphics[width=\textwidth]{./Images/EPI_sparse}
-  \end{minipage}
-	\pause
- \hfill 
-  \begin{minipage}[b]{0.32\textwidth}
-    \includegraphics[width=\textwidth]{./Images/EPI_wavelet}
-  \end{minipage}
-\pause
-	 \begin{minipage}[b]{0.32\textwidth}
-    \includegraphics[width=\textwidth]{./Images/EPI_shearlet}
-	\end{minipage}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{../../Diagrams/two-planes_param.jpg}
+\caption{Used representation: "Two plane parametrization".}
+\label{fig:C2S0F3}
 \end{figure}
+\end{frame}
+
+\begin{frame}{}
+
+\begin{center}
+\textbf{\huge{Motivation}}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}{Compression of High Resoluation Light Field (Wetzstein et al., 2013)}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{./images/compressed_light_field.pdf}
+\label{fig:C2S0F3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Raytrix (Perwass and Wietzke, 2010)}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{../../Diagrams/raytrix.jpg}
+\label{fig:C2S0F3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Lytro (Ng, 2012)}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{../../Diagrams/lytro.jpg}
+\label{fig:C2S0F3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Shearlet Representation of LF (Vagharshakyan et al., 2015)}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{./images/LightField_Shearlet.pdf}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Freedom of knowledge and reproducible research}
+
+\begin{quote}
+An article about computational result is \\
+advertising, not scholarship. The actual \\
+scholarship is the full software environment,\\
+code and data, that produced the result.
+\end{quote}
+\begin{flushright}
+\textbf{Buckheit and Donoho (1995)}
+\end{flushright}
+\end{frame}
+
+\begin{frame}{Stereo Vision and Epipolar Geometry}
+\begin{block}{}
+\begin{itemize}
+\item \textbf{Stereo Vision:} The human brain generates the 3D depth perception of its sorroundings by triangulating the points of a scene using the information coming from both eyes.
+
+\pause
+\item \textbf{Epipolar Geometry:} Generalization of Stereo Vision with more than two views, assuming the epipolar constraint.
+
+\pause
+\item \textbf{Epipolar Constraint:} Analysis of object position while assuming the knowledge of the camera motion.
+\pause
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.52\textwidth]{../../Diagrams/epipolarline.jpg}
+\end{figure}
+ 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Epipolar Plane Images (EPIs) on straight line trajectories}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{../../Diagrams/perp-move.jpg}
+\end{figure}
+
+\pause
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.90\textwidth]{../../Diagrams/EPI-dices.jpg}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Functional Analysis of EPIs}
+
+\end{frame}
+
+\begin{frame}{Depth map estimation with EPIs}
+
+\end{frame}
+
+\begin{frame}{Physical acquisition setup}
+
+\end{frame}
+
+\begin{frame}{Computational acquisition pipeline}
+
+\end{frame}
+
+\begin{frame}{Sparse representation and sampling rate}
+
+\end{frame}
+
+\begin{frame}{Reconstruction method with inpaiting}
+
+\end{frame}
+
+\begin{frame}{Cone Adapted Shearlets}
+
+\end{frame}
+
+\begin{frame}{Universal Shearlets and $\alpha$-Shearlets}
+
+\end{frame}
+
+\begin{frame}{Shearlet-based inpainting with iterative hard thresholding}
+
+\end{frame}
+
+\begin{frame}{Line detection and depth map estimation}
+
+\end{frame}
+
+\begin{frame}{Conclusions and Outlook}
 
 \end{frame}
 
@@ -295,7 +216,7 @@ $$
 \end{center}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{./Images/obama_compressed.jpg}
+\includegraphics[width=0.8\textwidth]{./Images/lf-camera.jpg}
 \end{figure}
 \end{frame}
 

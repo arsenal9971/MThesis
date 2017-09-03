@@ -1,7 +1,7 @@
 
 \chapter{Light Field Photography}
 
-The propagation of the light rays in the 3D space can be completely described by a 7D continuous function $R(\theta,\phi,\lambda,\tau,V_x,V_y,V_z)$, where $(V_x,V_y,V_z)$ is a location in the 3D space, $(\theta,\phi)$ are propagation angles, $\lambda$ is the wavelength of the corresponding light wave and $\tau$ the time; this function is known as the plenoptic function and describes the amount of light flowing in every direction through every point in space at any time, the magnitude of $R$ is known as the radiance.  In an 1846 lecture entitled "Thoughts on Ray Vibrations" Michael Faraday proposed for the first time that light could be interpreted as a field, inspired by his work on magnetic fields; but the idea of a plenoptic function representing the spectral radiance distribution of rays was first proposed by Adelson and Bergen \cite{Adelson-Plenoptic}. 
+The propagation of the light rays in the 3D space can be completely described by a 7D continuous function $L(\theta,\phi,\lambda,\tau,V_x,V_y,V_z)$, where $(V_x,V_y,V_z)$ is a location in the 3D space, $(\theta,\phi)$ are propagation angles, $\lambda$ is the wavelength of the corresponding light wave and $\tau$ the time; this function is known as the plenoptic function and describes the amount of light flowing in every direction through every point in space at any time, the magnitude of $L$ is known as the radiance.  In an 1846 lecture entitled "Thoughts on Ray Vibrations" Michael Faraday proposed for the first time that light could be interpreted as a field, inspired by his work on magnetic fields; but the idea of a plenoptic function representing the spectral radiance distribution of rays was first proposed by Adelson and Bergen \cite{Adelson-Plenoptic}. 
 
 \bigskip
 
@@ -13,7 +13,7 @@ The propagation of the light rays in the 3D space can be completely described by
 
 \bigskip
 
-In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L_4$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from. The Light Field of a ·D scene (subspace) describes the 3D information like the depth of the points in the scene and can be recovered by taking multiple pictures (views) of the scene. The goal of this thesis is to explain a particular fast technique for this purpose. 
+In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L_4$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from. The Light Field of a 3D scene (subspace) describes the 3D information like the depth of the points in the scene and can be recovered by taking multiple pictures (views) of the scene. The goal of this thesis is to explain a particular fast technique for this purpose. 
 
 \bigskip 
 
@@ -181,11 +181,11 @@ One of the fundamental tasks of computer vision is to describe a scene in terms 
 \item Classical images have an inherent ambiguity; since the process of forming an image captures only two of the three dimensions of the scene, an infinity of three-dimensional scenes can give rise to the same two-dimensional image; therefore no single two-dimensional image contains enough information to enable reconstruction of the three-dimensional scen that gave rise to it.
 \end{itemize}
 
-Human vision tackles this limitation with the use of knowledge of the scene objects and multiple images, like stereo pairs and image sequences acquired by a moving observer; though the mathematical and computational implementation  of this features is not trivial but using more than one image makes it theoritically possible, under certain circumstances (that go from position of the views to sampling rate) modern techniques on stereo vision have made this possible up to some precision. As we already mention in this thesis we will make use of the epipolar plane image analysis technique.
+Human vision tackles this limitation with the use of knowledge of the scene objects and multiple images, like stereo pairs and image sequences acquired by a moving observer; though the mathematical and computational implementation  of this features is not trivial but using more than one image makes it theoretically possible, under certain circumstances (that go from position of the views to sampling rate) modern techniques on stereo vision have made this possible up to some precision. As we already mention in this thesis we will make use of the epipolar plane image analysis technique.
 
 \bigskip
 
-The epipolar plane image analysis proposed by Bolles \cite{Bolles} is a technique to make a threedimensional description of a static scene from a dense sequence of images; the sequence is dense in the sense that its images form a solid block of data in which the temporal continouity from image to image is equal to the spatial continuity (namely the resolution of the picture). Slices of this block encode the 3D position of objects and occlusion of an object by another.
+The epipolar plane image analysis proposed by Bolles \cite{Bolles} is a technique to make a threedimensional description of a static scene from a dense sequence of images; the sequence is dense in the sense that its images form a solid block of data in which the temporal continuity from image to image is equal to the spatial continuity (namely the resolution of the picture). Slices of this block encode the 3D position of objects and occlusion of an object by another.
 
 \begin{figure}[h!]
 \centering

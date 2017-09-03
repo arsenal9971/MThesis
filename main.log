@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 AUG 2017 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 SEP 2017 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3517,7 +3517,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 824.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 824.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 824.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CF7E920C3E58124D992C888FD458E906;2898.
+(rerunfilecheck)             Checksum: E3B00F487FDCD6BA2C390FDBD4C8F546;2898.
 
 
 LaTeX Warning: There were undefined references.
@@ -3527,10 +3527,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40650 strings out of 493089
- 879160 string characters out of 6134842
+ 40649 strings out of 493089
+ 879139 string characters out of 6134842
  960287 words of memory out of 5000000
- 42300 multiletter control sequences out of 15000+600000
+ 42299 multiletter control sequences out of 15000+600000
  139885 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,22n,80p,10404b,2411s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3560,7 +3560,7 @@ st/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (137 pages, 19070246 bytes).
+Output written on main.pdf (137 pages, 19069985 bytes).
 PDF statistics:
  2536 PDF objects out of 2984 (max. 8388607)
  2159 compressed objects within 22 object streams

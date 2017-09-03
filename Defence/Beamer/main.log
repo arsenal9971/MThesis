@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 JUN 2017 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 SEP 2017 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -926,26 +926,53 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2015/04/15 v5.1e context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count153
+)
+\csq@reset=\count154
+\csq@gtype=\count155
+\csq@glevel=\count156
+\csq@qlevel=\count157
+\csq@maxlvl=\count158
+\csq@tshold=\count159
+\csq@ltx@everypar=\toks45
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2015/04/15 v5.1e csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Disabling multilingual quotes.
+Package csquotes Info: Redefining alias 'default' -> 'british'.
+)
 (./preamble.tex (/usr/local/texlive/2015/texmf-dist/tex/latex/bera/beramono.sty
 Package: beramono 2004/01/31 (WaS)
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count153
+\lst@mode=\count160
 \lst@gtempboxa=\box53
-\lst@token=\toks45
-\lst@length=\count154
+\lst@token=\toks46
+\lst@length=\count161
 \lst@currlwidth=\dimen188
-\lst@column=\count155
-\lst@pos=\count156
+\lst@column=\count162
+\lst@pos=\count163
 \lst@lostspace=\dimen189
 \lst@width=\dimen190
-\lst@newlines=\count157
-\lst@lineno=\count158
+\lst@newlines=\count164
+\lst@lineno=\count165
 \lst@maxwidth=\dimen191
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count159
-\lst@skipnumbers=\count160
+\c@lstnumber=\count166
+\lst@skipnumbers=\count167
 \lst@framebox=\box54
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
@@ -961,22 +988,18 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
+\XKV@toks=\toks47
+\XKV@tempa@toks=\toks48
 )
-\XKV@depth=\count161
+\XKV@depth=\count168
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\xargs@max=\count162
-\xargs@toksa=\toks48
-\xargs@toksb=\toks49
+\xargs@max=\count169
+\xargs@toksa=\toks49
+\xargs@toksb=\toks50
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count163
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2014/09/25 3.9l The Babel package
@@ -986,7 +1009,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count164
+\babel@savecnt=\count170
 \U@D=\dimen192
 LaTeX Info: Redefining \textlatin on input line 1431.
 )
@@ -998,20 +1021,20 @@ LaTeX Info: Redefining \textlatin on input line 1431.
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen193
 \extrarowheight=\dimen194
-\NC@list=\toks50
+\NC@list=\toks51
 \extratabsurround=\skip57
 \backup@length=\skip58
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
-\c@tracingmulticols=\count165
+\c@tracingmulticols=\count171
 \mult@box=\box55
 \multicol@leftmargin=\dimen195
-\c@unbalance=\count166
-\c@collectmore=\count167
-\doublecol@number=\count168
-\multicoltolerance=\count169
-\multicolpretolerance=\count170
+\c@unbalance=\count172
+\c@collectmore=\count173
+\doublecol@number=\count174
+\multicoltolerance=\count175
+\multicolpretolerance=\count176
 \full@width=\dimen196
 \page@free=\dimen197
 \premulticols=\dimen198
@@ -1042,21 +1065,21 @@ Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
 \@tempa=\box76
 \@tempa=\box77
 \@tempa=\box78
-\c@columnbadness=\count171
-\c@finalcolumnbadness=\count172
+\c@columnbadness=\count177
+\c@finalcolumnbadness=\count178
 \last@try=\dimen201
 \multicolovershoot=\dimen202
 \multicolundershoot=\dimen203
 \mult@nat@firstbox=\box79
 \colbreak@box=\box80
-\mc@col@check@num=\count173
+\mc@col@check@num=\count179
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen204
 \WF@size=\dimen205
-\c@WF@wrappedlines=\count174
+\c@WF@wrappedlines=\count180
 \WF@box=\box81
-\WF@everypar=\toks51
+\WF@everypar=\toks52
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/relsize/relsize.sty
@@ -1079,24 +1102,24 @@ L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
 L3 Module: l3str 2015/03/01 v5545 L3 Strings
 L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
 L3 Module: l3int 2015/02/21 v5529 L3 Integers
-\c_max_int=\count175
-\l_tmpa_int=\count176
-\l_tmpb_int=\count177
-\g_tmpa_int=\count178
-\g_tmpb_int=\count179
+\c_max_int=\count181
+\l_tmpa_int=\count182
+\l_tmpb_int=\count183
+\g_tmpa_int=\count184
+\g_tmpb_int=\count185
 L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
 L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
-\g__prg_map_int=\count180
+\g__prg_map_int=\count186
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
 L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
-\l_iow_line_count_int=\count181
-\l__iow_target_count_int=\count182
-\l__iow_current_line_int=\count183
-\l__iow_current_word_int=\count184
-\l__iow_current_indentation_int=\count185
+\l_iow_line_count_int=\count187
+\l__iow_target_count_int=\count188
+\l__iow_current_line_int=\count189
+\l__iow_current_word_int=\count190
+\l__iow_current_indentation_int=\count191
 L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \c_zero_dim=\dimen206
 \c_max_dim=\dimen207
@@ -1117,18 +1140,18 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
 L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
-\g__keyval_level_int=\count186
-\l_keys_choice_int=\count187
+\g__keyval_level_int=\count192
+\l_keys_choice_int=\count193
 L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
-\c__fp_leading_shift_int=\count188
-\c__fp_middle_shift_int=\count189
-\c__fp_trailing_shift_int=\count190
-\c__fp_big_leading_shift_int=\count191
-\c__fp_big_middle_shift_int=\count192
-\c__fp_big_trailing_shift_int=\count193
-\c__fp_Bigg_leading_shift_int=\count194
-\c__fp_Bigg_middle_shift_int=\count195
-\c__fp_Bigg_trailing_shift_int=\count196
+\c__fp_leading_shift_int=\count194
+\c__fp_middle_shift_int=\count195
+\c__fp_trailing_shift_int=\count196
+\c__fp_big_leading_shift_int=\count197
+\c__fp_big_middle_shift_int=\count198
+\c__fp_big_trailing_shift_int=\count199
+\c__fp_Bigg_leading_shift_int=\count200
+\c__fp_Bigg_middle_shift_int=\count201
+\c__fp_Bigg_trailing_shift_int=\count202
 L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \c_empty_box=\box82
 \l_tmpa_box=\box83
@@ -1179,14 +1202,14 @@ File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count197
+\l__driver_color_stack_int=\count203
 ))
 Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count198
-\l__xparse_m_args_int=\count199
-\l__xparse_mandatory_args_int=\count200
-\l__xparse_processor_int=\count201
-\l__xparse_v_nesting_int=\count202
+\l__xparse_current_arg_int=\count204
+\l__xparse_m_args_int=\count205
+\l__xparse_mandatory_args_int=\count206
+\l__xparse_processor_int=\count207
+\l__xparse_v_nesting_int=\count208
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
 Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
@@ -1197,14 +1220,14 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count203
+\c@abspage=\count209
 Package zref Info: New property: abspage on input line 62.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip67
-\c@mdf@globalstyle@cnt=\count204
+\c@mdf@globalstyle@cnt=\count210
 \mdf@skipabove@length=\skip68
 \mdf@skipbelow@length=\skip69
 \mdf@leftmargin@length=\skip70
@@ -1280,7 +1303,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip131
 \mdfsubtitleheight=\skip132
 \mdfsubsubtitleheight=\skip133
-\c@mdfcountframes=\count205
+\c@mdfcountframes=\count211
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -1296,10 +1319,10 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 . 
 . Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count206
-\c@mdf@env@i=\count207
-\c@mdf@env@ii=\count208
-\c@mdf@zref@counter=\count209
+\mdf@envdepth=\count212
+\c@mdf@env@i=\count213
+\c@mdf@env@ii=\count214
+\c@mdf@zref@counter=\count215
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfpages.sty
@@ -1307,23 +1330,23 @@ Package: pgfpages 2011/01/05 ver 0.02
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count210
-\calc@Bcount=\count211
+\calc@Acount=\count216
+\calc@Bcount=\count217
 \calc@Adimen=\dimen259
 \calc@Bdimen=\dimen260
 \calc@Askip=\skip134
 \calc@Bskip=\skip135
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count212
+\calc@Ccount=\count218
 \calc@Cskip=\skip136
 )
-\pgf@logicalpages=\count213
-\pgf@firstshipout=\count214
-\pgf@lastshipout=\count215
-\pgf@currentshipout=\count216
-\pgf@cpn=\count217
-\pgf@shipoutnextto=\count218
+\pgf@logicalpages=\count219
+\pgf@firstshipout=\count220
+\pgf@lastshipout=\count221
+\pgf@currentshipout=\count222
+\pgf@cpn=\count223
+\pgf@shipoutnextto=\count224
 \pgfphysicalheight=\dimen261
 \pgfphysicalwidth=\dimen262
 \pgfpages@shipoutbox=\box102
@@ -1362,8 +1385,8 @@ Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen265
 \pgffor@skip=\dimen266
-\pgffor@stack=\toks52
-\pgffor@toks=\toks53
+\pgffor@stack=\toks53
+\pgffor@toks=\toks54
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1372,7 +1395,7 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count219
+\pgf@plot@mark@count=\count225
 \pgfplotmarksize=\dimen267
 )
 \tikz@lastx=\dimen268
@@ -1385,19 +1408,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikz@figbox@bg=\box105
 \tikz@tempbox=\box106
 \tikz@tempbox@bg=\box107
-\tikztreelevel=\count220
-\tikznumberofchildren=\count221
-\tikznumberofcurrentchild=\count222
-\tikz@fig@count=\count223
+\tikztreelevel=\count226
+\tikznumberofchildren=\count227
+\tikznumberofcurrentchild=\count228
+\tikz@fig@count=\count229
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count224
-\pgfmatrixcurrentcolumn=\count225
-\pgf@matrix@numberofcolumns=\count226
+\pgfmatrixcurrentrow=\count230
+\pgfmatrixcurrentcolumn=\count231
+\pgf@matrix@numberofcolumns=\count232
 )
-\tikz@expandcount=\count227
+\tikz@expandcount=\count233
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1500,7 +1523,7 @@ Grid set 16 x 16 = 22.7622pt x 17.07166pt
 \TPboxrulesize=\dimen279
 \TP@ox=\dimen280
 \TP@oy=\dimen281
-\TP@tbargs=\toks54
+\TP@tbargs=\toks55
 \TP@prevdepth=\dimen282
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
@@ -1513,7 +1536,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count228
+\g_MT_multlinerow_int=\count266
 \l_MT_multwidth_dim=\dimen283
 \origjot=\skip137
 \l_MT_shortvdotswithinadjustabove_dim=\dimen284
@@ -1559,52 +1582,52 @@ Package zref Info: New property list: LastPage on input line 55.
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/animate/animfp.sty
 Package: animfp 2009/07/23 fixed point addition for animate.sty
-\afp@xs=\count229
-\afp@xia=\count230
-\afp@xib=\count231
-\afp@xfa=\count232
-\afp@xfb=\count233
-\afp@rega=\count266
-\afp@regb=\count267
-\afp@regs=\count268
+\afp@xs=\count267
+\afp@xia=\count268
+\afp@xib=\count269
+\afp@xfa=\count270
+\afp@xfb=\count271
+\afp@rega=\count272
+\afp@regb=\count273
+\afp@regs=\count274
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count269
+\scratchcounter=\count275
 \scratchdimen=\dimen290
 \scratchbox=\box130
-\nofMPsegments=\count270
-\nofMParguments=\count271
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count272
+\nofMPsegments=\count276
+\nofMParguments=\count277
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count278
 \MPscratchDim=\dimen291
-\MPnumerator=\count273
-\makeMPintoPDFobject=\count274
-\everyMPtoPDFconversion=\toks56
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
+\everyMPtoPDFconversion=\toks57
 )
 \@anim@box=\box131
 \@anim@measbox=\box132
 \@anim@tmpdima=\dimen292
 \@anim@tmpdimb=\dimen293
-\@anim@ocnum=\count275
-\@anim@num=\count276
-\@anim@curframe=\count277
-\@anim@curframe@zb=\count278
-\@anim@resizeflags=\count279
-\@anim@skipfram=\count280
-\@anim@mulframecnt=\count281
+\@anim@ocnum=\count281
+\@anim@num=\count282
+\@anim@curframe=\count283
+\@anim@curframe@zb=\count284
+\@anim@resizeflags=\count285
+\@anim@skipfram=\count286
+\@anim@mulframecnt=\count287
 \@anim@@tmlnfile=\read2
-\@anim@tmpcnt=\count282
-\c@@anim@ltxcnt=\count283
-\@anim@curlayer=\count284
-\@anim@lineno=\count285
-\@anim@curfield=\count286
-\@anim@begin=\toks57
-\@anim@end=\toks58
-\@anim@@resizeflags=\count287
+\@anim@tmpcnt=\count288
+\c@@anim@ltxcnt=\count289
+\@anim@curlayer=\count290
+\@anim@lineno=\count291
+\@anim@curfield=\count292
+\@anim@begin=\toks58
+\@anim@end=\toks59
+\@anim@@resizeflags=\count293
 )
-\c@algorithm=\count288
-\c@proposition=\count289
+\c@algorithm=\count294
+\c@proposition=\count295
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeBo
 adilla.sty
@@ -1631,23 +1654,33 @@ emebeaver.sty
 Package: beamercolorthemebeaver 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
 \footlineextrabox=\box133
-) (./math.tex) (./content/content-macros.tex) (./main.aux)
+) (./math.tex) (./content/content-macros.tex) (./main.aux
+
+LaTeX Warning: Label `fig:C2S0F3' multiply defined.
+
+
+LaTeX Warning: Label `fig:C2S0F3' multiply defined.
+
+
+LaTeX Warning: Label `fig:C2S0F3' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1700,7 +1733,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box134
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 21.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1708,70 +1741,70 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count290
+\c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 18.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 18.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 21.
 \symnumbers=\mathgroup12
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 18.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/cmss/m/it on input line 1
-8.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/cmss/m/it on input line 2
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/bx/sl --> OT1/cmss/m/it on input line 
-18.
+21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 18.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 18.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/fvm/m/n on input line 18.
+(Font)                  OT1/cmtt/m/n --> OT1/fvm/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/fvm/m/n on input line 18.
+(Font)                  OT1/cmtt/m/n --> OT1/fvm/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 18.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 18.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 18.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 18.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 18.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 18.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/fvm/m/n --> OT1/fvm/bx/n on input line 18.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 18.
+(Font)                  OT1/fvm/m/n --> OT1/fvm/bx/n on input line 21.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-8.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-18.
+21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 18.
+ut line 21.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1797,8 +1830,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 18.
-\c@lstlisting=\count291
+LaTeX Info: Redefining \includegraphics on input line 21.
+\c@lstlisting=\count297
  (./main.nav)
 (./content/title.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 22.
@@ -1829,764 +1862,473 @@ File: Images/bms-logo-button.png Graphic file (type png)
 Package pdftex.def Info: Images/bms-logo-button.png used on input line 22.
 (pdftex.def)             Requested size: 28.45216pt x 28.45274pt.
 
-<images/tub_afg.jpg, id=21, 1318.9275pt x 407.5225pt>
-File: images/tub_afg.jpg Graphic file (type jpg)
- <use images/tub_afg.jpg>
-Package pdftex.def Info: images/tub_afg.jpg used on input line 22.
-(pdftex.def)             Requested size: 92.07272pt x 28.45274pt.
+<images/tub_logo.png, id=21, 741.36975pt x 551.05875pt>
+File: images/tub_logo.png Graphic file (type png)
 
-[1
+<use images/tub_logo.png>
+Package pdftex.def Info: images/tub_logo.png used on input line 22.
+(pdftex.def)             Requested size: 38.26976pt x 28.45274pt.
+ [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Image
-s/bms-logo-button.png> <./images/tub_afg.jpg>]) (./content/content.tex
-<./Images/digita_signal.png, id=35, 1204.5pt x 679.53876pt>
-File: ./Images/digita_signal.png Graphic file (type png)
-
-<use ./Images/digita_signal.png>
-Package pdftex.def Info: ./Images/digita_signal.png used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.89148pt.
-
-<./Images/white_noise.jpg, id=37, 1927.2pt x 1084.05pt>
-File: ./Images/white_noise.jpg Graphic file (type jpg)
-
-<use ./Images/white_noise.jpg>
-Package pdftex.def Info: ./Images/white_noise.jpg used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.64307pt.
-
+s/bms-logo-button.png> <./images/tub_logo.png>])
+(./content/content.tex
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 19.
+(Font)              size <5> substituted on input line 23.
 
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [2
 
- <./Images/digita_signal.png> <./Images/white_noise.jpg>]
-File: ./Images/digita_signal.png Graphic file (type png)
-
-<use ./Images/digita_signal.png>
-Package pdftex.def Info: ./Images/digita_signal.png used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.89148pt.
-File: ./Images/white_noise.jpg Graphic file (type jpg)
- <use ./Images/white_noise.jpg>
-Package pdftex.def Info: ./Images/white_noise.jpg used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.64307pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [3
 
 ]
-File: ./Images/digita_signal.png Graphic file (type png)
- <use ./Images/digita_signal.png>
-Package pdftex.def Info: ./Images/digita_signal.png used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.89148pt.
-File: ./Images/white_noise.jpg Graphic file (type jpg)
- <use ./Images/white_noise.jpg>
-Package pdftex.def Info: ./Images/white_noise.jpg used on input line 19.
-(pdftex.def)             Requested size: 154.03183pt x 86.64307pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [4
 
-] <./Images/sparse_data.png, id=57, 251.94125pt x 168.63pt>
-File: ./Images/sparse_data.png Graphic file (type png)
-
-<use ./Images/sparse_data.png>
-Package pdftex.def Info: ./Images/sparse_data.png used on input line 30.
-(pdftex.def)             Requested size: 239.60567pt x 160.37512pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [5
 
- <./Images/sparse_data.png>]
-File: ./Images/sparse_data.png Graphic file (type png)
- <use ./Images/sparse_data.png>
-Package pdftex.def Info: ./Images/sparse_data.png used on input line 30.
-(pdftex.def)             Requested size: 239.60567pt x 160.37512pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [6
 
-] <./Images/fourier.png, id=72, 903.375pt x 523.9575pt>
-File: ./Images/fourier.png Graphic file (type png)
-
-<use ./Images/fourier.png>
-Package pdftex.def Info: ./Images/fourier.png used on input line 41.
-(pdftex.def)             Requested size: 239.60567pt x 138.968pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [7
 
- <./Images/fourier.png>]
-File: ./Images/fourier.png Graphic file (type png)
- <use ./Images/fourier.png>
-Package pdftex.def Info: ./Images/fourier.png used on input line 41.
-(pdftex.def)             Requested size: 239.60567pt x 138.968pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [8
 
-] <./Images/STFT.png, id=93, 461.725pt x 338.26375pt>
-File: ./Images/STFT.png Graphic file (type png)
-
-<use ./Images/STFT.png>
-Package pdftex.def Info: ./Images/STFT.png used on input line 52.
-(pdftex.def)             Requested size: 232.75829pt x 170.51988pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [9
 
- <./Images/STFT.png (PNG copy)>]
-File: ./Images/STFT.png Graphic file (type png)
- <use ./Images/STFT.png>
-Package pdftex.def Info: ./Images/STFT.png used on input line 52.
-(pdftex.def)             Requested size: 232.75829pt x 170.51988pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [10
 
-] <./Images/wavelet.jpg, id=107, 376.40625pt x 115.18031pt>
-File: ./Images/wavelet.jpg Graphic file (type jpg)
+] <../../Diagrams/Plenoptic_function.jpg, id=92, 211.992pt x 197.538pt>
+File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
 
-<use ./Images/wavelet.jpg>
-Package pdftex.def Info: ./Images/wavelet.jpg used on input line 70.
-(pdftex.def)             Requested size: 342.2953pt x 104.74919pt.
+<use ../../Diagrams/Plenoptic_function.jpg>
+Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
+ne 66.
+(pdftex.def)             Requested size: 85.57382pt x 79.7402pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [11
 
- <./Images/wavelet.jpg>]
-File: ./Images/wavelet.jpg Graphic file (type jpg)
- <use ./Images/wavelet.jpg>
-Package pdftex.def Info: ./Images/wavelet.jpg used on input line 70.
-(pdftex.def)             Requested size: 342.2953pt x 104.74919pt.
+ <../../Diagrams/Plenoptic_function.jpg>]
+File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<use ../../Diagrams/Plenoptic_function.jpg>
+Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
+ne 66.
+(pdftex.def)             Requested size: 85.57382pt x 79.7402pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [12
 
-] <./Images/cartoon-like.jpg, id=121, 274.02374pt x 261.97874pt>
-File: ./Images/cartoon-like.jpg Graphic file (type jpg)
+]
+File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
+ <use ../../Diagrams/Plenoptic_function.jpg>
+Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
+ne 66.
+(pdftex.def)             Requested size: 85.57382pt x 79.7402pt.
 
-<use ./Images/cartoon-like.jpg>
-Package pdftex.def Info: ./Images/cartoon-like.jpg used on input line 81.
-(pdftex.def)             Requested size: 136.91603pt x 130.9011pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [13
 
- <./Images/cartoon-like.jpg>]
-File: ./Images/cartoon-like.jpg Graphic file (type jpg)
- <use ./Images/cartoon-like.jpg>
-Package pdftex.def Info: ./Images/cartoon-like.jpg used on input line 81.
-(pdftex.def)             Requested size: 136.91603pt x 130.9011pt.
+]
+File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
+ <use ../../Diagrams/Plenoptic_function.jpg>
+Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
+ne 66.
+(pdftex.def)             Requested size: 85.57382pt x 79.7402pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [14
 
-] <./Images/anisotropic_isotropic.jpg, id=135, 720.6925pt x 373.395pt>
-File: ./Images/anisotropic_isotropic.jpg Graphic file (type jpg)
+]
+<../../Diagrams/Light-field-parametrizations.jpg, id=119, 518.3pt x 85.41pt>
+File: ../../Diagrams/Light-field-parametrizations.jpg Graphic file (type jpg)
 
-<use ./Images/anisotropic_isotropic.jpg>
-Package pdftex.def Info: ./Images/anisotropic_isotropic.jpg used on input line 
-101.
-(pdftex.def)             Requested size: 136.91603pt x 70.93439pt.
+<use ../../Diagrams/Light-field-parametrizations.jpg>
+Package pdftex.def Info: ../../Diagrams/Light-field-parametrizations.jpg used o
+n input line 80.
+(pdftex.def)             Requested size: 273.83728pt x 45.12631pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<../../Diagrams/two-planes_param.jpg, id=120, 385.9218pt x 232.7094pt>
+File: ../../Diagrams/two-planes_param.jpg Graphic file (type jpg)
+
+<use ../../Diagrams/two-planes_param.jpg>
+Package pdftex.def Info: ../../Diagrams/two-planes_param.jpg used on input line
+ 80.
+(pdftex.def)             Requested size: 171.14764pt x 103.20204pt.
+
+Overfull \vbox (11.10223pt too high) detected at line 80
+ []
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [15
 
- <./Images/anisotropic_isotropic.jpg>]
-File: ./Images/anisotropic_isotropic.jpg Graphic file (type jpg)
+ <../../Diagrams/Light-field-parametrizations.jpg> <../../Diagrams/two-planes_p
+aram.jpg>]
+File: ../../Diagrams/Light-field-parametrizations.jpg Graphic file (type jpg)
+ <use ../../Diagrams/Light-field-parametrizations.jpg>
+Package pdftex.def Info: ../../Diagrams/Light-field-parametrizations.jpg used o
+n input line 80.
+(pdftex.def)             Requested size: 273.83728pt x 45.12631pt.
+File: ../../Diagrams/two-planes_param.jpg Graphic file (type jpg)
 
-<use ./Images/anisotropic_isotropic.jpg>
-Package pdftex.def Info: ./Images/anisotropic_isotropic.jpg used on input line 
-101.
-(pdftex.def)             Requested size: 136.91603pt x 70.93439pt.
+<use ../../Diagrams/two-planes_param.jpg>
+Package pdftex.def Info: ../../Diagrams/two-planes_param.jpg used on input line
+ 80.
+(pdftex.def)             Requested size: 171.14764pt x 103.20204pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \vbox (11.10223pt too high) detected at line 80
+ []
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [16
 
 ]
-File: ./Images/anisotropic_isotropic.jpg Graphic file (type jpg)
- <use ./Images/anisotropic_isotropic.jpg>
-Package pdftex.def Info: ./Images/anisotropic_isotropic.jpg used on input line 
-101.
-(pdftex.def)             Requested size: 136.91603pt x 70.93439pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [17
 
-]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
+] <./images/compressed_light_field.pdf, id=141, 593.35269pt x 604.94164pt>
+File: ./images/compressed_light_field.pdf Graphic file (type pdf)
+
+<use ./images/compressed_light_field.pdf>
+Package pdftex.def Info: ./images/compressed_light_field.pdf used on input line
+ 97.
+(pdftex.def)             Requested size: 239.60567pt x 244.28003pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:C2S0F3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.97 \end{frame}
+                
+Overfull \vbox (42.00946pt too high) detected at line 97
  []
 
-<./Images/circle.png, id=154, 477.7047pt x 355.5684pt>
-File: ./Images/circle.png Graphic file (type png)
 
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-
-<./Images/circle_scaled.png, id=155, 462.528pt x 346.896pt>
-File: ./Images/circle_scaled.png Graphic file (type png)
-
-<use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-<./Images/square.png, id=156, 462.528pt x 346.896pt>
-File: ./Images/square.png Graphic file (type png)
- <use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-<./Images/square_sheared.png, id=157, 462.528pt x 346.896pt>
-File: ./Images/square_sheared.png Graphic file (type png)
-
-<use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [18
 
- <./Images/circle.png> <./Images/circle_scaled.png> <./Images/square.png> <./Im
-ages/square_sheared.png>]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
- []
+ <./images/compressed_light_field.pdf>]
+<../../Diagrams/raytrix.jpg, id=198, 615.29875pt x 248.93pt>
+File: ../../Diagrams/raytrix.jpg Graphic file (type jpg)
 
-File: ./Images/circle.png Graphic file (type png)
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-File: ./Images/circle_scaled.png Graphic file (type png)
- <use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/square.png Graphic file (type png)
-<use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-File: ./Images/square_sheared.png Graphic file (type png)
- <use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<use ../../Diagrams/raytrix.jpg>
+Package pdftex.def Info: ../../Diagrams/raytrix.jpg used on input line 105.
+(pdftex.def)             Requested size: 342.2953pt x 138.48444pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:C2S0F3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.105 \end{frame}
+                 
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [19
 
-]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
- []
+ <../../Diagrams/raytrix.jpg>]
+<../../Diagrams/lytro.jpg, id=206, 727.65565pt x 501.14082pt>
+File: ../../Diagrams/lytro.jpg Graphic file (type jpg)
 
-File: ./Images/circle.png Graphic file (type png)
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-File: ./Images/circle_scaled.png Graphic file (type png)
- <use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/square.png Graphic file (type png)
-<use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-File: ./Images/square_sheared.png Graphic file (type png)
- <use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<use ../../Diagrams/lytro.jpg>
+Package pdftex.def Info: ../../Diagrams/lytro.jpg used on input line 113.
+(pdftex.def)             Requested size: 273.83728pt x 188.60025pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:C2S0F3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.113 \end{frame}
+                 
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [20
 
-]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
+ <../../Diagrams/lytro.jpg>]
+<./images/LightField_Shearlet.pdf, id=213, 576.80815pt x 379.83014pt>
+File: ./images/LightField_Shearlet.pdf Graphic file (type pdf)
+
+<use ./images/LightField_Shearlet.pdf>
+Package pdftex.def Info: ./images/LightField_Shearlet.pdf used on input line 12
+0.
+(pdftex.def)             Requested size: 342.2953pt x 225.40767pt.
+
+Overfull \vbox (5.1371pt too high) detected at line 120
  []
 
-File: ./Images/circle.png Graphic file (type png)
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-File: ./Images/circle_scaled.png Graphic file (type png)
- <use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
 
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/square.png Graphic file (type png)
-<use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-File: ./Images/square_sheared.png Graphic file (type png)
- <use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [21
 
-]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/circle.png Graphic file (type png)
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-File: ./Images/circle_scaled.png Graphic file (type png)
- <use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/square.png Graphic file (type png)
-<use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-File: ./Images/square_sheared.png Graphic file (type png)
- <use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+ <./images/LightField_Shearlet.pdf>]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [22
 
-]
-Overfull \hbox (17.33473pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 A[] []\OT1/cmss/m/n/10.95 = []
- []
+] <../../Diagrams/epipolarline.jpg, id=265, 486.81876pt x 293.095pt>
+File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
 
-File: ./Images/circle.png Graphic file (type png)
-<use ./Images/circle.png>
-Package pdftex.def Info: ./Images/circle.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 74.51964pt.
-File: ./Images/circle_scaled.png Graphic file (type png)
- <use ./Images/circle_scaled.png>
-Package pdftex.def Info: ./Images/circle_scaled.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
+<use ../../Diagrams/epipolarline.jpg>
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 153
+.
+(pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
-Overfull \hbox (3.22728pt too wide) detected at line 165
-\OT1/mathkerncmss/m/sl/10.95 S[] []\OT1/cmss/m/n/10.95 = []
- []
-
-File: ./Images/square.png Graphic file (type png)
-<use ./Images/square.png>
-Package pdftex.def Info: ./Images/square.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-File: ./Images/square_sheared.png Graphic file (type png)
- <use ./Images/square_sheared.png>
-Package pdftex.def Info: ./Images/square_sheared.png used on input line 165.
-(pdftex.def)             Requested size: 100.11975pt x 75.08932pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [23
 
-] <./Images/tiling_nocone.jpg, id=201, 461.725pt x 342.27875pt>
-File: ./Images/tiling_nocone.jpg Graphic file (type jpg)
+ <../../Diagrams/epipolarline.jpg>]
+File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
+ <use ../../Diagrams/epipolarline.jpg>
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 153
+.
+(pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
-<use ./Images/tiling_nocone.jpg>
-Package pdftex.def Info: ./Images/tiling_nocone.jpg used on input line 183.
-(pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [24
 
- <./Images/tiling_nocone.jpg>]
-File: ./Images/tiling_nocone.jpg Graphic file (type jpg)
- <use ./Images/tiling_nocone.jpg>
-Package pdftex.def Info: ./Images/tiling_nocone.jpg used on input line 183.
-(pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
+]
+File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
+ <use ../../Diagrams/epipolarline.jpg>
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 153
+.
+(pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [25
 
 ]
-File: ./Images/tiling_nocone.jpg Graphic file (type jpg)
- <use ./Images/tiling_nocone.jpg>
-Package pdftex.def Info: ./Images/tiling_nocone.jpg used on input line 183.
-(pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
+File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
+ <use ../../Diagrams/epipolarline.jpg>
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 153
+.
+(pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [26
 
-] <./Images/tiling_cone.jpg, id=221, 812.03375pt x 424.58624pt>
-File: ./Images/tiling_cone.jpg Graphic file (type jpg)
+] <../../Diagrams/perp-move.jpg, id=291, 233.1493pt x 160.8793pt>
+File: ../../Diagrams/perp-move.jpg Graphic file (type jpg)
 
-<use ./Images/tiling_cone.jpg>
-Package pdftex.def Info: ./Images/tiling_cone.jpg used on input line 194.
-(pdftex.def)             Requested size: 308.06367pt x 161.07234pt.
+<use ../../Diagrams/perp-move.jpg>
+Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 167.
+(pdftex.def)             Requested size: 154.03183pt x 106.28867pt.
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<../../Diagrams/EPI-dices.jpg, id=292, 744.7825pt x 300.12125pt>
+File: ../../Diagrams/EPI-dices.jpg Graphic file (type jpg)
+
+<use ../../Diagrams/EPI-dices.jpg>
+Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 167.
+(pdftex.def)             Requested size: 308.06367pt x 124.14041pt.
+
+Overfull \vbox (23.15851pt too high) detected at line 167
+ []
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [27
 
- <./Images/tiling_cone.jpg>]
-File: ./Images/tiling_cone.jpg Graphic file (type jpg)
- <use ./Images/tiling_cone.jpg>
-Package pdftex.def Info: ./Images/tiling_cone.jpg used on input line 194.
-(pdftex.def)             Requested size: 308.06367pt x 161.07234pt.
+ <../../Diagrams/perp-move.jpg> <../../Diagrams/EPI-dices.jpg>]
+File: ../../Diagrams/perp-move.jpg Graphic file (type jpg)
 
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+<use ../../Diagrams/perp-move.jpg>
+Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 167.
+(pdftex.def)             Requested size: 154.03183pt x 106.28867pt.
+File: ../../Diagrams/EPI-dices.jpg Graphic file (type jpg)
+ <use ../../Diagrams/EPI-dices.jpg>
+Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 167.
+(pdftex.def)             Requested size: 308.06367pt x 124.14041pt.
+
+Overfull \vbox (23.15851pt too high) detected at line 167
+ []
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [28
 
-] <./Images/separable_nonseparable.jpg, id=234, 677.53125pt x 260.975pt>
-File: ./Images/separable_nonseparable.jpg Graphic file (type jpg)
-
-<use ./Images/separable_nonseparable.jpg>
-Package pdftex.def Info: ./Images/separable_nonseparable.jpg used on input line
- 226.
-(pdftex.def)             Requested size: 239.60567pt x 92.29434pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [29
 
- <./Images/separable_nonseparable.jpg>]
-File: ./Images/separable_nonseparable.jpg Graphic file (type jpg)
-
-<use ./Images/separable_nonseparable.jpg>
-Package pdftex.def Info: ./Images/separable_nonseparable.jpg used on input line
- 226.
-(pdftex.def)             Requested size: 239.60567pt x 92.29434pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [30
 
 ]
-File: ./Images/separable_nonseparable.jpg Graphic file (type jpg)
- <use ./Images/separable_nonseparable.jpg>
-Package pdftex.def Info: ./Images/separable_nonseparable.jpg used on input line
- 226.
-(pdftex.def)             Requested size: 239.60567pt x 92.29434pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [31
 
 ]
-File: ./Images/separable_nonseparable.jpg Graphic file (type jpg)
- <use ./Images/separable_nonseparable.jpg>
-Package pdftex.def Info: ./Images/separable_nonseparable.jpg used on input line
- 226.
-(pdftex.def)             Requested size: 239.60567pt x 92.29434pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [32
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+fvm on input line 247.
-
-LaTeX Font Info:    No file OT1fvm.fd. on input line 247.
-
-
-LaTeX Font Warning: Font shape `OT1/fvm/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 247.
-
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [33
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [34
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [35
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [36
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [37
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [38
 
 ]
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [39
 
-] <./Images/dices.jpg, id=322, 743.77875pt x 264.99pt>
-File: ./Images/dices.jpg Graphic file (type jpg)
+] <./Images/lf-camera.jpg, id=375, 602.25pt x 402.50375pt>
+File: ./Images/lf-camera.jpg Graphic file (type jpg)
 
-<use ./Images/dices.jpg>
-Package pdftex.def Info: ./Images/dices.jpg used on input line 290.
-(pdftex.def)             Requested size: 308.06367pt x 109.75853pt.
+<use ./Images/lf-camera.jpg>
+Package pdftex.def Info: ./Images/lf-camera.jpg used on input line 221.
+(pdftex.def)             Requested size: 273.83728pt x 183.0228pt.
 
-<./Images/EPI_sparse.jpg, id=323, 166.6225pt x 169.63374pt>
-File: ./Images/EPI_sparse.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_sparse.jpg>
-Package pdftex.def Info: ./Images/EPI_sparse.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 111.51857pt.
-
-<./Images/EPI_wavelet.jpg, id=324, 164.615pt x 166.6225pt>
-File: ./Images/EPI_wavelet.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_wavelet.jpg>
-Package pdftex.def Info: ./Images/EPI_wavelet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8763pt.
-
-<./Images/EPI_shearlet.jpg, id=325, 166.6225pt x 168.63pt>
-File: ./Images/EPI_shearlet.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_shearlet.jpg>
-Package pdftex.def Info: ./Images/EPI_shearlet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8587pt.
-
-Overfull \vbox (14.00653pt too high) detected at line 290
- []
-
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
+Package atenddvi Info: Last page = 40.
 [40
 
- <./Images/dices.jpg> <./Images/EPI_sparse.jpg> <./Images/EPI_wavelet.jpg> <./I
-mages/EPI_shearlet.jpg>]
-File: ./Images/dices.jpg Graphic file (type jpg)
- <use ./Images/dices.jpg>
-Package pdftex.def Info: ./Images/dices.jpg used on input line 290.
-(pdftex.def)             Requested size: 308.06367pt x 109.75853pt.
-File: ./Images/EPI_sparse.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_sparse.jpg>
-Package pdftex.def Info: ./Images/EPI_sparse.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 111.51857pt.
-File: ./Images/EPI_wavelet.jpg Graphic file (type jpg)
- <use ./Images/EPI_wavelet.jpg>
-Package pdftex.def Info: ./Images/EPI_wavelet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8763pt.
-File: ./Images/EPI_shearlet.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_shearlet.jpg>
-Package pdftex.def Info: ./Images/EPI_shearlet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8587pt.
-
-Overfull \vbox (14.00653pt too high) detected at line 290
- []
-
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[41
-
-]
-File: ./Images/dices.jpg Graphic file (type jpg)
- <use ./Images/dices.jpg>
-Package pdftex.def Info: ./Images/dices.jpg used on input line 290.
-(pdftex.def)             Requested size: 308.06367pt x 109.75853pt.
-File: ./Images/EPI_sparse.jpg Graphic file (type jpg)
- <use ./Images/EPI_sparse.jpg>
-Package pdftex.def Info: ./Images/EPI_sparse.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 111.51857pt.
-File: ./Images/EPI_wavelet.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_wavelet.jpg>
-Package pdftex.def Info: ./Images/EPI_wavelet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8763pt.
-File: ./Images/EPI_shearlet.jpg Graphic file (type jpg)
- <use ./Images/EPI_shearlet.jpg>
-Package pdftex.def Info: ./Images/EPI_shearlet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8587pt.
-
-Overfull \vbox (14.00653pt too high) detected at line 290
- []
-
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[42
-
-]
-File: ./Images/dices.jpg Graphic file (type jpg)
- <use ./Images/dices.jpg>
-Package pdftex.def Info: ./Images/dices.jpg used on input line 290.
-(pdftex.def)             Requested size: 308.06367pt x 109.75853pt.
-File: ./Images/EPI_sparse.jpg Graphic file (type jpg)
- <use ./Images/EPI_sparse.jpg>
-Package pdftex.def Info: ./Images/EPI_sparse.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 111.51857pt.
-File: ./Images/EPI_wavelet.jpg Graphic file (type jpg)
-
-<use ./Images/EPI_wavelet.jpg>
-Package pdftex.def Info: ./Images/EPI_wavelet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8763pt.
-File: ./Images/EPI_shearlet.jpg Graphic file (type jpg)
- <use ./Images/EPI_shearlet.jpg>
-Package pdftex.def Info: ./Images/EPI_shearlet.jpg used on input line 290.
-(pdftex.def)             Requested size: 109.537pt x 110.8587pt.
-
-Overfull \vbox (14.00653pt too high) detected at line 290
- []
-
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[43
-
-] <./Images/obama_compressed.jpg, id=351, 662.475pt x 173.64874pt>
-File: ./Images/obama_compressed.jpg Graphic file (type jpg)
-
-<use ./Images/obama_compressed.jpg>
-Package pdftex.def Info: ./Images/obama_compressed.jpg used on input line 300.
-(pdftex.def)             Requested size: 342.2953pt x 89.72289pt.
-
-Overfull \hbox (29.08844pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-Package atenddvi Info: Last page = 44.
-[44
-
- <./Images/obama_compressed.jpg>])
+ <./Images/lf-camera.jpg>])
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -2596,11 +2338,11 @@ Package atenddvi Info: Last page = 44.
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 28.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 28.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 31.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 28.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 28.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2609,38 +2351,42 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 28.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 31.
  ) 
 Here is how much of TeX's memory you used:
- 33703 strings out of 493089
- 672062 string characters out of 6134842
- 793997 words of memory out of 5000000
- 36375 multiletter control sequences out of 15000+600000
- 26577 words of font info for 87 fonts, out of 8000000 for 9000
+ 33848 strings out of 493089
+ 676184 string characters out of 6134842
+ 809105 words of memory out of 5000000
+ 36524 multiletter control sequences out of 15000+600000
+ 29437 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,18n,78p,10410b,1255s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+ 58i,18n,70p,10410b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (44 pages, 1362573 bytes).
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/zapfding/uz
+dr.pfb>
+Output written on main.pdf (40 pages, 4993007 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 445 PDF objects out of 1000 (max. 8388607)
+ 344 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
