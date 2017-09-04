@@ -265,7 +265,7 @@ We already mention words as epipolar plane, or epipolar plane image but we have 
 
 \subsection{Functional analysis approach to EPI}
 
-At the beginning of this chapter we mentioned the parallel plane approach to 4D light field (recall Figure~\ref{fig:C2S0F3}), the idea of epipolar geometry is based on this representation. As in Figure~\ref{fig:C2S0F3} let the two parallel planes be called $\pi_0$ and $\pi_1$ with coordinates $(s,t)$ and $(u,v)$ respectively. In this scheme, the 4D Light Field will be a function $L_4:\mathbb{R}^4\longrightarrow\mathbb{R}^3$ with the radiance $\mathbf{r}\in\mathbb{R}^3$ given as
+At the beginning of this chapter we mentioned the two parallel planes approach to 4D light field (recall Figure~\ref{fig:C2S0F3}), the idea of epipolar geometry is based on this representation. As in Figure~\ref{fig:C2S0F3} let the two parallel planes be called $\pi_0$ and $\pi_1$ with coordinates $(s,t)$ and $(u,v)$ respectively. In this scheme, the 4D Light Field will be a function $L_4:\mathbb{R}^4\longrightarrow\mathbb{R}^3$ with the radiance $\mathbf{r}\in\mathbb{R}^3$ given as
 
 $$
 \mathbf{r}=L_4(u,v,s,t)
@@ -390,10 +390,11 @@ The next diagram shows the general followed pipeline from acquisition to LF reco
   [node distance=.8cm,
   start chain=going below,]
      \node[punktchain, join] (acqui) {Acquisition of rectified images sequence};
-     \node[punktchain, join] (corner) {Corner detection};
-     \node[punktchain, join] (tracking) {Point tracking};
+     \node[punktchain, join] (corner) {Corner detection (Shi-Tomasi)};
+     \node[punktchain, join] (tracking) {Point tracking (Lucas-Kanade)};
      \node[punktchain, join] (paintsparse) {Initial sparse EPI painting};
-     \node[punktchain, join, ] (sparserec) {Sparse EPI reconstrution};
+     \node[punktchain, join ] (sparserec) {Sparse EPI reconstrution};
+		 \node[punktchain, join] (depthmap) {Depth map estimation (Hough Line Transform)};
 \end{tikzpicture}
 \end{center}
 
@@ -674,7 +675,7 @@ The maximum number of strong corners obtained by the Shi-Tomsi in the first view
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{./Diagrams/track_points_church.png}s
+\includegraphics[width=1\textwidth]{./Diagrams/track_points_church.png}
 \caption{Path of points tracked in the image sequence of the church, one can observe that the trajectories of the features are more or less straight lines, with some nuerical and algorithmical errors that can be ignored. The image is presented in shades of gray since the Lucas-Kanade method can be implemented with good performance in shades of gray}
 \label{fig:track_points_church}
 \end{figure}

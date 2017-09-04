@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 SEP 2017 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 SEP 2017 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2159,70 +2159,73 @@ File: ./Diagrams/Sparse_rec_diagram.jpg Graphic file (type jpg)
 
 <use ./Diagrams/Sparse_rec_diagram.jpg>
 Package pdftex.def Info: ./Diagrams/Sparse_rec_diagram.jpg used on input line 4
-04.
+05.
 (pdftex.def)             Requested size: 268.16472pt x 355.6439pt.
- [21 <./Diagrams/Sparse_rec_diagram.jpg>] <./Diagrams/epipolar_line.jpg, id=540
-, 451.6875pt x 183.68625pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Diagrams/epipolar_line.jpg, id=535, 451.6875pt x 183.68625pt>
 File: ./Diagrams/epipolar_line.jpg Graphic file (type jpg)
 
 <use ./Diagrams/epipolar_line.jpg>
-Package pdftex.def Info: ./Diagrams/epipolar_line.jpg used on input line 417.
+Package pdftex.def Info: ./Diagrams/epipolar_line.jpg used on input line 418.
 (pdftex.def)             Requested size: 412.56499pt x 167.78535pt.
 
-Underfull \hbox (badness 1308) in paragraph at lines 418--418
+Underfull \hbox (badness 1308) in paragraph at lines 419--419
  \T1/lmr/m/n/10 taken from []$\T1/fvm/m/n/10 http : / / opencv-[]python-[]tutro
 als . readthedocs . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
+Underfull \hbox (badness 10000) in paragraph at lines 419--419
  \T1/fvm/m/n/10 io / en / latest / py _ tutorials / py _ calib3d / py _ epipola
 r _ 
  []
 
-[22 <./Diagrams/epipolar_line.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21] [22 <./Diagrams/Sparse_rec_diagram.jpg> <./Diagrams/epipolar_line.jpg>]
 <./Diagrams/essential_matrix.jpg, id=554, 451.6875pt x 238.8925pt>
 File: ./Diagrams/essential_matrix.jpg Graphic file (type jpg)
 
 <use ./Diagrams/essential_matrix.jpg>
-Package pdftex.def Info: ./Diagrams/essential_matrix.jpg used on input line 434
+Package pdftex.def Info: ./Diagrams/essential_matrix.jpg used on input line 435
 .
 (pdftex.def)             Requested size: 371.30597pt x 196.3925pt.
 
-Underfull \hbox (badness 3354) in paragraph at lines 435--435
+Underfull \hbox (badness 3354) in paragraph at lines 436--436
  []\T1/lmr/m/sc/10 Figure 2.19: |\T1/lmr/m/n/10 Es-sen-tial Ma-trix. Fig-ure ta
 ken from []$\T1/fvm/m/n/10 http : 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
  \T1/fvm/m/n/10 / / opencv-[]python-[]tutroals . readthedocs . io / en / latest
  / 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
  \T1/fvm/m/n/10 py _ tutorials / py _ calib3d / py _ epipolar _ geometry / py _
  
  []
 
-[23 <./Diagrams/essential_matrix.jpg>]
-<./Diagrams/ScalingCorner.jpg, id=576, 328.22626pt x 135.50626pt>
+[23 <./Diagrams/essential_matrix.jpg>] [24]
+<./Diagrams/ScalingCorner.jpg, id=584, 328.22626pt x 135.50626pt>
 File: ./Diagrams/ScalingCorner.jpg Graphic file (type jpg)
 
 <use ./Diagrams/ScalingCorner.jpg>
-Package pdftex.def Info: ./Diagrams/ScalingCorner.jpg used on input line 490.
+Package pdftex.def Info: ./Diagrams/ScalingCorner.jpg used on input line 491.
 (pdftex.def)             Requested size: 288.79422pt x 119.22931pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[24] <./Diagrams/dif_sizes_corners.jpg, id=592, 451.6875pt x 339.2675pt>
+<./Diagrams/dif_sizes_corners.jpg, id=591, 451.6875pt x 339.2675pt>
 File: ./Diagrams/dif_sizes_corners.jpg Graphic file (type jpg)
 
 <use ./Diagrams/dif_sizes_corners.jpg>
 Package pdftex.def Info: ./Diagrams/dif_sizes_corners.jpg used on input line 50
-3.
+4.
 (pdftex.def)             Requested size: 330.05324pt x 247.92204pt.
 
 
@@ -2233,18 +2236,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./Diagrams/harris_region.png Graphic file (type png)
 
 <use ./Diagrams/harris_region.png>
-Package pdftex.def Info: ./Diagrams/harris_region.png used on input line 557.
+Package pdftex.def Info: ./Diagrams/harris_region.png used on input line 558.
 (pdftex.def)             Requested size: 206.28249pt x 206.28258pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26 <./Diagrams/dif_sizes_corners.jpg>]
-<./Diagrams/shitomasi_space.png, id=625, 421.575pt x 293.095pt>
+<./Diagrams/shitomasi_space.png, id=624, 421.575pt x 293.095pt>
 File: ./Diagrams/shitomasi_space.png Graphic file (type png)
 
 <use ./Diagrams/shitomasi_space.png>
-Package pdftex.def Info: ./Diagrams/shitomasi_space.png used on input line 577.
+Package pdftex.def Info: ./Diagrams/shitomasi_space.png used on input line 578.
 
 (pdftex.def)             Requested size: 288.79422pt x 200.78227pt.
  [27 <./Diagrams/harris_region.png> <./Diagrams/shitomasi_space.png>] [28]
@@ -2253,7 +2256,7 @@ File: ./Diagrams/first_frame_church.png Graphic file (type png)
 
 <use ./Diagrams/first_frame_church.png>
 Package pdftex.def Info: ./Diagrams/first_frame_church.png used on input line 6
-49.
+50.
 (pdftex.def)             Requested size: 412.56499pt x 274.2223pt.
 
 <./Diagrams/first_frame_church_points.png, id=654, 359.9046pt x 240.6591pt>
@@ -2261,7 +2264,7 @@ File: ./Diagrams/first_frame_church_points.png Graphic file (type png)
 
 <use ./Diagrams/first_frame_church_points.png>
 Package pdftex.def Info: ./Diagrams/first_frame_church_points.png used on input
- line 656.
+ line 657.
 (pdftex.def)             Requested size: 412.56499pt x 275.89285pt.
 
 
@@ -2272,7 +2275,7 @@ File: ./Diagrams/last_frame_church.png Graphic file (type png)
 
 <use ./Diagrams/last_frame_church.png>
 Package pdftex.def Info: ./Diagrams/last_frame_church.png used on input line 66
-3.
+4.
 (pdftex.def)             Requested size: 412.56499pt x 273.95317pt.
 
 
@@ -2283,7 +2286,7 @@ File: ./Diagrams/last_frame_church_points.png Graphic file (type png)
 
 <use ./Diagrams/last_frame_church_points.png>
 Package pdftex.def Info: ./Diagrams/last_frame_church_points.png used on input 
-line 670.
+line 671.
 (pdftex.def)             Requested size: 412.56499pt x 273.59259pt.
 
 
@@ -2294,12 +2297,8 @@ File: ./Diagrams/track_points_church.png Graphic file (type png)
 
 <use ./Diagrams/track_points_church.png>
 Package pdftex.def Info: ./Diagrams/track_points_church.png used on input line 
-677.
+678.
 (pdftex.def)             Requested size: 412.56499pt x 274.77911pt.
-
-Overfull \hbox (4.31921pt too wide) in paragraph at lines 677--678
- [][]\T1/lmr/m/n/10.95 s 
- []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2315,14 +2314,14 @@ File: ./Diagrams/lateral_motion_epi.jpg Graphic file (type jpg)
 
 <use ./Diagrams/lateral_motion_epi.jpg>
 Package pdftex.def Info: ./Diagrams/lateral_motion_epi.jpg used on input line 7
-00.
+01.
 (pdftex.def)             Requested size: 247.5415pt x 320.33968pt.
 
 <./Diagrams/EPI_bolles.jpg, id=686, 1203.49625pt x 654.445pt>
 File: ./Diagrams/EPI_bolles.jpg Graphic file (type jpg)
 
 <use ./Diagrams/EPI_bolles.jpg>
-Package pdftex.def Info: ./Diagrams/EPI_bolles.jpg used on input line 707.
+Package pdftex.def Info: ./Diagrams/EPI_bolles.jpg used on input line 708.
 (pdftex.def)             Requested size: 330.05324pt x 179.47862pt.
 
 
@@ -2333,7 +2332,7 @@ File: ./Diagrams/Feature_EPI_bolles.jpg Graphic file (type jpg)
 
 <use ./Diagrams/Feature_EPI_bolles.jpg>
 Package pdftex.def Info: ./Diagrams/Feature_EPI_bolles.jpg used on input line 7
-14.
+15.
 (pdftex.def)             Requested size: 247.5415pt x 270.70398pt.
 
 
@@ -2345,7 +2344,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./EPIs_Strips/EPIs/673_10_102_4_48_8_strip.png Graphic file (type png)
  <use ./EPIs_Strips/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ./EPIs_Strips/EPIs/673_10_102_4_48_8_strip.png used on
- input line 723.
+ input line 724.
 (pdftex.def)             Requested size: 247.5415pt x 168.807pt.
 
 
@@ -2357,7 +2356,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./EPIs_Strips/EPIs/673_10_102_4_48_8_dense.png Graphic file (type png)
  <use ./EPIs_Strips/EPIs/673_10_102_4_48_8_dense.png>
 Package pdftex.def Info: ./EPIs_Strips/EPIs/673_10_102_4_48_8_dense.png used on
- input line 730.
+ input line 731.
 (pdftex.def)             Requested size: 247.5415pt x 187.29823pt.
 
 
@@ -2369,7 +2368,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./EPIs_Strips/EPIs/673_10_102_4_48_8_sparse.png Graphic file (type png)
  <use ./EPIs_Strips/EPIs/673_10_102_4_48_8_sparse.png>
 Package pdftex.def Info: ./EPIs_Strips/EPIs/673_10_102_4_48_8_sparse.png used o
-n input line 737.
+n input line 738.
 (pdftex.def)             Requested size: 247.5415pt x 187.29823pt.
 
 
@@ -3527,10 +3526,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40649 strings out of 493089
- 879139 string characters out of 6134842
- 960287 words of memory out of 5000000
- 42299 multiletter control sequences out of 15000+600000
+ 40660 strings out of 493089
+ 879332 string characters out of 6134842
+ 960425 words of memory out of 5000000
+ 42310 multiletter control sequences out of 15000+600000
  139885 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,22n,80p,10404b,2411s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3560,7 +3559,7 @@ st/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (137 pages, 19069985 bytes).
+Output written on main.pdf (137 pages, 19070293 bytes).
 PDF statistics:
  2536 PDF objects out of 2984 (max. 8388607)
  2159 compressed objects within 22 object streams

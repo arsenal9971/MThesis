@@ -538,7 +538,7 @@ A natural generalization of the concept of orthonormal bases is the concept of f
 \begin{defn}[Frames]
 \label{def:frames}
 \begin{enumerate}
-\item[(1)] A sequence $(\phi_i)_{i\in I}$ in a Hilbert space $\mathcal{H}$ is called a \textbf{frame} for $\mathcal{H}$, if there exist constans $0<A\leq B<\infty$ such that
+\item[(1)] A sequence $(\phi_i)_{i\in I}$ in a Hilbert space $\mathcal{H}$ is called a \textbf{frame} for $\mathcal{H}$, if there exist constants $0<A\leq B<\infty$ such that
 \begin{equation}
 \label{eq:frames}
 A||x||^2\leq \sum_{i\in I}|\langle x,\phi_i\rangle|^2\leq B||x||^2 \text{,  }\forall x\in \mathcal{H}
@@ -1000,7 +1000,7 @@ It is easy to verify that $2^{\alpha_j j/2}\in\Theta(2^{\alpha_j/2})$ as $j\long
 \section{Image inpainting using Shearlet Parseval Frames}
 \label{sec:shearlet_parseval_inpainting}
 
-On the last chapter we explained how one can optimize the light field acquisition by using sparse acquisition setups that reduces the number of images of the scene (sampling rate) that one needs to acquire and still be able to recover the light field, this also reduces the complexity of the EPIs acquisition algorithm but adds a new problem; the EPIs obtained by this sparse acquisition technique are as well sparse so one will truncated straight lines instead of straight lines (see Figure~\ref{fig:sparse_EPI}). 
+On the last previous we explained how one can optimize the light field acquisition by using sparse acquisition setups that reduces the number of images of the scene (sampling rate) that one needs to acquire and still be able to recover the light field, this also reduces the complexity of the EPIs acquisition algorithm but adds a new problem; the EPIs obtained by this sparse acquisition technique are as well sparse so one will truncated straight lines instead of straight lines (see Figure~\ref{fig:sparse_EPI}). 
 
 \begin{figure}[h!]
 \centering
@@ -1009,7 +1009,7 @@ On the last chapter we explained how one can optimize the light field acquisitio
 \label{fig:sparse_EPI}
 \end{figure}
 
-One would like to recover the lost sections of the EPIs, this task is present in different applications on data processing, since frequently the technologies of data acquisition fails resulting on missing traces; in imaging science, this task is referred as \textit{inpainting} by the similiraty of the physical task of restoring a painting. 
+One would like to recover the lost sections of the EPIs, this task is present in different applications on data processing, since frequently the technologies of data acquisition fail resulting on missing traces; in imaging science, this task is referred as \textit{inpainting} by the similiraty of the physical task of restoring a painting. 
 
 \bigskip
 
@@ -1046,7 +1046,7 @@ where the operator $T^*_{\Phi}$ is the so-called synthesis operator associated t
 
 \bigskip
 
-In the \textit{analysis approach} we will consider \textit{analysis coefficients} given by the \textit{analysis operator} $T_{\Phi}x^0=(\langle x^0,\phi_i\rangle)_{i\in I}$, since the frame is assumed to obey the Parseval property, we can perform the reconstruction by $x^0=T^*_{\Phi}(\langle x^0,\phi_i\rangle)_{i\in I}=\sum_{i\in I}\langle x^0,\phi\rangle\phi_i$. $\Phi$ is not necessarily a basis, $T_{\Phi}x^0$ might not be a solution of~\ref{eq:alpha21}, so is not yet clear what does it mean to give a sparse representation in the sense of the analysis approach; to make sense of this we need to use some ideas of \textit{compressed sensing}.
+In the \textit{analysis approach} we will consider \textit{analysis coefficients} given by the \textit{analysis operator} $T_{\Phi}x^0=(\langle x^0,\phi_i\rangle)_{i\in I}$, since the frame is assumed to obey the Parseval property, we can perform the reconstruction by $x^0=T^*_{\Phi}(\langle x^0,\phi_i\rangle)_{i\in I}=\sum_{i\in I}\langle x^0,\phi_i\rangle\phi_i$. $\Phi$ is not necessarily a basis, $T_{\Phi}x^0$ might not be a solution of~\ref{eq:alpha21}, so is not yet clear what does it mean to give a sparse representation in the sense of the analysis approach; to make sense of this we need to use some ideas of \textit{compressed sensing}.
 
 \bigskip
 
