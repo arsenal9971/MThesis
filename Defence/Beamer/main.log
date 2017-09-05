@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 SEP 2017 20:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 SEP 2017 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2699,6 +2699,10 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [54
 
 ]
+
+LaTeX Warning: Command \L invalid in math mode on input line 376.
+
+
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2706,39 +2710,494 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [55
 
 ]
+
+LaTeX Warning: Command \L invalid in math mode on input line 376.
+
+
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [56
 
-]
+] <../../Diagrams/tiling_nocone.jpg, id=507, 461.725pt x 342.27875pt>
+File: ../../Diagrams/tiling_nocone.jpg Graphic file (type jpg)
+
+<use ../../Diagrams/tiling_nocone.jpg>
+Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 39
+2.
+(pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
+
+Overfull \vbox (8.22571pt too high) detected at line 392
+ []
+
+
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [57
 
-]
+ <../../Diagrams/tiling_nocone.jpg>]
+File: ../../Diagrams/tiling_nocone.jpg Graphic file (type jpg)
+ <use ../../Diagrams/tiling_nocone.jpg>
+Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 39
+2.
+(pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
+
+Overfull \vbox (8.22571pt too high) detected at line 392
+ []
+
+
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [58
 
-] <./Images/lf-camera.jpg, id=520, 602.25pt x 402.50375pt>
+] <../../Diagrams/cones.jpg, id=520, 389.455pt x 385.44pt>
+File: ../../Diagrams/cones.jpg Graphic file (type jpg)
+
+<use ../../Diagrams/cones.jpg>
+Package pdftex.def Info: ../../Diagrams/cones.jpg used on input line 404.
+(pdftex.def)             Requested size: 171.14764pt x 169.38239pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[59
+
+ <../../Diagrams/cones.jpg>]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[60
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[61
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[62
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[63
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[64
+
+] <../../Diagrams/alphapartcones.jpg, id=558, 878.28125pt x 278.03876pt>
+File: ../../Diagrams/alphapartcones.jpg Graphic file (type jpg)
+
+<use ../../Diagrams/alphapartcones.jpg>
+Package pdftex.def Info: ../../Diagrams/alphapartcones.jpg used on input line 4
+59.
+(pdftex.def)             Requested size: 342.2953pt x 108.36255pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[65
+
+ <../../Diagrams/alphapartcones.jpg>]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[66
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[67
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[68
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[69
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[70
+
+]
+Overfull \hbox (4.53027pt too wide) detected at line 553
+[] []
+ []
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[71
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[72
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 589.
+
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[73
+
+]
+<../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png, id=623, 340.8735pt x 
+228.25275pt>
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+
+<../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png, id=624, 324.0105pt x 
+240.9pt>
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
+
+<../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png, id=625, 323.70938pt 
+x 240.9pt>
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
+pe png)
+ <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
+ng used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
+
+<../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png, id=626, 358.
+63988pt x 265.29112pt>
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[74
+
+ <../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png> <../../Diagrams/resu
+lts/EPIs/673_10_102_7_48_8_dense.png> <../../Diagrams/results/EPIs/673_10_102_7
+_48_8_sparse.png> <../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted
+.png>]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
+e png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
+pe png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
+ng used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[75
+
+]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
+e png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
+pe png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
+ng used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[76
+
+]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
+e png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
+g used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
+File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
+pe png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
+ng used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 617.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[77
+
+]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+
+<../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png, id=655
+, 867.24pt x 650.43pt>
+File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
+aphic file (type png)
+
+<use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
+Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
+7_48_8_lines.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
+
+<../../Diagrams/church_depth_0034.png, id=656, 4022.02625pt x 2631.8325pt>
+File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
+
+<use ../../Diagrams/church_depth_0034.png>
+Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
+e 644.
+(pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[78
+
+ <../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png> <../.
+./Diagrams/church_depth_0034.png (PNG copy)>]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+
+<use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
+aphic file (type png)
+
+<use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
+Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
+7_48_8_lines.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
+File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
+
+<use ../../Diagrams/church_depth_0034.png>
+Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
+e 644.
+(pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[79
+
+]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
+aphic file (type png)
+
+<use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
+Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
+7_48_8_lines.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
+File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
+
+<use ../../Diagrams/church_depth_0034.png>
+Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
+e 644.
+(pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+Package atenddvi Info: Last page = 80.
+[80
+
+]
+File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
+e png)
+ <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
+Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
+g used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
+File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
+file (type png)
+
+<use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
+Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
+ainted.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
+File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
+aphic file (type png)
+
+<use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
+Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
+7_48_8_lines.png used on input line 644.
+(pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
+File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
+
+<use ../../Diagrams/church_depth_0034.png>
+Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
+e 644.
+(pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
+
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[81
+
+]
+Overfull \hbox (65.52644pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[82
+
+] <./Images/lf-camera.jpg, id=689, 602.25pt x 402.50375pt>
 File: ./Images/lf-camera.jpg Graphic file (type jpg)
 
 <use ./Images/lf-camera.jpg>
-Package pdftex.def Info: ./Images/lf-camera.jpg used on input line 369.
+Package pdftex.def Info: ./Images/lf-camera.jpg used on input line 660.
 (pdftex.def)             Requested size: 273.83728pt x 183.0228pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-Package atenddvi Info: Last page = 59.
-[59
+[83
 
  <./Images/lf-camera.jpg>])
 \tf@nav=\write6
@@ -2752,7 +3211,11 @@ Package atenddvi Info: Last page = 59.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 34.
- (./main.aux)
+ (./main.aux
+
+Package atenddvi Warning: Rerun LaTeX, last page has changed.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -2763,47 +3226,54 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 35435 strings out of 493089
- 700036 string characters out of 6134842
- 858739 words of memory out of 5000000
- 38045 multiletter control sequences out of 15000+600000
- 31801 words of font info for 104 fonts, out of 8000000 for 9000
+ 35577 strings out of 493089
+ 703314 string characters out of 6134842
+ 861739 words of memory out of 5000000
+ 38125 multiletter control sequences out of 15000+600000
+ 37657 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,70p,10410b,742s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/zapfding/uzdr
-.pfb>
-Output written on main.pdf (59 pages, 8243378 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (83 pages, 11055118 bytes).
 PDF statistics:
- 613 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 120 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 809 PDF objects out of 1000 (max. 8388607)
+ 618 compressed objects within 7 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -148,42 +148,85 @@ $A$ and $B$ are called lower and upper frame bound. Moreover, if $A$ and $B$ can
 
 - [There are different approaches to tackle the inpainting task, but we will use the one based on applied harmonic analysis combined with ideas of compressed sensing, this approach usually asumes that we know the positions and shape of the lost areas (referred as masks)].
 - Let $\mathcal{H}$ a separable Hilbert space and $x^0\in\mathcal{H}=\mathcal{H}_K\oplus\mathcal{H}_M=P_K\mathcal{H}\oplus P_M\mathcal{H}$. Then, given a corrupt signal $P_K x^0$, we want to recover the missing part $P_Mx^0$.
-- In image inpanting $\mathcal{H}=L^2(\mathbb{R}^2)$, the missing space $H_M=L^2(\mathcal{M})$ for some measurable set $\mathcal{M}\subset \mathbb{R}^2$ [seen as a mask covering the corrupted parts]. 
+- In image inpanting $\mathcal{H}=L^2(\mathbb{R}^2)$, the missing space $H_M=L^2(\mathcal{M})$ for some measurable set $\mathcal{M}\subset \mathbb{R}^2$.Given $x_k\in \mathcal{H}K$ we want to find $x^0\in\mathcal{H}$ such that $x_K=P_Kx^0$ (underdetermined problem). [seen as a mask covering the corrupted parts]. 
+- [So is basically a separation problem where x and x_K are morphologically different].
 - We will assume that $x^0$ can be efficiently represented by some Parseval frame $\Phi=(\phi_i){i\in I}$ for $\mathcal{H}$, this is translated as asking for the solution of the $\ell^0-$minimization problem [give the problem and explain the $\ell^0$ norm].
 - [Explain that this minimization problem is not convex, so it is a big issue in the solution method].
 
 ### Slide 17.5.4: Analysis Approach.
 
-\begin{algorithm}[h!]
-    \SetKwInOut{Input}{Input}
-    \SetKwInOut{Output}{Output}
-		\SetKwInOut{Compute}{Compute}
+- [Show the new approach that can be interpreted as the $\ell^1$ relaxation of the original problem, explain that Algorithm 1 minimizes the $\ell^1$ norm among all possible reconstruction candidates, since $T{\Phi}$ gives you the frame coefficients of the candidates, and that the error can be estimated using Compressed sensing tools as $\delta$-cluster sparsity, Cluster coherence, which broadly says that if $\Phi$ sparsifies $x^0$ and the missing space does not contain important information of the signal then the algorithm outputs a good, the measurement is sufficiently decoherent, it also can be seen as a separation problem sinusoids and spike sampled at $n$ points.]
 
-    \Input{Corrupted signal $P_Kx^0\in\mathcal{H}_K$, Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$}
-		\Compute{\begin{equation}
-			x^*=\underset{x\in\mathcal{H}}{\text{argmin}}||T_{\Phi}x||_{\ell^1(I)} \quad\textrm{subject to}\quad P_Kx^0=P_Kx
-			\tag{$\ell^1-\text{INP}$}
-		\label{eq:alphal1}
-		\end{equation}}
-    \Output{recovered signal $x^*\in\mathcal{H}$}
-    \caption{Inpainting via $\ell^1$-minimization}
-		\label{alg:alpha21}
-\end{algorithm}
+- [$\delta$-cluster sparisty: $\Gamma\subset I$, x is called $\delta$-clustered sparse in $\Phi$ with respect to $\Gamma$, if $||1{\Gamma^c}T{\Phi}x||\leq \delta$, and $\Gamma$ is a $\delta$-cluster for $x$ in $\Phi$, i.e. the analysis coefficients are highly concentrated on $\Gamma$. Cluster coherende $\mu_c(\Gamma,P_M\Phi)=max_j\in I\sum_i\in\Gamma |\langle P_M\Phi_i,P_M\Phi_j\rangle|$, where $P_M\Phi:=(P_M\phi_i)i\in I$, (abstract cmeasure for the gap size, maximal amound of missing information; We use the fact that is a parseval frame when defining a good norm to measure the error, $\ell^1$ analysis norm, since parseval frame has injective analysis operator and therefore the $\ell^1$ analysis norm define a Hilbert space, and is embedded in $\mathcal{H}$ so small recovery erros in the analysis norm imply small recovery error in the original space. ]
 
-### Slide 18: Cone Adapted Shearlets.
+- [We want know to choose a suitable representation systems which provides an optimally sparse representations of principally two morphologically distinct components, points and curves; present result by donoho, and wavelets case, explain why it is not sufficient just doind isotropic scaling in natural images].
 
-### Slide 19: Universal Shearlets and $\alpha$-Shearlets.
+### Slide 18.1: Shearlets.
+
+- [Explain one solution, the shearing operator, the parabolic scaling operator]. 
+- [Show the Discrete shearlet transform].
+
+### Slide 18.2: Classical Shearlets.
+
+- [Show the Classical Shearlets, how to pick the generating function in order to generate a Parseval frame]
+- [Show the frequency tiling of the classical shearlets, not uniform at all, is very biased towards the $\xi_2$-axis, that will lead to some issues when trying to analyze singularities aligend with the $x_1$-axis]
+
+### Slide 18.3: Cone Adapted Shearlets.
+
+- [Show the soution, explain the functions, and how to choose them in order to get a Parseval frame (compactly supported)].
+
+### Slide 19.1: Universal Shearlets and $0$-Shearlets.
+
+- Parabolic scaling is well suited to approximate functions with singularities over parabolic curves; we would like to inpaint the EPIs that have singularities over lines.
+- For more flexibility on the "level of anisotropy" of the functions that one would like to approximate, one can use a different scaling parameter in each scale (scaling sequence), $(\alpha_j){j\in I}\subseteq (-\infty,2)$, with associated scaling matrices 
+$$
+A{j,\alpha_j} = \left( \begin{matrix} 2^j & 0 \\ 0 & 2^{\alpha_j j/2}\end{matrix}\right)
+$$
+
+- With $A_{j,\alpha_j}_$ we can define the \textbf{Universal Shearlet System} (Kutyniok, Genzel, 2014), a generalization of the cone-adapted shearlet system for different level of anisotropy [and also permits a unified treatment of wavelets, shearlets, curvelets and ridgelets].
+
+### Slide 19.2: Untitled
+
+- [Present the Schwartz Functions Space].
+- [The Meyer and Corona Scaling Functions, explain that it can be interpreted as the wavelet-like function considered in the Classical Shearlets construction.]
+
+### Slide 19.3: Untitled
+- [As in the classical shearlets one define a bump-like function].
+- [Show the Meyer function, the Corona Shaped domains, and the cones, explain that for the same reason than in the classical shearlets one uses the cone-adapted approach].   
+
+### Slide 19.4: Untitled
+- [Show the new scaling and shearing Matrices for each scale, cone, and scaling parameter]
+- [Show the Adapted cone functions, using the bump functions in each cone]
+
+### Slide 19.5 and 19.6...: Untitled
+- [Show the ingredients, coarse scaling functions, Interior functions, boundary shearlets]
+- [Explain that to make the Fourier transform continuous (and then cover the fourier domain) the exponent $2^{(2-\alpha_j)j/2$ needs to be integer-valued, therefore one define a set of permited scaling parameters].
+
+- [Show the ingredients of the Universal Shearlet Transform].
+
+- [Show the form of the universal Shearlet transform].
+- [Show that it also constitutes a Parseval frame].
+- [Mention that for the implementation on julia one just need to select the scaling levels segun the bound of $|k|$ to perform it].
+- [Mention that when selecting $\alpha_j=1$ then you have Cone-adapted shearlets, by selecting $\alpha_j=2$ you obtain the wavelets].
+
+- [Show the 0-shearlets that approximate lines, maximum anisotropic].
 
 ### Slide 20: Shearlet-based inpaiting with iterative hard thresholding.
 
-### Slide 21: Line detection and depth map estimation.
+- [Show the algorithm, explain the synthesis and analysis operator, the thresholding operator, mostly how it works, and that choosing $\alpha_n=1$ is quite slow, but with $\alpha$ too high it has instability]
 
-### Slide 22: Results and performance benchmarking.
+- [Show the results on image inpainting results with disparity of $7pix$ and 16pix band].
+
+### Slide 21: Results on line detection and depth map estimation.
+
+- [Show them the results on line detection using Hough line detector and a depth map]
 
 ### Slide 23: Conclusions and outlook.
+
+- [On the next pages].
 
 ### Slide 24: Thanks. 
 
 
-[Explanation of Shi-Tomasi Corner detector, Lucas-Kanade algorithm and Hough Line transform]:
+[Explanation of Shi-Tomasi Corner detector, Lucas-Kanade algorithm and Hough Line transform, in the next pages]:
 
