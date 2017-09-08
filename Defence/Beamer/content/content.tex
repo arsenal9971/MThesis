@@ -37,12 +37,12 @@
 
 \bigskip
 \pause
-\item Compressed sensing techniques ($\ell^1$ optimization algorithms). 
+\item Compressed sensing techniques ($\ell^1$ optimization algorithms for inverse problems). 
 \end{itemize}
 \end{block}
 \end{frame}
 
-\begin{frame}{Light Field Thoery}
+\begin{frame}{Light Field Theory}
 \begin{block}{}
 \begin{itemize}
 
@@ -55,7 +55,7 @@
 \pause
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.25\textwidth]{../../Diagrams/Plenoptic_function.jpg}
+\includegraphics[width=0.3\textwidth]{../../Diagrams/Plenoptic_function.jpg}
 \end{figure}
 
 \pause
@@ -76,46 +76,6 @@
 \includegraphics[width=0.5\textwidth]{../../Diagrams/two-planes_param.jpg}
 \caption{Used representation: "Two plane parametrization".}
 \label{fig:C2S0F3}
-\end{figure}
-\end{frame}
-
-\begin{frame}{}
-
-\begin{center}
-\textbf{\huge{Motivation}}
-\end{center}
-
-\end{frame}
-
-
-\begin{frame}{Compression of High Resoluation Light Field (Wetzstein et al., 2013)}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{./images/compressed_light_field.pdf}
-\label{fig:C2S0F3}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Raytrix (Perwass and Wietzke, 2010)}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\textwidth]{../../Diagrams/raytrix.jpg}
-\label{fig:C2S0F3}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Lytro (Ng, 2012)}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\textwidth]{../../Diagrams/lytro.jpg}
-\label{fig:C2S0F3}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Shearlet Representation of LF (Vagharshakyan et al., 2015)}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\textwidth]{./images/LightField_Shearlet.pdf}
 \end{figure}
 \end{frame}
 
@@ -164,23 +124,6 @@ code and data, that produced the result.
 \includegraphics[width=0.90\textwidth]{../../Diagrams/EPI-dices.jpg}
 \end{figure}
 
-\end{frame}
-
-\begin{frame}{Functional Analysis of EPIs}
-\begin{block}{}
-\begin{itemize}
-\item \textbf{3D Light Field:} Fixing one coordinate in the focal $st$-plane $\pi_0$ of the two-parallel plane approach of 4D Light Field, one reduces the $\pi_0$ to a line, and the resulting field $L_3:\mathbb{R}^3\longrightarrow \mathbb{R}^3$ is called 3D Light Field with radiance $\mathbf{r}=L_3(u,v,s)$.
-
-\pause
-\item \textbf{Epipolar Plane Image:} By fixing on the 3D Light Field $L_3$ the $v$-coordinate on the image $uv$-plane one obtain the field $E_v:\mathbb{R}^2\longrightarrow \mathbb{R}^3$ known as the Epipolar Plane Image with radiance $\mathbf{r}=E_v(u,s)$.
-
-\pause
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.25\textwidth]{../../Diagrams/block1.jpg}
-\end{figure}
-\end{itemize}
-\end{block}
 \end{frame}
 
 \begin{frame}{Depth map Estimation with EPIs}
@@ -288,7 +231,7 @@ $A$ and $B$ are called lower and upper frame bound. Moreover, if $A$ and $B$ can
 \begin{block}{Analysis, synthesis and frame operator}
 $T:\mathcal{H}\longrightarrow\ell_2(I)$ given by $f\mapsto (\langle f,\phi_i\rangle )_{i\in I}$ is called \textbf{the analysis operator}, and $T^*:\ell_2(I)\longrightarrow\mathcal{H}$, given by $(c_i)_{i\in I}\mapsto \sum_{i\in I}c_i\phi_i$ is called \textbf{the synthesis operator}.
 
-$S=T^*T:\mathcal{H}\longrightarrow \mathcal{H}$, given by $f\mapsto \sum_{i\in I}\langle f,\phi\rangle \phi$ is called \textbf{the frame operator} and is an ivertible operator. 
+$S=T^*T:\mathcal{H}\longrightarrow \mathcal{H}$, given by $f\mapsto \sum_{i\in I}\langle f,\phi_i\rangle \phi_i$ is called \textbf{the frame operator} and is an ivertible operator. 
 \end{block}
 
 \pause
@@ -312,9 +255,9 @@ $$
 \item In image inpanting $\mathcal{H}=L^2(\mathbb{R}^2)$, the missing space $H_M=L^2(\mathcal{M})$ for some measurable set $\mathcal{M}\subset \mathbb{R}^2$. Given $x_k\in \mathcal{H}_K$ we want to find $x^0\in\mathcal{H}$ such that $x_K=P_Kx^0$ (underdetermined problem).
 \bigskip
 \pause
-\item We will assume that $x^0$ can be efficiently represented by some Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$, this is translated as asking for the solution of the $\ell^0-$minimization problem
+\item We will assume that $x^0$ can be efficiently represented by some Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$, the inpainting will be translated as asking for the solution of the $\ell^0-$minimization problem
 $$
-\underset{c\in\ell^2(I)}{\min}||c||_{\ell^0(I)}\quad\textrm{subject to}\quad x^0=T_{\Phi}^*c=\sum_{i\in I}c_i\phi_i
+\underset{c\in\ell^2(I)}{\min}||c||_{\ell^0(I)}\quad\textrm{subject to}\quad P_K x^0=P_KT_{\Phi}^*c=\sum_{i\in I}c_iP_K\phi_i
 $$
 \end{itemize}
 \end{block}
@@ -329,7 +272,7 @@ $$
 
     \Input{Corrupted signal $P_Kx^0\in\mathcal{H}_K$, Parseval frame $\Phi=(\phi_i)_{i\in I}$ for $\mathcal{H}$}
 		\Compute{\begin{equation}
-			x^*=\underset{x\in\mathcal{H}}{\text{argmin}}||T_{\Phi}x||_{\ell^1(I)} \quad\textrm{subject to}\quad P_Kx^0=P_Kx
+			x^*=\underset{x\in\mathcal{H}}{\text{argmin}}||T_{\Phi}x||_{\ell^1(I)} \quad\textrm{subject to}\quad P_Kx^*=P_Kx^0=x_K
 			\tag{$\ell^1-\text{INP}$}
 		\end{equation}}
     \Output{recovered signal $x^*\in\mathcal{H}$}
@@ -577,7 +520,7 @@ We used the $0$-Shearlets System as the selected sparsifying system for the spar
 					   $\beta_0 := T_{\Gamma_0}(y-Mx_0)$;\\
 						 $\alpha_0 =\frac{||\beta_0||_2^2}{||MT^*(\beta_0)||_2^2}$;\\
 						 \textbf{for} $n:=0$ \textbf{to} (iterations-1) \textbf{do}\\
-							 \hspace{5mm} $x_{n+1}=T^*(Thr_{\delta_n}(S(x_n+\alpha_n(y-Mx_n))))$;\\
+							 \hspace{5mm} $x_{n+1}=T^*(Thr_{\delta_n}(T(x_n+\alpha_n(y-Mx_n))))$;\\
 							 \hspace{5mm} $\Gamma_{n+1} := \textrm{supp}(T(x_{n+1}))$;\\
 					     \hspace{5mm} $\beta_{n+1} := T_{\Gamma_{n+1}}(y-Mx_{n+1})$;\\
 						 	 \hspace{5mm} $\alpha_{n+1}: =\frac{||\beta_{n+1}||_2^2}{||MT^*(\beta_{n+1})||}$;\\
