@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 SEP 2017 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 SEP 2017 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1930,7 +1930,7 @@ s/bms-logo-button.png> <./images/tub_logo.png>])
 (./content/content.tex
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 23.
+(Font)              size <5> substituted on input line 24.
 
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2000,10 +2000,10 @@ File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/Plenoptic_function.jpg>
 Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
-ne 66.
+ne 67.
 (pdftex.def)             Requested size: 102.68962pt x 95.68825pt.
 
-Overfull \vbox (3.51021pt too high) detected at line 66
+Overfull \vbox (3.51021pt too high) detected at line 67
  []
 
 
@@ -2018,10 +2018,10 @@ File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/Plenoptic_function.jpg>
 Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
-ne 66.
+ne 67.
 (pdftex.def)             Requested size: 102.68962pt x 95.68825pt.
 
-Overfull \vbox (3.51021pt too high) detected at line 66
+Overfull \vbox (3.51021pt too high) detected at line 67
  []
 
 
@@ -2035,10 +2035,10 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
  <use ../../Diagrams/Plenoptic_function.jpg>
 Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
-ne 66.
+ne 67.
 (pdftex.def)             Requested size: 102.68962pt x 95.68825pt.
 
-Overfull \vbox (3.51021pt too high) detected at line 66
+Overfull \vbox (3.51021pt too high) detected at line 67
  []
 
 
@@ -2052,10 +2052,10 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 File: ../../Diagrams/Plenoptic_function.jpg Graphic file (type jpg)
  <use ../../Diagrams/Plenoptic_function.jpg>
 Package pdftex.def Info: ../../Diagrams/Plenoptic_function.jpg used on input li
-ne 66.
+ne 67.
 (pdftex.def)             Requested size: 102.68962pt x 95.68825pt.
 
-Overfull \vbox (3.51021pt too high) detected at line 66
+Overfull \vbox (3.51021pt too high) detected at line 67
  []
 
 
@@ -2071,7 +2071,7 @@ File: ../../Diagrams/Light-field-parametrizations.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/Light-field-parametrizations.jpg>
 Package pdftex.def Info: ../../Diagrams/Light-field-parametrizations.jpg used o
-n input line 80.
+n input line 81.
 (pdftex.def)             Requested size: 273.83728pt x 45.12631pt.
 
 <../../Diagrams/two-planes_param.jpg, id=122, 385.9218pt x 232.7094pt>
@@ -2079,10 +2079,10 @@ File: ../../Diagrams/two-planes_param.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/two-planes_param.jpg>
 Package pdftex.def Info: ../../Diagrams/two-planes_param.jpg used on input line
- 80.
+ 81.
 (pdftex.def)             Requested size: 171.14764pt x 103.20204pt.
 
-Overfull \vbox (11.10223pt too high) detected at line 80
+Overfull \vbox (11.10223pt too high) detected at line 81
  []
 
 
@@ -2097,16 +2097,16 @@ aram.jpg>]
 File: ../../Diagrams/Light-field-parametrizations.jpg Graphic file (type jpg)
  <use ../../Diagrams/Light-field-parametrizations.jpg>
 Package pdftex.def Info: ../../Diagrams/Light-field-parametrizations.jpg used o
-n input line 80.
+n input line 81.
 (pdftex.def)             Requested size: 273.83728pt x 45.12631pt.
 File: ../../Diagrams/two-planes_param.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/two-planes_param.jpg>
 Package pdftex.def Info: ../../Diagrams/two-planes_param.jpg used on input line
- 80.
+ 81.
 (pdftex.def)             Requested size: 171.14764pt x 103.20204pt.
 
-Overfull \vbox (11.10223pt too high) detected at line 80
+Overfull \vbox (11.10223pt too high) detected at line 81
  []
 
 
@@ -2116,18 +2116,26 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [16
 
-]
+] <./images/LightField_Shearlet.pdf, id=136, 530.80762pt x 221.8675pt>
+File: ./images/LightField_Shearlet.pdf Graphic file (type pdf)
+
+<use ./images/LightField_Shearlet.pdf>
+Package pdftex.def Info: ./images/LightField_Shearlet.pdf used on input line 98
+.
+(pdftex.def)             Requested size: 273.83728pt x 114.46107pt.
+
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [17
 
-] <../../Diagrams/epipolarline.jpg, id=144, 486.81876pt x 293.095pt>
+ <./images/LightField_Shearlet.pdf>]
+<../../Diagrams/epipolarline.jpg, id=188, 486.81876pt x 293.095pt>
 File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/epipolarline.jpg>
-Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 113
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 118
 .
 (pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
@@ -2140,7 +2148,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  <../../Diagrams/epipolarline.jpg>]
 File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
  <use ../../Diagrams/epipolarline.jpg>
-Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 113
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 118
 .
 (pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
@@ -2153,7 +2161,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 ]
 File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
  <use ../../Diagrams/epipolarline.jpg>
-Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 113
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 118
 .
 (pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
@@ -2166,7 +2174,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 ]
 File: ../../Diagrams/epipolarline.jpg Graphic file (type jpg)
  <use ../../Diagrams/epipolarline.jpg>
-Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 113
+Package pdftex.def Info: ../../Diagrams/epipolarline.jpg used on input line 118
 .
 (pdftex.def)             Requested size: 177.99501pt x 107.16437pt.
 
@@ -2176,21 +2184,21 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [21
 
-] <../../Diagrams/perp-move.jpg, id=171, 233.1493pt x 160.8793pt>
+] <../../Diagrams/perp-move.jpg, id=214, 233.1493pt x 160.8793pt>
 File: ../../Diagrams/perp-move.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/perp-move.jpg>
-Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 127.
+Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 132.
 (pdftex.def)             Requested size: 154.03183pt x 106.28867pt.
 
-<../../Diagrams/EPI-dices.jpg, id=172, 744.7825pt x 300.12125pt>
+<../../Diagrams/EPI-dices.jpg, id=215, 744.7825pt x 300.12125pt>
 File: ../../Diagrams/EPI-dices.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/EPI-dices.jpg>
-Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 127.
+Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 132.
 (pdftex.def)             Requested size: 308.06367pt x 124.14041pt.
 
-Overfull \vbox (23.15851pt too high) detected at line 127
+Overfull \vbox (23.15851pt too high) detected at line 132
  []
 
 
@@ -2204,14 +2212,14 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 File: ../../Diagrams/perp-move.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/perp-move.jpg>
-Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 127.
+Package pdftex.def Info: ../../Diagrams/perp-move.jpg used on input line 132.
 (pdftex.def)             Requested size: 154.03183pt x 106.28867pt.
 File: ../../Diagrams/EPI-dices.jpg Graphic file (type jpg)
  <use ../../Diagrams/EPI-dices.jpg>
-Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 127.
+Package pdftex.def Info: ../../Diagrams/EPI-dices.jpg used on input line 132.
 (pdftex.def)             Requested size: 308.06367pt x 124.14041pt.
 
-Overfull \vbox (23.15851pt too high) detected at line 127
+Overfull \vbox (23.15851pt too high) detected at line 132
  []
 
 
@@ -2221,11 +2229,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [23
 
-] <../../Diagrams/stereo-dist.jpg, id=185, 237.54836pt x 202.98444pt>
+] <../../Diagrams/stereo-dist.jpg, id=228, 237.54836pt x 202.98444pt>
 File: ../../Diagrams/stereo-dist.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/stereo-dist.jpg>
-Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 141.
+Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 146.
 
 (pdftex.def)             Requested size: 171.14764pt x 146.24467pt.
 
@@ -2238,7 +2246,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  <../../Diagrams/stereo-dist.jpg>]
 File: ../../Diagrams/stereo-dist.jpg Graphic file (type jpg)
  <use ../../Diagrams/stereo-dist.jpg>
-Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 141.
+Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 146.
 
 (pdftex.def)             Requested size: 171.14764pt x 146.24467pt.
 
@@ -2251,7 +2259,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 ]
 File: ../../Diagrams/stereo-dist.jpg Graphic file (type jpg)
  <use ../../Diagrams/stereo-dist.jpg>
-Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 141.
+Package pdftex.def Info: ../../Diagrams/stereo-dist.jpg used on input line 146.
 
 (pdftex.def)             Requested size: 171.14764pt x 146.24467pt.
 
@@ -2261,11 +2269,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [26
 
-] <../../Diagrams/setting.jpg, id=206, 900.36375pt x 506.89375pt>
+] <../../Diagrams/setting.jpg, id=249, 900.36375pt x 506.89375pt>
 File: ../../Diagrams/setting.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/setting.jpg>
-Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 155.
+Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 160.
 (pdftex.def)             Requested size: 205.37926pt x 115.62402pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2277,7 +2285,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  <../../Diagrams/setting.jpg>]
 File: ../../Diagrams/setting.jpg Graphic file (type jpg)
  <use ../../Diagrams/setting.jpg>
-Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 155.
+Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 160.
 (pdftex.def)             Requested size: 205.37926pt x 115.62402pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2289,7 +2297,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 ]
 File: ../../Diagrams/setting.jpg Graphic file (type jpg)
  <use ../../Diagrams/setting.jpg>
-Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 155.
+Package pdftex.def Info: ../../Diagrams/setting.jpg used on input line 160.
 (pdftex.def)             Requested size: 205.37926pt x 115.62402pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2298,20 +2306,20 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [29
 
-] <../../Diagrams/first_frame_church.png, id=225, 357.7365pt x 237.7683pt>
+] <../../Diagrams/first_frame_church.png, id=268, 357.7365pt x 237.7683pt>
 File: ../../Diagrams/first_frame_church.png Graphic file (type png)
 
 <use ../../Diagrams/first_frame_church.png>
 Package pdftex.def Info: ../../Diagrams/first_frame_church.png used on input li
-ne 169.
+ne 174.
 (pdftex.def)             Requested size: 167.72658pt x 111.479pt.
 
-<../../Diagrams/last_frame_church.png, id=226, 359.1819pt x 238.491pt>
+<../../Diagrams/last_frame_church.png, id=269, 359.1819pt x 238.491pt>
 File: ../../Diagrams/last_frame_church.png Graphic file (type png)
 
 <use ../../Diagrams/last_frame_church.png>
 Package pdftex.def Info: ../../Diagrams/last_frame_church.png used on input lin
-e 169.
+e 174.
 (pdftex.def)             Requested size: 171.14764pt x 113.64102pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2325,13 +2333,13 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 File: ../../Diagrams/first_frame_church.png Graphic file (type png)
  <use ../../Diagrams/first_frame_church.png>
 Package pdftex.def Info: ../../Diagrams/first_frame_church.png used on input li
-ne 169.
+ne 174.
 (pdftex.def)             Requested size: 167.72658pt x 111.479pt.
 File: ../../Diagrams/last_frame_church.png Graphic file (type png)
 
 <use ../../Diagrams/last_frame_church.png>
 Package pdftex.def Info: ../../Diagrams/last_frame_church.png used on input lin
-e 169.
+e 174.
 (pdftex.def)             Requested size: 171.14764pt x 113.64102pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2340,11 +2348,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [31
 
-] <./images/pipeline.jpg, id=242, 504.88625pt x 720.6925pt>
+] <./images/pipeline.jpg, id=285, 504.88625pt x 720.6925pt>
 File: ./images/pipeline.jpg Graphic file (type jpg)
 
 <use ./images/pipeline.jpg>
-Package pdftex.def Info: ./images/pipeline.jpg used on input line 177.
+Package pdftex.def Info: ./images/pipeline.jpg used on input line 182.
 (pdftex.def)             Requested size: 136.91603pt x 195.43634pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2354,19 +2362,19 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [32
 
  <./images/pipeline.jpg>]
-<../../Diagrams/first_frame_church_points.png, id=249, 359.9046pt x 240.6591pt>
+<../../Diagrams/first_frame_church_points.png, id=292, 359.9046pt x 240.6591pt>
 File: ../../Diagrams/first_frame_church_points.png Graphic file (type png)
 <use ../../Diagrams/first_frame_church_points.png>
 Package pdftex.def Info: ../../Diagrams/first_frame_church_points.png used on i
-nput line 191.
+nput line 196.
 (pdftex.def)             Requested size: 167.72658pt x 112.15503pt.
 
-<../../Diagrams/track_points_church.png, id=250, 513.92pt x 342.27875pt>
+<../../Diagrams/track_points_church.png, id=293, 513.92pt x 342.27875pt>
 File: ../../Diagrams/track_points_church.png Graphic file (type png)
 
 <use ../../Diagrams/track_points_church.png>
 Package pdftex.def Info: ../../Diagrams/track_points_church.png used on input l
-ine 191.
+ine 196.
 (pdftex.def)             Requested size: 171.14764pt x 113.98643pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2380,13 +2388,13 @@ urch.png>]
 File: ../../Diagrams/first_frame_church_points.png Graphic file (type png)
  <use ../../Diagrams/first_frame_church_points.png>
 Package pdftex.def Info: ../../Diagrams/first_frame_church_points.png used on i
-nput line 191.
+nput line 196.
 (pdftex.def)             Requested size: 167.72658pt x 112.15503pt.
 File: ../../Diagrams/track_points_church.png Graphic file (type png)
 
 <use ../../Diagrams/track_points_church.png>
 Package pdftex.def Info: ../../Diagrams/track_points_church.png used on input l
-ine 191.
+ine 196.
 (pdftex.def)             Requested size: 171.14764pt x 113.98643pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2396,34 +2404,34 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [34
 
 ]
-<../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png, id=265, 374.90062pt x 255.
+<../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png, id=308, 374.90062pt x 255.
 65512pt>
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png Graphic file (type png
 )
  <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 105.03772pt.
 
-<../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png, id=266, 374.90062pt x 283.
+<../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png, id=309, 374.90062pt x 283.
 65974pt>
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png Graphic file (type png
 )
  <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 
-<../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png, id=267, 374.90062pt x 283
+<../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png, id=310, 374.90062pt x 283
 .65974pt>
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png Graphic file (type pn
 g)
  <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png us
-ed on input line 210.
+ed on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 
-Overfull \vbox (14.31078pt too high) detected at line 210
+Overfull \vbox (14.31078pt too high) detected at line 215
  []
 
 
@@ -2440,24 +2448,24 @@ File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png Graphic file (type png
 )
  <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 105.03772pt.
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png Graphic file (type png
 )
 
 <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png Graphic file (type pn
 g)
 
 <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png us
-ed on input line 210.
+ed on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 
-Overfull \vbox (14.31078pt too high) detected at line 210
+Overfull \vbox (14.31078pt too high) detected at line 215
  []
 
 
@@ -2472,24 +2480,24 @@ File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png Graphic file (type png
 )
  <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_strip.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 105.03772pt.
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png Graphic file (type png
 )
 
 <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_dense.png use
-d on input line 210.
+d on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 File: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png Graphic file (type pn
 g)
 
 <use ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png>
 Package pdftex.def Info: ../../EPIs_strips/EPIs/673_10_102_4_48_8_sparse.png us
-ed on input line 210.
+ed on input line 215.
 (pdftex.def)             Requested size: 154.03183pt x 116.54362pt.
 
-Overfull \vbox (14.31078pt too high) detected at line 210
+Overfull \vbox (14.31078pt too high) detected at line 215
  []
 
 
@@ -2499,11 +2507,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [37
 
-] <../../Diagrams/sparse_EPI.jpg, id=290, 264.5082pt x 222.1098pt>
+] <../../Diagrams/sparse_EPI.jpg, id=334, 264.5082pt x 222.1098pt>
 File: ../../Diagrams/sparse_EPI.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/sparse_EPI.jpg>
-Package pdftex.def Info: ../../Diagrams/sparse_EPI.jpg used on input line 218.
+Package pdftex.def Info: ../../Diagrams/sparse_EPI.jpg used on input line 223.
 (pdftex.def)             Requested size: 239.60567pt x 201.20178pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2570,7 +2578,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 ]
 
-LaTeX Warning: Command \L invalid in math mode on input line 319.
+LaTeX Warning: Command \L invalid in math mode on input line 334.
 
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2581,7 +2589,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 ]
 
-LaTeX Warning: Command \L invalid in math mode on input line 319.
+LaTeX Warning: Command \L invalid in math mode on input line 334.
 
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2590,15 +2598,15 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [48
 
-] <../../Diagrams/tiling_nocone.jpg, id=364, 461.725pt x 342.27875pt>
+] <../../Diagrams/tiling_nocone.jpg, id=407, 461.725pt x 342.27875pt>
 File: ../../Diagrams/tiling_nocone.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/tiling_nocone.jpg>
-Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 33
-5.
+Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 35
+0.
 (pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
 
-Overfull \vbox (8.22571pt too high) detected at line 335
+Overfull \vbox (8.22571pt too high) detected at line 350
  []
 
 
@@ -2611,11 +2619,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
  <../../Diagrams/tiling_nocone.jpg>]
 File: ../../Diagrams/tiling_nocone.jpg Graphic file (type jpg)
  <use ../../Diagrams/tiling_nocone.jpg>
-Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 33
-5.
+Package pdftex.def Info: ../../Diagrams/tiling_nocone.jpg used on input line 35
+0.
 (pdftex.def)             Requested size: 136.91603pt x 101.49362pt.
 
-Overfull \vbox (8.22571pt too high) detected at line 335
+Overfull \vbox (8.22571pt too high) detected at line 350
  []
 
 
@@ -2625,11 +2633,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [50
 
-] <../../Diagrams/cones.jpg, id=378, 389.455pt x 385.44pt>
+] <../../Diagrams/cones.jpg, id=421, 389.455pt x 385.44pt>
 File: ../../Diagrams/cones.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/cones.jpg>
-Package pdftex.def Info: ../../Diagrams/cones.jpg used on input line 347.
+Package pdftex.def Info: ../../Diagrams/cones.jpg used on input line 362.
 (pdftex.def)             Requested size: 171.14764pt x 169.38239pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2673,12 +2681,12 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [56
 
-] <../../Diagrams/alphapartcones.jpg, id=416, 878.28125pt x 278.03876pt>
+] <../../Diagrams/alphapartcones.jpg, id=460, 878.28125pt x 278.03876pt>
 File: ../../Diagrams/alphapartcones.jpg Graphic file (type jpg)
 
 <use ../../Diagrams/alphapartcones.jpg>
 Package pdftex.def Info: ../../Diagrams/alphapartcones.jpg used on input line 4
-02.
+17.
 (pdftex.def)             Requested size: 342.2953pt x 108.36255pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2723,7 +2731,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [62
 
 ]
-Overfull \hbox (4.53027pt too wide) detected at line 496
+Overfull \hbox (4.53027pt too wide) detected at line 511
 [] []
  []
 
@@ -2744,7 +2752,7 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 532.
+(Font)              using `OT1/cmss/bx/n' instead on input line 547.
 
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2754,41 +2762,41 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 [65
 
 ]
-<../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png, id=480, 340.8735pt x 
+<../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png, id=523, 340.8735pt x 
 228.25275pt>
 File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 
-<../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png, id=481, 324.0105pt x 
+<../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png, id=524, 324.0105pt x 
 240.9pt>
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
 
-<../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png, id=482, 323.70938pt 
+<../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png, id=525, 323.70938pt 
 x 240.9pt>
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
 pe png)
  <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
-ng used on input line 560.
+ng used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
 
-<../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png, id=483, 358.
+<../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png, id=526, 358.
 63988pt x 265.29112pt>
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 560.
+ainted.png used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2805,28 +2813,28 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
 e png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
 pe png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
-ng used on input line 560.
+ng used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 560.
+ainted.png used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2840,28 +2848,28 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
 e png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
 pe png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
-ng used on input line 560.
+ng used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 560.
+ainted.png used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2875,28 +2883,28 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (typ
 e png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_dense.pn
-g used on input line 560.
+g used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.79851pt.
 File: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (ty
 pe png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_7_48_8_sparse.p
-ng used on input line 560.
+ng used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.89041pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 560.
+ainted.png used on input line 575.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2910,32 +2918,32 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 587.
+g used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 587.
+ainted.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 
-<../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png, id=513
+<../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png, id=556
 , 867.24pt x 650.43pt>
 File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
 aphic file (type png)
 
 <use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
 Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
-7_48_8_lines.png used on input line 587.
+7_48_8_lines.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 
-<../../Diagrams/church_depth_0034.png, id=514, 4022.02625pt x 2631.8325pt>
+<../../Diagrams/church_depth_0034.png, id=557, 4022.02625pt x 2631.8325pt>
 File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
 
 <use ../../Diagrams/church_depth_0034.png>
 Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
-e 587.
+e 602.
 (pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2951,27 +2959,27 @@ e png)
 
 <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 587.
+g used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 587.
+ainted.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
 aphic file (type png)
 
 <use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
 Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
-7_48_8_lines.png used on input line 587.
+7_48_8_lines.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
 
 <use ../../Diagrams/church_depth_0034.png>
 Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
-e 587.
+e 602.
 (pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -2985,27 +2993,27 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 587.
+g used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 587.
+ainted.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
 aphic file (type png)
 
 <use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
 Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
-7_48_8_lines.png used on input line 587.
+7_48_8_lines.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
 
 <use ../../Diagrams/church_depth_0034.png>
 Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
-e 587.
+e 602.
 (pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -3019,27 +3027,27 @@ File: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (typ
 e png)
  <use ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.png>
 Package pdftex.def Info: ../../Diagrams/results/EPIs/673_10_102_4_48_8_strip.pn
-g used on input line 587.
+g used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 91.68259pt.
 File: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic 
 file (type png)
 
 <use ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png>
 Package pdftex.def Info: ../../Diagrams/results/Inpainted/673_10_102_7_48_8_inp
-ainted.png used on input line 587.
+ainted.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 101.28123pt.
 File: ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Gr
 aphic file (type png)
 
 <use ../../Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png>
 Package pdftex.def Info: ../../Diagrams/results/Disparity_benchmark/673_10_102_
-7_48_8_lines.png used on input line 587.
+7_48_8_lines.png used on input line 602.
 (pdftex.def)             Requested size: 136.91603pt x 102.68146pt.
 File: ../../Diagrams/church_depth_0034.png Graphic file (type png)
 
 <use ../../Diagrams/church_depth_0034.png>
 Package pdftex.def Info: ../../Diagrams/church_depth_0034.png used on input lin
-e 587.
+e 602.
 (pdftex.def)             Requested size: 136.91603pt x 89.5534pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -3055,11 +3063,11 @@ Overfull \hbox (65.52644pt too wide) has occurred while \output is active
 
 [74
 
-] <./Images/lf-camera.jpg, id=547, 602.25pt x 402.50375pt>
+] <./Images/lf-camera.jpg, id=591, 602.25pt x 402.50375pt>
 File: ./Images/lf-camera.jpg Graphic file (type jpg)
 
 <use ./Images/lf-camera.jpg>
-Package pdftex.def Info: ./Images/lf-camera.jpg used on input line 603.
+Package pdftex.def Info: ./Images/lf-camera.jpg used on input line 618.
 (pdftex.def)             Requested size: 273.83728pt x 183.0228pt.
 
 Overfull \hbox (65.52644pt too wide) has occurred while \output is active
@@ -3097,10 +3105,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 35518 strings out of 493089
- 702230 string characters out of 6134842
+ 35523 strings out of 493089
+ 702400 string characters out of 6134842
  861700 words of memory out of 5000000
- 38087 multiletter control sequences out of 15000+600000
+ 38091 multiletter control sequences out of 15000+600000
  35893 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,70p,10410b,742s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3124,11 +3132,16 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (75 pages, 6529778 bytes).
+2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (75 pages, 6835493 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 501 compressed objects within 6 object streams
+ 704 PDF objects out of 1000 (max. 8388607)
+ 538 compressed objects within 6 object streams
  152 named destinations out of 1000 (max. 500000)
- 212 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

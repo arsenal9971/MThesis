@@ -1,3 +1,4 @@
+
 \begin{frame}{What is this thesis about?}
 \begin{block}{}
 \begin{itemize}
@@ -77,9 +78,13 @@
 \caption{Used representation: "Two plane parametrization".}
 \label{fig:C2S0F3}
 \end{figure}
-\end{frame}
+\end{frame} 
 
-\begin{frame}{Freedom of knowledge and reproducible research}
+\begin{frame}{Motivation}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{./images/LightField_Shearlet.pdf}
+\end{figure}
 
 \begin{quote}
 An article about computational result is \\
@@ -218,6 +223,16 @@ code and data, that produced the result.
 \end{frame}
 
 \begin{frame}{Important Tool: Frame Theory}
+
+\begin{block}{Orthonormal Basis}
+If $\mathcal{H}$ is a Hilbert space and $(\phi_i)_{i\in I}\subset \mathcal{H}$ is an orthonormal basis then 
+$$
+x = \sum_{i\in I}\langle x,\phi_i\rangle \phi_i\text{,  }\forall x\in\mathcal{H}
+\Longrightarrow
+||x||^2=\sum_{i\in I}|\langle x,\phi_i\rangle|^2
+$$
+\end{block}
+
 \begin{block}{Frames}
 Let $I$ be a set of countable indices. A sequence $(\phi_i)_{i\in I}$ in a Hilbert space $\mathcal{H}$ is called a \textbf{frame} of $H$, if there exist constants $0< A\leq B<\infty$ such that
 $$
@@ -450,7 +465,7 @@ $$
 \begin{cases}
 2^{-(\alpha_j+2)j/4-1/4}&W(2^{-j}\xi)V_{(h)}(\xi^{\top} A_{-j,\alpha_j,(h)}S_{-k,(\iota)})\\
 &e^{-\pi i\xi^{\top}A_{-j,\alpha_j,(h)}S_{-k,(h)}m}\textrm{,}\quad \xi\in\mathcal{C}_{(h)},\\
-2^{-(\alpha_j+2)j/4-1/4}&W(2^{j}\xi)V_{(v)}(\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k,(v)})\\
+2^{-(\alpha_j+2)j/4-1/4}&W(2^{-j}\xi)V_{(v)}(\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k,(v)})\\
 &e^{-\pi i\xi^{\top}A_{-j,\alpha_j,(v)}S_{-k,(h)}m}\textrm{,}\quad \xi\in\mathcal{C}_{(v)}
 \end{cases}
 $$
@@ -490,7 +505,7 @@ $$
 $$
 \end{block}
 
-\begin{block}{Parseval Frame Property}
+\begin{block}{Parseval Frame Property (G. Kutyniok, M. Genzel, 2014}
 If $(\alpha_j)_j$ is a scaling squence then $\mathcal{SH}(\phi,v,(\alpha_j)_j)$ is a Parseval frame for $L^2(\mathbb{R}^2)$.
 \end{block}
 \end{frame}
