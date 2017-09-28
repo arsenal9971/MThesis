@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 SEP 2017 12:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 SEP 2017 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1891,7 +1891,7 @@ ogo.jpg> <./tu-logo.jpg>] [2
 ] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 240--247
+Underfull \hbox (badness 10000) in paragraph at lines 241--248
 
  []
 
@@ -3482,17 +3482,17 @@ Appendix D.
 les}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.523 \bibitem{Bolles}
+l.524 \bibitem{Bolles}
                        [124] [125] [126] [127]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 824.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 824.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 825.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 825.
  (./main.aux
 (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux)
 (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Appendix1.aux)
 (./Chapters/Appendix2.aux) (./Chapters/Appendix3.aux) (./Chapters/Appendix4.aux
 ))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 824.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 824.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 825.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 825.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E3B00F487FDCD6BA2C390FDBD4C8F546;2898.
 
@@ -3534,7 +3534,7 @@ st/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (139 pages, 19019840 bytes).
+Output written on main.pdf (139 pages, 19019920 bytes).
 PDF statistics:
  2548 PDF objects out of 2984 (max. 8388607)
  2169 compressed objects within 22 object streams
