@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 SEP 2017 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 OCT 2017 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1891,7 +1891,7 @@ ogo.jpg> <./tu-logo.jpg>] [2
 ] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 241--248
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
@@ -2391,7 +2391,7 @@ Overfull \hbox (0.97629pt too wide) in paragraph at lines 135--136
 n prop-erty for one-dimensional
  []
 
-[38] [39] <./Diagrams/cartoon-like.jpg, id=769, 274.02374pt x 261.97874pt>
+[38] [39] <./Diagrams/cartoon-like.jpg, id=770, 274.02374pt x 261.97874pt>
 File: ./Diagrams/cartoon-like.jpg Graphic file (type jpg)
 
 <use ./Diagrams/cartoon-like.jpg>
@@ -2402,14 +2402,14 @@ Package pdftex.def Info: ./Diagrams/cartoon-like.jpg used on input line 234.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [40] [41 <./Diagrams/cartoon-like.jpg>]
-<./Diagrams/edges-images.jpg, id=789, 376.40625pt x 357.335pt>
+<./Diagrams/edges-images.jpg, id=793, 376.40625pt x 357.335pt>
 File: ./Diagrams/edges-images.jpg Graphic file (type jpg)
 
 <use ./Diagrams/edges-images.jpg>
 Package pdftex.def Info: ./Diagrams/edges-images.jpg used on input line 289.
 (pdftex.def)             Requested size: 288.79422pt x 274.1837pt.
  [42 <./Diagrams/edges-images.jpg>]
-<./Diagrams/anisotropic_isotropic.jpg, id=805, 720.6925pt x 373.395pt>
+<./Diagrams/anisotropic_isotropic.jpg, id=808, 720.6925pt x 373.395pt>
 File: ./Diagrams/anisotropic_isotropic.jpg Graphic file (type jpg)
 
 <use ./Diagrams/anisotropic_isotropic.jpg>
@@ -2417,21 +2417,21 @@ Package pdftex.def Info: ./Diagrams/anisotropic_isotropic.jpg used on input lin
 e 351.
 (pdftex.def)             Requested size: 288.79422pt x 149.62314pt.
 
-<./Diagrams/circle.png, id=806, 370.0224pt x 271.7352pt>
+<./Diagrams/circle.png, id=809, 370.0224pt x 271.7352pt>
 File: ./Diagrams/circle.png Graphic file (type png)
 
 <use ./Diagrams/circle.png>
 Package pdftex.def Info: ./Diagrams/circle.png used on input line 359.
 (pdftex.def)             Requested size: 185.65298pt x 136.33994pt.
 
-<./Diagrams/circle_scaled.png, id=807, 353.4003pt x 264.5082pt>
+<./Diagrams/circle_scaled.png, id=810, 353.4003pt x 264.5082pt>
 File: ./Diagrams/circle_scaled.png Graphic file (type png)
 
 <use ./Diagrams/circle_scaled.png>
 Package pdftex.def Info: ./Diagrams/circle_scaled.png used on input line 364.
 (pdftex.def)             Requested size: 185.65298pt x 138.95767pt.
 
-<./Diagrams/square.png, id=808, 355.92975pt x 265.2309pt>
+<./Diagrams/square.png, id=811, 355.92975pt x 265.2309pt>
 File: ./Diagrams/square.png Graphic file (type png)
 
 <use ./Diagrams/square.png>
@@ -2447,7 +2447,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 374--374
  |\T1/lmr/m/n/10 Square be-fore 
  []
 
-<./Diagrams/square_sheared.png, id=809, 353.4003pt x 264.5082pt>
+<./Diagrams/square_sheared.png, id=812, 353.4003pt x 264.5082pt>
 File: ./Diagrams/square_sheared.png Graphic file (type png)
 
 <use ./Diagrams/square_sheared.png>
@@ -2460,30 +2460,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--379
 
 [43 <./Diagrams/anisotropic_isotropic.jpg>] [44 <./Diagrams/circle.png> <./Diag
 rams/circle_scaled.png> <./Diagrams/square.png> <./Diagrams/square_sheared.png>
-] <./Diagrams/tiling_nocone.jpg, id=834, 461.725pt x 342.27875pt>
+] <./Diagrams/tiling_nocone.jpg, id=838, 461.725pt x 342.27875pt>
 File: ./Diagrams/tiling_nocone.jpg Graphic file (type jpg)
 
 <use ./Diagrams/tiling_nocone.jpg>
 Package pdftex.def Info: ./Diagrams/tiling_nocone.jpg used on input line 447.
 (pdftex.def)             Requested size: 288.79422pt x 214.08559pt.
  [45]
-Overfull \hbox (1.84819pt too wide) in paragraph at lines 459--460
-[][]\T1/lmr/bx/n/10.95 Definition 3.6 \T1/lmr/m/n/10.95 (Cone-adapted shear-let
- sys-tem)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/n/10.95 Let $\OML/lmm/m/it/10.95 ^^^;
-  ; [] \OMS/lmsy/m/n/10.95 2 \OML/lmm/m/it/10.95 L[]\OT1/lmr/m/n/10.95 (\U/msb/
-m/n/10.95 R[]\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/n/10.95 and $\OML/lmm/m/it/10.95 c
- \OT1/lmr/m/n/10.95 = (\OML/lmm/m/it/10.95 c[]; c[]\OT1/lmr/m/n/10.95 ) \OMS/lm
-sy/m/n/10.95 2
- []
-
-<./Diagrams/tiling_cone.jpg, id=850, 812.03375pt x 424.58624pt>
+<./Diagrams/tiling_cone.jpg, id=855, 812.03375pt x 424.58624pt>
 File: ./Diagrams/tiling_cone.jpg Graphic file (type jpg)
 
 <use ./Diagrams/tiling_cone.jpg>
 Package pdftex.def Info: ./Diagrams/tiling_cone.jpg used on input line 498.
 (pdftex.def)             Requested size: 371.30597pt x 194.1394pt.
  [46 <./Diagrams/tiling_nocone.jpg>] [47 <./Diagrams/tiling_cone.jpg>]
-<./Diagrams/separable_nonseparable.jpg, id=875, 677.53125pt x 260.975pt>
+<./Diagrams/separable_nonseparable.jpg, id=880, 677.53125pt x 260.975pt>
 File: ./Diagrams/separable_nonseparable.jpg Graphic file (type jpg)
 
 <use ./Diagrams/separable_nonseparable.jpg>
@@ -2492,28 +2483,28 @@ ne 528.
 (pdftex.def)             Requested size: 330.05324pt x 127.1342pt.
  [48 <./Diagrams/separable_nonseparable.jpg>] [49] [50]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 675.
+(Font)              <14.4> on input line 676.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 675.
+(hyperref)                removing `math shift' on input line 676.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\alpha' on input line 675.
+(hyperref)                removing `\alpha' on input line 676.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 675.
+(hyperref)                removing `math shift' on input line 676.
 
-[51] <./Diagrams/alphapartcones.jpg, id=934, 878.28125pt x 278.03876pt>
+[51] <./Diagrams/alphapartcones.jpg, id=943, 878.28125pt x 278.03876pt>
 File: ./Diagrams/alphapartcones.jpg Graphic file (type jpg)
 
 <use ./Diagrams/alphapartcones.jpg>
-Package pdftex.def Info: ./Diagrams/alphapartcones.jpg used on input line 764.
+Package pdftex.def Info: ./Diagrams/alphapartcones.jpg used on input line 765.
 (pdftex.def)             Requested size: 371.30597pt x 117.5476pt.
  [52 <./Diagrams/alphapartcones.jpg>]
-Overfull \hbox (3.80165pt too wide) detected at line 798
+Overfull \hbox (3.80165pt too wide) detected at line 799
 [][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) := 2[]\OML/
 lmm/m/it/10.95 W\OT1/lmr/m/n/10.95 (2[]\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.9
 5 )\OML/lmm/m/it/10.95 V[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X[]A[]S[]\O
@@ -2522,55 +2513,46 @@ n/10.95 R[]
  []
 
 
-Overfull \hbox (54.97795pt too wide) detected at line 808
+Overfull \hbox (54.97795pt too wide) detected at line 809
 [][] \OT1/lmr/m/n/10.95 := []
  []
 
 [53]
-Overfull \hbox (30.07637pt too wide) in paragraph at lines 865--866
-[][]\T1/lmr/bx/n/10.95 Theorem 3.8 \T1/lmr/m/n/10.95 (Uni-ver-sal shear-let fra
-mes)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/n/10.95 Let $\OT1/lmr/m/n/10.95 (\OML/lmm/
-m/it/10.95 []\OT1/lmr/m/n/10.95 )[]$ \T1/lmr/m/n/10.95 be a scal-ing se-quence
- and $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^^; v; \OT1/lmr/m/n/10.95 (\OM
-L/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 )[])$
- []
-
-
-Overfull \hbox (4.59995pt too wide) detected at line 890
+Overfull \hbox (4.59995pt too wide) detected at line 891
 [][]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ^^X\OT1/lmr/m/n/10.95 ) = 2[] \OMS/
 lmsy/m/n/10.95 ^^A []
  []
 
 [54]
-Overfull \hbox (16.03815pt too wide) detected at line 902
+Overfull \hbox (16.03815pt too wide) detected at line 903
 [][] []
  []
 
 [55]
-Overfull \hbox (1.07904pt too wide) detected at line 957
+Overfull \hbox (1.07904pt too wide) detected at line 958
 [] []
  []
 
 [56]
-Overfull \hbox (7.33621pt too wide) detected at line 985
+Overfull \hbox (7.33621pt too wide) detected at line 986
 [] []
  []
 
 
-Overfull \hbox (28.84964pt too wide) detected at line 1016
+Overfull \hbox (28.84964pt too wide) detected at line 1017
 [] []
  []
 
 [57]
-Overfull \hbox (31.92627pt too wide) detected at line 1038
+Overfull \hbox (31.92627pt too wide) detected at line 1039
 [] []
  []
 
-[58] <./Diagrams/sparse_EPI.jpg, id=996, 264.5082pt x 222.1098pt>
+[58] <./Diagrams/sparse_EPI.jpg, id=1007, 264.5082pt x 222.1098pt>
 File: ./Diagrams/sparse_EPI.jpg Graphic file (type jpg)
 
 <use ./Diagrams/sparse_EPI.jpg>
-Package pdftex.def Info: ./Diagrams/sparse_EPI.jpg used on input line 1056.
+Package pdftex.def Info: ./Diagrams/sparse_EPI.jpg used on input line 1057.
 (pdftex.def)             Requested size: 247.5415pt x 207.86816pt.
  [59 <./Diagrams/sparse_EPI.jpg>] [60] [61pdfTeX warning (ext4): destination wi
 th the same identifier (name{equation.3.4.26}) has been already used, duplicate
@@ -2578,19 +2560,19 @@ th the same identifier (name{equation.3.4.26}) has been already used, duplicate
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1166 
-       ] [62] <./Diagrams/alpha6.jpg, id=1051, 697.60625pt x 238.8925pt>
+l.1167 
+       ] [62] <./Diagrams/alpha6.jpg, id=1063, 697.60625pt x 238.8925pt>
 File: ./Diagrams/alpha6.jpg Graphic file (type jpg)
 
 <use ./Diagrams/alpha6.jpg>
-Package pdftex.def Info: ./Diagrams/alpha6.jpg used on input line 1239.
+Package pdftex.def Info: ./Diagrams/alpha6.jpg used on input line 1240.
 (pdftex.def)             Requested size: 371.30597pt x 127.1519pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [63] [64 <./Diagrams/alpha6.jpg>]
-Overfull \hbox (3.23781pt too wide) in paragraph at lines 1329--1330
+Overfull \hbox (3.23781pt too wide) in paragraph at lines 1330--1331
 []\T1/lmr/m/n/10.95 The uni-ver-sal shear-let sys-tem gen-er-ated by the scal-i
 ng se-quence $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 )[]
  = (\OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 2\OML/lmm/m/it/10.95 =j\OT1/lmr/m
@@ -2598,7 +2580,7 @@ ng se-quence $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 )[]
  []
 
 [65]
-Overfull \hbox (55.4285pt too wide) in paragraph at lines 1367--1368
+Overfull \hbox (55.4285pt too wide) in paragraph at lines 1368--1369
 []\T1/lmr/m/n/10.95 and $\OMS/lmsy/m/n/10.95 f\OML/lmm/m/it/10.95 p[]\OT1/lmr/m
 /n/10.95 (\OML/lmm/m/it/10.95 n\OT1/lmr/m/n/10.95 )\OMS/lmsy/m/n/10.95 g[]$ \T1
 /lmr/m/n/10.95 are the Fourier co-ef-fi-cients of the trigono-met-ric poly-no-m
@@ -2607,36 +2589,36 @@ ial $\OML/lmm/m/it/10.95 P\OT1/lmr/m/n/10.95 (2[]\OML/lmm/m/it/10.95 ^^X[]; \OT
 .95 ,
  []
 
-<./Diagrams/magnitude_response.jpg, id=1079, 333.245pt x 264.99pt>
+<./Diagrams/magnitude_response.jpg, id=1091, 333.245pt x 264.99pt>
 File: ./Diagrams/magnitude_response.jpg Graphic file (type jpg)
 
 <use ./Diagrams/magnitude_response.jpg>
 Package pdftex.def Info: ./Diagrams/magnitude_response.jpg used on input line 1
-380.
+381.
 (pdftex.def)             Requested size: 288.79422pt x 229.65797pt.
- [66 <./Diagrams/magnitude_response.jpg>] <./Diagrams/LFshearlets2e.jpg, id=109
-5, 319.1925pt x 292.09125pt>
+ [66 <./Diagrams/magnitude_response.jpg>] <./Diagrams/LFshearlets2e.jpg, id=110
+7, 319.1925pt x 292.09125pt>
 File: ./Diagrams/LFshearlets2e.jpg Graphic file (type jpg)
 
 <use ./Diagrams/LFshearlets2e.jpg>
-Package pdftex.def Info: ./Diagrams/LFshearlets2e.jpg used on input line 1430.
+Package pdftex.def Info: ./Diagrams/LFshearlets2e.jpg used on input line 1431.
 (pdftex.def)             Requested size: 288.79422pt x 264.2747pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Diagrams/LFshearlets2f.jpg, id=1098, 319.1925pt x 300.12125pt>
+<./Diagrams/LFshearlets2f.jpg, id=1110, 319.1925pt x 300.12125pt>
 File: ./Diagrams/LFshearlets2f.jpg Graphic file (type jpg)
 
 <use ./Diagrams/LFshearlets2f.jpg>
-Package pdftex.def Info: ./Diagrams/LFshearlets2f.jpg used on input line 1437.
+Package pdftex.def Info: ./Diagrams/LFshearlets2f.jpg used on input line 1438.
 (pdftex.def)             Requested size: 288.79422pt x 271.54pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (32.1315pt too wide) detected at line 1453
+Overfull \hbox (32.77023pt too wide) detected at line 1454
 []\OML/lmm/m/it/10.95 S\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 f[]\OT1/lmr/m/n/
 10.95 ) = \OMS/lmsy/m/n/10.95 f\OML/lmm/m/it/10.95 c[]\OT1/lmr/m/n/10.95 (\OML/
 lmm/m/it/10.95 m\OT1/lmr/m/n/10.95 ) = (\OML/lmm/m/it/10.95 f[] \OMS/lmsy/m/n/1
@@ -2673,14 +2655,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[72] <./Diagrams/alpha_accel.jpg, id=1168, 490.83376pt x 288.07625pt>
+[72] <./Diagrams/alpha_accel.jpg, id=1180, 490.83376pt x 288.07625pt>
 File: ./Diagrams/alpha_accel.jpg Graphic file (type jpg)
 
 <use ./Diagrams/alpha_accel.jpg>
 Package pdftex.def Info: ./Diagrams/alpha_accel.jpg used on input line 103.
 (pdftex.def)             Requested size: 371.30597pt x 217.9292pt.
  [73 <./Diagrams/alpha_accel.jpg>]
-<./Diagrams/results/data_set/church_image-raw_0000_lowres.jpg, id=1189, 1027.84
+<./Diagrams/results/data_set/church_image-raw_0000_lowres.jpg, id=1201, 1027.84
 pt x 685.56125pt>
 File: ./Diagrams/results/data_set/church_image-raw_0000_lowres.jpg Graphic file
  (type jpg)
@@ -2694,7 +2676,7 @@ es.jpg used on input line 134.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/data_set/church_image-raw_0055_lowres.jpg, id=1190, 1027.84
+<./Diagrams/results/data_set/church_image-raw_0055_lowres.jpg, id=1202, 1027.84
 pt x 685.56125pt>
 File: ./Diagrams/results/data_set/church_image-raw_0055_lowres.jpg Graphic file
  (type jpg)
@@ -2708,7 +2690,7 @@ es.jpg used on input line 141.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/data_set/church_image-raw_0100_lowres.jpg, id=1191, 1027.84
+<./Diagrams/results/data_set/church_image-raw_0100_lowres.jpg, id=1203, 1027.84
 pt x 685.56125pt>
 File: ./Diagrams/results/data_set/church_image-raw_0100_lowres.jpg Graphic file
  (type jpg)
@@ -2740,7 +2722,7 @@ Overfull \hbox (8.81216pt too wide) in paragraph at lines 166--167
  []
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_strip.png, id=1219, 3
+<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_strip.png, id=1231, 3
 40.8735pt x 228.25275pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_strip.png Graphi
 c file (type png)
@@ -2750,7 +2732,7 @@ Package pdftex.def Info: ./Diagrams/results/Disparity_benchmark/673_10_102_4_48
 _8_strip.png used on input line 172.
 (pdftex.def)             Requested size: 288.79422pt x 193.3958pt.
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_dense.png, id=1220, 3
+<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_dense.png, id=1232, 3
 23.70938pt x 240.59888pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_dense.png Graphi
 c file (type png)
@@ -2764,7 +2746,7 @@ _8_dense.png used on input line 179.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_sparse.png, id=1223, 
+<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_sparse.png, id=1235, 
 323.40825pt x 241.20113pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_sparse.png Graph
 ic file (type png)
@@ -2778,7 +2760,7 @@ _8_sparse.png used on input line 186.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_sparse.png, id=1224, 
+<./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_sparse.png, id=1236, 
 323.70938pt x 240.9pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_sparse.png Graph
 ic file (type png)
@@ -2792,7 +2774,7 @@ _8_sparse.png used on input line 193.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_sparse.png, id=1225, 
+<./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_sparse.png, id=1237, 
 324.0105pt x 241.20113pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_sparse.png Graph
 ic file (type png)
@@ -2806,7 +2788,7 @@ _8_sparse.png used on input line 200.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_sparse.png, id=1226,
+<./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_sparse.png, id=1238,
  324.31163pt x 240.59888pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_sparse.png Grap
 hic file (type png)
@@ -2820,7 +2802,7 @@ Package pdftex.def Info: ./Diagrams/results/Disparity_benchmark/673_10_102_12_4
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/sparse_painting_benchmark.png, id=1227,
+<./Diagrams/results/Disparity_benchmark/sparse_painting_benchmark.png, id=1239,
  411.939pt x 331.7193pt>
 File: ./Diagrams/results/Disparity_benchmark/sparse_painting_benchmark.png Grap
 hic file (type png)
@@ -2834,7 +2816,7 @@ _benchmark.png used on input line 214.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png, id=1232, 8
+<./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png, id=1244, 8
 67.24pt x 650.43pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_4_48_8_lines.png Graphi
 c file (type png)
@@ -2849,7 +2831,7 @@ _8_lines.png used on input line 226.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png, id=1246, 8
+<./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png, id=1258, 8
 67.24pt x 650.43pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_lines.png Graphi
 c file (type png)
@@ -2863,7 +2845,7 @@ _8_lines.png used on input line 233.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_lines.png, id=1247, 8
+<./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_lines.png, id=1259, 8
 67.24pt x 650.43pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_9_48_8_lines.png Graphi
 c file (type png)
@@ -2877,7 +2859,7 @@ _8_lines.png used on input line 240.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png, id=1248, 
+<./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png, id=1260, 
 867.24pt x 650.43pt>
 File: ./Diagrams/results/Disparity_benchmark/673_10_102_12_48_8_lines.png Graph
 ic file (type png)
@@ -2919,7 +2901,7 @@ agrams / results /
 
 [78 <./Diagrams/results/Disparity_benchmark/673_10_102_7_48_8_sparse.png> <./Di
 agrams/results/Disparity_benchmark/673_10_102_9_48_8_sparse.png>]
-<./Diagrams/results/EPIs/392_8_102_7_15_4_strip.png, id=1274, 340.8735pt x 227.
+<./Diagrams/results/EPIs/392_8_102_7_15_4_strip.png, id=1286, 340.8735pt x 227.
 04825pt>
 File: ./Diagrams/results/EPIs/392_8_102_7_15_4_strip.png Graphic file (type png
 )
@@ -2932,7 +2914,7 @@ d on input line 278.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/392_8_102_7_15_4_dense.png, id=1275, 323.70938pt x 240
+<./Diagrams/results/EPIs/392_8_102_7_15_4_dense.png, id=1287, 323.70938pt x 240
 .9pt>
 File: ./Diagrams/results/EPIs/392_8_102_7_15_4_dense.png Graphic file (type png
 )
@@ -2945,7 +2927,7 @@ d on input line 285.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/392_8_102_7_15_4_sparse.png, id=1278, 323.40825pt x 24
+<./Diagrams/results/EPIs/392_8_102_7_15_4_sparse.png, id=1290, 323.40825pt x 24
 0.59888pt>
 File: ./Diagrams/results/EPIs/392_8_102_7_15_4_sparse.png Graphic file (type pn
 g)
@@ -2958,7 +2940,7 @@ ed on input line 292.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Inpainted/392_8_102_7_15_4_inpainted.png, id=1281, 356.8331
+<./Diagrams/results/Inpainted/392_8_102_7_15_4_inpainted.png, id=1293, 356.8331
 3pt x 266.79675pt>
 File: ./Diagrams/results/Inpainted/392_8_102_7_15_4_inpainted.png Graphic file 
 (type png)
@@ -2972,7 +2954,7 @@ d.png used on input line 299.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/424_8_102_7_10_4_strip.png, id=1284, 340.8735pt x 226.
+<./Diagrams/results/EPIs/424_8_102_7_10_4_strip.png, id=1296, 340.8735pt x 226.
 74713pt>
 File: ./Diagrams/results/EPIs/424_8_102_7_10_4_strip.png Graphic file (type png
 )
@@ -2985,7 +2967,7 @@ d on input line 307.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/424_8_102_7_10_4_dense.png, id=1285, 323.10713pt x 240
+<./Diagrams/results/EPIs/424_8_102_7_10_4_dense.png, id=1297, 323.10713pt x 240
 .9pt>
 File: ./Diagrams/results/EPIs/424_8_102_7_10_4_dense.png Graphic file (type png
 )
@@ -2998,7 +2980,7 @@ d on input line 314.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/424_8_102_7_10_4_sparse.png, id=1288, 323.40825pt x 24
+<./Diagrams/results/EPIs/424_8_102_7_10_4_sparse.png, id=1300, 323.40825pt x 24
 0.9pt>
 File: ./Diagrams/results/EPIs/424_8_102_7_10_4_sparse.png Graphic file (type pn
 g)
@@ -3011,7 +2993,7 @@ ed on input line 321.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Inpainted/424_8_102_7_10_4_inpainted.png, id=1291, 359.2421
+<./Diagrams/results/Inpainted/424_8_102_7_10_4_inpainted.png, id=1303, 359.2421
 3pt x 266.79675pt>
 File: ./Diagrams/results/Inpainted/424_8_102_7_10_4_inpainted.png Graphic file 
 (type png)
@@ -3025,7 +3007,7 @@ d.png used on input line 328.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/306_8_102_7_27_6_strip.png, id=1294, 340.8735pt x 227.
+<./Diagrams/results/EPIs/306_8_102_7_27_6_strip.png, id=1306, 340.8735pt x 227.
 34938pt>
 File: ./Diagrams/results/EPIs/306_8_102_7_27_6_strip.png Graphic file (type png
 )
@@ -3038,7 +3020,7 @@ d on input line 335.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/306_8_102_7_27_6_dense.png, id=1295, 323.40825pt x 240
+<./Diagrams/results/EPIs/306_8_102_7_27_6_dense.png, id=1307, 323.40825pt x 240
 .9pt>
 File: ./Diagrams/results/EPIs/306_8_102_7_27_6_dense.png Graphic file (type png
 )
@@ -3051,7 +3033,7 @@ d on input line 342.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/306_8_102_7_27_6_sparse.png, id=1298, 324.0105pt x 241
+<./Diagrams/results/EPIs/306_8_102_7_27_6_sparse.png, id=1310, 324.0105pt x 241
 .20113pt>
 File: ./Diagrams/results/EPIs/306_8_102_7_27_6_sparse.png Graphic file (type pn
 g)
@@ -3064,7 +3046,7 @@ ed on input line 349.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Inpainted/306_8_102_7_27_6_inpainted.png, id=1301, 356.2308
+<./Diagrams/results/Inpainted/306_8_102_7_27_6_inpainted.png, id=1313, 356.2308
 8pt x 266.1945pt>
 File: ./Diagrams/results/Inpainted/306_8_102_7_27_6_inpainted.png Graphic file 
 (type png)
@@ -3078,7 +3060,7 @@ d.png used on input line 356.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/292_8_102_7_34_8_strip.png, id=1304, 341.47575pt x 226
+<./Diagrams/results/EPIs/292_8_102_7_34_8_strip.png, id=1316, 341.47575pt x 226
 .74713pt>
 File: ./Diagrams/results/EPIs/292_8_102_7_34_8_strip.png Graphic file (type png
 )
@@ -3091,7 +3073,7 @@ d on input line 363.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/292_8_102_7_34_8_dense.png, id=1305, 324.31163pt x 240
+<./Diagrams/results/EPIs/292_8_102_7_34_8_dense.png, id=1317, 324.31163pt x 240
 .9pt>
 File: ./Diagrams/results/EPIs/292_8_102_7_34_8_dense.png Graphic file (type png
 )
@@ -3104,7 +3086,7 @@ d on input line 370.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/292_8_102_7_34_8_sparse.png, id=1308, 324.31163pt x 24
+<./Diagrams/results/EPIs/292_8_102_7_34_8_sparse.png, id=1320, 324.31163pt x 24
 0.9pt>
 File: ./Diagrams/results/EPIs/292_8_102_7_34_8_sparse.png Graphic file (type pn
 g)
@@ -3117,7 +3099,7 @@ ed on input line 377.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Inpainted/292_8_102_7_34_8_inpainted.png, id=1311, 358.0376
+<./Diagrams/results/Inpainted/292_8_102_7_34_8_inpainted.png, id=1323, 358.0376
 3pt x 266.1945pt>
 File: ./Diagrams/results/Inpainted/292_8_102_7_34_8_inpainted.png Graphic file 
 (type png)
@@ -3131,7 +3113,7 @@ d.png used on input line 384.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/673_10_102_4_48_8_strip.png, id=1314, 340.8735pt x 228
+<./Diagrams/results/EPIs/673_10_102_4_48_8_strip.png, id=1326, 340.8735pt x 228
 .25275pt>
 File: ./Diagrams/results/EPIs/673_10_102_4_48_8_strip.png Graphic file (type pn
 g)
@@ -3144,7 +3126,7 @@ ed on input line 392.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/673_10_102_7_48_8_dense.png, id=1315, 324.0105pt x 240
+<./Diagrams/results/EPIs/673_10_102_7_48_8_dense.png, id=1327, 324.0105pt x 240
 .9pt>
 File: ./Diagrams/results/EPIs/673_10_102_7_48_8_dense.png Graphic file (type pn
 g)
@@ -3157,7 +3139,7 @@ ed on input line 399.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png, id=1318, 323.70938pt x 2
+<./Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png, id=1330, 323.70938pt x 2
 40.9pt>
 File: ./Diagrams/results/EPIs/673_10_102_7_48_8_sparse.png Graphic file (type p
 ng)
@@ -3170,7 +3152,7 @@ sed on input line 406.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png, id=1321, 358.639
+<./Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png, id=1333, 358.639
 88pt x 265.29112pt>
 File: ./Diagrams/results/Inpainted/673_10_102_7_48_8_inpainted.png Graphic file
  (type png)
@@ -3192,7 +3174,7 @@ nchmark/673_10_102_12_48_8_lines.png>] [82] [83 <./Diagrams/results/EPIs/392_8_
 102_7_15_4_strip.png> <./Diagrams/results/EPIs/392_8_102_7_15_4_dense.png>]
 [84 <./Diagrams/results/EPIs/392_8_102_7_15_4_sparse.png> <./Diagrams/results/I
 npainted/392_8_102_7_15_4_inpainted.png>]
-<./Diagrams/family-lines-hough.jpg, id=1382, 301.125pt x 203.76125pt>
+<./Diagrams/family-lines-hough.jpg, id=1394, 301.125pt x 203.76125pt>
 File: ./Diagrams/family-lines-hough.jpg Graphic file (type jpg)
 
 <use ./Diagrams/family-lines-hough.jpg>
@@ -3219,7 +3201,7 @@ npainted/424_8_102_7_10_4_inpainted.png>] [87 <./Diagrams/results/EPIs/306_8_10
 2_7_27_6_strip.png> <./Diagrams/results/EPIs/306_8_102_7_27_6_dense.png>]
 [88 <./Diagrams/results/EPIs/306_8_102_7_27_6_sparse.png> <./Diagrams/results/I
 npainted/306_8_102_7_27_6_inpainted.png>]
-<./Diagrams/results/data_set/feature_points.png, id=1438, 476.78125pt x 317.185
+<./Diagrams/results/data_set/feature_points.png, id=1450, 476.78125pt x 317.185
 pt>
 File: ./Diagrams/results/data_set/feature_points.png Graphic file (type png)
  <use ./Diagrams/results/data_set/feature_points.png>
@@ -3233,7 +3215,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [89 <./Diagrams/results/EPIs/292_8_102_7_34_8_strip.png> <./Diagrams/results/EP
 Is/292_8_102_7_34_8_dense.png>] [90 <./Diagrams/results/EPIs/292_8_102_7_34_8_s
 parse.png> <./Diagrams/results/Inpainted/292_8_102_7_34_8_inpainted.png>]
-<./Diagrams/results/data_set/feature_points_grid.png, id=1472, 381.5856pt x 234
+<./Diagrams/results/data_set/feature_points_grid.png, id=1484, 381.5856pt x 234
 .8775pt>
 File: ./Diagrams/results/data_set/feature_points_grid.png Graphic file (type pn
 g)
@@ -3482,17 +3464,17 @@ Appendix D.
 les}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.524 \bibitem{Bolles}
+l.525 \bibitem{Bolles}
                        [124] [125] [126] [127]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 825.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 825.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 826.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 826.
  (./main.aux
 (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux)
 (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux) (./Chapters/Appendix1.aux)
 (./Chapters/Appendix2.aux) (./Chapters/Appendix3.aux) (./Chapters/Appendix4.aux
 ))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 825.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 825.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 826.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 826.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E3B00F487FDCD6BA2C390FDBD4C8F546;2898.
 
@@ -3503,7 +3485,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  40661 strings out of 493089
  879339 string characters out of 6134842
- 960598 words of memory out of 5000000
+ 960739 words of memory out of 5000000
  42309 multiletter control sequences out of 15000+600000
  139885 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3534,10 +3516,10 @@ st/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (139 pages, 19019920 bytes).
+Output written on main.pdf (139 pages, 19021036 bytes).
 PDF statistics:
- 2548 PDF objects out of 2984 (max. 8388607)
- 2169 compressed objects within 22 object streams
+ 2560 PDF objects out of 2984 (max. 8388607)
+ 2181 compressed objects within 22 object streams
  1037 named destinations out of 1200 (max. 500000)
  771 words of extra memory for PDF output out of 10000 (max. 10000000)
 

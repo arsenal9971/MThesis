@@ -13,7 +13,7 @@ The propagation of the light rays in the 3D space can be completely described by
 
 \bigskip
 
-In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L_4$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from. The Light Field of a 3D scene (subspace) describes the 3D information like the depth of the points in the scene and can be recovered by taking multiple pictures (views) of the scene. The goal of this thesis is to explain a particular fast technique for this purpose. 
+In a more practical approach the plenoptic function can be simplified to a 4D version, called 4D Light Field or simply Light Field (abbreviated from now on as LF), denoted as the function $L_4$. The LF quantifies the intensity of static and monochromatic light rays propagating in half space, though this seems like an important reduction of information, this constraint does not substantially limit us in the accurate 3D description of the scene from where the light rays come from. The Light Field of a 3D scene describes the 3D information like the depth of the points in the scene and can be recovered by taking multiple pictures (views) of the scene. The goal of this thesis is to explain a particular fast technique for this purpose. 
 
 \bigskip 
 
@@ -493,7 +493,7 @@ In 2004, D. Lowe published the paper "Distintive Image Features from Scale-Invar
 
 \bigskip
 
-The broad idea of the algorithm is as follows: From figure~\ref{fig:ScalingCorner} is obvious that to detect windows with different scale. It behaves correctly with small corners, but to detect large corners we need larger windows. For this, scale-space filtering is used; Laplacian of Gaussian (refering to the famous blob detector spatial filter nicely explained in \cite{MVision}) is found for the image with various standard deviations $\sigma$ (which controls the scales); this acts as a blob detector for blobs of different sizes. One finds the local maxima accross the space and scale which give us a list of $(x,y,\sigma)$ values (see Figure~\ref{fig:dif_sizes_corners}) which means there is a potential key point $(x,y)$ at scale $\sigma$
+The broad idea of the algorithm is as follows: From Figure~\ref{fig:ScalingCorner} is obvious that to detect corners at different scales one could windows with different sizes. It behaves correctly with small corners, but to detect large corners we need larger windows. For this, scale-space filtering is used; Laplacian of Gaussian (refering to the famous blob detector spatial filter nicely explained in \cite{MVision}) is found for the image with various standard deviations $\sigma$ (which controls the scales); this acts as a blob detector for blobs of different sizes. One finds the local maxima accross the space and scale which give us a list of $(x,y,\sigma)$ values (see Figure~\ref{fig:dif_sizes_corners}) which means there is a potential key point $(x,y)$ at scale $\sigma$
 
 \begin{figure}[h!]
 \centering
@@ -541,7 +541,7 @@ where $I_x$ and $I_y$ are directional derivatives of the intensity. The main par
 \label{eq:C2S4E10}
 R=det(M)-K(\tr{(M)})^2=\lambda_1\lambda_2-K(\lambda_1+\lambda_2)^2
 \end{equation}
-where $\lambda_1$ and $\lambda_2$ are the eigenvalues of $M$. The criterion with the score has the next cases:
+where $\lambda_1$ and $\lambda_2$ are the eigenvalues of $M$. Finally to decide if wether a feature is a corner or not one follows the next criterion  with the score $R$:
 \begin{enumerate}
 \item If $|R|$ is small, i.e.\ $\lambda_1,\lambda_2$ are small, the region is flat.
 \item If $R<0$, i.e.\ $\lambda_1\gg\lambda_2$ or viceversa, the region is an edge.
@@ -567,7 +567,7 @@ Shi-Tomasi changes the scoring function that gave criteria for corner detection 
 \label{eq:C2S4E11}
 R = \min (\lambda_1,\lambda_2)
 \end{equation}
-as in the case of the Harris Corner Detector, if $|R|$ is greater than a threshold value $\lambda_{\min}$, it is considered as a corner. The $\lambda_1\text{vs.}\lambda_2$ space will now look as in Figure~\ref{fig:shitomasi_space}
+as in the case of the Harris Corner Detector, if $|R|$ is greater than a threshold value $\lambda_{\min}$, it is considered as a corner. The $\lambda_1$ vs. $\lambda_2$ space will now look as in Figure~\ref{fig:shitomasi_space}
 
 \begin{figure}[h!]
 \centering
@@ -576,14 +576,14 @@ as in the case of the Harris Corner Detector, if $|R|$ is greater than a thresho
 \label{fig:shitomasi_space}
 \end{figure}
 
-There is also an straight forward implementation of this algorithm on OpenCV, we used this algorithm to find the $N$ strongest corners and then track them with Lucas-Kanade algorithm. Even the Shi-Tomasi corner detector is rotation invariant since the trace and the determinant of the matrix $M$ are rotation invariant they are not scaling invariant like the SIFT algorithm which is slower than the former. In the case of the sequence that we are working with the images were taken very close to each other so the scale of the features won't change significantly. 
+There is also a straight forward implementation of this algorithm on OpenCV, we used this algorithm to find the $N$ strongest corners and then track them with the Lucas-Kanade algorithm (explained in detail in the next page). Even the Shi-Tomasi corner detector is rotation invariant since the trace and the determinant of the matrix $M$ are rotation invariant they are not scaling invariant like the SIFT algorithm which is slower than the former. In the case of the sequence that we are working with the images were taken very close to each other so the scale of the features will not change significantly. 
 \end{itemize}
 
-We already explained the different options for feature detection algorithms and that the option picked was the Shi-Tomasi corner detector to track the strong corners obtained by the Shi-Tomasi algorithm we used the Lucas-Kanade method explained as follows:
+We already explained the different options for feature detection algorithms and that the option picked was the Shi-Tomasi corner detector to track the strong corners obtained by the Shi-Tomasi algorithm, we used the Lucas-Kanade method explained as follows:
 \begin{itemize}
 \item \textbf{Lucas-Kanade method:} We would like to associate a movement vector $(u,v)$ to every such "interesting pixel" (strong corner point) in the scene obtained by comparing two successive images with the next two assumptions:
 \begin{enumerate}
-\item The two images are separated by a small increment $\Delta t$, such that the objects have not displaces significantly (the algorithm works best with slow moving objects). 
+\item The two images are separated by a small increment $\Delta t$, such that the objects have not significant displaces (the algorithm works best with slow moving objects). 
 \item The images depict a natural scene containing textured objects exhibiting shades of gray (different intensity levels) which change smoothly.
 \item The pixel intensity of an object does not change in consecutive frames.
 \item Neighbouring pixels have similar motion.
@@ -592,7 +592,7 @@ With this assumptions consider a pair in $(x,y)$ at time $t$ with intensity $I(x
 $$
 I(x,y,t)=I(x+dx,y+dy,t+dt)
 $$
-Expanding with Taylor the right hand side we obtain the following equation
+Computing the Taylor expansion of the right hand side we obtain the following equation
 \begin{equation}
 \label{eq:C2S5E12}
 I_xu+I_yv+I_t=0
@@ -604,11 +604,11 @@ I_x = \frac{\partial I}{\partial x}\text{; } I_y = &\frac{\partial I}{\partial y
 u = \frac{\partial x}{\partial t}\text{; }& v = \frac{\partial y}{\partial t}
 \end{aligned}
 $$
-The Equation~\ref{eq:C2S5E12} is known as the \textbf{"Optical Flow Equation"}.Computing the gradient of the intensity we obtain $(I_x,I_y,I_t)$, and we aim to know the flow by solving the equation for $(u,v)$. In 1981, Bruce D. Lucas and Takeo Kanade proposed a method to solve this in their paper "An iterative image registration technique with an application to stereo vision" \cite{LucasKanade}; the made the assumptions that we already mentioned before. 
+The Equation~\ref{eq:C2S5E12} is known as the \textbf{"Optical Flow Equation"}. Computing the gradient of the intensity we obtain $(I_x,I_y,I_t)$, and we aim to know the flow by solving the equation for $(u,v)$. In 1981, Bruce D. Lucas and Takeo Kanade proposed a method to solve this in their paper "An iterative image registration technique with an application to stereo vision" \cite{LucasKanade}; the made the assumptions that we already mentioned before. 
 
 \bigskip
 
-By assumption neighbouring pixels have similar motion, lets take a $3\times 3$ patch around the point (in our case corner), then all the nine points of the patch have the same motion. We can find $(I_x,I_y,I_t)$ for this nine points; thus the problem reduces to solving nine equations with two unknowns variables which is over-determined. As is explained in detail on \cite{LucasKanade} a better solution is obtained with least squares fit method. In this setting the problem has the solution
+By assumption neighbouring pixels have similar motion, lets take a $3\times 3$ patch around the point (in our case corner), then all the nine points of the patch have the same motion. We can find $(I_x,I_y,I_t)$ for this nine points; thus the problem reduces to solving nine equations with two unknowns variables which is over-determined. As is explained in detail on \cite{LucasKanade} a better solution is obtained using the least squares fit method. In this setting the problem has the solution
 \begin{equation}
 \label{eq:C2S5E13}
 \left( 
@@ -630,13 +630,13 @@ v
 \end{matrix}
 \right)
 \end{equation}
-obtaining with this the vector flow of the features in the scene. Because its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how we implemented the Lucas-Kanade method with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
+obtaining with this the vector flow of the features in the scene. Due its simplicity we used the OpenCV implementation of this algorithm to track the $N$ strongest corners (found by Shi-Tomasi corner detector) in the image sequence \textbf{Church}. In the next subsection we will show explicitly how we implemented the Lucas-Kanade method with the Shi-Tomasi algorithm to detect and track strong corners in our dataset, including the code in python. We will also show how to paint the Epipolar plane based on the results of this procedure. 
 \end{itemize}
  
 \subsection{Procedure for tracking and painting the EPIs}
 \label{sec:proc_track}
 
-The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the curch and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the church and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec:Appendix_A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook Pro with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
+The maximum number of strong corners obtained by the Shi-Tomsi in the first view was 336, one can see in Figure~\ref{fig:first_frame_church} the first image of the church and in Figure~\ref{fig:first_frame_church_points} the 336 strong corners found by the Shi-Tomasi detector; one can also see in Figure~\ref{fig:last_frame_church} the last image (number 101) of the church and in Figure~\ref{fig:last_frame_church_points} the final position of the points correspondent to the tracked corners. Finally, in the Figure~\ref{fig:track_points_church} one can see the path of the corners tracked through the sequence of images in the data set. The code used to detect the $N$ strongest corners with Shi-Tomasi detector and track them through the sequence of images in the Church data set using Lucas-Kanade method is presented in Appendix~\ref{sec:Appendix_A}. Using this code the time elapsed to detect and track 336 corners along 101 pictures in the Church data set sequence was \textbf{16.36 seconds} in a Macbook Pro with OSX 10.10.5, with 8GB memory, 2.7 GHz Intel Core i5 processor and Graphic Card Intel Iris Graphics 6100 1536 MB. 
 
 \begin{figure}[h!]
 \centering
@@ -675,7 +675,7 @@ The maximum number of strong corners obtained by the Shi-Tomsi in the first view
 
 \bigskip
 
-We are trying to construct the epipolar plane images correspondent to the sequence of different views of the church; for that we will follow the method that Bolles proposed in \cite{Bolles}. Due the straight linear trajectory of the camera, the points will follow an straight line trajectory that will stay in the corresponding epipolar line. The epipolar line will be parallel to the $x$-axis; we will use strongly this result.
+We are trying to construct the Epipolarplane Images corresponding to the sequence of different views of the church; for that we will follow the method that Bolles proposed in \cite{Bolles}. Due the straight linear trajectory of the camera, the points will follow a straight line trajectory that will stay in the corresponding epipolar line. The Epipolar Line will be parallel to the $x$-axis; we will use strongly this result.
 
 \bigskip
 
@@ -687,7 +687,7 @@ Since in comparsion with the actual resolution of the pictures ($1024\text{px}\t
 
 \bigskip
 
-In order to have a trustworthy light field reconstruction we took Epipolar plane images corresponding to $y$-strips with different thickness depending on the density of tracked points for the corresponding $y$, for example more tight at the bottom part of the pictures where we have a lot of tracked points due the bushes and trees and  broader at the top where there is not a lot of tracked points due the almost homogeneous sky.
+In order to have a trustworthy light field reconstruction we took Epipolarplane Images corresponding to $y$-strips with different thickness depending on the density of tracked points for the corresponding $y$, for example more tight at the bottom part of the pictures where we have a lot of tracked points due the bushes and trees and  broader at the top where there is not a lot of tracked points due the almost homogeneous sky.
 
 \begin{figure}[h!]
 \centering
